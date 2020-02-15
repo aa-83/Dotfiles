@@ -1,2 +1,2 @@
 # Dotfiles
-The are dot- and build files I use.
+These are my dotfiles.
