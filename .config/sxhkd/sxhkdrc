@@ -1,0 +1,59 @@
+#Basic binds
+super + Return
+	$TERMINAL
+super + d
+	dmenu_run
+super + w
+    $BROWSER
+super + shift + w
+    $TERMINAL -e internett
+super + shift + s
+	slock
+
+#Terminal software
+super + u
+	$TERMINAL -e vifm
+super + shift + u
+	$TERMINAL -e ranger
+super + i
+    $TERMINAL -e gotop
+super + shift + i
+	$TERMINAL -e htop
+super + o
+    $TERMINAL -e newsboat
+super + p
+	$TERMINAL -e neomutt
+super + r
+	$TERMINAL -e rtorrent
+
+# Software
+super + e
+	vlc
+super + shift + e
+	audacity
+super + shift + o
+    bless
+super + shift + p
+    pd
+
+#Misc
+super + å
+    $TERMINAL -e xinput disable 'SynPS/2 Synaptics TouchPad'
+super + shift + å
+    $TERMINAL -e xinput enable 'SynPS/2 Synaptics TouchPad'
+
+#Music
+super + z
+	mpc pause
+super + shift + z
+	mpc play
+super + x
+	mpc next
+super + shift + x
+	mpc prev
+super + a
+    $TERMINAL -e ncmpcpp
+super + shift + a
+	$TERMINAL -e pulsemixer
+super + s
+	$TERMINAL -e spt
