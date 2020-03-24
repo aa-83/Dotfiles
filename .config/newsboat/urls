@@ -1,9 +1,13 @@
 https://lukesmith.xyz/rss.xml Linux
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Linux
+
+file:///tmp/mozilla_eirik0/vwlL6GEE.rss
 https://www.archlinux.org/feeds/news/ Linux
 
 https://www.fsf.org/static/fsforg/rss/news.xml Linux
 https://www.fsf.org/static/fsforg/rss/blogs.xml Linux
+
+https://www.fosslinux.com/feed
 
 file:///tmp/mozilla_eirik0/NS7RoL0R.rss
 
@@ -28,12 +32,22 @@ file:///tmp/mozilla_eirik0/DnWF2atB.rss "Digital Culture"
 
 file:///tmp/mozilla_eirik0/deeuprG7.rss
 
+file:///tmp/mozilla_eirik0/rss Nyheter
+
 https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
 
 https://www.haaretz.com/cmlink/1.4605045 Nyheter
 https://www.haaretz.com/cmlink/1.4850015 Nyheter
 https://www.haaretz.com/cmlink/1.4605051 Nyheter
 https://www.haaretz.com/cmlink/1.4850006 Nyheter
+
+https://www.dr.dk/nyheder/service/feeds/indland
+https://www.dr.dk/nyheder/service/feeds/udland
+https://www.dr.dk/nyheder/service/feeds/politik
+https://www.dr.dk/nyheder/service/feeds/kultur
+https://www.dr.dk/Nyheder/Service/feeds/regionale/kbh/
+
+file:///tmp/mozilla_eirik0/feed
 
 https://www.independent.co.uk/news/world/rss Nyheter
 http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fwww.independent.co.uk%2Fvoices%2Fcommentators%2Ffisk&in_id_or_class=content+premium-bg&url_contains=

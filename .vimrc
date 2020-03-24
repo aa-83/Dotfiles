@@ -1,3 +1,5 @@
+" Vim Config
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,8 +11,6 @@ Plugin 'dense-analysis/ale'
 Plugin 'neomake/neomake'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'SirVer/ultisnips'
-Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vifm/vifm.vim'
@@ -25,13 +25,6 @@ set nohlsearch
 set clipboard+=unnamedplus
 
 
-" Vimxtex setting
-let g:tex_flavor = 'latex'
-let g:tex_view_method = 'zathura'
-let g:tex_view_general_viewer = 'zathura'
-let g:tex_vimtex_viewer = 'zathura'
-
-" Some Basics
 set nocompatible
 set encoding=utf-8
 filetype plugin indent on
@@ -39,7 +32,7 @@ syntax on
 set relativenumber
 set textwidth=80
 set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray
+highlight ColorColumn ctermbg=darkgreen
 set history=500
 set shiftwidth=4
 set tabstop=4
@@ -70,12 +63,19 @@ set wildmode=longest,list,full
 " Disable Automatic Commenting on New Line
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Hex Mode
+" Hex Read
+nmap <Leader>hr :%!xxd<CR> :set filetype=xxd<CR>
+
+" Hex Write
+nmap <Leader>hw :%!xxd -r<CR> :set binary<CR> :set filetype=<CR>
+
 " Turn on Goyo for Prose Writing
 map <leader>f :Goyo \| set bg=light \| set linebreak<cr>
 
 "Spell Check
-map <leader>oe :setlocal spell! spelllang=en_us<cr>
-map <leader>on :setlocal spell! spelllang=no_nb<cr>
+map <leader>oe :setlocal spell! spelllang=en<cr>
+map <leader>on :setlocal spell! spelllang=nb_NO<cr>
 
 "Fix splits
 set splitbelow splitright
@@ -89,9 +89,31 @@ map <C-l> <C-w>l
 " Save file as sudo on files that require root permission
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Automatically deletes all trailing whitespaces on save
+    autocmd BufWritePre * %s/\s\+$//e
+
+" Recompile suckless programs automatically
+    autocmd BufWritePost config.h,config.def.h !sudo make install
+
+" Update binds when sxhkdrc is updated
+    autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+
+" Plugins
+
+" Vimxtex setting
+let g:tex_flavor = 'latex'
+let g:tex_view_method = 'zathura'
+let g:tex_view_general_viewer = 'zathura'
+let g:tex_vimtex_viewer = 'zathura'
+
+" Start nerdtree when vim opens
+"	autocmd vimenter * NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+	map <C-n> :NERDTreeToggle<CR>
+
 "Enable Goyo by default for mutt writing
 "Goyo's width will be the line limit in mutt
-autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+"autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
 autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
@@ -103,8 +125,8 @@ function! s:goyo_enter()
 	cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
 endfunction
 
+" Quit Vim if this is the only remaining buffer
 function! s:goyo_leave()
-	" Quit Vim if this is the only remaining buffer
 	if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
 		if b:quitting_bang
 			qa!
@@ -117,20 +139,19 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
-" Automatically deletes all trailing whitespaces on save
-    autocmd BufWritePre * %s/\s\+$//e
+" Ultisnips config
+let g:SuperTabDefaultCompletionType    = '<C-b>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
-" Recompile suckless programs automatically
-    autocmd BufWritePost config.h,config.def.h !sudo make install
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
-" Update binds when sxhkdrc is updated
-    autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-
-" Start nerdtree when vim opens
-	autocmd vimenter * NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-	map <C-n> :NERDTreeToggle<CR>
-
+" Statusline
 set statusline+=%#warningsmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -164,5 +185,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-

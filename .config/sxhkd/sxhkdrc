@@ -20,27 +20,31 @@ super + i
 super + shift + i
 	$TERMINAL -e htop
 super + o
-    $TERMINAL -e newsboat
+    $TERMINAL -e calcurse
+super + shift + o
+ 	$TERMINAL -e newsboat
 super + p
 	$TERMINAL -e neomutt
-super + r
-	$TERMINAL -e rtorrent
+super + shift p
+	mailsync
+super + control + shift + p
+	protonmail-bridge
 
 # Software
 super + e
-	vlc
+	bless
 super + shift + e
 	audacity
-super + shift + o
-    bless
-super + shift + p
+super + r
+	qbittorrent
+super + shift + r
     pd
 
 #Misc
-super + å
-    $TERMINAL -e xinput disable 'SynPS/2 Synaptics TouchPad'
-super + shift + å
-    $TERMINAL -e xinput enable 'SynPS/2 Synaptics TouchPad'
+super + control + shift + u
+	xinput disable 'SynPS/2 Synaptics TouchPad'
+super + control + shift + i
+	xinput enable 'SynPS/2 Synaptics TouchPad'
 
 #Music
 super + z
@@ -56,4 +60,4 @@ super + a
 super + shift + a
 	$TERMINAL -e pulsemixer
 super + s
-	$TERMINAL -e spt
+	$TERMINAL -e spotify-tui

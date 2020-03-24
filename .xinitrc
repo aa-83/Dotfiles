@@ -1,6 +1,6 @@
 #!/bin/sh
 
-userresources=$HOME/build/git/st/.Xdefaults
+userresources=$HOME/build/st/.Xdefaults
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
@@ -35,11 +35,12 @@ fi
 ~/.fehbg &
 slstatus &
 sxhkd &
+spotifyd --no-daemon &
 unclutter &
 xcompmgr &
 dunst &
 mpd &
-#syncthing &
+syncthing -no-browser &
 xrdb ~/build/st/.Xdefaults &
 
 setxkbmap && setxkbmap -option caps:super && killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape' &

@@ -14,21 +14,21 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/Google_Drive/DDSKS/master/første_år
-	andre_semester
-1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester
-	electives
+d/home/eirik/.qbittorent/downloaded
+	Webcam Chloe Lamb
 3
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives
-	light_sound_space
+d/home/eirik/.qbittorent/downloaded/Webcam Chloe Lamb
+	Chloe Lamb.mp4
 1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space
-	tekster
-10
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space/tekster
-	a_field_guide_to_fermentation.pdf
+d/home/eirik/.qbittorent/downloaded
+	Webcam Chloe Lamb
+3
+d/home/eirik/.qbittorent/downloaded/Webcam Chloe Lamb
+	Chloe Lamb.mp4
 1
+d/home/eirik/.qbittorent/downloaded
+	[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
+3
 d/home/eirik
 	Google_Drive
 1
@@ -45,19 +45,19 @@ d/home/eirik/Google_Drive/DDSKS/master/første_år
 	andre_semester
 1
 d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester
-	electives
-3
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives
-	light_sound_space
+	artistic_research
 1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space
-	tekster
-10
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space/tekster
-	a_field_guide_to_fermentation.pdf
+d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research
+	images
 1
-d/home/eirik
-	Google_Drive
+d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images
+	templates
+1
+d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images/templates
+	test2.jpg
+4
+d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images
+	templates
 1
 
 # Right window history (oldest to newest):
@@ -113,11 +113,17 @@ D/home/eirik
 
 # Prompt history (oldest to newest):
 pzizek_why_i_am_still_a_communist.mkv
+p200313-15_københavn_oslo.pdf
+p200313-15_københavn_oslo_reisekvittering.pdf
+pINTERNATIONALE_MODULE_PORTFOLIO.pdf
+ptilbud_på_atomic.pdf
+p20_04_12_bergen-køben
+p20_04_12_reisekvittering.pdf
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_mozilla.pdf
+""/home/eirik/.local/share/vifm/Trash/000_Z16057289.pdf
 
 # Directory stack (oldest to newest):
 
@@ -212,3 +218,123 @@ t/home/eirik/.local/share/vifm/Trash/000_551F9B0A1947FB845B16953B59E513C2FD41610
 	/home/eirik/.rtorrent/.session/551F9B0A1947FB845B16953B59E513C2FD416105.torrent.rtorrent
 t/home/eirik/.local/share/vifm/Trash/000_mozilla.pdf
 	/home/eirik/mozilla.pdf
+t/home/eirik/.local/share/vifm/Trash/000_.ncmpcpp
+	/home/eirik/.vim/.ncmpcpp
+t/home/eirik/.local/share/vifm/Trash/000_.rtorrent
+	/home/eirik/.vim/.rtorrent
+t/home/eirik/.local/share/vifm/Trash/000_.stardict
+	/home/eirik/.vim/.stardict
+t/home/eirik/.local/share/vifm/Trash/000_scripts
+	/home/eirik/.vim/scripts
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-eirik_ddsks.gpg
+	/home/eirik/.password-store/mutt-wizard-eirik_ddsks.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-eirik_gmail.gpg
+	/home/eirik/.password-store/mutt-wizard-eirik_gmail.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-eirik_proton.gpg
+	/home/eirik/.password-store/mutt-wizard-eirik_proton.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-gmail.gpg
+	/home/eirik/.password-store/mutt-wizard-gmail.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-gmail_mutt.gpg
+	/home/eirik/.password-store/mutt-wizard-gmail_mutt.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-mutt_gmail.gpg
+	/home/eirik/.password-store/mutt-wizard-mutt_gmail.gpg
+t/home/eirik/.local/share/vifm/Trash/000_mutt-wizard-proton_mutt.gpg
+	/home/eirik/.password-store/mutt-wizard-proton_mutt.gpg
+t/home/eirik/.local/share/vifm/Trash/000_A63B5C19BE984BB6D2B00C9DDB36A23A14F46E3B.meta
+	/home/eirik/.rtorrent/A63B5C19BE984BB6D2B00C9DDB36A23A14F46E3B.meta
+t/home/eirik/.local/share/vifm/Trash/000_01PublicServiceAnnouncement.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/01PublicServiceAnnouncement.mp3
+t/home/eirik/.local/share/vifm/Trash/000_01PublicServiceAnnouncement.png
+	/home/eirik/music/danger_mouse/the_grey_album/01PublicServiceAnnouncement.png
+t/home/eirik/.local/share/vifm/Trash/000_01PublicServiceAnnouncement_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/01PublicServiceAnnouncement_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_02WhatMoreCanISay.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/02WhatMoreCanISay.mp3
+t/home/eirik/.local/share/vifm/Trash/000_02WhatMoreCanISay.png
+	/home/eirik/music/danger_mouse/the_grey_album/02WhatMoreCanISay.png
+t/home/eirik/.local/share/vifm/Trash/000_02WhatMoreCanISay_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/02WhatMoreCanISay_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_03Encore.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/03Encore.mp3
+t/home/eirik/.local/share/vifm/Trash/000_03Encore.png
+	/home/eirik/music/danger_mouse/the_grey_album/03Encore.png
+t/home/eirik/.local/share/vifm/Trash/000_03Encore_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/03Encore_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_04December4th.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/04December4th.mp3
+t/home/eirik/.local/share/vifm/Trash/000_04December4th.png
+	/home/eirik/music/danger_mouse/the_grey_album/04December4th.png
+t/home/eirik/.local/share/vifm/Trash/000_04December4th_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/04December4th_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_06DirtOffYourShoulder.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/06DirtOffYourShoulder.mp3
+t/home/eirik/.local/share/vifm/Trash/000_06DirtOffYourShoulder.png
+	/home/eirik/music/danger_mouse/the_grey_album/06DirtOffYourShoulder.png
+t/home/eirik/.local/share/vifm/Trash/000_06DirtOffYourShoulder_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/06DirtOffYourShoulder_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_07MomentOfClarity.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/07MomentOfClarity.mp3
+t/home/eirik/.local/share/vifm/Trash/000_07MomentOfClarity.png
+	/home/eirik/music/danger_mouse/the_grey_album/07MomentOfClarity.png
+t/home/eirik/.local/share/vifm/Trash/000_07MomentOfClarity_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/07MomentOfClarity_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_08ChangeClothes.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/08ChangeClothes.mp3
+t/home/eirik/.local/share/vifm/Trash/000_08ChangeClothes.png
+	/home/eirik/music/danger_mouse/the_grey_album/08ChangeClothes.png
+t/home/eirik/.local/share/vifm/Trash/000_08ChangeClothes_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/08ChangeClothes_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_09Allure.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/09Allure.mp3
+t/home/eirik/.local/share/vifm/Trash/000_09Allure.png
+	/home/eirik/music/danger_mouse/the_grey_album/09Allure.png
+t/home/eirik/.local/share/vifm/Trash/000_09Allure_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/09Allure_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_10JustifyMyThug.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/10JustifyMyThug.mp3
+t/home/eirik/.local/share/vifm/Trash/000_10JustifyMyThug.png
+	/home/eirik/music/danger_mouse/the_grey_album/10JustifyMyThug.png
+t/home/eirik/.local/share/vifm/Trash/000_10JustifyMyThug_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/10JustifyMyThug_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_11Interlude.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/11Interlude.mp3
+t/home/eirik/.local/share/vifm/Trash/000_11Interlude.png
+	/home/eirik/music/danger_mouse/the_grey_album/11Interlude.png
+t/home/eirik/.local/share/vifm/Trash/000_11Interlude_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/11Interlude_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_12MyFirstSong.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/12MyFirstSong.mp3
+t/home/eirik/.local/share/vifm/Trash/000_12MyFirstSong.png
+	/home/eirik/music/danger_mouse/the_grey_album/12MyFirstSong.png
+t/home/eirik/.local/share/vifm/Trash/000_12MyFirstSong_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/12MyFirstSong_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_0599Problems.mp3
+	/home/eirik/music/danger_mouse/the_grey_album/0599Problems.mp3
+t/home/eirik/.local/share/vifm/Trash/000_0599Problems.png
+	/home/eirik/music/danger_mouse/the_grey_album/0599Problems.png
+t/home/eirik/.local/share/vifm/Trash/000_0599Problems_spectrogram.png
+	/home/eirik/music/danger_mouse/the_grey_album/0599Problems_spectrogram.png
+t/home/eirik/.local/share/vifm/Trash/000_DjDangerMouse-TheGreyAlbum_meta.xml
+	/home/eirik/music/danger_mouse/the_grey_album/DjDangerMouse-TheGreyAlbum_meta.xml
+t/home/eirik/.local/share/vifm/Trash/000_DjDangerMouse-TheGreyAlbum_vbr.m3u
+	/home/eirik/music/danger_mouse/the_grey_album/DjDangerMouse-TheGreyAlbum_vbr.m3u
+t/home/eirik/.local/share/vifm/Trash/000___ia_thumb.jpg
+	/home/eirik/music/danger_mouse/the_grey_album/__ia_thumb.jpg
+t/home/eirik/.local/share/vifm/Trash/000_3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent
+	/home/eirik/.rtorrent/.session/3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent
+t/home/eirik/.local/share/vifm/Trash/000_3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent.libtorrent_resume
+	/home/eirik/.rtorrent/.session/3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent.libtorrent_resume
+t/home/eirik/.local/share/vifm/Trash/000_3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent.rtorrent
+	/home/eirik/.rtorrent/.session/3891F36A497F2D5836610D812BFBFDE8F5B6D01E.torrent.rtorrent
+t/home/eirik/.local/share/vifm/Trash/000_8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent
+	/home/eirik/.rtorrent/.session/8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent
+t/home/eirik/.local/share/vifm/Trash/000_8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent.libtorrent_resume
+	/home/eirik/.rtorrent/.session/8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent.libtorrent_resume
+t/home/eirik/.local/share/vifm/Trash/000_8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent.rtorrent
+	/home/eirik/.rtorrent/.session/8D5184FFEE7D3273F1E54663CF057C85F0F366FA.torrent.rtorrent
+t/home/eirik/.local/share/vifm/Trash/000_8D5184FFEE7D3273F1E54663CF057C85F0F366FA.meta
+	/home/eirik/.rtorrent/download/8D5184FFEE7D3273F1E54663CF057C85F0F366FA.meta
+t/home/eirik/.local/share/vifm/Trash/000_3891F36A497F2D5836610D812BFBFDE8F5B6D01E.meta
+	/home/eirik/.rtorrent/download/3891F36A497F2D5836610D812BFBFDE8F5B6D01E.meta
+t/home/eirik/.local/share/vifm/Trash/000_Z16057289.pdf
+	/home/eirik/Z16057289.pdf
