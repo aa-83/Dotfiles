@@ -1,8 +1,16 @@
-" Neovim Config
+" Vim Config
 set nocompatible
 
+" Environment
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
 " Plugins
-execute pathogen#infect('~/.config/nvim/bundle/{}')
+
+execute pathogen#infect('~/.config/vim/bundle/{}')
 syntax on
 filetype plugin indent on
 

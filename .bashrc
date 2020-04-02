@@ -22,12 +22,13 @@ alias srn='sudo reboot now'
 alias hex='nvim -b'
 alias hexedit='hexedit --color'
 
-alias of='cd ~/build/of'
+alias of='cd ~/documents/build/of'
 alias scripts='cd ~/.local/bin/scripts/'
 alias arbeid='cd ~/Google_Drive/Arbeid/produksjoner'
 alias skole='cd ~/Google_Drive/DDSKS/master/første_år/andre_semester'
 alias bib='vim ~/documents/latex/bib/bibliografi.bib'
 alias trash='cd ~/.local/share/vifm/Trash'
+alias build='cd ~/documents/build'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

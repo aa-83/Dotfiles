@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space'
+let g:netrw_dirhist_3='/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space/aux'
+let g:netrw_dirhist_2='/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/electives/light_sound_space'
+let g:netrw_dirhist_1='/etc/X11/xinit/xinitrc.d'
