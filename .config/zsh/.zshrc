@@ -1,15 +1,30 @@
-# Luke's config for the Zoomer Shell
+# Eirik's config for the Zoomer Shell
 
 autoload -U colors && colors
 PROMPT="%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b "
+setopt COMPLETE_ALIASES
+setopt AUTOCD
+setopt CORRECT_ALL
 
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
+_comp_options+=(globdots) # Include hidden files in autocomplete:
 
-# Include hidden files in autocomplete:
-_comp_options+=(globdots)
+# Load aliases and shortcuts if existent.
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
+#[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc"
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -17,8 +32,6 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
-
-export KEYTIMEOUT=1
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -61,47 +74,7 @@ vifmcd () {
     fi
 }
 
-bindkey -s '^o' 'lfcd\n'  # zsh
-
-#Aliases
-alias ls='ls -hN --color=always --group-directories-first'
-alias rm='rm -vI'
-alias mv='mv -vi'
-alias cp='cp -vi'
-alias mkdir='mkdir -pv'
-alias grep='grep --color=auto'
-alias diff='diff --color=auto'
-alias yt='youtube-dl --add-metadata -i'
-alias yta='yt -x -f bestaudio/best'
-alias hex='nvim -b'
-alias hexedit='hexedit --color'
-alias bib='nvim ~/documents/latex/bib/bibliografi.bib'
-
-alias db='cd ~/documents/build && pwd'
-alias dof='cd ~/documents/build/of && pwd'
-alias di='cd ~/documents/images && pwd'
-alias diw='cd ~/documents/images/wallpapers && pwd'
-alias div='cd ~/documents/images/video && pwd'
-alias dmu='cd ~/documents/music && pwd'
-alias dma='cd ~/documents/man && pwd'
-alias dl='cd ~/documents/downloads && pwd'
-
-alias dsa='cd ~/documents/syncdox/arbeid/produksjoner && pwd'
-alias dsd='cd ~/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd'
-alias art='cd ~/documents/syncdox/universitet/ddsks/master/artistic_research && pwd'
-
-alias conf='cd ~/.config && pwd'
-alias lb='cd ~/.local/bin && pwd'
-alias lbs='cd ~/.local/bin/scripts && pwd'
-alias lsh='cd ~/.local/share && pwd'
-alias vt='cd ~/.local/share/vifm/Trash && pwd'
-
-alias srn='sudo reboot now'
-alias sdn='sudo shutdown now'
-
-alias abook='abook -C "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook'
-alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf'
-alias calcurse='calcurse -D ~/.config/calcurse/'
+bindkey -s '^o' 'vifmcd\n'  # zsh
 
 # Man colour
 man() {

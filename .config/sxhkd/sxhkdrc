@@ -3,12 +3,20 @@ super + Return
 	$TERMINAL
 super + d
 	dmenu_run
+super + shift + s
+	slock &  mpc pause ; pauseallmpv ; xset dpms force off
 super + w
     $BROWSER
-super + shift + w
+
+#Nettverk
+super + shift + F1
     $TERMINAL -e internett
-super + shift + s
-	slock
+super + shift + F2
+	$TERMINAL -e exvpn
+super + shift + F3
+	$TERMINAL -e ping5
+super + shift + F12
+	mailsync
 
 #Terminal software
 super + u
@@ -20,15 +28,13 @@ super + i
 super + shift + i
 	$TERMINAL -e htop
 super + o
-    $TERMINAL -e calcurse
+    $TERMINAL -e calcurse -D ~/.config/calcurse
 super + shift + o
  	$TERMINAL -e newsboat
 super + p
 	$TERMINAL -e neomutt
 super + shift p
-	mailsync
-super + control + shift + p
-	protonmail-bridge
+	$TERMINAL -e nvim
 
 # Software
 super + e
@@ -39,6 +45,8 @@ super + r
 	qbittorrent
 super + shift + r
     pd
+super + shift + F11
+	protonmail-bridge
 
 #Misc
 super + control + shift + u
@@ -61,3 +69,9 @@ super + shift + a
 	$TERMINAL -e pulsemixer
 super + s
 	$TERMINAL -e spotify-tui
+
+#XF86
+XF86MonBrightnessDown
+	xbacklight -dec 15
+XF86MonBrightnessUp
+	xbacklight -inc 15

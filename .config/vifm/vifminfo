@@ -14,50 +14,50 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.qbittorent/downloaded
-	Webcam Chloe Lamb
-3
-d/home/eirik/.qbittorent/downloaded/Webcam Chloe Lamb
-	Chloe Lamb.mp4
-1
-d/home/eirik/.qbittorent/downloaded
-	Webcam Chloe Lamb
-3
-d/home/eirik/.qbittorent/downloaded/Webcam Chloe Lamb
-	Chloe Lamb.mp4
-1
-d/home/eirik/.qbittorent/downloaded
-	[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
-3
-d/home/eirik
-	Google_Drive
-1
-d/home/eirik/Google_Drive
-	DDSKS
-3
-d/home/eirik/Google_Drive/DDSKS
-	master
-2
-d/home/eirik/Google_Drive/DDSKS/master
-	første_år
-2
-d/home/eirik/Google_Drive/DDSKS/master/første_år
-	andre_semester
-1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester
-	artistic_research
-1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research
 	images
 1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images
-	templates
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
+	alphabet
 1
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images/templates
-	test2.jpg
-4
-d/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/artistic_research/images
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet
+	..
+0
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
 	templates
+4
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/templates
+	template2.jpg
+2
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
+	alphabet
+1
+d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet
+	template2.jpg
+1
+d/home/eirik
+	documents
+1
+d/home/eirik/documents
+	syncdox
+10
+d/home/eirik/documents/syncdox
+	hobby
+4
+d/home/eirik/documents/syncdox/hobby
+	GW
+4
+d/home/eirik/documents/syncdox/hobby/GW
+	Warhammer
+6
+d/home/eirik/documents/syncdox/hobby/GW/Warhammer
+	Army Books
+1
+d/home/eirik/documents/syncdox/hobby/GW/Warhammer/Army Books
+	Tomb Kings (8ed).pdf
+12
+d/home/eirik
+	documents
 1
 
 # Right window history (oldest to newest):
@@ -123,7 +123,7 @@ p20_04_12_reisekvittering.pdf
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_Z16057289.pdf
+""/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/templates/template2.jpg
 
 # Directory stack (oldest to newest):
 
@@ -338,3 +338,55 @@ t/home/eirik/.local/share/vifm/Trash/000_3891F36A497F2D5836610D812BFBFDE8F5B6D01
 	/home/eirik/.rtorrent/download/3891F36A497F2D5836610D812BFBFDE8F5B6D01E.meta
 t/home/eirik/.local/share/vifm/Trash/000_Z16057289.pdf
 	/home/eirik/Z16057289.pdf
+t/home/eirik/.local/share/vifm/Trash/001_$XDG_CACHE_HOME
+	/home/eirik/$XDG_CACHE_HOME
+t/home/eirik/.local/share/vifm/Trash/000_.abook
+	/home/eirik/.abook
+t/home/eirik/.local/share/vifm/Trash/000_c.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/c.jpg
+t/home/eirik/.local/share/vifm/Trash/000_d.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/d.jpg
+t/home/eirik/.local/share/vifm/Trash/000_e.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/e.jpg
+t/home/eirik/.local/share/vifm/Trash/000_f.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/f.jpg
+t/home/eirik/.local/share/vifm/Trash/000_g.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/g.jpg
+t/home/eirik/.local/share/vifm/Trash/000_h.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/h.jpg
+t/home/eirik/.local/share/vifm/Trash/000_i.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/i.jpg
+t/home/eirik/.local/share/vifm/Trash/000_j.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/j.jpg
+t/home/eirik/.local/share/vifm/Trash/000_l.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/l.jpg
+t/home/eirik/.local/share/vifm/Trash/000_n.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/n.jpg
+t/home/eirik/.local/share/vifm/Trash/000_o.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/o.jpg
+t/home/eirik/.local/share/vifm/Trash/000_p.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/p.jpg
+t/home/eirik/.local/share/vifm/Trash/000_q.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/q.jpg
+t/home/eirik/.local/share/vifm/Trash/000_r.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/r.jpg
+t/home/eirik/.local/share/vifm/Trash/000_s.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/s.jpg
+t/home/eirik/.local/share/vifm/Trash/000_t.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/t.jpg
+t/home/eirik/.local/share/vifm/Trash/000_u.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/u.jpg
+t/home/eirik/.local/share/vifm/Trash/000_v.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/v.jpg
+t/home/eirik/.local/share/vifm/Trash/000_x.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/x.jpg
+t/home/eirik/.local/share/vifm/Trash/000_y.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/y.jpg
+t/home/eirik/.local/share/vifm/Trash/000_z.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/z.jpg
+t/home/eirik/.local/share/vifm/Trash/000_å.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/å.jpg
+t/home/eirik/.local/share/vifm/Trash/000_æ.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/æ.jpg
+t/home/eirik/.local/share/vifm/Trash/000_ø.jpg
+	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/ø.jpg
