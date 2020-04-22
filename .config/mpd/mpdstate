@@ -1,8 +1,6 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
-state: pause
-current: 0
-time: 1.365000
+state: stop
 random: 0
 repeat: 0
 single: 0
@@ -11,20 +9,4 @@ crossfade: 3
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:tom_waits/Bone Machine/01-Earth Died Screaming.mp3
-1:tom_waits/Bone Machine/02-Dirt in the Ground.mp3
-2:tom_waits/Bone Machine/03-Such a Scream.mp3
-3:tom_waits/Bone Machine/04-All Stripped Down.mp3
-4:tom_waits/Bone Machine/05-Who Are You_.mp3
-5:tom_waits/Bone Machine/06-The Ocean Doesn't Want Me.mp3
-6:tom_waits/Bone Machine/07-Jesus Gonna Be Here.mp3
-7:tom_waits/Bone Machine/08-A Little Rain.mp3
-8:tom_waits/Bone Machine/09-In the Colosseum.mp3
-9:tom_waits/Bone Machine/10-Goin' Out West.mp3
-10:tom_waits/Bone Machine/11-Murder in the Red Barn.mp3
-11:tom_waits/Bone Machine/12-Black Wings.mp3
-12:tom_waits/Bone Machine/13-Whistle Down the Wind.mp3
-13:tom_waits/Bone Machine/14-I Don't Wanna Grow Up.mp3
-14:tom_waits/Bone Machine/15-Let Me Get Up On It.mp3
-15:tom_waits/Bone Machine/16-That Feel.mp3
 playlist_end

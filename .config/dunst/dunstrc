@@ -4,11 +4,11 @@
     geometry = "0x0-0+0"
     indicate_hidden = yes
     shrink = yes
-    transparency = 20
+    transparency = 0
     notification_height = 0
     separator_height = 2
     padding = 0
-    horizontal_padding = 8
+    horizontal_padding = 0
     frame_width = 0
     frame_color = "#282828"
 
@@ -24,7 +24,7 @@
     sort = yes
 
     idle_threshold = 120
-    font = Monospace 12
+    font = Monospace 10
     line_height = 0
     markup = full
 

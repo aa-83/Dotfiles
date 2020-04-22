@@ -1,0 +1,23 @@
+alias h='cd ~/ && pwd' ;
+alias d='cd ~/documents && pwd' ;
+alias db='cd ~/documents/build && pwd' ;
+alias of='cd ~/documents/build/of && pwd' ;
+alias i='cd ~/images && pwd' ;
+alias iw='cd ~/images/wallpapers && pwd' ;
+alias iv='cd ~/images/video && pwd' ;
+alias m='cd ~/music && pwd' ;
+alias dma='cd ~/documents/man && pwd' ;
+alias dl='cd ~/downloads && pwd' ;
+
+alias dsa='cd ~/documents/syncdox/arbeid/produksjoner && pwd' ;
+alias dsd='cd ~/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd' ;
+alias art='cd ~/documents/artistic_research && pwd' ;
+alias dot='cd ~/documents/.dotfiles && pwd'
+
+alias conf='cd ~/.config && pwd' ;
+alias lb='cd ~/.local/bin && pwd' ;
+alias lbs='cd ~/.local/bin/scripts && pwd' ;
+alias lsh='cd ~/.local/share && pwd' ;
+alias lsg='cd ~/.local/share/gnupg && pwd' ;
+alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
+

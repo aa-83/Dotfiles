@@ -1,0 +1,31 @@
+#!/bin/sh
+#Aliases
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+alias ls='ls -hN --color=always --group-directories-first' ;
+alias rm='rm -vI' ;
+alias mv='mv -vi' ;
+alias cp='cp -vi' ;
+alias mkdir='mkdir -pv' ;
+alias grep='grep --color=auto' ;
+alias diff='diff --color=auto' ;
+
+alias yt='youtube-dl --add-metadata -i' ;
+alias yta='yt -x -f bestaudio/best' ;
+alias hex='nvim -b' ;
+alias hexedit='hexedit --color' ;
+alias bib='nvim ~/documents/latex/bib/bibliografi.bib' ;
+alias nzsh='nvim ~/.config/zsh/.zshrc' ;
+alias nurls='nvim ~/.config/newsboat/urls' ;
+alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
+
+alias srn='sudo reboot now' ;
+alias sdn='sudo shutdown now' ;
+
+alias abook='abook -C "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook' ;
+alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf' ;
+alias calcurse='calcurse -D ~/.config/calcurse/' ;
+
+
