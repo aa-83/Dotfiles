@@ -11,8 +11,11 @@ alias dl='cd ~/downloads && pwd' ;
 
 alias dsa='cd ~/documents/syncdox/arbeid/produksjoner && pwd' ;
 alias dsd='cd ~/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd' ;
-alias art='cd ~/documents/artistic_research && pwd' ;
-alias dot='cd ~/documents/.dotfiles && pwd'
+alias ar='cd ~/documents/artistic_practice && pwd' ;
+alias ap='cd ~/documents/artistic_practice/portfolio && pwd' ;
+alias art='cd ~/documents/artistic_practice/artistic_research && pwd' ;
+alias gr='cd ~/documents/git_repositories/ && pwd'
+alias dot='cd ~/documents/git_repositories/dotfiles && pwd'
 
 alias conf='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;

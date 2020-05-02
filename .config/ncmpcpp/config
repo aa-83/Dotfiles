@@ -77,7 +77,12 @@ mpd_music_dir = ~/music
 ## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
 ## with fftw3 support.
 ##
-#
+#visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
 #visualizer_type = wave
@@ -88,7 +93,7 @@ mpd_music_dir = ~/music
 #
 ## Alternative subset of 256 colors for terminals that support it.
 ##
-#visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
 #
 ##### system encoding #####
 ##

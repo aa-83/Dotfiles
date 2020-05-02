@@ -1,4 +1,4 @@
-#files: 913	version: 5.8
+#files: 918	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -943,6 +943,11 @@ _comps=(
 'parec' '_pulseaudio'
 'parecord' '_pulseaudio'
 'pass' '_pass'
+'pass-audit' '_pass-audit'
+'pass-close' '_pass-close'
+'pass-open' '_pass-open'
+'pass-tomb' '_pass-tomb'
+'pass-update' '_pass-update'
 'passwd' '_users'
 'paste' '_paste'
 'pasuspender' '_pulseaudio'
@@ -1779,6 +1784,7 @@ autoload -Uz _afew _android _archlinux-java _artisan _atach \
             _mix _mkinitcpio _mpv _mussh _mvn \
             _nano _networkctl _nftables _node _notmuch \
             _nvm _openssl _optirun _pacman _pass \
+            _pass-audit _pass-close _pass-open _pass-tomb _pass-update \
             _patool _perf _periscope _pgsql_utils _phing \
             _pixz _pkcon _play _pm2 _port \
             _pulseaudio _pygmentize _rails _ralio _redis-cli \
