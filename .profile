@@ -33,11 +33,13 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 #export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export HISTFILE="$XDG_DATA_HOME/bash/history"
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-export GEM_HOME="$XDG_DATA_HOME"/gem
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export GEM_HOME="$XDG_DATA_HOME/gem"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export PASSWORD_STORE_TOMB_FILE="$XDG_DATA_HOME/tomb/password.tomb"
+export PASSWORD_STORE_TOMB_KEY="$XDG_DATA_HOME/tomb/password.tomb.key"
 
-eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval id_rsa aa-83)"
+eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa aa-83)"
 
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x dwm >dev/null && exec startx #"$XDG_CONFIG_HOME/X11/xinitrc"

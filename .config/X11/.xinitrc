@@ -48,4 +48,7 @@ xmodmap -e 'keycode 135 = Super_R' &
 
 xinput disable SynPS/2\ Synaptics\ TouchPad &
 
+#Raspberry Pi Screen Orientation
+#xrandr --output DSI-1 --orientate inverted
+
 exec dwm

@@ -7,7 +7,7 @@ alias iw='cd ~/images/wallpapers && pwd' ;
 alias iv='cd ~/images/video && pwd' ;
 alias m='cd ~/music && pwd' ;
 alias dma='cd ~/documents/man && pwd' ;
-alias dl='cd ~/downloads && pwd' ;
+alias dl='cd ~/Downloads && pwd' ;
 
 alias dsa='cd ~/documents/syncdox/arbeid/produksjoner && pwd' ;
 alias dsd='cd ~/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd' ;
