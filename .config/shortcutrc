@@ -15,7 +15,7 @@ alias ar='cd ~/documents/artistic_practice && pwd' ;
 alias ap='cd ~/documents/artistic_practice/portfolio && pwd' ;
 alias art='cd ~/documents/artistic_practice/artistic_research && pwd' ;
 alias gr='cd ~/documents/git_repositories/ && pwd'
-alias dot='cd ~/documents/git_repositories/dotfiles && pwd'
+alias dot='cd ~/documents/git_repositories/Dotfiles && pwd'
 
 alias conf='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;

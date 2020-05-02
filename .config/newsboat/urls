@@ -30,6 +30,8 @@ https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss Nasa
 http://feeds.arstechnica.com/arstechnica/features "Tech News"
 http://feeds.arstechnica.com/arstechnica/index "Tech News"
 
+http://magpi.raspberrypi.org/feed
+
 https://cdm.link/feed/ "Digital Culture"
 
 file:///tmp/mozilla_eirik0/pJqsISw2.rss "Digital Culture"
@@ -55,7 +57,6 @@ https://www.dr.dk/Nyheder/Service/feeds/regionale/kbh/
 file:///tmp/mozilla_eirik0/feed
 
 https://www.independent.co.uk/news/world/rss Nyheter
-http://createfeed.fivefilters.org/extract.php?url=https%3A%2F%2Fwww.independent.co.uk%2Fvoices%2Fcommentators%2Ffisk&in_id_or_class=content+premium-bg&url_contains=
 https://www.independent.co.uk/sport/rugby/rugby-union/rss Nyheter
 https://www.independent.co.uk/arts-entertainment/rss Nyheter
 
