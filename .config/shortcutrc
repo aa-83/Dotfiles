@@ -1,26 +1,26 @@
 alias h='cd ~/ && pwd' ;
-alias d='cd ~/documents && pwd' ;
-alias db='cd ~/documents/build && pwd' ;
-alias of='cd ~/documents/build/of && pwd' ;
-alias i='cd ~/images && pwd' ;
-alias iw='cd ~/images/wallpapers && pwd' ;
-alias iv='cd ~/images/video && pwd' ;
-alias m='cd ~/music && pwd' ;
-alias dma='cd ~/documents/man && pwd' ;
-alias dl='cd ~/Downloads && pwd' ;
+alias f='cd ~/files && pwd' ;
+alias d='cd ~/files/documents && pwd' ;
+alias b='cd ~/files/documents/build && pwd' ;
+alias of='cd ~/files/documents/build/of && pwd' ;
+alias i='cd ~/files/images && pwd' ;
+alias iw='cd ~/files/images/wallpapers && pwd' ;
+alias iv='cd ~/files/images/video && pwd' ;
+alias m='cd ~/files/music && pwd' ;
+alias dm='cd ~/files/documents/man && pwd' ;
+alias dl='cd ~/downloads && pwd' ;
 
-alias dsa='cd ~/documents/syncdox/arbeid/produksjoner && pwd' ;
-alias dsd='cd ~/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd' ;
-alias ar='cd ~/documents/artistic_practice && pwd' ;
-alias ap='cd ~/documents/artistic_practice/portfolio && pwd' ;
-alias art='cd ~/documents/artistic_practice/artistic_research && pwd' ;
-alias gr='cd ~/documents/git_repositories/ && pwd'
-alias dot='cd ~/documents/git_repositories/Dotfiles && pwd'
+alias a='cd ~/files/documents/syncdox/arbeid/produksjoner && pwd' ;
+alias s='cd ~/files/documents/syncdox/universitet/ddsks/master/første_år/andre_semester && pwd' ;
+alias a='cd ~/files/documents/artistic_practice && pwd' ;
+alias ap='cd ~/files/documents/artistic_practice/portfolio && pwd' ;
+alias ar='cd ~/files/documents/artistic_practice/artistic_research && pwd' ;
+alias g='cd ~/files/documents/git_repositories/ && pwd'
+alias dot='cd ~/files/documents/git_repositories/Dotfiles && pwd'
 
-alias conf='cd ~/.config && pwd' ;
+alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
 alias lbs='cd ~/.local/bin/scripts && pwd' ;
 alias lsh='cd ~/.local/share && pwd' ;
-alias lsg='cd ~/.local/share/gnupg && pwd' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
 

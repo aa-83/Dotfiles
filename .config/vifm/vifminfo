@@ -14,36 +14,9 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research
-	images
-1
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
-	alphabet
-1
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet
-	..
-0
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
-	templates
-4
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/templates
-	template2.jpg
-2
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images
-	alphabet
-1
-d/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet
-	template2.jpg
-1
-d/home/eirik
-	documents
-1
-d/home/eirik/documents
-	syncdox
-10
 d/home/eirik/documents/syncdox
 	hobby
-4
+3
 d/home/eirik/documents/syncdox/hobby
 	GW
 4
@@ -54,19 +27,40 @@ d/home/eirik/documents/syncdox/hobby/GW/Warhammer
 	Army Books
 1
 d/home/eirik/documents/syncdox/hobby/GW/Warhammer/Army Books
-	Tomb Kings (8ed).pdf
-12
+	Skaven (7ed).pdf
+11
 d/home/eirik
-	music
+	documents
+2
+d/home/eirik/documents
+	syncdox
+11
+d/home/eirik/documents/syncdox
+	hobby
+3
+d/home/eirik/documents/syncdox/hobby
+	gw
+5
+d/home/eirik/documents/syncdox/hobby/gw
+	warhammer
+9
+d/home/eirik/documents/syncdox/hobby/gw/warhammer
+	army_books
+1
+d/home/eirik/documents/syncdox/hobby/gw/warhammer/army_books
+	bretonnia_6ed.pdf
+2
+d/home/eirik/documents/syncdox/hobby/gw/warhammer
+	army_books
+1
+d/home/eirik/documents/syncdox/hobby/gw/warhammer/army_books
+	orcs_and_goblins_8ed.pdf
+10
+d/home/eirik
+	files
 2
 
 # Right window history (oldest to newest):
-D/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/rasmus_ölme
-	tekster
-10
-D/home/eirik/Google_Drive/DDSKS/master/første_år/andre_semester/rasmus_ölme/tekster
-	PARSE_Issue3-ArtisticResearch.pdf
-1
 D/home/eirik
 	.config
 2
@@ -106,6 +100,12 @@ D/home/eirik/.config
 D/home/eirik
 	..
 0
+D/home/eirik/.local/bin/scripts/statusbar
+	
+0
+D/home/eirik
+	
+0
 
 # Command line history (oldest to newest):
 
@@ -123,7 +123,7 @@ p20_04_12_reisekvittering.pdf
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/templates/template2.jpg
+""/home/eirik/.local/share/vifm/Trash/000_.audacity-data
 
 # Directory stack (oldest to newest):
 
@@ -390,3 +390,7 @@ t/home/eirik/.local/share/vifm/Trash/000_æ.jpg
 	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/æ.jpg
 t/home/eirik/.local/share/vifm/Trash/000_ø.jpg
 	/home/eirik/documents/syncdox/universitet/ddsks/master/artistic_research/images/alphabet/ø.jpg
+t/home/eirik/.local/share/vifm/Trash/000_Arduino
+	/home/eirik/Arduino
+t/home/eirik/.local/share/vifm/Trash/000_.audacity-data
+	/home/eirik/.audacity-data
