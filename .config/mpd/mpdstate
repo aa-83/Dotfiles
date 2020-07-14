@@ -2,25 +2,12 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
-current: 7
-random: 0
+random: 1
 repeat: 0
 single: 0
 consume: 0
-crossfade: 3
+crossfade: 5
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:gorillaz/laika_come_home/01 19-2000 - Jungle Fresh.mp3
-1:gorillaz/laika_come_home/02 Slow Country - Strictly Rubbadub.mp3
-2:gorillaz/laika_come_home/03 Tomorrow Comes Today - Bañana Baby.mp3
-3:gorillaz/laika_come_home/04 Man Research - Monkey Racket.mp3
-4:gorillaz/laika_come_home/05 Punk - De-Punked.mp3
-5:gorillaz/laika_come_home/06 5-4 - P45.mp3
-6:gorillaz/laika_come_home/07 Starshine - Dub Ø9.mp3
-7:gorillaz/laika_come_home/08 Soundcheck (Gravity) - Crooked Dub.mp3
-8:gorillaz/laika_come_home/09 New Genius (Brother) - Mutant Genius.mp3
-9:gorillaz/laika_come_home/10 Re Hash - Come Again.mp3
-10:gorillaz/laika_come_home/11 Clint Eastwood - A Fistful Of Peanuts.mp3
-11:gorillaz/laika_come_home/12 M1 A1 - Lil' Dub Chefin'.mp3
 playlist_end

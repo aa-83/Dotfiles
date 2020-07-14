@@ -20,9 +20,9 @@ super + shift + F12
 
 #Terminal software
 super + u
-	$TERMINAL -e vifm
+	$TERMINAL -e vu
 super + shift + u
-	$TERMINAL -e ranger
+	$TERMINAL -e sudo iftop
 super + i
     $TERMINAL -e gotop
 super + shift + i

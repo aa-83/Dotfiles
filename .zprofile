@@ -39,6 +39,6 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export PASSWORD_STORE_TOMB_FILE="$XDG_DATA_HOME/tomb/password.tomb"
 export PASSWORD_STORE_TOMB_KEY="$XDG_DATA_HOME/tomb/password.tomb.key"
 
-eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa aa-83)"
+eval "$(keychain --dir /home/eirik/.config/.keychain --agents gpg --eval aa-83)"
 
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/xinitrc"

@@ -14,74 +14,53 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/documents/syncdox
-	hobby
-3
-d/home/eirik/documents/syncdox/hobby
-	GW
-4
-d/home/eirik/documents/syncdox/hobby/GW
-	Warhammer
-6
-d/home/eirik/documents/syncdox/hobby/GW/Warhammer
-	Army Books
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020
+	books
 1
-d/home/eirik/documents/syncdox/hobby/GW/Warhammer/Army Books
-	Skaven (7ed).pdf
-11
-d/home/eirik
-	documents
-2
-d/home/eirik/documents
-	syncdox
-11
-d/home/eirik/documents/syncdox
-	hobby
-3
-d/home/eirik/documents/syncdox/hobby
-	gw
-5
-d/home/eirik/documents/syncdox/hobby/gw
-	warhammer
-9
-d/home/eirik/documents/syncdox/hobby/gw/warhammer
-	army_books
-1
-d/home/eirik/documents/syncdox/hobby/gw/warhammer/army_books
-	bretonnia_6ed.pdf
-2
-d/home/eirik/documents/syncdox/hobby/gw/warhammer
-	army_books
-1
-d/home/eirik/documents/syncdox/hobby/gw/warhammer/army_books
-	orcs_and_goblins_8ed.pdf
-10
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
+	cyberpunk_2020_cp3002_core_rulebook_v2.01_(new_art).pdf
+13
 d/home/eirik
 	files
 2
-
-# Right window history (oldest to newest):
-D/home/eirik
+d/home/eirik/files
+	documents
+3
+d/home/eirik/files/documents
+	synk
+2
+d/home/eirik/files/documents/synk
+	memes
+4
+d/home/eirik/files/documents/synk/memes
+	gif
+1
+d/home/eirik/files/documents/synk/memes/gif
+	get_back_to_twerk.gif
+1
+d/home/eirik/files/documents/synk/memes
+	images
+2
+d/home/eirik/files/documents/synk/memes/images
+	time_to_push_buttons.png
+24
+d/home/eirik/files/documents/synk/memes
+	video
+3
+d/home/eirik/files/documents/synk/memes/video
+	crazy_bus.mp4
+7
+d/home/eirik
 	.config
 2
-D/home/eirik/.config
-	ncmpcpp
-15
-D/home/eirik/.config/ncmpcpp
-	config
-1
-D/home/eirik/.config/ncmpcpp/config
-	config
-1
-D/home/eirik
-	.abook
-1
-D/home/eirik/.abook
-	addressbook
-1
-D/home/eirik
-	.config
-4
+d/home/eirik/.config
+	vifm
+24
+d/home/eirik/.config/vifm
+	vifmrc
+5
+
+# Right window history (oldest to newest):
 D/home/eirik/.config
 	sxhkd
 26
@@ -106,8 +85,30 @@ D/home/eirik/.local/bin/scripts/statusbar
 D/home/eirik
 	
 0
+D/home/eirik/files/documents/sync/arbeid/produksjoner/mirte_bogaert/and_there_is_a_chair/praktisk
+	
+0
+D/home/eirik
+	..
+0
+D/home/eirik/.local/bin/scripts
+	..
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/documents/synk/hobby
+	
+0
+D/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
+	
+0
+D/home/eirik
+	
+0
 
 # Command line history (oldest to newest):
+:file_rename
 
 # Search history (oldest to newest):
 
@@ -394,3 +395,11 @@ t/home/eirik/.local/share/vifm/Trash/000_Arduino
 	/home/eirik/Arduino
 t/home/eirik/.local/share/vifm/Trash/000_.audacity-data
 	/home/eirik/.audacity-data
+t/home/eirik/.local/share/vifm/Trash/000_syncdox
+	/home/eirik/files/syncdox
+t/home/eirik/.local/share/vifm/Trash/000_cyberpunk_2020_cp3181_chromebook_2
+	/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books/cyberpunk_2020_cp3181_chromebook_2
+t/home/eirik/.local/share/vifm/Trash/000_pakker.txt
+	/home/eirik/pakker.txt
+t/home/eirik/.local/share/vifm/Trash/000_scripts
+	/home/eirik/.config/vifm/scripts

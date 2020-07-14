@@ -1,66 +1,52 @@
+"---Linux---"
 https://lukesmith.xyz/rss.xml Linux
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Linux
-
-file:///tmp/mozilla_eirik0/vwlL6GEE.rss
+file:///tmp/mozilla_eirik0/vwlL6GEE.rss Linux
 https://www.archlinux.org/feeds/news/ Linux
-
-https://www.fsf.org/static/fsforg/rss/news.xml Linux
-https://www.fsf.org/static/fsforg/rss/blogs.xml Linux
-
+"---Tech---"
+https://www.fsf.org/static/fsforg/rss/news.xml
+https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
-
 file:///tmp/mozilla_eirik0/NS7RoL0R.rss
-
 https://rawsec.ml/rss.xml Linux
-
+http://feeds.arstechnica.com/arstechnica/features "Tech News"
+http://feeds.arstechnica.com/arstechnica/index "Tech News"
+https://www.bleepingcomputer.com/feed/
+https://magpi.raspberrypi.org/feed
+https://riscv.org/feed
+"---Gaming---"
 https://twitrss.me/twitter_user_to_rss/?user=day9tv
-
 https://tl.net/rss/news.xml E-sports
-
 https://www.liquiddota.com/rss/news.xml E-sports
-
 https://twitrss.me/twitter_user_to_rss/?user=TeamAretuza
 https://teamleviathangaming.com/feed/
-
+"---Vitenskap---"
 https://www.nasa.gov/rss/dyn/breaking_news.rss Nasa
 https://www.nasa.gov/rss/dyn/earth.rss Nasa
 https://www.nasa.gov/rss/dyn/solar_system.rss Nasa
 https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss Nasa
-
-http://feeds.arstechnica.com/arstechnica/features "Tech News"
-http://feeds.arstechnica.com/arstechnica/index "Tech News"
-
-https://magpi.raspberrypi.org/feed
-https://riscv.org/feed
-
+"---Kunst ---"
 https://cdm.link/feed/ "Digital Culture"
-
 file:///tmp/mozilla_eirik0/pJqsISw2.rss "Digital Culture"
 file:///tmp/mozilla_eirik0/DnWF2atB.rss "Digital Culture"
-
 file:///tmp/mozilla_eirik0/deeuprG7.rss
-
-file:///tmp/mozilla_eirik0/rss Nyheter
-
-https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
-
-https://www.haaretz.com/cmlink/1.4605045 Nyheter
-https://www.haaretz.com/cmlink/1.4850015 Nyheter
+"---Meninger---"
+file:///tmp/mozilla_eirik0/sounds-1.rss
 https://www.haaretz.com/cmlink/1.4605051 Nyheter
+"---Nyheter---"
+https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
+#https://www.haaretz.com/cmlink/1.4605045 Nyheter
+#https://www.haaretz.com/cmlink/1.4850015 Nyheter
 https://www.haaretz.com/cmlink/1.4850006 Nyheter
-
 https://www.dr.dk/nyheder/service/feeds/indland
 https://www.dr.dk/nyheder/service/feeds/udland
 https://www.dr.dk/nyheder/service/feeds/politik
 https://www.dr.dk/nyheder/service/feeds/kultur
 https://www.dr.dk/Nyheder/Service/feeds/regionale/kbh/
-
 file:///tmp/mozilla_eirik0/feed
-
 https://www.independent.co.uk/news/world/rss Nyheter
 https://www.independent.co.uk/sport/rugby/rugby-union/rss Nyheter
 https://www.independent.co.uk/arts-entertainment/rss Nyheter
-
 https://www.nrk.no/toppsaker.rss Nyheter
 https://www.nrk.no/urix/toppsaker.rss Nyheter
 https://www.nrk.no/sport/toppsaker.rss Nyheter
