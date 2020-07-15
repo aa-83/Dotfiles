@@ -1,9 +1,11 @@
 " vim: filetype=vifm
 
 set vicmd=$EDITOR
+set dotfiles
 set syscalls
 set nofollowlinks
 set sortnumbers
+set sortorder
 set undolevels=100
 set wildmenu
 set wildstyle=popup
@@ -13,7 +15,7 @@ set smartcase
 set nohlsearch
 set incsearch
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
-colorscheme Default
+colorscheme eirik
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -93,4 +95,8 @@ set classify+='🎹::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.m
 set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 " office files
 set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx]::,📊::*.pptx,,*.ppt::,🗒️ ::*.txt,,*.tex::'
+
+" Status line
+" set statusline="  %z%= %A %10u:%-7g %15s %20d  "
+set statusline=" %-26t %= %A %7u:%-7g %-5s %d "
 

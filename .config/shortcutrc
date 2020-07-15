@@ -17,8 +17,17 @@ alias ho='cd ~/files/documents/synk/hobby && pwd' ;
 alias a='cd ~/files/documents/artistic_practice && pwd' ;
 alias ap='cd ~/files/documents/artistic_practice/portfolio && pwd' ;
 alias ar='cd ~/files/documents/artistic_practice/artistic_research && pwd' ;
-alias g='cd ~/files/git_repositories/ && pwd'
 alias dot='cd ~/files/git_repositories/Dotfiles && pwd'
+
+alias g='cd ~/files/git_repositories/ && pwd'
+alias g.='cd ~/files/git_repositories/Dotfiles && pwd'
+alias gd='cd ~/files/git_repositories/dwm && pwd'
+alias gdw='cd ~/files/git_repositories/dwmblocks && pwd'
+alias gdm='cd ~/files/git_repositories/dmenu && pwd'
+alias gs='cd ~/files/git_repositories/st && pwd'
+alias gsl='cd ~/files/git_repositories/slock && pwd'
+alias gsls='cd ~/files/git_repositories/slstatus && pwd'
+
 
 alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
