@@ -14,30 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
-	cyberpunk_2020_cp3002_core_rulebook_v2.01_(new_art).pdf
-13
-d/home/eirik
-	files
-2
-d/home/eirik/files
-	documents
-3
-d/home/eirik/files/documents
-	synk
-2
-d/home/eirik/files/documents/synk
-	memes
-4
-d/home/eirik/files/documents/synk/memes
-	gif
-1
-d/home/eirik/files/documents/synk/memes/gif
-	get_back_to_twerk.gif
-1
-d/home/eirik/files/documents/synk/memes
-	images
-2
 d/home/eirik/files/documents/synk/memes/images
 	time_to_push_buttons.png
 24
@@ -57,8 +33,32 @@ d/home/eirik/.config/vifm
 	vifmrc
 5
 d/home/eirik
-	..
-0
+	files
+2
+d/home/eirik/files
+	documents
+3
+d/home/eirik/files/documents
+	synk
+3
+d/home/eirik/files/documents/synk
+	memes
+4
+d/home/eirik/files/documents/synk/memes
+	video
+3
+d/home/eirik/files/documents/synk
+	hobby
+3
+d/home/eirik/files/documents/synk/hobby
+	cyberpunk_2020
+3
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020
+	books
+1
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
+	cyberpunk_2020_cp3211_deep_space.pdf
+22
 
 # Right window history (oldest to newest):
 D/home/eirik/.config

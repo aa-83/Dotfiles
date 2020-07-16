@@ -5,7 +5,7 @@
 st.font: Monospace-14;
 dwm.font: Monospace-10;
 *.font: Monospace-11;
-*.fontalt: JoyPixels-14;
+*.fontalt0: JoyPixels-14;
 
 !st.termname: st-256color
 *.borderpx: 2
