@@ -1,33 +1,32 @@
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
+alias t='cd ~/files/texts && pwd' ;
+alias s='cd ~/files/texts/synk && pwd' ;
 alias d='cd ~/files/documents && pwd' ;
-alias s='cd ~/files/documents/synk && pwd' ;
-alias b='cd ~/files/build && pwd' ;
+alias ma='cd ~/files/documents/man && pwd' ;
+alias b='cd ~/files/diverse/build && pwd' ;
 alias of='cd ~/files/build/of && pwd' ;
-alias i='cd ~/files/images && pwd' ;
-alias iw='cd ~/files/images/wallpapers && pwd' ;
-alias iv='cd ~/files/images/video && pwd' ;
-alias m='cd ~/files/music && pwd' ;
-alias ma='cd ~/files/man && pwd' ;
+alias i='cd ~/files/media/images && pwd' ;
+alias iw='cd ~/files/media/images/wallpapers && pwd' ;
+alias iv='cd ~/files/media/images/video && pwd' ;
+alias m='cd ~/files/media/music && pwd' ;
 alias dl='cd ~/downloads && pwd' ;
 
-alias a='cd ~/files/documents/synk/arbeid/produksjoner && pwd' ;
-alias sk='cd ~/files/documents/synk/universitet/ddsks/master/andre_år/første_semester && pwd' ;
-alias ho='cd ~/files/documents/synk/hobby && pwd' ;
-alias a='cd ~/files/documents/artistic_practice && pwd' ;
-alias ap='cd ~/files/documents/artistic_practice/portfolio && pwd' ;
-alias ar='cd ~/files/documents/artistic_practice/artistic_research && pwd' ;
-alias dot='cd ~/files/git_repositories/Dotfiles && pwd'
+alias a='cd ~/files/texts/synk/arbeid/produksjoner && pwd' ;
+alias sk='cd ~/files/texts/synk/universitet/ddsks/master/andre_år/første_semester && pwd' ;
+alias ho='cd ~/files/texts/synk/hobby && pwd' ;
+alias a='cd ~/files/texts/artistic_practice && pwd' ;
+alias ap='cd ~/files/texts/artistic_practice/portfolio && pwd' ;
+alias ar='cd ~/files/texts/artistic_practice/artistic_research && pwd' ;
 
-alias g='cd ~/files/git_repositories/ && pwd'
-alias g.='cd ~/files/git_repositories/Dotfiles && pwd'
-alias gd='cd ~/files/git_repositories/dwm && pwd'
-alias gdw='cd ~/files/git_repositories/dwmblocks && pwd'
-alias gdm='cd ~/files/git_repositories/dmenu && pwd'
-alias gs='cd ~/files/git_repositories/st && pwd'
-alias gsl='cd ~/files/git_repositories/slock && pwd'
-alias gsls='cd ~/files/git_repositories/slstatus && pwd'
-
+alias g='cd ~/files/diverse/git_repositories/ && pwd'
+alias g.='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
+alias gd='cd ~/files/diverse/git_repositories/dwm && pwd'
+alias gdw='cd ~/files/diverse/git_repositories/dwmblocks && pwd'
+alias gdm='cd ~/files/diverse/git_repositories/dmenu && pwd'
+alias gs='cd ~/files/diverse/git_repositories/st && pwd'
+alias gsl='cd ~/files/diverse/git_repositories/slock && pwd'
+alias gsls='cd ~/files/diverse/git_repositories/slstatus && pwd'
 
 alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;

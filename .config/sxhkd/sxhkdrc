@@ -22,7 +22,7 @@ super + shift + F12
 super + u
 	$TERMINAL -e vu
 super + shift + u
-	$TERMINAL -e sudo iftop
+
 super + i
     $TERMINAL -e gotop
 super + shift + i
@@ -75,3 +75,11 @@ XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
 	xbacklight -inc 15
+
+#Scripts
+super + control + alt + u
+	dmenuunicode
+super + control + alt + p
+	$TERMINAL -e pass_open
+super + control + alt + shift + p
+	$TERMINAL -e pass_close

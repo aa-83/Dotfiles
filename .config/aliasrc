@@ -21,9 +21,6 @@ alias nzsh='nvim ~/.config/zsh/.zshrc' ;
 alias nurls='nvim ~/.config/newsboat/urls' ;
 alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
 
-alias srn='sudo reboot now' ;
-alias sdn='sudo shutdown now' ;
-
 alias abook='abook -C "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook' ;
 alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf' ;
 alias calcurse='calcurse -D ~/.config/calcurse/' ;

@@ -14,93 +14,99 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
-	cyberpunk_2020_cp3002_core_rulebook_v2.01_(new_art).pdf
-13
-d/home/eirik
-	files
+d/home/eirik/.local/bin/scripts
+	statusbar
+6
+d/home/eirik/.local/bin/scripts/statusbar
+	clock
 2
-d/home/eirik/files
-	documents
-3
-d/home/eirik/files/documents
-	synk
-2
-d/home/eirik/files/documents/synk
-	memes
-4
-d/home/eirik/files/documents/synk/memes
-	gif
+d/home/eirik/.local/bin/scripts
+	cron
 1
-d/home/eirik/files/documents/synk/memes/gif
-	get_back_to_twerk.gif
-1
-d/home/eirik/files/documents/synk/memes
-	images
-2
-d/home/eirik/files/documents/synk/memes/images
-	time_to_push_buttons.png
-24
-d/home/eirik/files/documents/synk/memes
-	video
-3
-d/home/eirik/files/documents/synk/memes/video
-	crazy_bus.mp4
+d/home/eirik/.local/bin/scripts/cron
+	newsup
+5
+d/home/eirik/files/build/dwm
+	config.h
 7
 d/home/eirik
-	.config
-2
-d/home/eirik/.config
-	vifm
-24
-d/home/eirik/.config/vifm
-	vifmrc
-5
+	.zprofile
+10
+d/home/eirik/.local/bin/scripts
+	k_scripts
+4
+d/home/eirik/.local/bin/scripts/k_scripts
+	pass_open
+3
+d/home/eirik/.local/bin/scripts
+	sdn
+23
 d/home/eirik
-	..
-0
+	.zprofile
+9
+d/home/eirik/files/documents/synk/hobby/diy
+	bookofmaking_volume1.pdf
+6
+d/home/eirik
+	files
+8
+d/home/eirik/files
+	git_repositories
+6
+d/home/eirik/files/documents/synk/hobby/diy
+	raspberry_pi
+2
+d/home/eirik/files/documents/synk/hobby/diy/raspberry_pi
+	anintroductiontocandguiprogramming.pdf
+1
+d/home/eirik
+	files
+8
 
 # Right window history (oldest to newest):
-D/home/eirik/.config
-	sxhkd
-26
-D/home/eirik/.config/sxhkd
-	sxhkdrc
-1
-D/home/eirik/.config
-	vifm
-29
-D/home/eirik/.config/vifm
-	vifminfo
-4
-D/home/eirik/.config
-	vifm
-29
 D/home/eirik
-	..
+	
 0
-D/home/eirik/.local/bin/scripts/statusbar
+D/home/eirik/.local/bin/scripts/cron
+	
+0
+D/home/eirik/.local/share/abook
 	
 0
 D/home/eirik
 	
 0
-D/home/eirik/files/documents/sync/arbeid/produksjoner/mirte_bogaert/and_there_is_a_chair/praktisk
+D/home/eirik/files/documents/synk/universitet/ddsks/ymse/lint
 	
 0
 D/home/eirik
-	..
+	
+0
+D/home/eirik/.local/share
+	
 0
 D/home/eirik/.local/bin/scripts
-	..
+	
+0
+D/home/eirik/files/build/dwm
+	
 0
 D/home/eirik
 	
 0
-D/home/eirik/files/documents/synk/hobby
+D/home/eirik/.local/bin/scripts
 	
 0
-D/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
+D/home/eirik
+	
+0
+D/home/eirik/files/documents/synk/hobby/diy
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/documents/synk/hobby/diy
 	
 0
 D/home/eirik
@@ -114,6 +120,16 @@ D/home/eirik
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+pst_orig
+pst_v01
+pst_v02
+pst_v03
+pst_v04
+pst_v05
+pst_v06
+pst_v07
+pst_v08
+pst_v09
 pzizek_why_i_am_still_a_communist.mkv
 p200313-15_københavn_oslo.pdf
 p200313-15_københavn_oslo_reisekvittering.pdf
@@ -121,11 +137,16 @@ pINTERNATIONALE_MODULE_PORTFOLIO.pdf
 ptilbud_på_atomic.pdf
 p20_04_12_bergen-køben
 p20_04_12_reisekvittering.pdf
+pchill.wav
+pdrankz.wav
+pmirkeldunkel.m4a
+pvariesque.wav
+pandrez.wav
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_.audacity-data
+""/home/eirik/.local/share/vifm/Trash/000_anintroductiontocandguiprogramming
 
 # Directory stack (oldest to newest):
 
@@ -404,3 +425,31 @@ t/home/eirik/.local/share/vifm/Trash/000_pakker.txt
 	/home/eirik/pakker.txt
 t/home/eirik/.local/share/vifm/Trash/000_scripts
 	/home/eirik/.config/vifm/scripts
+t/home/eirik/.local/share/vifm/Trash/000_oomox-Cyberpunk-Neon
+	/home/eirik/.local/share/oomox-Cyberpunk-Neon
+t/home/eirik/.local/share/vifm/Trash/000_icons
+	/home/eirik/.local/share/icons
+t/home/eirik/.local/share/vifm/Trash/002_drw.c.orig
+	/home/eirik/files/build/dwm/drw.c.orig
+t/home/eirik/.local/share/vifm/Trash/000_dwm.png
+	/home/eirik/files/build/dwm/dwm.png
+t/home/eirik/.local/share/vifm/Trash/001_mutt-wizard-gmail_eirik.gpg
+	/home/eirik/mutt-wizard-gmail_eirik.gpg
+t/home/eirik/.local/share/vifm/Trash/001_mutt-wizard-proton_eirik.gpg
+	/home/eirik/mutt-wizard-proton_eirik.gpg
+t/home/eirik/.local/share/vifm/Trash/000_anintroductiontocandguiprogramming
+	/home/eirik/files/documents/synk/hobby/diy/anintroductiontocandguiprogramming
+t/home/eirik/.local/share/vifm/Trash/009_config.def.h.orig
+	/home/eirik/files/build/st_patching/st_v10/config.def.h.orig
+t/home/eirik/.local/share/vifm/Trash/008_config.def.h.rej
+	/home/eirik/files/build/st_patching/st_v10/config.def.h.rej
+t/home/eirik/.local/share/vifm/Trash/001_st.c.orig
+	/home/eirik/files/build/st_patching/st_v10/st.c.orig
+t/home/eirik/.local/share/vifm/Trash/000_st.c.rej
+	/home/eirik/files/build/st_patching/st_v10/st.c.rej
+t/home/eirik/.local/share/vifm/Trash/001_st.h.orig
+	/home/eirik/files/build/st_patching/st_v10/st.h.orig
+t/home/eirik/.local/share/vifm/Trash/001_st.h.rej
+	/home/eirik/files/build/st_patching/st_v10/st.h.rej
+t/home/eirik/.local/share/vifm/Trash/001_x.c.orig
+	/home/eirik/files/build/st_patching/st_v10/x.c.orig

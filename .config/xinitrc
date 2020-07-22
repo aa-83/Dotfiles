@@ -43,12 +43,10 @@ unclutter &
 xcompmgr &
 dunst &
 mpd &
+expressvpn connect smart &
+remaps &
 #syncthing -no-browser &
 xrdb ~/.config/Xresources &
-
-
-setxkbmap && setxkbmap -option caps:super && killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape' &
-xmodmap -e 'keycode 135 = Super_R' &
 
 xinput disable SynPS/2\ Synaptics\ TouchPad &
 
