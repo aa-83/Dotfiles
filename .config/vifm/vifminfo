@@ -14,6 +14,7 @@ l2
 r2
 
 # Left window history (oldest to newest):
+<<<<<<< HEAD
 d/home/eirik/.local/bin/scripts
 	statusbar
 6
@@ -28,6 +29,16 @@ d/home/eirik/.local/bin/scripts/cron
 5
 d/home/eirik/files/build/dwm
 	config.h
+=======
+d/home/eirik/files/documents/synk/memes/images
+	time_to_push_buttons.png
+24
+d/home/eirik/files/documents/synk/memes
+	video
+3
+d/home/eirik/files/documents/synk/memes/video
+	crazy_bus.mp4
+>>>>>>> 68e8b1e57a694a45506565903973a044feb4f28b
 7
 d/home/eirik
 	.zprofile
@@ -61,7 +72,35 @@ d/home/eirik/files/documents/synk/hobby/diy/raspberry_pi
 1
 d/home/eirik
 	files
+<<<<<<< HEAD
 8
+=======
+2
+d/home/eirik/files
+	documents
+3
+d/home/eirik/files/documents
+	synk
+3
+d/home/eirik/files/documents/synk
+	memes
+4
+d/home/eirik/files/documents/synk/memes
+	video
+3
+d/home/eirik/files/documents/synk
+	hobby
+3
+d/home/eirik/files/documents/synk/hobby
+	cyberpunk_2020
+3
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020
+	books
+1
+d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
+	cyberpunk_2020_cp3211_deep_space.pdf
+22
+>>>>>>> 68e8b1e57a694a45506565903973a044feb4f28b
 
 # Right window history (oldest to newest):
 D/home/eirik
