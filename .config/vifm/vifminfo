@@ -14,7 +14,24 @@ l2
 r2
 
 # Left window history (oldest to newest):
-<<<<<<< HEAD
+d/home/eirik/.cache/.p/.cm
+	BF_Christy_Mack_XX_04_2012.mp4
+1
+d/home/eirik/.cache/.p
+	.dna
+6
+d/home/eirik/.cache/.p/.dna
+	Del1lahG BJ+Facial-ph58be2a22e6e93.mp4
+3
+d/home/eirik/.cache/.p
+	.hb
+7
+d/home/eirik/.cache/.p/.hb
+	IDeepThroat (Heather Brookes) Site Rip 2012 [NG-SITE]
+1
+d/home/eirik/.cache/.p/.hb/IDeepThroat (Heather Brookes) Site Rip 2012 [NG-SITE]
+	Images
+2
 d/home/eirik/.local/bin/scripts
 	statusbar
 6
@@ -29,16 +46,6 @@ d/home/eirik/.local/bin/scripts/cron
 5
 d/home/eirik/files/build/dwm
 	config.h
-=======
-d/home/eirik/files/documents/synk/memes/images
-	time_to_push_buttons.png
-24
-d/home/eirik/files/documents/synk/memes
-	video
-3
-d/home/eirik/files/documents/synk/memes/video
-	crazy_bus.mp4
->>>>>>> 68e8b1e57a694a45506565903973a044feb4f28b
 7
 d/home/eirik
 	.zprofile
@@ -72,37 +79,12 @@ d/home/eirik/files/documents/synk/hobby/diy/raspberry_pi
 1
 d/home/eirik
 	files
-<<<<<<< HEAD
 8
-=======
-2
-d/home/eirik/files
-	documents
-3
-d/home/eirik/files/documents
-	synk
-3
-d/home/eirik/files/documents/synk
-	memes
-4
-d/home/eirik/files/documents/synk/memes
-	video
-3
-d/home/eirik/files/documents/synk
-	hobby
-3
-d/home/eirik/files/documents/synk/hobby
-	cyberpunk_2020
-3
-d/home/eirik/files/documents/synk/hobby/cyberpunk_2020
-	books
-1
-d/home/eirik/files/documents/synk/hobby/cyberpunk_2020/books
-	cyberpunk_2020_cp3211_deep_space.pdf
-22
->>>>>>> 68e8b1e57a694a45506565903973a044feb4f28b
 
 # Right window history (oldest to newest):
+D/home/eirik/files/diverse/git_repositories/Dotfiles
+	
+0
 D/home/eirik
 	
 0
@@ -492,3 +474,59 @@ t/home/eirik/.local/share/vifm/Trash/001_st.h.rej
 	/home/eirik/files/build/st_patching/st_v10/st.h.rej
 t/home/eirik/.local/share/vifm/Trash/001_x.c.orig
 	/home/eirik/files/build/st_patching/st_v10/x.c.orig
+t/home/eirik/.local/share/vifm/Trash/001_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ale/.git
+t/home/eirik/.local/share/vifm/Trash/000_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ale/.github
+t/home/eirik/.local/share/vifm/Trash/000_.gitattributes
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ale/.gitattributes
+t/home/eirik/.local/share/vifm/Trash/000_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ale/.gitignore
+t/home/eirik/.local/share/vifm/Trash/002_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/goyo.vim/.git
+t/home/eirik/.local/share/vifm/Trash/001_.gitattributes
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/goyo.vim/.gitattributes
+t/home/eirik/.local/share/vifm/Trash/001_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/goyo.vim/.gitignore
+t/home/eirik/.local/share/vifm/Trash/003_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/neomake/.git
+t/home/eirik/.local/share/vifm/Trash/001_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/neomake/.github
+t/home/eirik/.local/share/vifm/Trash/002_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/neomake/.gitignore
+t/home/eirik/.local/share/vifm/Trash/000_.dockerignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/neomake/.dockerignore
+t/home/eirik/.local/share/vifm/Trash/004_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/nerdtree/.git
+t/home/eirik/.local/share/vifm/Trash/002_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/nerdtree/.github
+t/home/eirik/.local/share/vifm/Trash/003_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/nerdtree/.gitignore
+t/home/eirik/.local/share/vifm/Trash/005_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/syntastic/.git
+t/home/eirik/.local/share/vifm/Trash/004_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/syntastic/.gitignore
+t/home/eirik/.local/share/vifm/Trash/006_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ultisnips/.git
+t/home/eirik/.local/share/vifm/Trash/003_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ultisnips/.github
+t/home/eirik/.local/share/vifm/Trash/005_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/ultisnips/.gitignore
+t/home/eirik/.local/share/vifm/Trash/007_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vifm.vim/.git
+t/home/eirik/.local/share/vifm/Trash/008_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vim-gutentags/.git
+t/home/eirik/.local/share/vifm/Trash/004_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vim-gutentags/.github
+t/home/eirik/.local/share/vifm/Trash/006_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vim-gutentags/.gitignore
+t/home/eirik/.local/share/vifm/Trash/009_.git
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vimtex/.git
+t/home/eirik/.local/share/vifm/Trash/005_.github
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vimtex/.github
+t/home/eirik/.local/share/vifm/Trash/007_.gitignore
+	/home/eirik/files/diverse/git_repositories/Dotfiles/.config/nvim/bundle/vimtex/.gitignore
+t/home/eirik/.local/share/vifm/Trash/000_[MyFreeCams] Chloe Lamb - New Videos [HD] [.mp4][PornLeech]
+	/home/eirik/.cache/.p/.cl/[MyFreeCams] Chloe Lamb - New Videos [HD] [.mp4][PornLeech]
+t/home/eirik/.local/share/vifm/Trash/000_[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
+	/home/eirik/.cache/.p/.cl/[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
