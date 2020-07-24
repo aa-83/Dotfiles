@@ -1,6 +1,6 @@
 #show-read-feeds no
 auto-reload yes
-browser "/usr/bin/firefox"
+browser "/usr/bin/firefox %u"
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
 bind-key j down
@@ -32,8 +32,9 @@ bind-key x pb-delete
 browser linkhandler
 macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
-macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
+macro a set browser "youtube-dl --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
+macro d set browser "youtube-dl --add-metadata -i" ; open-in-browser #; set browser linkhandler
 macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
 macro p set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
 macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler

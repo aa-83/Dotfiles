@@ -1,6 +1,5 @@
 "---Linux---"
 https://lukesmith.xyz/rss.xml Linux
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Linux
 file:///tmp/mozilla_eirik0/vwlL6GEE.rss Linux
 https://www.archlinux.org/feeds/news/ Linux
 "---Tech---"
@@ -52,3 +51,6 @@ https://www.nrk.no/urix/toppsaker.rss Nyheter
 https://www.nrk.no/sport/toppsaker.rss Nyheter
 https://www.nrk.no/kultur/toppsaker.rss Nyheter
 https://www.nrk.no/hordaland/toppsaker.rss Nyheter
+"---Youtube---"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA Linux
+

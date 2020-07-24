@@ -19,12 +19,6 @@ d/home/eirik/.config
 7
 d/home/eirik/.config/calcurse
 	todo
-7
-d/home/eirik/.config
-	calcurse
-7
-d/home/eirik/.config/calcurse
-	todo
 5
 d/home/eirik/.config
 	dconf
@@ -80,6 +74,12 @@ d/home/eirik/.config
 d/home/eirik/.config/wget
 	.wget-hsts
 1
+d/home/eirik/.config/newsboat
+	config
+3
+d/home/eirik/.config
+	shortcutrc
+25
 
 # Right window history (oldest to newest):
 D/home/eirik/files/diverse/.voidrice/.config
@@ -137,6 +137,12 @@ D/home/eirik
 	
 0
 D/home/eirik/files/texts/synk
+	
+0
+D/home/eirik/.config
+	
+0
+D/home/eirik/.config/newsboat
 	
 0
 D/home/eirik/.config

@@ -1,7 +1,4 @@
 #!/bin/sh
-
-#Shortcuts
-
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
 alias t='cd ~/files/texts && pwd' ;
@@ -24,7 +21,7 @@ alias ap='cd ~/files/texts/artistic_practice/portfolio && pwd' ;
 alias ar='cd ~/files/texts/artistic_practice/artistic_research && pwd' ;
 
 alias g='cd ~/files/diverse/git_repositories/ && pwd'
-alias g.='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
+alias .g='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
 alias gd='cd ~/files/diverse/git_repositories/dwm && pwd'
 alias gdw='cd ~/files/diverse/git_repositories/dwmblocks && pwd'
 alias gdm='cd ~/files/diverse/git_repositories/dmenu && pwd'
@@ -36,7 +33,7 @@ alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
 alias lbs='cd ~/.local/bin/scripts && pwd' ;
 alias lsh='cd ~/.local/share && pwd' ;
-alias vt='cd ~/.local/share/vifm/Trash && pwd' ;c
+alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
 
 # Mac shortcuts
 #alias hdd='cd /Volumes/hdd_1tb/ ;

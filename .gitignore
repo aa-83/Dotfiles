@@ -1,2 +1,2 @@
 tags
-.config/bundle/*/.git*
+.config/nvim/bundle/*/.git*
