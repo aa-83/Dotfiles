@@ -25,4 +25,8 @@ alias abook='abook -C "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOM
 alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf' ;
 alias calcurse='calcurse -D ~/.config/calcurse/' ;
 
-
+# Mac specific aliases
+#alias ls='ls -Gh' ;
+#alias rm='rm -vi' ;
+#alias mv='mv -vi' ;
+#alias cp='cp -vi' ;

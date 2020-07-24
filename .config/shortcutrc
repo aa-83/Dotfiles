@@ -1,3 +1,7 @@
+#!/bin/sh
+
+#Shortcuts
+
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
 alias t='cd ~/files/texts && pwd' ;
@@ -15,7 +19,7 @@ alias dl='cd ~/downloads && pwd' ;
 alias a='cd ~/files/texts/synk/arbeid/produksjoner && pwd' ;
 alias sk='cd ~/files/texts/synk/universitet/ddsks/master/andre_år/første_semester && pwd' ;
 alias ho='cd ~/files/texts/synk/hobby && pwd' ;
-alias a='cd ~/files/texts/artistic_practice && pwd' ;
+alias a='cd ~/files/texts/artisti_practice && pwd' ;
 alias ap='cd ~/files/texts/artistic_practice/portfolio && pwd' ;
 alias ar='cd ~/files/texts/artistic_practice/artistic_research && pwd' ;
 
@@ -32,4 +36,8 @@ alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
 alias lbs='cd ~/.local/bin/scripts && pwd' ;
 alias lsh='cd ~/.local/share && pwd' ;
-alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
+alias vt='cd ~/.local/share/vifm/Trash && pwd' ;c
+
+# Mac shortcuts
+#alias hdd='cd /Volumes/hdd_1tb/ ;
+#alias serier'cd /Volumes/hdd_1tb/video/serier ;
