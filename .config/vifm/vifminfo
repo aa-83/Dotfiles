@@ -14,74 +14,77 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.cache/.p/.cm
-	BF_Christy_Mack_XX_04_2012.mp4
-1
-d/home/eirik/.cache/.p
-	.dna
-6
-d/home/eirik/.cache/.p/.dna
-	Del1lahG BJ+Facial-ph58be2a22e6e93.mp4
-3
-d/home/eirik/.cache/.p
-	.hb
+d/home/eirik/.config
+	calcurse
 7
-d/home/eirik/.cache/.p/.hb
-	IDeepThroat (Heather Brookes) Site Rip 2012 [NG-SITE]
-1
-d/home/eirik/.cache/.p/.hb/IDeepThroat (Heather Brookes) Site Rip 2012 [NG-SITE]
-	Images
-2
-d/home/eirik/.local/bin/scripts
-	statusbar
-6
-d/home/eirik/.local/bin/scripts/statusbar
-	clock
-2
-d/home/eirik/.local/bin/scripts
-	cron
-1
-d/home/eirik/.local/bin/scripts/cron
-	newsup
+d/home/eirik/.config/calcurse
+	todo
+7
+d/home/eirik/.config
+	calcurse
+7
+d/home/eirik/.config/calcurse
+	todo
 5
-d/home/eirik/files/build/dwm
-	config.h
-7
-d/home/eirik
-	.zprofile
-10
-d/home/eirik/.local/bin/scripts
-	k_scripts
-4
-d/home/eirik/.local/bin/scripts/k_scripts
-	pass_open
-3
-d/home/eirik/.local/bin/scripts
-	sdn
-23
-d/home/eirik
-	.zprofile
+d/home/eirik/.config
+	dconf
 9
-d/home/eirik/files/documents/synk/hobby/diy
-	bookofmaking_volume1.pdf
-6
-d/home/eirik
-	files
-8
-d/home/eirik/files
-	git_repositories
-6
-d/home/eirik/files/documents/synk/hobby/diy
-	raspberry_pi
-2
-d/home/eirik/files/documents/synk/hobby/diy/raspberry_pi
-	anintroductiontocandguiprogramming.pdf
+d/home/eirik/.config/dconf
+	user
 1
-d/home/eirik
-	files
-8
+d/home/eirik/.config
+	dunst
+10
+d/home/eirik/.config/dunst
+	dunstrc
+1
+d/home/eirik/.config
+	fontconfig
+12
+d/home/eirik/.config/fontconfig
+	fonts.conf
+1
+d/home/eirik/.config
+	ncmpcpp
+21
+d/home/eirik/.config/ncmpcpp
+	lyrics
+1
+d/home/eirik/.config/ncmpcpp/lyrics
+	..
+0
+d/home/eirik/.config/ncmpcpp
+	bindings.backup
+3
+d/home/eirik/.config
+	sxiv
+23
+d/home/eirik/.config/sxiv
+	exec
+1
+d/home/eirik/.config/sxiv/exec
+	key-handler
+1
+d/home/eirik/.config/sxiv
+	exec
+1
+d/home/eirik/.config
+	newsboat
+13
+d/home/eirik/.config/newsboat
+	history.cmdline
+4
+d/home/eirik/.config
+	wget
+15
+d/home/eirik/.config/wget
+	.wget-hsts
+1
 
 # Right window history (oldest to newest):
+D/home/eirik/files/diverse/.voidrice/.config
+	
+0
 D/home/eirik/files/diverse/git_repositories/Dotfiles
 	
 0
@@ -133,6 +136,12 @@ D/home/eirik/files/documents/synk/hobby/diy
 D/home/eirik
 	
 0
+D/home/eirik/files/texts/synk
+	
+0
+D/home/eirik/.config
+	
+0
 
 # Command line history (oldest to newest):
 :tree
@@ -167,7 +176,7 @@ pandrez.wav
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_anintroductiontocandguiprogramming
+""/home/eirik/.local/share/vifm/Trash/000_wgetrc
 
 # Directory stack (oldest to newest):
 
@@ -530,3 +539,11 @@ t/home/eirik/.local/share/vifm/Trash/000_[MyFreeCams] Chloe Lamb - New Videos [H
 	/home/eirik/.cache/.p/.cl/[MyFreeCams] Chloe Lamb - New Videos [HD] [.mp4][PornLeech]
 t/home/eirik/.local/share/vifm/Trash/000_[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
 	/home/eirik/.cache/.p/.cl/[MyFreeCams] Chloe Lamb (4 Videos - Hardcore) [.avi]
+t/home/eirik/.local/share/vifm/Trash/000_keys
+	/home/eirik/.config/calcurse/keys
+t/home/eirik/.local/share/vifm/Trash/000_conf
+	/home/eirik/.config/calcurse/conf
+t/home/eirik/.local/share/vifm/Trash/000_image-info
+	/home/eirik/.config/sxiv/exec/image-info
+t/home/eirik/.local/share/vifm/Trash/000_wgetrc
+	/home/eirik/.config/wget/wgetrc
