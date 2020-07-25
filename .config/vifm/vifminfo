@@ -14,83 +14,74 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.config
-	calcurse
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/disney
+	who_framed_roger_rabbit
+2
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	dune
 7
-d/home/eirik/.config/calcurse
-	todo
-5
-d/home/eirik/.config
-	dconf
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/dune
+	Dune.1984.1080p.BRrip.x264.YIFY.srt
+2
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	get_out
+8
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/get_out
+	get_out.mkv
+1
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	joker
 9
-d/home/eirik/.config/dconf
-	user
-1
-d/home/eirik/.config
-	dunst
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/joker
+	Joker.2019.1080p.WEBRip.x264-[YTS.LT].srt
+2
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	jumanji_the_next_level
 10
-d/home/eirik/.config/dunst
-	dunstrc
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level
+	Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].srt
+2
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	jurassic_park
+11
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
+	01
 1
-d/home/eirik/.config
-	fontconfig
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	knives_out
 12
-d/home/eirik/.config/fontconfig
-	fonts.conf
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/knives_out
+	knives_out.mp4
 1
-d/home/eirik/.config
-	ncmpcpp
-21
-d/home/eirik/.config/ncmpcpp
-	lyrics
-1
-d/home/eirik/.config/ncmpcpp/lyrics
-	..
-0
-d/home/eirik/.config/ncmpcpp
-	bindings.backup
-3
-d/home/eirik/.config
-	sxiv
-23
-d/home/eirik/.config/sxiv
-	exec
-1
-d/home/eirik/.config/sxiv/exec
-	key-handler
-1
-d/home/eirik/.config/sxiv
-	exec
-1
-d/home/eirik/.config
-	newsboat
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	murder_on_the_orient_express
 13
-d/home/eirik/.config/newsboat
-	history.cmdline
-4
-d/home/eirik/.config
-	wget
-15
-d/home/eirik/.config/wget
-	.wget-hsts
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/murder_on_the_orient_express
+	murder_on_the_orient_express.mkv
 1
-d/home/eirik/.config/newsboat
-	config
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	once_upon_a_time
+14
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time
+	Once.Upon.A.Time.....In.Hollywood.2019.1080p.BluRay.x264-[YTS.LT].mp4
+1
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	once_upon_a_time
+14
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time
+	Once.Upon.A.Time.....In.Hollywood.2019.1080p.BluRay.x264-[YTS.LT].mp4
+1
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	once_upon_a_time
+14
+d/run/media/eirik/hdd_1tb/video/film
+	spillefilm
 3
-d/home/eirik/.config
-	shortcutrc
-25
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	once_upon_a_time
+2
 
 # Right window history (oldest to newest):
-D/home/eirik/files/diverse/.voidrice/.config
-	
-0
-D/home/eirik/files/diverse/git_repositories/Dotfiles
-	
-0
-D/home/eirik
-	
-0
 D/home/eirik/.local/bin/scripts/cron
 	
 0
@@ -145,18 +136,27 @@ D/home/eirik/.config
 D/home/eirik/.config/newsboat
 	
 0
-D/home/eirik/.config
+D/home/eirik
+	
+0
+D/run/media/eirik/hdd_1tb/video/serier/30_rock/01
+	
+0
+D/etc/pacman.d
+	
+0
+D/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
 	
 0
 
 # Command line history (oldest to newest):
 :tree
 :file_rename
+:mkdir quentin_tarantino
 
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
-pst_orig
 pst_v01
 pst_v02
 pst_v03
@@ -178,11 +178,12 @@ pdrankz.wav
 pmirkeldunkel.m4a
 pvariesque.wav
 pandrez.wav
+p05
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_wgetrc
+""/run/media/eirik/hdd_1tb/.vifm-Trash-1000/003_www.YTS.LT.jpg
 
 # Directory stack (oldest to newest):
 
@@ -553,3 +554,33 @@ t/home/eirik/.local/share/vifm/Trash/000_image-info
 	/home/eirik/.config/sxiv/exec/image-info
 t/home/eirik/.local/share/vifm/Trash/000_wgetrc
 	/home/eirik/.config/wget/wgetrc
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park/02/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/001_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park/03/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_Jurassic World 2015 1080p BRRip x264 DTS-JYK.mkv.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park/04/Jurassic World 2015 1080p BRRip x264 DTS-JYK.mkv.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_www.YTS.AM.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park/05/www.YTS.AM.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_www.YTS.LT.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/alita/www.YTS.LT.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_[TGx]Downloaded from torrentgalaxy.to .txt
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/birds_of_prey/[TGx]Downloaded from torrentgalaxy.to .txt
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_Birds.of.Prey.And.the.Fantabulous.Emancipation.of.One.Harley.Quinn.2020.HC.HDRip.AC3.x264-CMRG.nfo
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/birds_of_prey/Birds.of.Prey.And.the.Fantabulous.Emancipation.of.One.Harley.Quinn.2020.HC.HDRip.AC3.x264-CMRG.nfo
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_Downloaded from www.ETTV.tv .txt
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/blackkklansman/Downloaded from www.ETTV.tv .txt
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_BlacKkKlansman.2018.HDRip.XviD.AC3-EVO.nfo
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/blackkklansman/BlacKkKlansman.2018.HDRip.XviD.AC3-EVO.nfo
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_blade_runner.m3u
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/bladerunner/blade_runner.m3u
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/001_www.YTS.LT.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/disney/the_lion_king/www.YTS.LT.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/002_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/dune/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/002_www.YTS.LT.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/joker/www.YTS.LT.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_www.YTS.MX.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level/www.YTS.MX.jpg
+t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/003_www.YTS.LT.jpg
+	/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time/www.YTS.LT.jpg

@@ -8,6 +8,7 @@ alias cp='cp -vi' ;
 alias mkdir='mkdir -pv' ;
 alias grep='grep --color=auto' ;
 alias diff='diff --color=auto' ;
+alias ip='ip -color=auto'
 
 alias yt='youtube-dl --add-metadata -i' ;
 alias yta='yt -x -f bestaudio/best' ;
