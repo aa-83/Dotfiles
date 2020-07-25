@@ -8,8 +8,8 @@ alias ma='cd ~/files/documents/man && pwd' ;
 alias b='cd ~/files/diverse/build && pwd' ;
 alias of='cd ~/files/build/of && pwd' ;
 alias i='cd ~/files/media/images && pwd' ;
+alias v='cd ~/files/media/videos && pwd' ;
 alias iw='cd ~/files/media/images/wallpapers && pwd' ;
-alias iv='cd ~/files/media/images/video && pwd' ;
 alias m='cd ~/files/media/music && pwd' ;
 alias dl='cd ~/downloads && pwd' ;
 
@@ -33,6 +33,7 @@ alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
 alias lbs='cd ~/.local/bin/scripts && pwd' ;
 alias lsh='cd ~/.local/share && pwd' ;
+alias lsp='cd ~/.local/share/password-store && pwd' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
 
 # Mac shortcuts

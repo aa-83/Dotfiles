@@ -14,9 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/disney
-	who_framed_roger_rabbit
-2
 d/run/media/eirik/hdd_1tb/video/film/spillefilm
 	dune
 7
@@ -80,11 +77,11 @@ d/run/media/eirik/hdd_1tb/video/film
 d/run/media/eirik/hdd_1tb/video/film/spillefilm
 	once_upon_a_time
 2
+d/home/eirik
+	.gitconfig
+2
 
 # Right window history (oldest to newest):
-D/home/eirik/.local/bin/scripts/cron
-	
-0
 D/home/eirik/.local/share/abook
 	
 0
@@ -148,6 +145,9 @@ D/etc/pacman.d
 D/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
 	
 0
+D/home/eirik
+	
+0
 
 # Command line history (oldest to newest):
 :tree
@@ -183,7 +183,7 @@ p05
 # Local filter history (oldest to newest):
 
 # Registers:
-""/run/media/eirik/hdd_1tb/.vifm-Trash-1000/003_www.YTS.LT.jpg
+""/home/eirik/.local/share/vifm/Trash/000_Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
 
 # Directory stack (oldest to newest):
 
@@ -584,3 +584,7 @@ t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/000_www.YTS.MX.jpg
 	/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level/www.YTS.MX.jpg
 t/run/media/eirik/hdd_1tb/.vifm-Trash-1000/003_www.YTS.LT.jpg
 	/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time/www.YTS.LT.jpg
+t/home/eirik/.local/share/vifm/Trash/000_Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.m4a
+	/home/eirik/Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.m4a
+t/home/eirik/.local/share/vifm/Trash/000_Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
+	/home/eirik/Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
