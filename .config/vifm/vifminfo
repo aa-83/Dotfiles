@@ -14,27 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	dune
-7
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/dune
-	Dune.1984.1080p.BRrip.x264.YIFY.srt
-2
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	get_out
-8
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/get_out
-	get_out.mkv
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	joker
-9
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/joker
-	Joker.2019.1080p.WEBRip.x264-[YTS.LT].srt
-2
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	jumanji_the_next_level
-10
 d/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level
 	Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].srt
 2
@@ -80,14 +59,29 @@ d/run/media/eirik/hdd_1tb/video/film/spillefilm
 d/home/eirik
 	.mbsyncrc
 10
+d/home/eirik/.config/vifm/scripts
+	..
+0
+d/home/eirik/.config/vifm
+	scripts
+2
+d/home/eirik/.config
+	nvim
+11
+d/home/eirik/.config/nvim
+	init.vim
+5
+d/home/eirik/.config
+	nvim
+4
+d/home/eirik/.config/nvim
+	init.vim
+5
+d/home/eirik
+	Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
+11
 
 # Right window history (oldest to newest):
-D/home/eirik/.local/share/abook
-	
-0
-D/home/eirik
-	
-0
 D/home/eirik/files/documents/synk/universitet/ddsks/ymse/lint
 	
 0
@@ -143,6 +137,12 @@ D/etc/pacman.d
 	
 0
 D/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/.config/vifm/scripts
 	
 0
 D/home/eirik

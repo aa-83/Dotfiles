@@ -1,4 +1,5 @@
 " Neovim Config
+
 set nocompatible
 
 " Plugins
@@ -32,6 +33,7 @@ set tabstop=4
 set softtabstop=4
 set display=lastline
 set backspace=eol,start,indent
+set modifiable
 
 set number
 set ruler
@@ -105,9 +107,8 @@ let g:tex_vimtex_viewer = 'zathura'
 	map <C-n> :NERDTreeToggle<CR>
 
 "Enable Goyo by default for mutt writing
-"Goyo's width will be the line limit in mutt
 "autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+"autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
