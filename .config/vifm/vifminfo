@@ -78,8 +78,8 @@ d/run/media/eirik/hdd_1tb/video/film/spillefilm
 	once_upon_a_time
 2
 d/home/eirik
-	.gitconfig
-2
+	.mbsyncrc
+10
 
 # Right window history (oldest to newest):
 D/home/eirik/.local/share/abook

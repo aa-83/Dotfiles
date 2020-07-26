@@ -1,4 +1,3 @@
-#!/bin/sh
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
 alias t='cd ~/files/texts && pwd' ;

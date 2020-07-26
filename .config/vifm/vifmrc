@@ -85,22 +85,27 @@ set vifminfo=dhistory,chistory,tui,shistory,phistory,fhistory,dirstack,registers
 set classify='📁:dir:/,>_ :exe:,📄:reg:,🔗:link:'
 
 " various file names
-set classify+='⬆️ ::../::, ::*.sh::, ::*.[hc]pp::, ::*.[hc]::,©️ ::/^copying|license$/::, ::.git/,,*.git/::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso::'
+set classify+='⬆️ ::../::,>_ ::*.sh::,C ::*.[hc]pp::,C ::*.[hc]::,©️ ::/^copying|license$/::,g ::.git/,,*.git/::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::,🎛️ ::*.conf::'
+
+" encryption
+set classify+='🔑::*.keyring::,🔒::*.gpg,,*.asc,,*.pub,,*.key,,*.kbx,,*.kbx~,,*.key,,*.rev::'
 
 " archives
 set classify+='📦::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
 
 " images
-set classify+='🖼️ ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
+set classify+='🖼️::*.bmp,,*.gif,,*.ico,,*.png,,*.ppm,,*.svg,,*.svgz,,*.tga,,*.tif,,*.tiff,,*.xbm,,*.xcf,,*.xpm,,*.xspf,,*.xwd::'
+" images 2
+set classify+='📸::*.jpeg,,*.jpg,,*.jpe,,*.webp::'
 
 " audio
 set classify+='🎹::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 
-" media
-set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
+" video
+set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 
 " office files
-set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx]::,📊::*.pptx,,*.ppt::,🗒️ ::*.txt,,*.tex::'
+set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx],,*.odt,,*.R,,*.Rmd,,*.rmd::,📘::*.md::,🏢::*.pptx,,*.ppt::, 🗒️ ::*.txt::,📔::.tex::,📙::*.log::'
 
 " Status line
 " set statusline="  %z%= %A %10u:%-7g %15s %20d  "
