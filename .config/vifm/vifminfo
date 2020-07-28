@@ -14,21 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level
-	Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].srt
-2
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	jurassic_park
-11
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
-	01
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	knives_out
-12
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/knives_out
-	knives_out.mp4
-1
 d/run/media/eirik/hdd_1tb/video/film/spillefilm
 	murder_on_the_orient_express
 13
@@ -78,8 +63,44 @@ d/home/eirik/.config/nvim
 	init.vim
 5
 d/home/eirik
-	Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
-11
+	.config
+2
+d/home/eirik/.config
+	old
+5
+d/home/eirik/.config/old
+	X11
+1
+d/home/eirik/.config/old/X11
+	xinitrc
+2
+d/home/eirik/.config/old
+	X11
+1
+d/home/eirik/.config
+	oomox
+6
+d/home/eirik/.config/oomox
+	base16
+1
+d/home/eirik/.config/oomox/base16
+	templates
+1
+d/home/eirik/.config/oomox/base16/templates
+	..
+0
+d/home/eirik/.config/oomox/base16
+	templates
+1
+d/home/eirik/.config/oomox
+	colors
+2
+d/home/eirik/.config/oomox/colors
+	Cyberpunk-Neon
+1
+d/home/eirik/files/media/music/kanka
+	don't_stop_dub
+2
 
 # Right window history (oldest to newest):
 D/home/eirik/files/documents/synk/universitet/ddsks/ymse/lint
@@ -148,6 +169,9 @@ D/home/eirik/.config/vifm/scripts
 D/home/eirik
 	
 0
+D/home/eirik/files/media/music/kanka
+	
+0
 
 # Command line history (oldest to newest):
 :tree
@@ -157,6 +181,9 @@ D/home/eirik
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+p04
+p01
+p02
 pst_v01
 pst_v02
 pst_v03
@@ -179,6 +206,10 @@ pmirkeldunkel.m4a
 pvariesque.wav
 pandrez.wav
 p05
+pevery_night's_dub
+psub.mersion
+palert
+pdon't_stop_dub
 
 # Local filter history (oldest to newest):
 
@@ -588,3 +619,81 @@ t/home/eirik/.local/share/vifm/Trash/000_Regular Expressions (Regex) - All the B
 	/home/eirik/Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.m4a
 t/home/eirik/.local/share/vifm/Trash/000_Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
 	/home/eirik/Regular Expressions (Regex) - All the Basics-77I4ZkhuHsQ.mkv
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_Other
+	/run/media/eirik/4tb/video/film/spillefilm/robocop/Other
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/4tb/video/film/spillefilm/robocop/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_[TGx]Downloaded from torrentgalaxy.to .txt
+	/run/media/eirik/4tb/video/film/spillefilm/sonic_the_hedgehog/[TGx]Downloaded from torrentgalaxy.to .txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_Torrent Downloaded From ProstyleX.com.txt
+	/run/media/eirik/4tb/video/film/spillefilm/sorry_to_bother_you/Torrent Downloaded From ProstyleX.com.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_www.YTS.AM.jpg
+	/run/media/eirik/4tb/video/film/spillefilm/us/www.YTS.AM.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/001_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/4tb/video/film/spillefilm/totall_recall/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_The.Man.from.U.N.C.L.E.2015.1080p.NL.srt
+	/run/media/eirik/4tb/video/film/spillefilm/the_man_from_uncle/The.Man.from.U.N.C.L.E.2015.1080p.NL.srt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_www.YTS.MX.jpg
+	/run/media/eirik/4tb/video/film/spillefilm/taika_waititi/Jojo Rabbit (2019) [1080p] [WEBRip] [5.1] [YTS.MX]/www.YTS.MX.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_Hunt for the Wilderpeople 2016 1080p BluRay x264 DTS-JYK.mkv.jpg
+	/run/media/eirik/4tb/video/film/spillefilm/taika_waititi/hunt_for_the_wilderpeople/Hunt for the Wilderpeople 2016 1080p BluRay x264 DTS-JYK.mkv.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_sonic_the_hedgehog
+	/run/media/eirik/4tb/video/film/spillefilm/sonic_the_hedgehog
+t/run/media/eirik/4tb/.vifm-Trash-1000/001_[TGx]Downloaded from torrentgalaxy.to .txt
+	/run/media/eirik/4tb/video/film/spillefilm/parasite/[TGx]Downloaded from torrentgalaxy.to .txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_RARBG.txt
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/coffee_and_cigarettes/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_RARBG_DO_NOT_MIRROR.exe
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/coffee_and_cigarettes/RARBG_DO_NOT_MIRROR.exe
+t/run/media/eirik/4tb/.vifm-Trash-1000/001_RARBG.txt
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/dead_man/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/001_RARBG_DO_NOT_MIRROR.exe
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/dead_man/RARBG_DO_NOT_MIRROR.exe
+t/run/media/eirik/4tb/.vifm-Trash-1000/002_RARBG.txt
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/down_by_law/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/002_RARBG_DO_NOT_MIRROR.exe
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/down_by_law/RARBG_DO_NOT_MIRROR.exe
+t/run/media/eirik/4tb/.vifm-Trash-1000/003_RARBG.txt
+	/run/media/eirik/4tb/video/film/spillefilm/jim_jarmusch/ghost_dog/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/004_RARBG.txt
+	/run/media/eirik/4tb/video/film/spillefilm/dredd/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_WALL-E.2008.1080p.BrRip.x264.YIFY.srt
+	/run/media/eirik/4tb/video/film/animasjon/disney/wall-e/WALL-E.2008.1080p.BrRip.x264.YIFY.srt
+t/run/media/eirik/4tb/.vifm-Trash-1000/002_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/4tb/video/film/animasjon/disney/wall-e/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/003_WWW.YIFY-TORRENTS.COM.jpg
+	/run/media/eirik/4tb/video/film/animasjon/heavy_metal/WWW.YIFY-TORRENTS.COM.jpg
+t/run/media/eirik/4tb/.vifm-Trash-1000/002_[TGx]Downloaded from torrentgalaxy.to .txt
+	/run/media/eirik/4tb/video/serier/30_rock/one_time_special/[TGx]Downloaded from torrentgalaxy.to .txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_Torrent downloaded from Demonoid.me.txt
+	/run/media/eirik/4tb/video/serier/animasjon/avatar_the_last_airbender/Torrent downloaded from Demonoid.me.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_The Corner - Episode 4 - Dope Fiend's Blues-rocknonstop-(DivX)
+	/run/media/eirik/4tb/video/serier/david_simon/the_corner/The Corner - Episode 4 - Dope Fiend's Blues-rocknonstop-(DivX)
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_The Corner - Episode 5 - Corner Boy Blues-rocknonstop-(DivX)
+	/run/media/eirik/4tb/video/serier/david_simon/the_corner/The Corner - Episode 5 - Corner Boy Blues-rocknonstop-(DivX)
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_The Corner - Episode 6 - Everyman's Blues-rocknonstop-(DivX)
+	/run/media/eirik/4tb/video/serier/david_simon/the_corner/The Corner - Episode 6 - Everyman's Blues-rocknonstop-(DivX)
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_TSV.txt
+	/run/media/eirik/4tb/video/serier/david_simon/the_wire/Extras/TSV.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_TSV Torrents
+	/run/media/eirik/4tb/video/serier/david_simon/the_wire/TSV Torrents
+t/run/media/eirik/4tb/.vifm-Trash-1000/001_TSV.txt
+	/run/media/eirik/4tb/video/serier/david_simon/the_wire/TSV.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_The Wire.ico
+	/run/media/eirik/4tb/video/serier/david_simon/the_wire/The Wire.ico
+t/run/media/eirik/4tb/.vifm-Trash-1000/005_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/01/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/006_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/02/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/007_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/03/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/008_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/04/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/009_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/05/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/010_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/06/RARBG.txt
+t/run/media/eirik/4tb/.vifm-Trash-1000/011_RARBG.txt
+	/run/media/eirik/4tb/video/serier/veep/07/RARBG.txt
+t/home/eirik/.local/share/vifm/Trash/000_sample
+	/home/eirik/.local/share/.qbittorrent/downloads/lord_of_the_rings/sample

@@ -20,7 +20,7 @@ super + shift + F12
 
 #Terminal software
 super + u
-	$TERMINAL -e vu
+	$TERMINAL -e vuz
 super + shift + u
 
 super + i

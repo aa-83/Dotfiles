@@ -35,6 +35,11 @@ alias lsh='cd ~/.local/share && pwd' ;
 alias lsp='cd ~/.local/share/password-store && pwd' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
 
+alias rme='/run/media/eirik && pwd' ;
+alias rme4='/run/media/eirik/4tb && pwd' ;
+alias rme1='/run/media/eirik/hdd_1tb && pwd' ;
+alias rmemp='/run/media/eirik/mp_64gb && pwd' ;
+
 # Mac shortcuts
 #alias hdd='cd /Volumes/hdd_1tb/ ;
 #alias serier'cd /Volumes/hdd_1tb/video/serier ;
