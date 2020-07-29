@@ -41,5 +41,8 @@ alias rme1='/run/media/eirik/hdd_1tb && pwd' ;
 alias rmemp='/run/media/eirik/mp_64gb && pwd' ;
 
 # Mac shortcuts
-#alias hdd='cd /Volumes/hdd_1tb/ ;
-#alias serier'cd /Volumes/hdd_1tb/video/serier ;
+alias hdd='cd /Volumes/hdd_1tb' ;
+alias serier1='cd /Volumes/hdd_1tb/video/serier' ;
+alias 4tb='cd /Volumes/4tb' ;
+alias serier4='cd /Volumes/4tb/video/serier' ;
+alias mp64='cd /Volumes/mp_64gb' ;
