@@ -14,6 +14,54 @@ l2
 r2
 
 # Left window history (oldest to newest):
+d/home/eirik/.local/bin/scripts
+	dmenumount
+14
+d/home/eirik/.local/share/.qbittorrent/downloads
+	ml-005
+3
+d/home/eirik/.local/share/.qbittorrent/downloads/ml-005
+	01_I._Introduction_Week_1
+1
+d/home/eirik/.local/share/.qbittorrent/downloads/ml-005/01_I._Introduction_Week_1
+	01_Welcome_7_min.pdf
+2
+d/home/eirik/.config/old
+	X11
+1
+d/home/eirik/.config/old/X11
+	xinitrc
+2
+d/home/eirik/.config/old
+	X11
+1
+d/home/eirik/.config/oomox
+	base16
+1
+d/home/eirik/.config/oomox/base16
+	templates
+1
+d/home/eirik/.config/oomox/base16/templates
+	..
+0
+d/home/eirik/.config/oomox/base16
+	templates
+1
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level
+	Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].srt
+2
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	jurassic_park
+11
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
+	01
+1
+d/run/media/eirik/hdd_1tb/video/film/spillefilm
+	knives_out
+12
+d/run/media/eirik/hdd_1tb/video/film/spillefilm/knives_out
+	knives_out.mp4
+1
 d/run/media/eirik/hdd_1tb/video/film/spillefilm
 	murder_on_the_orient_express
 13
@@ -63,46 +111,16 @@ d/home/eirik/.config/nvim
 	init.vim
 5
 d/home/eirik
-	.config
-2
-d/home/eirik/.config
-	old
-5
-d/home/eirik/.config/old
-	X11
-1
-d/home/eirik/.config/old/X11
-	xinitrc
-2
-d/home/eirik/.config/old
-	X11
-1
-d/home/eirik/.config
-	oomox
+	.mbsyncrc
 6
-d/home/eirik/.config/oomox
-	base16
-1
-d/home/eirik/.config/oomox/base16
-	templates
-1
-d/home/eirik/.config/oomox/base16/templates
-	..
-0
-d/home/eirik/.config/oomox/base16
-	templates
-1
-d/home/eirik/.config/oomox
-	colors
-2
-d/home/eirik/.config/oomox/colors
-	Cyberpunk-Neon
-1
-d/home/eirik/files/media/music/kanka
-	don't_stop_dub
-2
 
 # Right window history (oldest to newest):
+D/home/eirik/files/texts/synk/memes
+	
+0
+D/home/eirik/files/media/music/kanka
+	
+0
 D/home/eirik/files/documents/synk/universitet/ddsks/ymse/lint
 	
 0
@@ -169,9 +187,6 @@ D/home/eirik/.config/vifm/scripts
 D/home/eirik
 	
 0
-D/home/eirik/files/media/music/kanka
-	
-0
 
 # Command line history (oldest to newest):
 :tree
@@ -181,6 +196,14 @@ D/home/eirik/files/media/music/kanka
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+pevery_night's_dub
+psub.mersion
+palert
+pdon't_stop_dub
+pTurister reagerer på Hurtigruten-drops.mp4
+p30 Rock S04 E09 - Klaus and Greta.avi
+p30 Rock S04 E10 - Black Light Attack!.avi
+p03
 p04
 p01
 p02
@@ -206,10 +229,6 @@ pmirkeldunkel.m4a
 pvariesque.wav
 pandrez.wav
 p05
-pevery_night's_dub
-psub.mersion
-palert
-pdon't_stop_dub
 
 # Local filter history (oldest to newest):
 
@@ -697,3 +716,9 @@ t/run/media/eirik/4tb/.vifm-Trash-1000/011_RARBG.txt
 	/run/media/eirik/4tb/video/serier/veep/07/RARBG.txt
 t/home/eirik/.local/share/vifm/Trash/000_sample
 	/home/eirik/.local/share/.qbittorrent/downloads/lord_of_the_rings/sample
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_batman_cartoons_here
+	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_batman_cartoons_here
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_superhero_anime_shows_here
+	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_superhero_anime_shows_here
+t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_superhero_related_cartoons_shows_and_movies_here
+	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_superhero_related_cartoons_shows_and_movies_here

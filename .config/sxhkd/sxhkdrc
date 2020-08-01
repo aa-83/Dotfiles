@@ -83,3 +83,7 @@ super + control + alt + p
 	$TERMINAL -e pass_open
 super + control + alt + shift + p
 	$TERMINAL -e pass_close
+super + F7
+	dmenumount
+super + F8
+	dmenuumount
