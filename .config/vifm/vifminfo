@@ -14,119 +14,107 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.local/bin/scripts
-	dmenumount
-14
-d/home/eirik/.local/share/.qbittorrent/downloads
-	ml-005
+d/home/eirik/.config/mutt
+	accounts
+1
+d/home/eirik/.config/mutt/accounts
+	1-proton_eirik.muttrc
+1
+d/home/eirik
+	.config
+2
+d/home/eirik/.config
+	mutt
+5
+d/home/eirik/.config/mutt
+	accounts
+1
+d/home/eirik/.config/mutt/accounts
+	3-ddsks_eirik.muttrc
 3
-d/home/eirik/.local/share/.qbittorrent/downloads/ml-005
-	01_I._Introduction_Week_1
-1
-d/home/eirik/.local/share/.qbittorrent/downloads/ml-005/01_I._Introduction_Week_1
-	01_Welcome_7_min.pdf
+d/home/eirik
+	.config
 2
-d/home/eirik/.config/old
-	X11
+d/home/eirik/.config
+	mutt
+5
+d/home/eirik/.config/mutt
+	accounts
 1
-d/home/eirik/.config/old/X11
-	xinitrc
+d/home/eirik/.config/mutt/accounts
+	2-gmail_eirik.muttrc
 2
-d/home/eirik/.config/old
-	X11
+d/home/eirik/.config/mutt
+	accounts
 1
-d/home/eirik/.config/oomox
-	base16
+d/home/eirik/.config
+	mutt
+5
+d/home/eirik/.config/mutt
+	accounts
 1
-d/home/eirik/.config/oomox/base16
-	templates
-1
-d/home/eirik/.config/oomox/base16/templates
-	..
-0
-d/home/eirik/.config/oomox/base16
-	templates
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/jumanji_the_next_level
-	Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].srt
-2
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	jurassic_park
-11
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
-	01
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	knives_out
-12
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/knives_out
-	knives_out.mp4
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	murder_on_the_orient_express
-13
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/murder_on_the_orient_express
-	murder_on_the_orient_express.mkv
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	once_upon_a_time
-14
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time
-	Once.Upon.A.Time.....In.Hollywood.2019.1080p.BluRay.x264-[YTS.LT].mp4
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	once_upon_a_time
-14
-d/run/media/eirik/hdd_1tb/video/film/spillefilm/once_upon_a_time
-	Once.Upon.A.Time.....In.Hollywood.2019.1080p.BluRay.x264-[YTS.LT].mp4
-1
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	once_upon_a_time
-14
-d/run/media/eirik/hdd_1tb/video/film
-	spillefilm
-3
-d/run/media/eirik/hdd_1tb/video/film/spillefilm
-	once_upon_a_time
-2
+d/home/eirik/.config
+	mutt
+5
 d/home/eirik
 	.mbsyncrc
-10
-d/home/eirik/.config/vifm/scripts
+8
+d/home/eirik/files/texts/synk/hobby/gw
+	inquisitor
+3
+d/home/eirik/files/texts/synk/hobby/gw/inquisitor
+	Campaign
+1
+d/home/eirik/files/texts/synk/hobby/gw/inquisitor/Campaign
+	after_the_eye_of_terror.pdf
+1
+d/home/eirik/files/texts/synk/hobby/gw/inquisitor
+	Campaign
+1
+d/home/eirik/files/texts/synk/hobby/gw/inquisitor/Campaign
+	campaign_record.pdf
+7
+d/home/eirik/.local/share/.qbittorrent/downloads/godzila
+	godzilla_king_of_the_monsters_(2019)_[webrip]_[720p]_[yts.lt]
+2
+d/home/eirik/.local/share/.qbittorrent/downloads/godzila/godzilla_king_of_the_monsters_(2019)_[webrip]_[720p]_[yts.lt]
+	Godzilla.King.Of.The.Monsters.2019.720p.WEBRip.x264-[YTS.LT].mp4
+1
+d/home/eirik
+	.mbsyncrc
+3
+d/home/eirik/files/diverse/build/oF/apps/test/src
+	main.cpp
+1
+d/home/eirik
+	.mbsyncrc
+8
+d/boot/EFI
+	arch
+3
+d/boot/EFI/arch
 	..
 0
-d/home/eirik/.config/vifm
-	scripts
-2
-d/home/eirik/.config
-	nvim
-11
-d/home/eirik/.config/nvim
-	init.vim
-5
-d/home/eirik/.config
-	nvim
+d/boot/EFI
+	systemd
 4
+d/home/eirik
+	.mbsyncrc
+4
+d/home/eirik/files/texts/synk/hobby
+	basic_illustrated_knots
+1
+d/home/eirik/files/texts/synk/hobby/basic_illustrated_knots
+	Basic Illustrated Knots for the Outdoors (Basic Illustrated Series).pdf
+1
+d/home/eirik/.config
+	nvim
+9
 d/home/eirik/.config/nvim
 	init.vim
 5
-d/home/eirik
-	.mbsyncrc
-6
 
 # Right window history (oldest to newest):
-D/home/eirik/files/texts/synk/memes
-	
-0
-D/home/eirik/files/media/music/kanka
-	
-0
-D/home/eirik/files/documents/synk/universitet/ddsks/ymse/lint
-	
-0
-D/home/eirik
-	
-0
 D/home/eirik/.local/share
 	
 0
@@ -185,6 +173,45 @@ D/home/eirik/.config/vifm/scripts
 	
 0
 D/home/eirik
+	
+0
+D/home/eirik/files/diverse/build/oF/apps/myApps/ofBook
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/diverse/build/mutt-wizard_backup
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/texts/synk/hobby/gw
+	
+0
+D/home/eirik/.local/share/.qbittorrent/downloads/godzila
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/diverse/build/oF/apps/test/src
+	
+0
+D/home/eirik
+	
+0
+D/boot/EFI
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/texts/synk/hobby
+	
+0
+D/home/eirik/.config
 	
 0
 
@@ -722,3 +749,5 @@ t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_superhero_anime_shows_here
 	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_superhero_anime_shows_here
 t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_superhero_related_cartoons_shows_and_movies_here
 	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_superhero_related_cartoons_shows_and_movies_here
+t/home/eirik/.local/share/vifm/Trash/000_main.cpp
+	/home/eirik/files/diverse/build/oF/apps/myApps/ofBook_1/src/main.cpp

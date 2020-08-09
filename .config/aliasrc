@@ -1,3 +1,4 @@
+#!/bin/sh
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
@@ -22,6 +23,8 @@ alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
 alias abook='abook -C "$XDG_CONFIG_HOME"/abook/abookrc --datafile "$XDG_DATA_HOME"/abook/addressbook' ;
 alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf' ;
 alias calcurse='calcurse -D ~/.config/calcurse/' ;
+
+alias prosjekt='mkdir -pv inspirasjonsbilder teknisketegninger prøverapporter produksjonsplaner diverse manus'
 
 # Mac specific aliases
 #alias ls='ls -Gh' ;

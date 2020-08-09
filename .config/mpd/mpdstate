@@ -2,7 +2,7 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
-current: 0
+current: 172
 random: 1
 repeat: 0
 single: 0
@@ -11,23 +11,279 @@ crossfade: 5
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:tom_waits/1._studio_albums/1985_rain_dogs/01_singapore.mp3
-1:tom_waits/1._studio_albums/1985_rain_dogs/02_clap_hands.mp3
-2:tom_waits/1._studio_albums/1985_rain_dogs/03_cemetery_polka.mp3
-3:tom_waits/1._studio_albums/1985_rain_dogs/04_jockey_full_of_bourbon.mp3
-4:tom_waits/1._studio_albums/1985_rain_dogs/05_tango_till_they're_sore.mp3
-5:tom_waits/1._studio_albums/1985_rain_dogs/06_big_black_mariah.mp3
-6:tom_waits/1._studio_albums/1985_rain_dogs/07_diamonds_&_gold.mp3
-7:tom_waits/1._studio_albums/1985_rain_dogs/08_hang_down_your_head.mp3
-8:tom_waits/1._studio_albums/1985_rain_dogs/09_time.mp3
-9:tom_waits/1._studio_albums/1985_rain_dogs/10_rain_dogs.mp3
-10:tom_waits/1._studio_albums/1985_rain_dogs/11_midtown.mp3
-11:tom_waits/1._studio_albums/1985_rain_dogs/12_9th_&_hennepin.mp3
-12:tom_waits/1._studio_albums/1985_rain_dogs/13_gun_street_girl.mp3
-13:tom_waits/1._studio_albums/1985_rain_dogs/14_union_square.mp3
-14:tom_waits/1._studio_albums/1985_rain_dogs/15_blind_love.mp3
-15:tom_waits/1._studio_albums/1985_rain_dogs/16_walking_spanish.mp3
-16:tom_waits/1._studio_albums/1985_rain_dogs/17_downtown_train.mp3
-17:tom_waits/1._studio_albums/1985_rain_dogs/18_bride_of_rain_dog.mp3
-18:tom_waits/1._studio_albums/1985_rain_dogs/19_anywhere_i_lay_my_head.mp3
+0:dub/(1975) Gabrielle - Tonight-P1zrDN-DtmM.m4a
+1:dub/(1976) Blue Bells - Come Along-gUIVZXQzd_Y.m4a
+2:dub/03 - Panda Dub (Subcontraire) - Warrior Step-B62iZwwE4Yo.opus
+3:dub/10' King Alpha - Jah Warrior + Dub-m4D6YIj8qpE.opus
+4:dub/10'' Mighty Massa - Climb the mountain top (& dub)-QCk42Fr38i4.opus
+5:dub/10'' The Bush Chemists - Star Dub-pROJcnnBsfc.opus
+6:dub/12' Side A - Tenor Saw - Come Me Just A Come-UMSIgYsx4Uk.opus
+7:dub/12' Side B - 1. Maya - Joy of Life _ 2. Kibir La Amlak - Joyous Dub-xZxJocXuvbI.opus
+8:dub/12' Uprising Sounds - Jah Passage_Passage Dub (Indica Dubs)-t_lagS9DlIU.m4a
+9:dub/12'' D Roy Band -  Back Street Dub-u8UfS8ovB6w.opus
+10:dub/12'' Lion Youth - Rat a Cut Bottle & dub-tZcuE0ZyJms.m4a
+11:dub/12'' Mighty Three - Rasta Business-lxix_Rh9vpk.m4a
+12:dub/12'' Sound Iration & Tena Stelin - Give Thanks & Praise-Fsm-xDmyFKg.opus
+13:dub/12'' Vivian Jones - Red Eyes-poR2t56MIQ4.opus
+14:dub/7' Haspar - Nemesis_Vengeful Dub-G8ry9E9pzM4.m4a
+15:dub/7'' Dhaima - Ina Jah Children & Dub-DVu27tt11QA.opus
+16:dub/7'' Pablo-Moses - Give I Fi I Name (& Dub)-nsPkWq6jWRw.opus
+17:dub/Aba Shaka+Dub-S. Antoniol_Zilvy (Stebass)-cyJWxeuYk_U.opus
+18:dub/Aba-Ariginals - Lucrative-2MLFAyxauFg.opus
+19:dub/ACKBOO - THE LAST RACE-P9M86sMwn4I.opus
+20:dub/Al Campbell Meets Young Kulcha - Live It Up _ Set Dem Free-aas0aTKDHbQ.opus
+21:dub/Alpha & Omega - The Eagle, the Dragon & the Bear (Jofis mix) - 7' vinyl-2o2T_jhoMcc.opus
+22:dub/Anthony Johnson - What Kind of Herb-373mwpF79NE.opus
+23:dub/Art Of Ethiopia + Dub - Jah Ragga-PtIJFpXZJRk.m4a
+24:dub/Aswad ♬ Back To Africa (1981)-aN17TAVqeGs.opus
+25:dub/ASWAD AFRICA WARRIOR STYLE DUBPLATE-quMXk7nvVlQ.opus
+26:dub/Augustus Pablo - Vibrate On-jg9pTd2zqHs.opus
+27:dub/Babylon Must Go Down-gt14bQ3dIzw.m4a
+28:dub/Barrington Levy - Tomorrow Is Another Day 12'  1982-zA8aeRAnq0c.opus
+29:dub/Barry Biggs - Work all Day-a2otzQFREwc.opus
+30:dub/BE THANKFUL FOR WHAT YOU GOT - DONOVAN CARLESS-pkfvaF-Gjmc.m4a
+31:dub/Billy Boyo   Righteousness--qeVnX142kE.opus
+32:dub/Black Uhuru - Fit Yu Haffi Fit HQ-5ZphQcdqRJA.opus
+33:dub/Blundetto ft Hindi Zahra - Voices-jULPIpeCi80.opus
+34:dub/Brain Damage - Brain Booster-1yhZtc0JaEk.opus
+35:dub/Brigadier Jerry -  Every Man A Me Brethren-tTvp6RJKEJM.m4a
+36:dub/Bush Chemists - Light Up Your Spliff-afa7DO8W-4g.opus
+37:dub/Caustik - Herbman VIP-11zaTkxYS7w.m4a
+38:dub/CBF001 - Olaia Love Me Or Leave Me _ Love Me Or Dub-mEpMi1tls5k.opus
+39:dub/CBF004 - BassDefender - Portuko ranpi + Portuko Dub-nvc0v9e8cTI.opus
+40:dub/Chazbo - Guiding Principles of Dub-ZhF8MkD7uqk.opus
+41:dub/Chazbo meets Empress Shema  'Warrior Spirit'  + more-5QtCkCo_de4.opus
+42:dub/Clarence Parks - Mount Zion-s5fuKQtUZ_Y.opus
+43:dub/Clip Kaly Live Dub - Allaxis-1IG3Ad-2_w4.opus
+44:dub/Cocoa Tea - Hail Jah Man-rf9rKdXom4s.opus
+45:dub/Cologne - No Pull Over-gnnYdF7CpCw.opus
+46:dub/Creeper's_Creeper's Dub-Errol Arawak (King Earthquake)-GZs6wGwLwkM.opus
+47:dub/curly locks _ lock and key _ dreader locks _ millitant rock - Junior Byles - Black Ark-SQWHoM98Py8.opus
+48:dub/Daba Makourejah_ Ganja Tree feat. Mahom Dub [Amoul Bayi Records]-wjpQz4sf9pw.opus
+49:dub/Danny Red - False Preacher Man - Partial Records 7' PRTL7033-MTUURuMW10o.opus
+50:dub/Danny Red - Jahovah + Version-tJX7R99TT4c.opus
+51:dub/Danny T  & Tradesman ft Mark Iration  - Up deh-vsqu_zNgyuY.opus
+52:dub/Dawa Hifi Tubby's request-aXpc6SSriXQ.opus
+53:dub/Diggory Kenrick 'Faya'.mp4-90KYG3zZFVQ.opus
+54:dub/Digid - Babylon Fall--EKZODv7fxc.opus
+55:dub/Disciples - Abyssinia _ Mabrak - Partial Records 10' PRTL10010-MKJ4-fr5T1s.opus
+56:dub/Disciples - imperial stepper-rdUvRh2zFaQ.opus
+57:dub/DIXIE PEACH - Roots man warrior + Dub  (Jah Tubbys)  10'-jcPmoQzOO_o.opus
+58:dub/Don Fe - Jericho + Dub [Steppas Records]-OmOG233Zgl8.opus
+59:dub/don't bogart me - Mr nice-Sq5YDx6oLR8.opus
+60:dub/Dreadzone - Iron Shirt-Wao5wjEaSpw.m4a
+61:dub/Dub Conductor - Flying Dub - Roots Youths Records-3fH6gZOqL3U.opus
+62:dub/Dub Conductor - Roots Liturgy-0bcsSmcJjVM.opus
+63:dub/Dub Dynasty - Monsoon Come ft. Ras Tinny (Alpha Steppa_Alpha & Omega)-dALahYrHe4Y.opus
+64:dub/Dub Dynasty (Alpha Steppa x Alpha & Omega) - Thundering Mantis [Chopz Mix]-f3_tLOJR82E.opus
+65:dub/Dub FX 'NO REST FOR THE WICKED' feat. CAde & Mahesh Vinayakram-rBmMzabdEKQ.opus
+66:dub/Dub Machinist meets Livication Corner _ LCR010-qhRmIqo6PKM.opus
+67:dub/Dub-a-mix _ Acting dub-QmziPpIP3lg.opus
+68:dub/Dubamix - CESECA-iRmdHYCDVjM.opus
+69:dub/Dubdadda ‎- Jah Music Is The Key _Dougie Conscious - Dub Is The Key-9lWeOxPjtG4.m4a
+70:dub/Dubkasm  Victory [Extended Version] [VINYLE RIP] [HD]-cfmFaujYijA.opus
+71:dub/Dubkasm - City walls-BIhVtlBWzA4.opus
+72:dub/Dubkasm-Higher Judgement-bS_NqMzn3pU.opus
+73:dub/Dubmatix - Struggle (feat Dennis Alcapone) [Venybzz]-0CknJEN9J8Y.opus
+74:dub/Dubzoic - Warrior of Light-gv-YbDWQ6mg.opus
+75:dub/Earl Anthony - Sensi Man Rock _ Version-bCUj-3BIr8k.opus
+76:dub/EASY MY YOUT .   STAN RYCK-V8OTWNKYmdc.m4a
+77:dub/ECHO ROOTS  - HEAVY PRESSURE-NAJ5345vlWU.opus
+78:dub/Eddy Schorcher - Feeling Inside-fY6HBxqphbs.m4a
+79:dub/EDUCATION _ STEP ADDICT - Izyah Davis _ Tozer _ Alex Sci-Fi-R_x1sXVB_dg.opus
+80:dub/Errol Holt - Congo Dread -1979-Fqdisl8AP5k.opus
+81:dub/Evergreen & Landlord feat. Danman - Jah Rain-vNvokYf1DyQ.opus
+82:dub/Fashion_Fashion Dub-Errol Arawak (King Earthquake)-1ldso_4XDsg.opus
+83:dub/Feel It & Dub - Stikki Tantafari (Nucleus Roots 7')-bSdfF0dgho8.opus
+84:dub/FootPrint system - Indian Rain-aSPI1D29bQ0.opus
+85:dub/Footprint System - Warmongers-to7HKlhDN7E.opus
+86:dub/Gaylads - Aren't You The Guy-Iwhtflf6Lno.m4a
+87:dub/Gorgon Sound - Find Jah Way-QaYuddLy4k8.opus
+88:dub/Gorgon Sound V.s. Dubkasm - Arise-ZPr9XWoxFhI.opus
+89:dub/Gregory Isaacs - Babylon Too Rough-kU959L4fLO0.opus
+90:dub/Habesha - Martin Luther King + Dub-hwwaoTFjfa0.opus
+91:dub/Hail Jah ~ Sista Mary ~ Ras Muffet ~ 3Cuts-CGUD3Whlnog.m4a
+92:dub/Hard Rok Dub  -  - Yaba Yout-Z5QZtwbhSnc.m4a
+93:dub/hey natty dread-9QZiKQ7ludM.m4a
+94:dub/HIGH RISE VIBRATIONS - IRATION STEPPAS-0WQwFUTIWU0.m4a
+95:dub/High Tone - Dub What-nEh5bPosCl8.opus
+96:dub/High Tone - Ekphrön # 3 Wahqam Saba-GfurmRon9K8.opus
+97:dub/High Tone - Glowing Fire-cj5F80HL-rg.opus
+98:dub/High tone - Rub-A-Dub anthem (Feat. Pupajim)-lKj852Cm_pU.opus
+99:dub/High Tone - Uncontrollable Flesh-i5ZnQuTrC2w.opus
+100:dub/Horace Andy Every tongue shall tell & dub-90B1wMXmwyc.opus
+101:dub/Humble Brother - The Supreme _ Dub Supreme-Ge0xBNbLcEc.m4a
+102:dub/I-Tist & The Dub Machinist -Flatron part 1 & 2-GIH6hkzOuSg.m4a
+103:dub/I'N'I NAH & DUB - JAH MARNYAH (AMOUL-BAYI RECORDS 12)-sks9Bt9WdfQ.opus
+104:dub/Improvisators Dub  - Be yourself in Dub-lsF5gn4CvVI.opus
+105:dub/Ini Kamoze - Murder dub-K0DLT65pyFQ.opus
+106:dub/Iration Steppas - Mistikal Warrior-X1tz3rOdVy4.opus
+107:dub/Iration Steppas - YT Dubplate - Red Bull Denmark 7 Aug 2010-Q3nR79jhGQI.m4a
+108:dub/iration steppas angelic symphony dub-2JY55GIyFHM.opus
+109:dub/Iration Steppas Meet D. Rootical - Lightning (Pieces Like Rice Grain Mix)-zj32tbfJem8.opus
+110:dub/iration steppas no war dub--ptKwHMj7pg.opus
+111:dub/ISHAN SOUND - NAMKHA - KAHN REMIX-Y2NuJDOqwmA.opus
+112:dub/JAH BENJIE - I am Ethiopian + version (1999 Freedom sounds)-Tstlf70cSFw.opus
+113:dub/Jah Free - Burn Dem'-Vf4KJaSIFKc.opus
+114:dub/Jah Shaka and Friends '45 Disco Stylee'-P50nIVE-Mxk.opus
+115:dub/Jah Shaka Ft. Roger Robin - Come Now Jah Dub-UjZa23dBBrg.opus
+116:dub/JAH WARI SOUND -  STEP TO RASTAFARI-ptXjsOE4kUU.opus
+117:dub/Jah warrior - Babylon shall fall-ZcERFp7pOQQ.opus
+118:dub/JAMMYS 12'-SUPER BLACK-ONE TIME GIRLFRIEND!!-yW3I9kaEzpk.opus
+119:dub/jay tees - forward to jah-PS_cYI5XpVM.opus
+120:dub/John Holt   Police In Helicopter-jUrUzqE0mE8.opus
+121:dub/Johnny Osbourne - Christmas Stylee-bvxvAX9Ehh0.m4a
+122:dub/Joseph Lalibela I'am an Ethiopian _ Far East mt Sista Habesha & Ras Moa - For H.I.M. Glory-ERhcwxW-_B0.opus
+123:dub/Joy Card - Boy I Love You-PTX68KFIUI0.opus
+124:dub/Judah Eskender Tafari - Land Of Confusion (Ticklah Rmx)-xgnIR-hBz1g.opus
+125:dub/Junior Keating - African Queen-ecffRo1tMXo.opus
+126:dub/KALY LIVE DUB_RUN AND GO HIDE-FxwhliJ2NQs.opus
+127:dub/Kanka - Anesthesia-9RV-bCxWIzE.opus
+128:dub/kanka - dubalistik-9lNwoqH0k4c.opus
+129:dub/Kanka - Indian Time-aBYpbkXFv5s.opus
+130:dub/kanka - Nova dub-eHDT0T_erc4.opus
+131:dub/Kanka - Step forward-i_8Xnp7OiEI.opus
+132:dub/Kanka - West Dub-QF0me8D1ABY.opus
+133:dub/Kanka - Wise-XxAIqfhrFaE.opus
+134:dub/Kibir La Amlak - Mental Freedom-LP6OW18YQ_o.opus
+135:dub/Kiko Bun - Shy Man-leNNUnds7j4.opus
+136:dub/King Earthquake - Ancient Mystic Dub-0lNHGKCDqR4.opus
+137:dub/King Earthquake - Shark Attack + Dub Attack-xwcAf93OF6I.m4a
+138:dub/King Earthquake - Trojan + Dub-OYjWceVViWQ.opus
+139:dub/King Earthquake - White Sand-d-kX7hEXXw4.opus
+140:dub/King Earthquake ~ Sister Olidia ~ Jah Kingdom-gVWsoRZmAY0.m4a
+141:dub/King General - Money Runs Things-TB4HeC4uMz8.opus
+142:dub/La Chasse Aux Papillons (Panda Dub)-P5FmAW5XJjA.opus
+143:dub/Lee 'Scratch' Perry - Blackboard Jungle Dub [2012 Record Store Day Deluxe Edition]-8Qb3Ow98eWQ.opus
+144:dub/Lee Perry And The Upsetters - Jungle Lion-Ke6NVMfIhcI.opus
+145:dub/Leroy Smart-the meaning of life '12'-xoJ12XBTreE.opus
+146:dub/Lord Hissayas - We Believe In One God-zO0g7YY6khI.opus
+147:dub/Love of Dub - Bristol-F-IRX-hOPsE.opus
+148:dub/Mad Professor - Rasta Dub-M9PkADawUKU.opus
+149:dub/Mad professor meets Jah Shaka - Claps like Thunder.-quKGCsasejk.opus
+150:dub/Mahom - Deep in your-_3uMa8wtI3s.opus
+151:dub/Mahom - Faso Feu-TWar-CdvSF0.opus
+152:dub/Marcus Gad & Tribe - Chanting-Tj2m42KEHwo.opus
+153:dub/Mexican Stepper - Les 4 vents (Part dub Chazbo)-X8X8NLiQCdE.opus
+154:dub/Michael Prophet - Rootsman  ( Ariwa Sounds 1999 )-vkCHzps4PsY.opus
+155:dub/Michael Prophet Conscious man & dub-UGoEssV1Ayw.opus
+156:dub/Mighty Cricket -  Jah is so good + The Dub Machinist - Earthquake (part 1 & 2)-fS4-f6LahxY.opus
+157:dub/Minima - Warrior dub-Zke-p-J3zKE.opus
+158:dub/Miniman - Back to roots-8yfS_40sj6E.opus
+159:dub/Miniman - Dub land-KPCifaXnkRA.opus
+160:dub/Miniman - En Marche Pour Sion-JvUfPm0D9UM.opus
+161:dub/Miniman - Path Of Dub-ftDJ_cOwXe0.opus
+162:dub/Miniman Back to roots - Inna di dance-bAYq_MI1__E.opus
+163:dub/MINIMAN-Conscious dub-MZ1cFNLMcVA.opus
+164:dub/Mixman - Antiquities + Antiquities 2nd Cut + Antiquities 3rd Cut-ASgXVbbjxcY.opus
+165:dub/Moses-D-Maximillian_Moses Version-Blakamix (Blakamix)-GsWpsbtXt2w.opus
+166:dub/Mr Zebre - Anthem-JBYhQD1XSN0.opus
+167:dub/Mr Zebre - Warrior Charge feat Brother Culture + Dub-cLTrjhDGsVQ.opus
+168:dub/Mungo's Hi Fi ft. Soom T - Jump up quickly [SCRUB008]-WgqqUH8dsLw.m4a
+169:dub/Mungos  hi-fi    'Barnstormer'-7uET1uuC4Ic.opus
+170:dub/MYKAL ROSE   GANJA OVER GUNS   CULTIVATOR RIDDIM 2014-RGWNwcC5j9s.opus
+171:dub/Maasai Warrior _ Bliss Zion - Freedom outta Babylon - Dub Babylon-DGbN7Vn9Aew.opus
+172:dub/N-Tone - 80'S Madness - Grow Mix & Ruff Mix  _ Hi Fif - E.Q. Teachings - Learning Mix & Dark mix-yswIzSlkmSU.m4a
+173:dub/Natural Tribulation ft. Black Omolo - Steamers Meditation (Full EP)-CF22KyWBSiI.opus
+174:dub/NATURALLY & DUB  - REALITY SOULJAHS (AMOUL BAYI RECORDS 12')-otSC2hH_sac.opus
+175:dub/nebuchadnezzar-dub--creation stepper, Russ D (Disciple Vintage)-rP6DDQwVNIc.opus
+176:dub/New Song - Bagga T (aka Jah Melodie)-6_0Z7nU7o4o.opus
+177:dub/Nora Dean   Peace Begins Within-p-eAs8FPG9A.m4a
+178:dub/O.B.F - Mystik Revelation-k08hYk4cmUY.opus
+179:dub/OBF - Forward Dub Pt 1-Uf0BSgAR9BA.opus
+180:dub/OBF - System Ruff [feat. Warrior Queen] + Dub Ruff !-8GnpVQrgsCs.opus
+181:dub/OBF meets DAN MAN - Wicked haffi run - 12inch OBF records-AjVli7b3-Mw.opus
+182:dub/Pablo Gad - Hard Times Yard + dub Yard-80Il0UdZ13A.opus
+183:dub/Pablo Gad - Lighter Shade Of Dub (Black Roots BR043 B-Side 12 Inch) (Hard Times Dub-1ehG6dQCj3Q.opus
+184:dub/Pablo Gad - Oh Jah-hizE1sfRWLc.opus
+185:dub/Panda Dub - (R)evolution-CzoTpxIlHQ8.opus
+186:dub/Panda dub - 2005-2008 - Absorption-oHCOcaOw3jc.opus
+187:dub/Panda Dub - L'arbre à son-Rc1ABD9YFQE.opus
+188:dub/Panda Dub - smile is the key-QTP5I4x1Yr0.opus
+189:dub/Panda Dub - The Lost Ship - 7 - Unknown attack-BetlmdAhdFA.opus
+190:dub/Panda Dub - Time-IAyQlB-7KIc.opus
+191:dub/Panda Dub (Meets Dubatriator) - Neighbour Connexion-Y8CKeWxRE7U.opus
+192:dub/Paolo Baldini DubFiles Ft. Hempress Sativa - Boom (Wah Da Da Deng)-j2ny3JhPn7U.opus
+193:dub/Papa Dimes - Thru Me 1982 Greensleeves 12' GRED 104-CcEuMIn-5pA.opus
+194:dub/Paulette Wright - Protect The Earth Extended (DUBATRIATION).wmv-jMbyn9JELW4.opus
+195:dub/Polo`s Schmetterding Mary Jane 1985-l9tocScymnA.opus
+196:dub/Power Pack-Errol Arawak_Dub Power-King Earthquake (King Earthquake)-6d0uJ2S_2PU.opus
+197:dub/PUPA JIM INDUHMAN WARNING DUB PLATE SPECIAL-z-CFIRjH78k.opus
+198:dub/Pupajim (Stand High Patrol Sound System) - Gimmi di dubplate-YluQtI19zeI.m4a
+199:dub/Radikal Guru - Dread commandments-o3LFWKd2UK8.opus
+200:dub/Radikal Guru - Fire (ft. Brother Culture)-fSu50ZLDdPQ.opus
+201:dub/Radikal Guru - Strong Dub-FYFxM3d16e0.opus
+202:dub/Ramon Judah - the vibe (Vibescreator Records VCR7004)-v4AIdE6RTEw.opus
+203:dub/Raphie Meets Martin Campbell - Oh My Brother + Dub-TVFz0ONPbQA.opus
+204:dub/Ras Charmer - Songs of Zion(Mungo Hi-Fi)-KrXFFeqjy40.opus
+205:dub/Ras Ico & The Shades ‎– See Mount Zion + Dub + Melodica Part + Version (Darker Shade Of Roots 7')-nfX6QthRI_8.opus
+206:dub/Ras Michael  & The Sons Of Negus - Truth & Right Dub-hopBtmNh1XE.opus
+207:dub/Ras Michael - In Zion--RDq5bzTmu70.opus
+208:dub/Razor Blade Dub - observer records-ZBmLi5zLbfs.opus
+209:dub/Reality Souljahs_ Jah Marnyah [Amoul Bayi Records]-T6LBE_fDaVA.m4a
+210:dub/Richie Spice - Marijuana pon di corna (letra y traduccion)-eNtE3zChalQ.opus
+211:dub/RISE UP _ KING'S HIGHWAY (Rootical Attack Records)-KtqFOOtilQw.opus
+212:dub/Roots Ista Posse meets Ras Mykha - Protect Myself + Protect Mi Dub-uvckW3Llnt4.opus
+213:dub/RSD - Jah Way-NK8jI33MJUA.opus
+214:dub/Ruffy & Tuffy and Iration - The Day After + Version-72UOTI5M_hw.opus
+215:dub/Screechie Dan - Mama Ball-TuSl93ZDVtU.opus
+216:dub/Send Another Moses-Winston Fergus_Another Dub-E. Ramsey (King Earthquake)-2fNNDwLbA78.opus
+217:dub/Shanti D meets Mayd Hubb - Politik - Dubatriation Records 2012 (D7003 7' vinyl)-GGl264jhJ50.opus
+218:dub/Singie Shante - Mental Slavery-vB5Smn23074.opus
+219:dub/Sis I-Leen Open The Borders & Dub-EmoZsSvYFys.m4a
+220:dub/Sista Aude Meets MatDTSound & Woody Vibes - Love Jah-CGqdUyI7cXI.opus
+221:dub/Sista Mary - Blindeye-UUiYERphj_Q.opus
+222:dub/Sista Mary - Can't fool I + Dub (Ital Thunder meets Echo Roots) .wmv-lwZllpbx2kY.opus
+223:dub/Sister Beloved - The eye of the storm _ King Alpha - Storm dub-HB8kvcMGo9c.opus
+224:dub/Sister Nadia -  Life is Today + version-b_0gzeXMx-w.opus
+225:dub/Sister Nancy - BAM BAM-qXnT3LFTc-s.m4a
+226:dub/Sister Olidia - Dread out deh-cqgS_ijFh5s.opus
+227:dub/Skank To Azania & Dub - Stamina Li Sta Sax (Amoul bayi Records 12')-AI0PHBnQ6E4.opus
+228:dub/Sledgehammer - Aggro-S_ShyQmZQVU.opus
+229:dub/Sly & Robbie - Dub Softly-W946yK2EFmI.opus
+230:dub/Social Living Sounds feat. Jah Zebi - Blood and Fire + Version-1gAdQzq1fKQ.opus
+231:dub/Sodom & Gomorrah-Sister Olidia_Sodom Dub-E. Ramsey (King Earthquake)-sYLuG0dLakQ.opus
+232:dub/Sound Iration In Dub - C.T.U.F.B. track 5-PyEg3MjsmQs.opus
+233:dub/Stephanie - Jah love is the key-9ZqEaTBllbk.opus
+234:dub/Sugar Minott - Strictly Sensi-Q8Tw-orL59w.opus
+235:dub/Sylford Walker - Chant down Babylon.-unoW1hrA280.m4a
+236:dub/Talk to the People - Mungo's Hi Fi-DjvBzxvkEhQ.opus
+237:dub/Tara Putra - Freedom Fighters - Dubland - Reggae Dub-s1LxvL6DTOY.opus
+238:dub/Tarishi ‎- Jah Children-GzHDTmogWZQ.opus
+239:dub/The Blackstarliners - Roaring Lion-Q8xrEEzxw38.opus
+240:dub/The Frightnrs 'Till Then'-1hAywVxvuy0.m4a
+241:dub/The Revolutionaries - Kunta Kinte-jliZ6PpUcIY.opus
+242:dub/The Rootsman - Intifada - Partial Records 10' PRTL10003A-81CfI0PmWAA.m4a
+243:dub/The Twinckle Brothers   Dub massacre Part 1 2   18   Escape of the assassin-Y5F1_f3U6ZQ.opus
+244:dub/The Upsetters - Chim Cherie-4MBpN7XwVio.opus
+245:dub/The Wackies Rhythm Force - Mystic-dY0Ky6ZmQ3k.opus
+246:dub/Tiburk - Taste it right - Full Album-SI9UPR1ppPY.opus
+247:dub/Tiburk - Yoko-o_QJf-pViL0.opus
+248:dub/TNT Roots - Elohim (Aba Shanti-I Killer)-yZY3-fayvVk.opus
+249:dub/TNT Roots - The Trumpet Of Zion Remix + Verse II (Aba Shanti-I Killer)-uFx13d4ph14.opus
+250:dub/Tom Jarmey - Claudia's Place-q40hkAAkRFA.opus
+251:dub/Tommy McCook - West Of Parade-NvD74JA7UTs.opus
+252:dub/Tonto Irie - Experience-GQjxP-bFJRQ.m4a
+253:dub/Toyan vs Burro Banton (Solomon_Stumbling Block)-Umwj6sh0sIc.opus
+254:dub/Triston Palmer -  Miserable Woman + Drum & Bass To Your Face  1982-8dF1gMNMzfE.m4a
+255:dub/Tsunami Wazahari -  Hanuman Hi Fi -  Dub To Lie-DmKpsy36EpY.opus
+256:dub/Tsunami Wazahari - Chakra Rules-mpp6XiVq8gI.opus
+257:dub/TUNE OF THE DAY-K0nCWQlr8Pg.m4a
+258:dub/TUNE OF THE DAY-pwkL8y7CUdk.m4a
+259:dub/TUNE OF THE DAY-YPa9T94awCQ.m4a
+260:dub/Twin Roots - Jah Light 7''.mp4-U2It_OQwzgk.m4a
+261:dub/UK Dub Playlist-8EUuxoLp8d0.opus
+262:dub/Uptown Rebel - Indian Dub-hb_YoRXyxEQ.opus
+263:dub/Vibronics meets Kanka - Indian Time-LHWIFo68eNI.opus
+264:dub/Vibronics-Spiritunational-uza9LaCO6FU.m4a
+265:dub/Wailing Souls - They Don't Know Jah 12'  1982-p_ZruKS9qPA.opus
+266:dub/WhoDemSound - Lazy Dub-zykqu_I6qLw.opus
+267:dub/Winston Fergus - Bills Pressure + Dub (King Earthquake 12')-nTerkYaPo0g.opus
+268:dub/Xana Romeo - Mercy Please (Lyrics CC)-sWWGAyi0P94.opus
+269:dub/Yami Bolo - Free Mandela-T60St6sYUmk.opus
+270:dub/Yehoud I - Leave Babylon-RFLTBfFaTtw.opus
+271:dub/Young Maasai - House Of Judah-Kp_8bNUTUJw.opus
+272:dub/Zentone - Zentown-Flbympi5uu4.opus
+273:dub/ZENZILE - SMELL THE ROSES-OMweqcWCIkU.opus
+274:dub/Zoro - killing fields + iyah one killing ( dub )-ItM7bZQdm0k.opus
 playlist_end

@@ -1,3 +1,4 @@
+#!/bin/sh
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
 alias t='cd ~/files/texts && pwd' ;
@@ -5,7 +6,7 @@ alias s='cd ~/files/texts/synk && pwd' ;
 alias d='cd ~/files/documents && pwd' ;
 alias ma='cd ~/files/documents/man && pwd' ;
 alias b='cd ~/files/diverse/build && pwd' ;
-alias of='cd ~/files/build/of && pwd' ;
+alias oF='cd ~/files/diverse/build/oF && pwd' ;
 alias i='cd ~/files/media/images && pwd' ;
 alias v='cd ~/files/media/video && pwd' ;
 alias iw='cd ~/files/media/images/wallpapers && pwd' ;
@@ -41,8 +42,8 @@ alias rme1='/run/media/eirik/hdd_1tb && pwd' ;
 alias rmemp='/run/media/eirik/mp_64gb && pwd' ;
 
 # Mac shortcuts
-alias hdd='cd /Volumes/hdd_1tb' ;
-alias serier1='cd /Volumes/hdd_1tb/video/serier' ;
-alias 4tb='cd /Volumes/4tb' ;
-alias serier4='cd /Volumes/4tb/video/serier' ;
-alias mp64='cd /Volumes/mp_64gb' ;
+#alias hdd='cd /Volumes/hdd_1tb && pwd' ;
+#alias serier1='cd /Volumes/hdd_1tb/video/serier && pwd' ;
+#alias 4tb='cd /Volumes/4tb && pwd' ;
+#alias serier4='cd /Volumes/4tb/video/serier && pwd' ;
+#alias mp64='cd /Volumes/mp_64gb && pwd' ;

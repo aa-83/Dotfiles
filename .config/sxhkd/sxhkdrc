@@ -4,7 +4,7 @@ super + Return
 super + d
 	dmenu_run
 super + shift + s
-	slock &  mpc pause ; pauseallmpv ; xset dpms force off
+	slock &  mpc pause ; pauseallmpv
 super + w
     $BROWSER
 
@@ -16,7 +16,7 @@ super + shift + F2
 super + shift + F3
 	$TERMINAL -e ping5
 super + shift + F12
-	mailsync
+	mbsync -a
 
 #Terminal software
 super + u
@@ -75,6 +75,14 @@ XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
 	xbacklight -inc 15
+XF86PowerOff
+    prompt 'Do you want to shutdown?' 'systemctl poweroff'
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+XF86AudioRaiseVolume
+	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%
 
 #Scripts
 super + control + alt + u
