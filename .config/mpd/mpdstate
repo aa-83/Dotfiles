@@ -1,8 +1,8 @@
-sw_volume: 100
+sw_volume: 86
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
-current: 172
+current: 0
 random: 1
 repeat: 0
 single: 0
@@ -286,4 +286,7 @@ playlist_begin
 272:dub/Zentone - Zentown-Flbympi5uu4.opus
 273:dub/ZENZILE - SMELL THE ROSES-OMweqcWCIkU.opus
 274:dub/Zoro - killing fields + iyah one killing ( dub )-ItM7bZQdm0k.opus
+275:dub/Dubmatix - Wobble Weeble (feat Kulcha ites)-oSrG3S-Vh08.m4a
+276:dub/KNOWLEDGE & TAPPA ZUKIE - WHAT'S YOURS (LEE PERRY BLACK ARK)-ji1pJi6SpcQ.m4a
+277:dub/Prince Jamo - Sheep To The Shepherd _ Jubby Hoffin Dubmix-cTyWj3cf390.m4a
 playlist_end

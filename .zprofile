@@ -4,8 +4,8 @@
 
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$PATH:/home/eirik/files/diverse/build/of"
-export PG_OF_PATH="/home/eirik/files/diverse/build/of"
+export PATH="$PATH:/home/eirik/files/diverse/build/oF"
+export PG_OF_PATH="/home/eirik/files/diverse/build/oF"
 export PATH="$PATH:/home/eirik/.local/share/gem/ruby/2.7.0/bin"
 
 # Default Programs
@@ -38,7 +38,7 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export PASSWORD_STORE_TOMB_FILE="$XDG_DATA_HOME/tomb/password.tomb"
 export PASSWORD_STORE_TOMB_KEY="$XDG_DATA_HOME/tomb/password.tomb.key"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-#export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="gtk2"
 export DICS="/usr/share/stardict/dic/"
 
 eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa aa-83)"

@@ -2,7 +2,6 @@
 alias h='cd ~/ && pwd' ;
 alias f='cd ~/files && pwd' ;
 alias t='cd ~/files/texts && pwd' ;
-alias s='cd ~/files/texts/synk && pwd' ;
 alias d='cd ~/files/documents && pwd' ;
 alias ma='cd ~/files/documents/man && pwd' ;
 alias b='cd ~/files/diverse/build && pwd' ;
@@ -11,17 +10,20 @@ alias i='cd ~/files/media/images && pwd' ;
 alias v='cd ~/files/media/video && pwd' ;
 alias iw='cd ~/files/media/images/wallpapers && pwd' ;
 alias m='cd ~/files/media/music && pwd' ;
+alias mp='cd ~/files/media/music/podcasts && pwd' ;
 alias dl='cd ~/downloads && pwd' ;
 
+alias s='cd ~/files/texts/synk && pwd' ;
+alias ss='cd ~/files/texts/synk/spansk && pwd' ;
 alias a='cd ~/files/texts/synk/arbeid/produksjoner && pwd' ;
 alias sk='cd ~/files/texts/synk/universitet/ddsks/master/andre_år/første_semester && pwd' ;
 alias ho='cd ~/files/texts/synk/hobby && pwd' ;
-alias a='cd ~/files/texts/artisti_practice && pwd' ;
+alias a='cd ~/files/texts/artistic_practice && pwd' ;
 alias ap='cd ~/files/texts/artistic_practice/portfolio && pwd' ;
 alias ar='cd ~/files/texts/artistic_practice/artistic_research && pwd' ;
 
 alias g='cd ~/files/diverse/git_repositories/ && pwd'
-alias .g='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
+alias g.='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
 alias gd='cd ~/files/diverse/git_repositories/dwm && pwd'
 alias gdw='cd ~/files/diverse/git_repositories/dwmblocks && pwd'
 alias gdm='cd ~/files/diverse/git_repositories/dmenu && pwd'
@@ -34,6 +36,7 @@ alias lb='cd ~/.local/bin && pwd' ;
 alias lbs='cd ~/.local/bin/scripts && pwd' ;
 alias lsh='cd ~/.local/share && pwd' ;
 alias lsp='cd ~/.local/share/password-store && pwd' ;
+alias lsm='cd ~/.local/share/mail && pwd' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
 
 alias rme='/run/media/eirik && pwd' ;

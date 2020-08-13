@@ -16,7 +16,7 @@ super + shift + F2
 super + shift + F3
 	$TERMINAL -e ping5
 super + shift + F12
-	mbsync -a
+	mailcheck
 
 #Terminal software
 super + u
@@ -45,8 +45,6 @@ super + r
 	qbittorrent
 super + shift + r
     pd
-super + shift + F11
-	protonmail-bridge
 
 #Misc
 super + control + shift + u
@@ -68,14 +66,14 @@ super + a
 super + shift + a
 	$TERMINAL -e pulsemixer
 super + s
-	$TERMINAL -e spotify-tui
+	$TERMINAL -e spotify_tui
 
 #XF86
 XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
 	xbacklight -inc 15
-XF86PowerOff
+super + control + alt + q
     prompt 'Do you want to shutdown?' 'systemctl poweroff'
 XF86AudioMute
 	pactl set-sink-mute 0 toggle

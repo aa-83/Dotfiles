@@ -14,27 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.config/mutt
-	accounts
-1
-d/home/eirik/.config/mutt/accounts
-	1-proton_eirik.muttrc
-1
-d/home/eirik
-	.config
-2
-d/home/eirik/.config
-	mutt
-5
-d/home/eirik/.config/mutt
-	accounts
-1
-d/home/eirik/.config/mutt/accounts
-	3-ddsks_eirik.muttrc
-3
-d/home/eirik
-	.config
-2
 d/home/eirik/.config
 	mutt
 5
@@ -107,12 +86,36 @@ d/home/eirik/files/texts/synk/hobby
 d/home/eirik/files/texts/synk/hobby/basic_illustrated_knots
 	Basic Illustrated Knots for the Outdoors (Basic Illustrated Series).pdf
 1
-d/home/eirik/.config
-	nvim
-9
-d/home/eirik/.config/nvim
-	init.vim
-5
+d/home/eirik
+	files
+7
+d/home/eirik/files
+	texts
+4
+d/home/eirik/files/texts
+	cheat_sheets
+3
+d/home/eirik/files/texts/cheat_sheets
+	iwctl.txt
+6
+d/home/eirik
+	files
+7
+d/home/eirik/.local/share/.qbittorrent/downloads
+	Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
+3
+d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
+	Childish Gambino - Summer Pack (Single, 2018)
+1
+d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]/Childish Gambino - Summer Pack (Single, 2018)
+	01. Summertime Magic.mp3
+1
+d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
+	Childish Gambino - Summer Pack (Single, 2018)
+1
+d/home/eirik/.local/share/.qbittorrent/downloads
+	Childish Gambino - This is America.flac
+6
 
 # Right window history (oldest to newest):
 D/home/eirik/.local/share
@@ -211,7 +214,10 @@ D/home/eirik
 D/home/eirik/files/texts/synk/hobby
 	
 0
-D/home/eirik/.config
+D/home/eirik
+	
+0
+D/home/eirik/.local/share/.qbittorrent/downloads
 	
 0
 
@@ -223,6 +229,7 @@ D/home/eirik/.config
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+pdark_future_dice_book_2_chapter_05.opus
 pevery_night's_dub
 psub.mersion
 palert

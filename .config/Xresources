@@ -15,6 +15,34 @@ dwm.font: monospace-11;
 *.foreground: white*/
 *.cursorColor: magenta
 
+!! cyberpunk 8 colour
+*background:  #000b1e
+*foreground:  #0abdc6
+
+*color0:  #0c2b56
+*color8:  #123e7c
+
+*color1:  #8e0000
+*color9:  #cc0000
+
+*color4:  #930089
+*color12:  #d300c4
+
+*color3:  #ab5400
+*color11:  #f57800
+
+*color2:  #116211
+*color10:  #198c19
+
+*color5:  #4f1365
+*color13: #711c91
+
+*color6:  #07848A
+*color14:  #0abdc6
+
+*color7:  #b2b2b2
+*color15:  #ffffff
+
 /*!! cyberpunk 16 colour
 *background:  #000b1e
 *foreground:  #0abdc6
@@ -33,27 +61,8 @@ dwm.font: monospace-11;
 *color12:  #711c91
 *color13:  #aa1c91
 *color14:  #519a69
-*color15:  #4dffff*/
+*color15:  #4dffff
 
-!! cyberpunk 8 colour
-*background:  #000b1e
-*foreground:  #0abdc6
-*color0:  #123e7c
-*color1:  #cc0000
-*color2:  #d300c4
-*color3:  #f57800
-*color4:  #123e7c
-*color5:  #711c91
-*color6:  #0abdc6
-*color7:  #ffffff
-*color8:  #123e7c
-*color9:  #cc0000
-*color10:  #d300c4
-*color11:  #f57800
-*color12:  #123e7c
-*color13:  #711c91
-*color14:  #0abdc6
-*color15:  #d7d7d5
 
 /*background:  #091833
 *foreground:  #0abdc6

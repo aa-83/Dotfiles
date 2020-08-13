@@ -37,15 +37,16 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 ~/.local/bin/scripts/.fehbg &
 dwmblocks &
 sxhkd &
-spotifyd --no-daemon &
+xrdb ~/.config/Xresources &
 unclutter &
 xcompmgr &
 dunst &
 mpd &
-expressvpn connect smart &
 remaps &
 syncthing -no-browser &
-xrdb ~/.config/Xresources &
+protonmail-bridge --no-window &
+#spotifyd &
+expressvpn connect smart &
 
 xinput disable SynPS/2\ Synaptics\ TouchPad &
 
