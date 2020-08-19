@@ -14,33 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.config
-	mutt
-5
-d/home/eirik/.config/mutt
-	accounts
-1
-d/home/eirik/.config/mutt/accounts
-	2-gmail_eirik.muttrc
-2
-d/home/eirik/.config/mutt
-	accounts
-1
-d/home/eirik/.config
-	mutt
-5
-d/home/eirik/.config/mutt
-	accounts
-1
-d/home/eirik/.config
-	mutt
-5
-d/home/eirik
-	.mbsyncrc
-8
-d/home/eirik/files/texts/synk/hobby/gw
-	inquisitor
-3
 d/home/eirik/files/texts/synk/hobby/gw/inquisitor
 	Campaign
 1
@@ -100,42 +73,51 @@ d/home/eirik/files/texts/cheat_sheets
 6
 d/home/eirik
 	files
-7
-d/home/eirik/.local/share/.qbittorrent/downloads
-	Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
 3
-d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
-	Childish Gambino - Summer Pack (Single, 2018)
-1
-d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]/Childish Gambino - Summer Pack (Single, 2018)
-	01. Summertime Magic.mp3
-1
-d/home/eirik/.local/share/.qbittorrent/downloads/Childish Gambino - Summer Pack (Single, 2018) Mp3 (320kbps) [Hunter]
-	Childish Gambino - Summer Pack (Single, 2018)
+d/home/eirik/.local/bin/scripts
+	srn
+18
+d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
+	200813_prapp_et_dukkehjem_nr18.md
+5
+d/home/eirik/files/texts/synk/universitet/ddsks/master
+	dokumentasjon
+2
+d/home/eirik/files/texts/synk/universitet/ddsks/master/dokumentasjon
+	..
+0
+d/home/eirik/files/texts/synk/universitet/ddsks/master
+	første_år
+3
+d/home/eirik/files/texts/synk/universitet/ddsks
+	ymse
+3
+d/home/eirik/files/texts/synk/universitet/ddsks/ymse
+	mastersøknad
+4
+d/home/eirik/files/texts/synk/universitet/ddsks/ymse/mastersøknad
+	portfolio
+2
+d/home/eirik/files/texts/synk/universitet/ddsks/ymse/mastersøknad/portfolio
+	fugue.png
 1
 d/home/eirik/.local/share/.qbittorrent/downloads
-	Childish Gambino - This is America.flac
-6
+	the_rocky_horror_picture_show
+9
+d/home/eirik/.local/share/.qbittorrent/downloads/the_rocky_horror_picture_show
+	The.Rocky.Horror.Picture.Show.1975.1080p.BluRay.x264.VPPV.srt
+2
+d/home/eirik/files/media/music/the_blues_brothers
+	various_artists_(02)_peter_gunn_theme_.mp3
+2
+d/home/eirik
+	..
+0
+d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
+	200819_kmdll.tex
+22
 
 # Right window history (oldest to newest):
-D/home/eirik/.local/share
-	
-0
-D/home/eirik/.local/bin/scripts
-	
-0
-D/home/eirik/files/build/dwm
-	
-0
-D/home/eirik
-	
-0
-D/home/eirik/.local/bin/scripts
-	
-0
-D/home/eirik
-	
-0
 D/home/eirik/files/documents/synk/hobby/diy
 	
 0
@@ -217,7 +199,25 @@ D/home/eirik/files/texts/synk/hobby
 D/home/eirik
 	
 0
+D/home/eirik/.local/bin/scripts
+	
+0
+D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
+	
+0
+D/home/eirik/files/texts/synk/universitet/ddsks/master
+	
+0
 D/home/eirik/.local/share/.qbittorrent/downloads
+	
+0
+D/home/eirik/files/media/music/the_blues_brothers
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
 	
 0
 
@@ -758,3 +758,19 @@ t/run/media/eirik/4tb/.vifm-Trash-1000/000_other_superhero_related_cartoons_show
 	/run/media/eirik/4tb/video/film/spillefilm/batman/batman_the_animated_series/other_superhero_related_cartoons_shows_and_movies_here
 t/home/eirik/.local/share/vifm/Trash/000_main.cpp
 	/home/eirik/files/diverse/build/oF/apps/myApps/ofBook_1/src/main.cpp
+t/home/eirik/.local/share/vifm/Trash/000_frame.png
+	/home/eirik/files/media/images/movie_screenshots/frame.png
+t/home/eirik/.local/share/vifm/Trash/000_gem
+	/home/eirik/.cache/gem
+t/home/eirik/.local/share/vifm/Trash/000_gimp
+	/home/eirik/.cache/gimp
+t/home/eirik/.local/share/vifm/Trash/000_gotop
+	/home/eirik/.cache/gotop
+t/home/eirik/.local/share/vifm/Trash/000_krita
+	/home/eirik/.cache/krita
+t/home/eirik/.local/share/vifm/Trash/000_neosnippet
+	/home/eirik/.cache/neosnippet
+t/home/eirik/.local/share/vifm/Trash/000_vimtex
+	/home/eirik/.cache/vimtex
+t/home/eirik/.local/share/vifm/Trash/000_rx_bytes
+	/home/eirik/.cache/rx_bytes
