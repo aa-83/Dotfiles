@@ -22,14 +22,14 @@ alias a='cd ~/files/texts/artistic_practice && pwd' ;
 alias ap='cd ~/files/texts/artistic_practice/portfolio && pwd' ;
 alias ar='cd ~/files/texts/artistic_practice/artistic_research && pwd' ;
 
-alias g='cd ~/files/diverse/git_repositories/ && pwd'
-alias g.='cd ~/files/diverse/git_repositories/Dotfiles && pwd'
-alias gd='cd ~/files/diverse/git_repositories/dwm && pwd'
-alias gdw='cd ~/files/diverse/git_repositories/dwmblocks && pwd'
-alias gdm='cd ~/files/diverse/git_repositories/dmenu && pwd'
-alias gs='cd ~/files/diverse/git_repositories/st && pwd'
-alias gsl='cd ~/files/diverse/git_repositories/slock && pwd'
-alias gsls='cd ~/files/diverse/git_repositories/slstatus && pwd'
+alias g='cd ~/files/diverse/git_repositories/ && pwd' ;
+alias g.='cd ~/files/diverse/git_repositories/Dotfiles && pwd' ;
+alias gd='cd ~/files/diverse/git_repositories/dwm && pwd' ;
+alias gdw='cd ~/files/diverse/git_repositories/dwmblocks && pwd' ;
+alias gdm='cd ~/files/diverse/git_repositories/dmenu && pwd' ;
+alias gs='cd ~/files/diverse/git_repositories/st && pwd' ;
+alias gsl='cd ~/files/diverse/git_repositories/slock && pwd' ;
+alias gsls='cd ~/files/diverse/git_repositories/slstatus && pwd' ;
 
 alias c='cd ~/.config && pwd' ;
 alias lb='cd ~/.local/bin && pwd' ;
