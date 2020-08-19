@@ -45,7 +45,6 @@ mpd &
 remaps &
 syncthing -no-browser &
 protonmail-bridge --no-window &
-#spotifyd &
 expressvpn connect smart &
 
 xinput disable SynPS/2\ Synaptics\ TouchPad &
