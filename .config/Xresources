@@ -2,7 +2,7 @@
 *.alpha: 0.9
 
 !! Set a default font and font size as below:
-st.font: monospace-14;
+st.font: monospace-16;
 dwm.font: monospace-11;
 *.font: monospace-14;
 *.fontalt0: JoyPixels-12;
