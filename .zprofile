@@ -39,7 +39,7 @@ export PASSWORD_STORE_TOMB_FILE="$XDG_DATA_HOME/tomb/password.tomb"
 export PASSWORD_STORE_TOMB_KEY="$XDG_DATA_HOME/tomb/password.tomb.key"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export QT_QPA_PLATFORMTHEME="gtk2"
-export DICS="/usr/share/stardict/dic/"
+export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 
 eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa aa-83)"
 
