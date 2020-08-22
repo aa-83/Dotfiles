@@ -2,7 +2,7 @@
 *.alpha: 0.9
 
 !! Set a default font and font size as below:
-st.font: monospace-16;
+st.font: monospace-14;
 dwm.font: monospace-11;
 *.font: monospace-14;
 *.fontalt0: JoyPixels-12;
@@ -11,77 +11,105 @@ dwm.font: monospace-11;
 *.borderpx: 2
 
 !! Set the background, foreground and cursor colors as below:
-/**.background: #282828
-*.foreground: white*/
+/*.background: #282828*/
+/*.foreground: white*/
 *.cursorColor: magenta
 
-!! cyberpunk 8 colour
-*background:  #000b1e
-*foreground:  #0abdc6
+!! cyberpunk 16 colour bright
+*background: #000e22
+*foreground: #0abdc6
 
-*color0:  #0c2b56
-*color8:  #123e7c
+*color8: #123e7c
+*color0: #416496
 
-*color1:  #8e0000
-*color9:  #cc0000
+*color9: #cc0000
+*color1: #d63232
 
-*color4:  #930089
-*color12:  #d300c4
+*color10: #198c19
+*color2: #46a346
 
-*color3:  #ab5400
-*color11:  #f57800
+*color11: #f57800
+*color3: #f79332
 
-*color2:  #116211
-*color10:  #198c19
+*color12: #711c91
+*color4: #8d49a7
 
-*color5:  #4f1365
-*color13: #711c91
+*color13: #ff00ff
+*color5: #ff32ff
 
-*color6:  #07848A
-*color14:  #0abdc6
+*color14: #0abdc6
+*color6: #3acad1
 
-*color7:  #b2b2b2
-*color15:  #ffffff
+*color15: #ffffff
+*color7: #e5e5e5
+
+!! cyberpunk 16 colour dark
+/*background: #000b1e*/
+/*foreground: #0abdc6*/
+
+/*color0: #0c2b56*/
+/*color8: #123e7c*/
+
+/*color1: #8e0000*/
+/*color9: #cc0000*/
+
+/*color2: #116211*/
+/*color10: #198c19*/
+
+/*color3: #ab5400*/
+/*color11: #f57800*/
+
+/*color4: #930089*/
+/*color12: #d300c4*/
+
+/*color5: #4f1365*/
+/*color13: #711c91*/
+
+/*color6: #07848A*/
+/*color14: #0abdc6*/
+
+/*color7: #b2b2b2*/
+/*color15: #ffffff */
 
 /*!! cyberpunk 16 colour
-*background:  #000b1e
-*foreground:  #0abdc6
-*color0:  #001812
-*color1:  #be002d
-*color2:  #818900
-*color3:  #be5800
-*color4:  #620080
-*color5:  #be007e
-*color6:  #088976
-*color7:  #008b8f
-*color8:  #416c69
-*color9:  #cf1c3b
-*color10:  #919a15
-*color11:  #cf7413
-*color12:  #711c91
-*color13:  #aa1c91
-*color14:  #519a69
-*color15:  #4dffff
+*background:  #000b1e*/
+/*foreground:  #0abdc6*/
+/*color0:  #001812*/
+/*color1:  #be002d*/
+/*color2:  #818900*/
+/*color3:  #be5800*/
+/*color4:  #620080*/
+/*color5:  #be007e*/
+/*color6:  #088976*/
+/*color7:  #008b8f*/
+/*color8:  #416c69*/
+/*color9:  #cf1c3b*/
+/*color10:  #919a15*/
+/*color11:  #cf7413*/
+/*color12:  #711c91*/
+/*color13:  #aa1c91*/
+/*color14:  #519a69*/
+/*color15:  #4dffff*/
 
 
-/*background:  #091833
-*foreground:  #0abdc6
-*color0:  #091833
-*color1:  #cc0065
-*color2:  #352d68
-*color3:  #8a1c00
-*color4:  #2121e4
-*color5:  #a70597
-*color6:  #4624a8
-*color7:  #23b8a1
-*color8:  #001d30
-*color9:  #bc0322
-*color10:  #00346a
-*color11:  #a01300
-*color12:  #6f10e3
-*color13:  #b900af
-*color14:  #172c9e
-*color15:  #0abdc6*/
+/*background:  #091833*/
+/*foreground:  #0abdc6*/
+/*color0:  #091833*/
+/*color1:  #cc0065*/
+/*color2:  #352d68*/
+/*color3:  #8a1c00*/
+/*color4:  #2121e4*/
+/*color5:  #a70597*/
+/*color6:  #4624a8*/
+/*color7:  #23b8a1*/
+/*color8:  #001d30*/
+/*color9:  #bc0322*/
+/*color10:  #00346a*/
+/*color11:  #a01300*/
+/*color12:  #6f10e3*/
+/*color13:  #b900af*/
+/*color14:  #172c9e*/
+/*color15:  #0abdc6*/
 
 /* !! gruvbox: */
 /* *.color0: #1d2021 */
