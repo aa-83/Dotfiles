@@ -7,16 +7,6 @@ execute pathogen#infect('~/.config/nvim/bundle/{}')
 syntax on
 filetype plugin indent on
 
-"Plugin 'lervag/vimtex'
-"Plugin 'dense-analysis/ale'
-"Plugin 'neomake/neomake'
-"Plugin 'vim-syntastic/syntastic'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'ludovicchabant/vim-gutentags'
-"Plugin 'junegunn/goyo.vim'
-"Plugin 'vifm/vifm.vim'
-"Plugin 'preservim/nerdtree'
-
 set bg=light
 set go=a
 set mouse=a
@@ -100,9 +90,8 @@ let g:tex_view_general_viewer = 'zathura'
 let g:tex_vimtex_viewer = 'zathura'
 
 " Start nerdtree when vim opens
-"	autocmd vimenter * NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-	map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
 
 "Enable Goyo by default for mutt writing
 "autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
@@ -131,22 +120,6 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
-" Ultisnips config
-"let g:SuperTabDefaultCompletionType    = '<C-b>'
-"let g:SuperTabCrMapping                = 0
-"let g:UltiSnipsExpandTrigger           = '<tab>'
-"let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-"let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-"let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
-" ALE
-"let b:ale_fixers = ['uncrustify']
-"let b:ale_linters = ['gcc']
-
 set tags=~/tags
 set tags=./tags;
 
@@ -163,16 +136,7 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 " Colours
 set colorcolumn=80
-highlight ColorColumn ctermbg=darkgreen
-set background=light
+highlight ColorColumn ctermbg=magenta
