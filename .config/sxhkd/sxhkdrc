@@ -20,7 +20,7 @@ super + shift + F12
 
 #Terminal software
 super + u
-	$TERMINAL -e vuz
+	$TERMINAL -e vufm
 super + shift + u
 
 super + i
