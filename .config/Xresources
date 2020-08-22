@@ -13,10 +13,10 @@ dwm.font: monospace-11;
 !! Set the background, foreground and cursor colors as below:
 /*.background: #282828*/
 /*.foreground: white*/
-*.cursorColor: magenta
+*.cursorColor: #ea00d9
 
 !! cyberpunk 16 colour bright
-*background: #000e22
+*background: #091833
 *foreground: #0abdc6
 
 *color8: #123e7c
@@ -34,8 +34,8 @@ dwm.font: monospace-11;
 *color12: #711c91
 *color4: #8d49a7
 
-*color13: #ff00ff
-*color5: #ff32ff
+*color13: #ea00d9
+*color5: #ee32e0
 
 *color14: #0abdc6
 *color6: #3acad1
