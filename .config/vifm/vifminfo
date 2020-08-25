@@ -14,39 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/boot/EFI
-	arch
-3
-d/boot/EFI/arch
-	..
-0
-d/boot/EFI
-	systemd
-4
-d/home/eirik
-	.mbsyncrc
-4
-d/home/eirik/files/texts/synk/hobby
-	basic_illustrated_knots
-1
-d/home/eirik/files/texts/synk/hobby/basic_illustrated_knots
-	Basic Illustrated Knots for the Outdoors (Basic Illustrated Series).pdf
-1
-d/home/eirik
-	files
-7
-d/home/eirik/files
-	texts
-4
-d/home/eirik/files/texts
-	cheat_sheets
-3
-d/home/eirik/files/texts/cheat_sheets
-	iwctl.txt
-6
-d/home/eirik
-	files
-3
 d/home/eirik/.local/bin/scripts
 	srn
 18
@@ -116,20 +83,41 @@ d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
 d/home/eirik/files/texts/synk/memes/images
 	artsupplies_and_pain.jpg
 3
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
+	books
+2
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
+	beyond_the_mountains_of_madness.pdf
+6
+d/home/eirik/files/texts/synk/hobby
+	call_of_cthulhu
+2
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
+	books
+2
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
+	before_the_fall.pdf
+5
+d/home/eirik/files/texts/synk/hobby/cyberpunk_2020
+	podcast
+4
+d/home/eirik/files/texts/synk/hobby/cyberpunk_2020/podcast
+	dark_future_dice_book_1
+1
+d/home/eirik/files/texts/synk/hobby/cyberpunk_2020/podcast/dark_future_dice_book_1
+	..
+0
+d/home/eirik/files/texts/synk/hobby/cyberpunk_2020/podcast
+	dark_future_dice_book_2
+2
+d/home/eirik/files/texts/synk/hobby/cyberpunk_2020/podcast/dark_future_dice_book_2
+	dark_future_dice_book_2_chapter_06.opus
+8
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
+	7th_ed_core_rulebook_(revised).pdf
+5
 
 # Right window history (oldest to newest):
-D/etc/pacman.d
-	
-0
-D/run/media/eirik/hdd_1tb/video/film/spillefilm/jurassic_park
-	
-0
-D/home/eirik
-	
-0
-D/home/eirik/.config/vifm/scripts
-	
-0
 D/home/eirik
 	
 0
@@ -218,6 +206,18 @@ D/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
 	
 0
 D/home/eirik/files/texts/synk/memes/images
+	
+0
+D/home/eirik/files/texts/synk/hobby/call_of_cthulhu
+	
+0
+D/home/eirik/files/texts/synk/hobby
+	
+0
+D/home/eirik/files/texts/synk/hobby/cyberpunk_2020
+	
+0
+D/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
 	
 0
 

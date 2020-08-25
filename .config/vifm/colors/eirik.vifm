@@ -53,7 +53,7 @@ highlight BrokenLink cterm=bold ctermfg=red ctermbg=default
 highlight Socket cterm=bold ctermfg=magenta ctermbg=default
 highlight Device cterm=bold ctermfg=red ctermbg=default
 highlight Fifo cterm=bold ctermfg=cyan ctermbg=default
-highlight Executable cterm=bold ctermfg=lightmagenta ctermbg=default
+highlight Executable cterm=bold ctermfg=lightgreen ctermbg=default
 highlight Selected cterm=bold ctermfg=magenta ctermbg=default
 highlight CurrLine cterm=bold,reverse ctermfg=default ctermbg=default
 highlight TopLine cterm=bold ctermfg=default ctermbg=blue
