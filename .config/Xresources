@@ -40,8 +40,8 @@ dwm.font: monospace-11;
 *color14: #0abdc6
 *color6: #3acad1
 
-*color15: #ffffff
-*color7: #e5e5e5
+*color15: #fff
+*color7: #eee
 
 !! cyberpunk 16 colour dark
 /*background: #000b1e*/
