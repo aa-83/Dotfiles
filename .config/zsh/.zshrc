@@ -1,5 +1,3 @@
-# Eirik's config for the Zoomer Shell
-
 autoload -U colors && colors
 PROMPT="%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b "
 setopt COMPLETE_ALIASES
