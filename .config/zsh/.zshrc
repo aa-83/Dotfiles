@@ -1,14 +1,17 @@
-autoload -U colors && colors
+autoload -Uz colors && colors
 PROMPT="%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b "
-setopt COMPLETE_ALIASES
-setopt AUTOCD
-setopt CORRECT_ALL
 
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files in autocomplete:
+setopt COMPLETE_ALIASES
+setopt AUTOCD
+setopt CORRECT_ALL
+
+autoload -Uz promptinit
+promptinit
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
@@ -70,7 +73,8 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-
+# Load zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # Mac placements
