@@ -79,4 +79,4 @@ man() {
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 # Mac placements
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/local/share/zsh-syntax-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
