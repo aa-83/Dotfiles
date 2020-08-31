@@ -85,7 +85,10 @@ set vifminfo=dhistory,chistory,tui,shistory,phistory,fhistory,dirstack,registers
 set classify='📁:dir:/,>_ :exe:,📄:reg:,🔗:link:'
 
 " various file names
-set classify+='⬆️ ::../::,>_ ::*.sh::,C ::*.[hc]pp::,C ::*.[hc]::,©️ ::/^copying|license$/::,g ::.git/,,*.git/::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::,🎛️ ::*.conf::'
+set classify+='⬆️ ::../::,>_ ::*.sh::,C ::*.[hc]pp::,C ::*.[hc]::,©️ ::/^copying|license$/::,g ::.git/,,*.git/::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::'
+
+" Configs
+set classify+='🚧::*.conf::'
 
 " encryption
 set classify+='🔑::*.keyring::,🔒::*.gpg,,*.asc,,*.pub,,*.key,,*.kbx,,*.kbx~,,*.key,,*.rev::'
@@ -105,7 +108,11 @@ set classify+='🎹::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.m
 set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
 
 " office files
-set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx],,*.odt,,*.R,,*.Rmd,,*.rmd::,📘::*.md::,🏢::*.pptx,,*.ppt::, 🗒️ ::*.txt::,📔::.tex::,📙::*.log::'
+set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx],,*.odt,,*.R,,*.Rmd,,*.rmd::,📘::*.md::,🏢::*.pptx,,*.ppt::,📔::.tex::,📙::*.log::'
+
+" Text files
+set classify+='📓::*.txt::'
+
 
 " Status line
 " set statusline="  %z%= %A %10u:%-7g %15s %20d  "
