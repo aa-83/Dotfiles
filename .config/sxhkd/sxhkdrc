@@ -22,7 +22,7 @@ super + shift + F12
 super + u
 	$TERMINAL -e vufm
 super + shift + u
-
+	$TERMINAL -e nvim
 super + i
     $TERMINAL -e gotop
 super + shift + i
@@ -34,7 +34,7 @@ super + shift + o
 super + p
 	$TERMINAL -e neomutt
 super + shift p
-	$TERMINAL -e nvim
+	passmenu
 
 # Software
 super + e
@@ -86,9 +86,9 @@ XF86AudioLowerVolume
 super + control + alt + u
 	dmenuunicode
 super + control + alt + p
-	$TERMINAL -e pass_open
+	$TERMINAL -e pass open -f
 super + control + alt + shift + p
-	$TERMINAL -e pass_close
+	$TERMINAL -e pass close
 super + F7
 	dmenumount
 super + F8
