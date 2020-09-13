@@ -19,29 +19,29 @@ dwm.font: monospace-11;
 *background: #091833
 *foreground: #0abdc6
 
-*color8: #123e7c
-*color0: #416496
+*color0: #123e7c
+*color8: #416496
 
-*color9: #cc0000
-*color1: #d63232
+*color1: #cc0000
+*color9: #d63232
 
-*color10: #198c19
-*color2: #46a346
+*color2: #198c19
+*color10: #46a346
 
-*color11: #f57800
-*color3: #f79332
+*color3: #f57800
+*color11: #f79332
 
-*color4: #3232c1
-*color12: #0000b2
+*color4: #0000b2
+*color12: #3232c1
 
-*color13: #711c91
-*color5: #8d49a7
+*color5: #711c91
+*color13: #8d49a7
 
-*color14: #ea00d9
-*color6: #ee32e0
+*color6: #ea00d9
+*color14: #ee32e0
 
+*color7: #0abdc6
 *color15: #0abdc6
-*color7: #3acad1
 
 
 !! cyberpunk 16 colour dark
