@@ -14,57 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/.config/vifm
-	vifmrc
-5
-d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
-	sourcebooks
-9
-d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
-	7th_ed_core_rulebook_(revised).pdf
-5
-d/home/eirik
-	files
-8
-d/home/eirik/files
-	texts
-4
-d/home/eirik/files/texts
-	synk
-6
-d/home/eirik/files/texts/synk
-	hobby
-4
-d/home/eirik/files/texts/synk/hobby
-	call_of_cthulhu
-2
-d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
-	sourcebooks
-9
-d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
-	7th_ed_core_rulebook_(revised).pdf
-5
-d/home/eirik
-	files
-8
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
-	produksjonsplaner
-16
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden/produksjonsplaner
-	..
-0
-d/home/eirik
-	.cache
-1
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
-	200827_prapp_et_dukkehjem_nr28.md
-15
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem
-	prøverapporter
-17
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov
-	et_dukkehjem
-1
 d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret
 	torshov
 2
@@ -120,13 +69,64 @@ d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
 	7th_ed_core_rulebook_(revised).pdf
 5
 d/home/eirik
-	.mozilla
+	files
+8
+d/home/eirik/files
+	texts
 4
+d/home/eirik/files/texts
+	synk
+6
+d/home/eirik/files/texts/synk
+	hobby
+4
+d/home/eirik/files/texts/synk/hobby
+	call_of_cthulhu
+2
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
+	sourcebooks
+10
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
+	7th_ed_keeper_rulebook.pdf
+6
+d/home/eirik/files/texts/synk/hobby/call_of_cthulhu
+	sourcebooks
+10
+d/home/eirik/files/texts/synk/hobby
+	x_wing
+7
+d/home/eirik/files/texts/synk/hobby/x_wing
+	swx36_learn_to_play_lfl_online.pdf
+1
+d/home/eirik
+	files
+8
+d/home/eirik/files
+	texts
+4
+d/home/eirik/files/texts
+	synk
+6
+d/home/eirik/files/texts/synk
+	hobby
+4
+d/home/eirik/files/texts/synk/hobby
+	x_wing
+7
+d/home/eirik/files/texts/synk/hobby/x_wing
+	swx36_learn_to_play_lfl_online.pdf
+1
+d/home/eirik
+	files
+2
+d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
+	template.tex
+16
+d/home/eirik
+	files
+8
 
 # Right window history (oldest to newest):
-D/home/eirik/.config/vifm
-	
-0
 D/home/eirik/files/media/images/nasa
 	
 0
@@ -227,6 +227,12 @@ D/home/eirik
 	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
+	
+0
+D/home/eirik
+	
+0
+D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
 	
 0
 D/home/eirik
@@ -802,3 +808,5 @@ t/home/eirik/.local/share/vifm/Trash/000_Prapp Dukkehjem 26.08 nr 27.docx
 	/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter/Prapp Dukkehjem 26.08 nr 27.docx
 t/home/eirik/.local/share/vifm/Trash/000_Prapp Dukkehjem 27.08 nr 28.docx
 	/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter/Prapp Dukkehjem 27.08 nr 28.docx
+t/home/eirik/.local/share/vifm/Trash/000_Inglourious Basterds 2009 Inglorious Bastards DVDRip x264
+	/home/eirik/.local/share/.qbittorrent/downloads/Inglourious Basterds 2009 Inglorious Bastards DVDRip x264
