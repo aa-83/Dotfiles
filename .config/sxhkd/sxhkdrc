@@ -22,7 +22,7 @@ super + shift + F12
 super + u
 	$TERMINAL -e vufm
 super + shift + u
-	$TERMINAL -e nvim
+	$TERMINAL -e pcmanfm
 super + i
     $TERMINAL -e gotop
 super + shift + i
