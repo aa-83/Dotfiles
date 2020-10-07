@@ -2,6 +2,7 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
+current: 1
 random: 1
 repeat: 0
 single: 0
@@ -14,6 +15,6 @@ playlist_begin
 1:blarf/cease_and_desist/01_badass_bullshit_benjamin_buttons_butthole_assassin_642535323.mp3
 2:kanka/alert/01___step_forward.mp3
 3:kanka/alert/08___nova_dub.mp3
-4:childish_gambino/stn_mtn_kauai/01 Sober.mp3
-5:childish_gambino/childish_gambino_this_is_america.flac
+4:childish_gambino/childish_gambino_this_is_america.flac
+5:childish_gambino/stn_mtn_kauai/01 Sober.mp3
 playlist_end
