@@ -14,33 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/files/diverse/build/dwmblocks/.git/objects
-	2d
-2
-d/home/eirik/files/diverse/build/dwmblocks/.git
-	packed-refs
-11
-d/home/eirik/files/diverse/build/dwmblocks
-	patches
-2
-d/home/eirik/files/diverse/build/dwmblocks/patches
-	dwmblocks-statuscmd-signal.diff
-2
-d/home/eirik/files/diverse/build/dwmblocks
-	.gitignore
-3
-d/home/eirik/files/diverse/build
-	dwmblocks
-4
-d/home/eirik/files/diverse/build/dwmblocks
-	dwmblocks
-8
-d/home/eirik/files/diverse/build
-	ofBook
-7
-d/home/eirik/files/diverse
-	.voidrice
-1
 d/home/eirik/files/diverse/.voidrice
 	.local
 3
@@ -125,11 +98,35 @@ d/home/eirik/.local/share/.qbittorrent/downloads/treme
 d/home/eirik/.local/share/.qbittorrent/downloads/treme/01
 	Treme.S01E01.1080p.Bluray.10bit.x265-HazMatt.mkv
 1
+d/home/eirik
+	.emacs.d
+3
+d/home/eirik/.emacs.d
+	..
+0
+d/home/eirik
+	.thumbnails
+8
+d/home/eirik/.thumbnails
+	large
+1
+d/home/eirik/.thumbnails/large
+	..
+0
+d/home/eirik/.thumbnails
+	normal
+2
+d/home/eirik/.thumbnails/normal
+	05b8b3d622acd3ecd10ba250f7d710d0.png
+1
+d/home/eirik/.thumbnails
+	normal
+2
+d/home/eirik
+	downloads
+8
 
 # Right window history (oldest to newest):
-D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
-	
-0
 D/home/eirik/files/texts/synk/universitet/ddsks/master
 	
 0
@@ -238,6 +235,9 @@ D/home/eirik/.local/share/.qbittorrent/downloads/antman
 D/home/eirik/.local/share/.qbittorrent/downloads/treme
 	
 0
+D/home/eirik
+	
+0
 
 # Command line history (oldest to newest):
 :tree
@@ -290,7 +290,7 @@ pantman_and_the_wasp
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/eirik/.local/share/vifm/Trash/000_AntManAndTheWasp_2018.Swe.srt
+""/home/eirik/.local/share/vifm/Trash/001_.thumbnails
 
 # Directory stack (oldest to newest):
 
@@ -815,3 +815,5 @@ t/home/eirik/.local/share/vifm/Trash/000_AntManAndTheWasp_2018_Pics
 	/home/eirik/.local/share/.qbittorrent/downloads/antman/antman_and_the_wasp/AntManAndTheWasp_2018_Pics
 t/home/eirik/.local/share/vifm/Trash/000_AntManAndTheWasp_2018.Swe.srt
 	/home/eirik/.local/share/.qbittorrent/downloads/antman/antman_and_the_wasp/AntManAndTheWasp_2018.Swe.srt
+t/home/eirik/.local/share/vifm/Trash/001_.thumbnails
+	/home/eirik/.thumbnails
