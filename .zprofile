@@ -2,6 +2,8 @@
 # ~/.profile
 #
 
+export GPG_TTY=$(tty1)
+
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/files/diverse/build/oF"
@@ -11,6 +13,7 @@ export PATH="$PATH:/home/eirik/.local/share/gem/ruby/2.7.0/bin"
 # Default Programs
 export TERMINAL="st"
 export EDITOR="nvim"
+export VISUAL="nvim"
 export FILE="vifm"
 export BROWSER="firefox"
 export READER="zathura"
@@ -41,6 +44,6 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export QT_QPA_PLATFORMTHEME="gtk2"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 
-eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa aa-83)"
+eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa arrogant_ambassador)"
 
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/xinitrc"
