@@ -94,3 +94,4 @@ writeCommonTags: couldn't write 'track' tag to 'podcasts/cyberpunk_2020/dark_fut
 writeCommonTags: couldn't write 'track' tag to 'podcasts/cyberpunk_2020/dark_future_dice_book_2/dark_future_dice_book_2_chapter_18.opus' as it's not a positive integer
 writeCommonTags: couldn't write 'track' tag to 'podcasts/cyberpunk_2020/dark_future_dice_book_2/dark_future_dice_book_2_chapter_19.opus' as it's not a positive integer
 writeCommonTags: couldn't write 'track' tag to 'podcasts/cyberpunk_2020/dark_future_dice_book_2/dark_future_dice_book_2_dark_future_dice_section.opus' as it's not a positive integer
+writeCommonTags: couldn't write 'year' tag to 'atomic_dancer/atomic_techno_track_unmixed.wav' as it's not a positive integer
