@@ -1,5 +1,8 @@
 autoload -Uz colors && colors
-PROMPT="%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b "
+autoload -Uz promptinit
+promptinit
+
+PROMPT='%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b '
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -9,9 +12,6 @@ _comp_options+=(globdots) # Include hidden files in autocomplete:
 setopt COMPLETE_ALIASES
 setopt AUTOCD
 setopt CORRECT_ALL
-
-autoload -Uz promptinit
-promptinit
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
