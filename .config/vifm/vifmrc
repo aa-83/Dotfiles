@@ -61,8 +61,8 @@ filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus mpv -
 filextype *.ps,*.eps,*.ps.gz,*.djvu,*.epub,*.cbz,*.cbr,*.cb7 zathura %f 2>/dev/null &,
 filextype *.pdf zathura %c %i &,
 fileviewer *.pdf vifmimg pdfpreview %px %py %pw %ph %c %pc vifmimg clear
-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.qt,*.divx,*.as[fx],*mp3,*.flac vifmimg videopreview %px %py %pw %ph %c %pc vifmimg clear
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx] mpv %f 2>/dev/null &,
+fileviewer *.avi,*.f4v,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.qt,*.divx,*.as[fx],*mp3,*.flac vifmimg videopreview %px %py %pw %ph %c %pc vifmimg clear
+filextype *.avi,*.f4v,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx] mpv %f 2>/dev/null &,
 
 fileview *.tar.gz atool -l --format=tar %f 2>/dev/null | awk '{$1=$2=$3=$4=$5=""; print $0}'
 fileview *.zip,*.cbz atool -l --format=zip %f 2>/dev/null | tail +4 | awk '{$1=$2=$3=""; print $0}'
@@ -107,7 +107,7 @@ set classify+='📸::*.jpeg,,*.jpg,,*.jpe,,*.webp::'
 set classify+='🎹::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 
 " video
-set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm::'
+set classify+='🎞️ ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid,,*.webm,,*.f4v::'
 
 " office files
 set classify+='📃::*.doc,,*.docx::,📊::*.xls,,*.xls[mx],,*.odt,,*.R,,*.Rmd,,*.rmd::,📘::*.md::,🏢::*.pptx,,*.ppt::,📔::.tex::,📙::*.log::'
