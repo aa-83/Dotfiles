@@ -7,6 +7,7 @@ execute pathogen#infect('~/.config/nvim/bundle/{}')
 syntax on
 filetype plugin indent on
 
+set title
 set bg=light
 set go=a
 set mouse=a

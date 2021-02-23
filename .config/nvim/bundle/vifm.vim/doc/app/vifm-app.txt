@@ -1,4 +1,4 @@
-*vifm-app.txt*    For Vifm version 0.10.1  Last change: 2020 August 8
+*vifm-app.txt*    For Vifm version 0.11  Last change: 2021 Feb 10
 
  Email for bugs and suggestions: <xaizek@posteo.net>
 
@@ -474,6 +474,9 @@ gf                                             *vifm-gf*
     find link destination (like l with |vifm-'followlinks'| off, but also
     finds directories).  On Windows additionally follows .lnk-files.
 
+gF                                             *vifm-gF*
+    Same as gf, but resolves final path of the chain of symbolic links.
+
                                                *vifm-gr*
 gr                                             {only for MS-Windows}
     same as l key, but tries to run program with administrative
@@ -840,7 +843,6 @@ q, Q, ZZ                                       *vifm-q_q* *vifm-q_Q* *vifm-q_ZZ*
 [count]Alt-V                                   *vifm-q_ALT-V*
     scroll backward one window (or [count] lines).
 
-
 [count]z                                       *vifm-q_z*
     scroll forward one window (and set window to [count]).
 
@@ -870,6 +872,16 @@ F                                              *vifm-q_F*
     and scrolling to the bottom.  The behaviour is similar to `tail -F` or F
     key in less.
 
+a                                              *vifm-q_a*
+    switch to the next viewer.  Does nothing for preview constructed via `%q`
+    macro.
+A                                              *vifm-q_A*
+    switch to the previous viewer.  Does nothing for preview constructed
+    via `%q` macro.
+i                                              *vifm-q_i*
+    toggle raw mode (ignoring of defined viewers).  Does nothing for preview
+    constructed via `%q` macro.
+
 
 [count]/pattern                                *vifm-q_/*
     search forward for ([count]-th) matching line.
@@ -895,7 +907,7 @@ F                                              *vifm-q_F*
 
 v                                              *vifm-q_v*
     invoke an editor to edit the current file being viewed.  The command for
-    editing is taken from the |vifm-'vicmd'|/|vifm-'vixcmd'| option value and
+    editing is taken from the |vifm-'vicmd'| or |vifm-'vixcmd'| option value and
     extended with middle line number prepended by a plus sign and name of the
     current file.
 
@@ -1572,7 +1584,7 @@ The builtin commands are:
     name of current file is appended as if program entry ended with %c macro
     on *nix and %"c on Windows.  On Windows path to executables containing
     spaces can (and should be for correct work with such paths) be double
-    quoted.  See |vifm-globs| for pattern definition and |vifm-selection| for
+    quoted.  See |vifm-patterns| for pattern definition and |vifm-selection| for
     how selection is handled.  See also |vifm-fuse|.
     Example for zip archives and several actions: >
 
@@ -1596,7 +1608,7 @@ The builtin commands are:
                                                *vifm-:filextype* *vifm-:filex*
 :filex[type] pattern-list [{ description }] def_program,program2,...
     same as :filetype, but this command is ignored if not running in X.  In
-    X :filextype is equal to :filetype.  See |vifm-globs| for pattern
+    X :filextype is equal to :filetype.  See |vifm-patterns| for pattern
     definition and |vifm-selection| for how selection is handled.  See also
     |vifm-fuse|.
 
@@ -1656,7 +1668,7 @@ The builtin commands are:
     When the command doesn't contain any of vifm macros, name of current file
     is appended as if command ended with |vifm-%c| macro.  Comma escaping and
     missing commands processing rules as for |vifm-:filetype| apply to this
-    command.  See |vifm-globs| for pattern definition.
+    command.  See |vifm-patterns| for pattern definition.
 
     Example for zip archives: >
 
@@ -1779,8 +1791,6 @@ Available group-name values:
  - TabLine - tab line color (for |vifm-'tabscope'| set to "global")
  - TabLineSel - color of the tip of selected tab (regardless of
                 |vifm-'tabscope'|)
- - TabNr - tab number color
- - TabNrSel - tab number color for current tab
  - TopLine - top line color of the other pane
  - TopLineSel - top line color of the current pane
  - CmdLine - the command line/status bar color
@@ -1817,10 +1827,11 @@ Available colors:
  - white   and lightwhite
  - 0-255 - corresponding colors from 256-color palette
 
-Light versions of colors are regular colors with bold attribute set.  So order
-of arguments of :highlight command is important and it's better to put "cterm"
-in front of others to prevent it from overwriting attributes set by "ctermfg" or
-"ctermbg" arguments.
+Light versions of colors are regular colors with bold attribute set
+automatically in terminals that have less than 16 colors.  So order of arguments
+of :highlight command is important and it's better to put "cterm" in front of
+others to prevent it from overwriting attributes set by "ctermfg" or "ctermbg"
+arguments.
 
 For convenience of color scheme authors xterm-like names for 256 color palette
 is also supported.  The mapping is taken from
@@ -1962,12 +1973,10 @@ transparency:
   TopLine
     TopLineSel
       TabLineSel (for pane tabs)
-        TabNr
-          TabNrSel
+        User1..User9
   TabLine
     TabLineSel
-      TabNr
-        TabNrSel
+      User1..User9
 
 "none" means default terminal color for highlight groups at the first level
 of the hierarchy and transparency for all others.
@@ -2122,6 +2131,16 @@ order using the '.' operator.  Any whitespace is ignored.
 :on[ly]                                        *vifm-:only* *vifm-:on*
     switch to a one window view.
 
+                                               *vifm-:plugin*
+:plugin blacklist {plugin}
+    adds {plugin} to the list of plugins to be ignored.
+:plugin whitelist {plugin}
+    adds {plugin} to the list of plugins to be loaded while ignoring all
+    other plugins.  This list should normally be empty.
+
+:plugins                                       *vifm-:plugins*
+    open plugins menu.  See |vifm-menus-and-dialogs| for controls.
+
 :popd                                          *vifm-:popd*
     remove pane directories from stack.
 
@@ -2132,7 +2151,7 @@ order using the '.' operator.  Any whitespace is ignored.
     exchange top two items of the directory stack.
 
 :[line]pu[t][!] [reg] [ &]                     *vifm-:put* *vifm-:pu*
-    puts files from specified register (" by default) into current directory.
+    put files from specified register (" by default) into current directory.
     The [line] can be used to pick node in a tree-view.  "!" moves files
     from their original location instead of copying them.  During this
     operation no confirmation dialogs will be shown, all checks are performed
@@ -2170,7 +2189,8 @@ order using the '.' operator.  Any whitespace is ignored.
 :[range]rename name1 name2...
     rename each of selected files to a corresponding name.
 
-:restart                                       *vifm-:restart*
+                                               *vifm-:restart*
+:restart
     free a lot of things (histories, commands, etc.), reread vifminfo, vifmrc
     and session files and run startup commands passed in the argument list,
     thus losing all unsaved changes (e.g. recent history or keys mapped after
@@ -2178,6 +2198,8 @@ order using the '.' operator.  Any whitespace is ignored.
 
     While many things get reset, some basic UI state and current locations
     are preserved, including tabs.
+:restart full
+    variation of :restart that makes no attempt to preserve anything.
 
 :[range]restore                                *vifm-:restore*
     restore file from |vifm-trash| directory, doesn't work outside one of trash
@@ -2568,10 +2590,10 @@ yet supported) and might be changed in future releases, or get an alias.
                                                *vifm-:noremap* *vifm-:no*
 :no[remap] lhs rhs
     map the key sequence lhs to rhs for normal and visual modes, but
-    disallow mapping of rhs.
+    don't expand user mappings in rhs.
 :no[remap]! lhs rhs
-    map the key sequence lhs to rhs for command line mode, but disallow
-    mapping of rhs.
+    map the key sequence lhs to rhs for command line mode, but don't expand
+    user mappings in rhs.
 
                                                *vifm-:cnoremap* *vifm-:cno*
                                                *vifm-:dnoremap* *vifm-:dn*
@@ -2580,23 +2602,23 @@ yet supported) and might be changed in future releases, or get an alias.
                                                *vifm-:qnoremap* *vifm-:qn*
                                                *vifm-:vnoremap* *vifm-:vn*
 :cno[remap] lhs rhs
-    map the key sequence lhs to rhs for command line mode, but disallow
-    mapping of rhs.
+    map the key sequence lhs to rhs for command line mode, but don't expand
+    user mappings in rhs.
 :dn[oremap] lhs rhs
-    map the key sequence lhs to rhs for dialog modes, but disallow
-    mapping of rhs.
+    map the key sequence lhs to rhs for dialog modes, but don't expand user
+    mappings in rhs.
 :mn[oremap] lhs rhs
-    map the key sequence lhs to rhs for menu mode, but disallow mapping
-    of rhs.
+    map the key sequence lhs to rhs for menu mode, but don't expand user
+    mappings in rhs.
 :nn[oremap] lhs rhs
-    map the key sequence lhs to rhs for normal mode, but disallow mapping
-    of rhs.
+    map the key sequence lhs to rhs for normal mode, but don't expand user
+    mappings in rhs.
 :qn[oremap] lhs rhs
-    map the key sequence lhs to rhs for view mode, but disallow mapping
-    of rhs.
+    map the key sequence lhs to rhs for view mode, but don't expand user
+    mappings in rhs.
 :vn[oremap] lhs rhs
-    map the key sequence lhs to rhs for visual mode, but disallow mapping
-    of rhs.
+    map the key sequence lhs to rhs for visual mode, but don't expand user
+    mappings in rhs.
 
                                                *vifm-:unmap* *vifm-:unm*
 :unm[ap] lhs
@@ -2691,7 +2713,9 @@ The command macros may be used in user commands.
                                                                *vifm-%n*
   %n        forbid using of terminal multiplexer to run the command.
                                                                *vifm-%i*
-  %i        completely ignore command output.
+  %i        completely ignore command output.  For background jobs this
+            suppresses error dialogs, while still storing errors
+            internally for viewing via |vifm-:jobs| menu.
 
                                                                *vifm-%pc*
   %pc       marks the end of the main command and the beginning of the
@@ -2988,6 +3012,9 @@ character extension unless it's "d" letter.  And >
 associates `sxiv` picture viewer only for JPEG-files that contain single digit
 in their name.
 
+If you need to include literal comma, which is normally separates multiple
+globs, double it.
+
 --------------------------------------------------------------------------------
 *vifm-set-options*
 
@@ -3232,6 +3259,9 @@ option and %% sequence for inserting percent sign literally.  The macros are:
    %a     empty or
           literal arguments of :find or
           predicate followed by escaped arguments of :find
+   %p     empty or
+          literal arguments of :find or
+          escaped arguments (parameters) of :find
 
    %u     redirect output to custom view instead of showing a menu
    %U     redirect output to unsorted custom view instead of showing a menu
@@ -3242,20 +3272,20 @@ If both %u and %U are specified, %U is chosen.
 
 Some macros can be added implicitly:
  - if %s isn't present, it's appended
- - if neither of %a and %A is present, %a is appended
- - if neither of %s, %a and %A is present, %s and %a are appended in this
+ - if neither of %a, %A and %p is present, %a is appended
+ - if neither of %s, %a, %A and %p is present, %s and %a are appended in this
    order
 
 The macros slightly change their meaning depending on format of :find's
 arguments:
  - if the first argument points to an existing directory, %s is assigned all
-   arguments while %a and %A are left empty
+   arguments while %a, %A and %p are left empty
  - otherwise:
     - %s is assigned a dot (".") meaning current directory or list of
       selected file names, if any
-    - %a and %A are assigned literal arguments when first argument starts
+    - %a, %A and %p are assigned literal arguments when first argument starts
       with a dash ("-"), otherwise %a gets an escaped version of the arguments
-      with a predicate
+      with a predicate and %p contains escaped version of the arguments
 
 Starting with Windows Server 2003 a `where` command is available.  One can
 configure vifm to use it in the following way: >
@@ -3537,6 +3567,27 @@ scope: local
 
 Minimal number of characters for line number field.
 
+                                               *vifm-'previewoptions'*
+previewoptions
+type: string list
+default: "graphicsdelay:50000"
+
+Tweaks how previewing is done (in quick view, miller view's column and
+view mode).
+
+    item               default  meaning ~
+    graphicsdelay:num  0        delay before drawing graphics (microseconds)
+    hardgraphicsclear  unset    redraw screen to get rid of graphics
+
+graphicsdelay is needed if terminal requires some timeout before it can
+draw graphics (otherwise it gets lost).
+
+hardgraphicsclear seems to be necessary to get rid of sixel graphics in some
+terminals, where it otherwise lingers.  This can cause flicker on the screen
+due to erasure followed by redrawing.
+
+Default value is used when item is missing from the option.
+
                                                *vifm-'previewprg'*
 previewprg
 type: string
@@ -3591,6 +3642,8 @@ it's right aligned.  Following macros are supported:
     %L  - total number of files in view (including filtered out ones)
     %x  - number of files excluded by filters
     %0- - old name for %x macro
+    %P  - percentage through file list (All, Top, xx% or Bot), always 3 in
+          length
     %S  - number of displayed files
     %%  - literal percent sign
     %[  - designates beginning of an optional block
@@ -3659,6 +3712,16 @@ default: "-c" or "/C" (for cmd.exe on MS-Windows)
 
 Command-line option used to pass a command to |vifm-'shell'|.  It's used in
 contexts where command comes from the user.
+
+Note that using this option to force interactive mode of the shell is most
+likely a BAD IDEA.  In general interactive host and interactive child shell
+can't share the same terminal session.  You can't even run such a shell in
+background.  Consider writing a wrapper for your shell that preloads aliases
+and commands without making the shell interactive and ending up using it in
+a way it was not meant to be used.
+
+Note that this option is ignored when |vifm-'shell'| is set to PowerShell due
+to the internal use of `-encodedCommand`.
 
                                                *vifm-'shortmess'* *vifm-'shm'*
 shortmess shm
@@ -3933,21 +3996,24 @@ tablabel
 type: string
 default: ""
 
-When non-empty, determines format of a single tab's label, excluding tab
-number and tab delimiters.
+When non-empty, determines format of the main part of a single tab's label.
 
 When empty, tab label is set to either tab name for named tabs or to view
 title (usually current path) for unnamed tabs.
 
-The following macros can appear in the format:
-    %T - flag of a tree mode (see below)
-    %c - description of a custom view
-    %n - name of the tab
-    %p - path of the view (handles |vifm-filename-modifiers|)
-    %t - title of the view (affected by |vifm-'shortmess'| flags)
-    %% - literal percent sign
-    %[ - designates beginning of an optional block
-    %] - designates end of an optional block
+The following macros can appear in the format (see below for what a flag is):
+    %C      - flag of a current tab
+    %N      - number of the tab
+    %T      - flag of a tree mode
+    %c      - description of a custom view
+    %n      - name of the tab
+    %p      - path of the view (handles |vifm-filename-modifiers|)
+    %t      - title of the view (affected by |vifm-'shortmess'| flags)
+    %%      - literal percent sign
+    %[      - designates beginning of an optional block
+    %]      - designates end of an optional block
+    %*, %0* - resets highlighting
+    %1-%9   - applies one of User1..User9 highlight groups
 
 In global tabs the view in bullets above refers to currently active view of that
 tab.
@@ -3968,6 +4034,22 @@ Example: >
  " %p:t            -- tail part of view's location
  set tablabel=%[(%n)%]%[%[%T{tree}%]%[{%c}%]@%]%p:t
 <
+                                               *vifm-'tabprefix'*
+tabprefix
+type: string
+default: "[%N:"
+
+Determines prefix of a tab's label.  Formatting is done as for
+|vifm-'tablabel'| option.
+
+Example of highlighting tab number: >
+ " setup color for non-current tabs
+ highlight User7 ctermfg=red
+ " setup color for current tabs
+ highlight User8 ctermbg=blue ctermfg=none
+ " use optional group predicated on current-tab flag
+ set tabprefix=[%7*%[%8*%C%]%N%*:
+
                                                *vifm-'tabscope'*
 tabscope
 type: enumeration
@@ -3984,6 +4066,14 @@ type: integer
 default: value from curses library
 
 Number of spaces that a Tab in the file counts for.
+
+                                               *vifm-'tabsuffix'*
+tabsuffix
+type: string
+default: "]"
+
+Determines suffix of a tab's label.  Formatting is done as for
+|vifm-'tablabel'| option.
 
                                                *vifm-'timefmt'*
 timefmt
@@ -5007,6 +5097,14 @@ m - mount/unmount device (cursor should be positioned on lines under device
     information).
 [ - put cursor on the previous device.
 ] - put cursor on the next device.
+
+Plugins menu~
+
+e - display log messages of selected plugin if any were collected.  They are
+displayed in a new menu, but you can get back to plugins menu by pressing h.
+
+gf - navigate previously active view to the location of selected plugin.
+Leaves menu mode.
 
 --------------------------------------------------------------------------------
 *vifm-custom-views*
