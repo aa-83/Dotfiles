@@ -4,7 +4,8 @@
 !! Set a default font and font size as below:
 st.font: monospace-14;
 dwm.font: monospace-11;
-*.font: monospace-14;
+emacs.font: monospace-14;
+*.font: inconsolata-14;
 *.fontalt0: JoyPixels-10;
 
 !st.termname: st-256color
