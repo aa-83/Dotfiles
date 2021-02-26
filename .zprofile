@@ -1,9 +1,6 @@
 #
 # ~/.profile
 #
-
-export GPG_TTY=$(tty1)
-
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/files/diverse/build/oF"
@@ -19,6 +16,8 @@ export BROWSER="firefox"
 export READER="zathura"
 export VIEWER="sxiv"
 export STATUSBAR="dwmblocks"
+export DISPLAY=":0"
+export SHELL=/bin/zsh
 
 # ~/ Clean-up
 export ZDOTDIR="$HOME/.config/zsh"
@@ -32,6 +31,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GPG_TTY=$(tty1)
 export XINITRC="$XDG_CONFIG_HOME/xinitrc"
 export HISTFILE="$XDG_DATA_HOME/bash/history"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -41,8 +41,9 @@ export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export PASSWORD_STORE_TOMB_FILE="$XDG_DATA_HOME/tomb/password.tomb"
 export PASSWORD_STORE_TOMB_KEY="$XDG_DATA_HOME/tomb/password.tomb.key"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa arrogant_ambassador)"
 
