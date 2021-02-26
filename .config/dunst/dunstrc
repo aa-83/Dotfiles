@@ -10,7 +10,7 @@
     padding = 0
     horizontal_padding = 0
     frame_width = 0
-    frame_color = "#282828"
+    frame_color = "#711c91"
 
     # Define a color for the separator.
     # possible values are:
@@ -24,7 +24,7 @@
     sort = yes
 
     idle_threshold = 120
-    font = Monospace 10
+    font = Monospace 12
     line_height = 0
     markup = full
 
@@ -50,11 +50,11 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 40
-    #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/Adwaita/256x256/status/
+    icon_path = /usr/share/icons/oomox-cyberpunk-neon_themix/status/:/usr/share/icons/oomox-cyberpunk-neon_themix/devices/
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/brave -new-tab
+    browser = /usr/bin/firefox -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -75,21 +75,21 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282828"
-    foreground = "#928374"
+    background = "#0000b2"
+    foreground = "#0abdc6"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = /usr/share/icons/oomox-cyberpunk-neon_themix
 
 [urgency_normal]
-    background = "#458588"
-    foreground = "#ebdbb2"
+    background = "#0000b2"
+    foreground = "#0abdc6"
     timeout = 5
 
 [urgency_critical]
     background = "#cc2421"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    foreground = "#3232c1"
+    frame_color = "#198c19"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
