@@ -21,8 +21,8 @@ alias ap='cd ~/documents/artistic_practice && pwd' ;
 alias app='cd ~/documents/artistic_practice/portfolio && pwd' ;
 alias apr='cd ~/documents/artistic_practice/artistic_research && pwd' ;
 
-alias gr='cd ~/diverse/git_repositories/ && pwd' ;
-alias g.='cd ~/diverse/git_repositories/Dot/ && pwd' ;
+alias gr='cd ~/diverse/git_repositories && pwd' ;
+alias g.='cd ~/diverse/git_repositories/Dotfiles && pwd' ;
 alias gdw='cd ~/diverse/git_repositories/dwm && pwd' ;
 alias gdwb='cd ~/diverse/git_repositories/dwmblocks && pwd' ;
 alias gdm='cd ~/diverse/git_repositories/dmenu && pwd' ;
@@ -38,11 +38,6 @@ alias lsp='cd ~/.local/share/password-store && pwd' ;
 alias lsg='cd ~/.local/share/gnupg && pwd' ;
 alias lsm='cd ~/.local/share/mail && pwd' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd' ;
-
-alias rme='/run/media/eirik && pwd' ;
-alias rme4='/run/media/eirik/4tb && pwd' ;
-alias rme1='/run/media/eirik/hdd_1tb && pwd' ;
-alias rmemp='/run/media/eirik/mp_64gb && pwd' ;
 
 # Mac shortcuts
 #alias hdd='cd /Volumes/hdd_1tb && pwd' ;
