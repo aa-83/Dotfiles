@@ -73,8 +73,8 @@ filetype *.zip,*.7z,*.rar,*.tar.gz,*.tar.xz ext %f
 fileviewer *.[1-8] man ./%c | col -b
 filetype *.[1-8] man ./%c
 
-filextype *.webp,*.bmp,*.jpg,*.jpeg,*.png,*.ico,*.gif,*.xpm sxiv -ia %f &,
-fileviewer *.webp,*.bmp,*.jpg,*.jpeg,*.png,*.ico,*.gif,*.xpm vifmimg draw %px %py %pw %ph %c %pc vifmimg clear
+filextype *.webp,*.bmp,*.jpg,*.jpeg,*.tif,*.png,*.ico,*.gif,*.xpm sxiv -ia %f &,
+fileviewer *.webp,*.bmp,*.jpg,*.jpeg,*.tif,*.png,*.ico,*.gif,*.xpm vifmimg draw %px %py %pw %ph %c %pc vifmimg clear
 fileviewer *.gif vifmimg gifpreview %px %py %pw %ph %c %pc vifmimg clear
 
 filextype *.svg inkscape %f 2>/dev/null &
