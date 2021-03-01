@@ -1,7 +1,7 @@
 autoload -Uz colors && colors
 autoload -Uz promptinit
 
-PROMPT='%B[%b%F{11}%n%f%B%F{12}@%f%F{9}%m%f %F{13}%1~%B%f] %F{14}$%f%b '
+PROMPT='[%F{11}%n%f%F{12}@%f%B%F{9}%m%f%b %F{13}%1~%f] %F{14}$%f '
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' actionformats \
