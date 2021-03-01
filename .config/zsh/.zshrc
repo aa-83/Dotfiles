@@ -1,25 +1,33 @@
 autoload -Uz colors && colors
 autoload -Uz promptinit
-promptinit
+setopt prompt_subst
 
 PROMPT='%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b '
+RPROMPT='%* %D [%F{#FF0000}%?%f]'
+promptinit
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# Search for new executables automagically
+zstyle ':completion:*' rehash true
 zmodload zsh/complist
+# Include hidden files in autocomplete:
+_comp_options+=(globdots)
 compinit
-_comp_options+=(globdots) # Include hidden files in autocomplete:
+
 setopt COMPLETE_ALIASES
 setopt AUTOCD
 setopt CORRECT_ALL
+
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.cache/zsh/history
 
 # vi mode
@@ -69,13 +77,25 @@ man() {
     command man "$@"
 }
 
+
+# Help-function
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
+autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
+
+# Fuzzy plugin
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+# Search for missing packages
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
 # Mac placements
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 #source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
