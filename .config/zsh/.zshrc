@@ -1,9 +1,17 @@
 autoload -Uz colors && colors
 autoload -Uz promptinit
-setopt prompt_subst
 
-PROMPT='%B[%F{11}%n%f%F{12}@%f%F{9}%m%f %F{13}%1~%f] %F{14}$%f%b '
-RPROMPT='%* %D [%F{#FF0000}%?%f]'
+PROMPT='%B[%b%F{11}%n%f%B%F{12}@%f%F{9}%m%f %F{13}%1~%B%f] %F{14}$%f%b '
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' actionformats \
+	'(%F{#F09000}%s%f)%F{#FF00FF}/%f[%F{#0000F0}%b|%a%f] %B%F{#0f0f0f}%u%f %F{#f0f0f0}%c%f'
+zstyle ':vcs_info:git:*' formats \
+	'(%F{#F09000}%s%f)%F{#FF00FF}/%f[%F{#0000F0}%b%f] %B%F{#0f0f0f}%u%f %F{#f0f0f0}%c%f'
+zstyle ':vcs_info:*' enable git
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+RPROMPT='%F{#00F000}%*%f %F{#F000F0}%D%f [%B%F{#FF0000}%?%f%b] %B$vcs_info_msg_0_%b'
 promptinit
 
 autoload -Uz compinit
