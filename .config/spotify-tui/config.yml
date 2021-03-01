@@ -1,0 +1,19 @@
+behavior:
+    seek_milliseconds: 5000
+    volume_increment: 5
+    tick_rate_milliseconds: 10
+
+keybindings:
+    back: "ctrl-q"
+    manage_devices: "d"
+    decrease_volume: "-"
+    increase_volume: "+"
+    seek_backwards: "<"
+    seek_forwards: ">"
+    next_track: "n"
+    previous_track: "p"
+    help: "?"
+    shuffle: "s"
+    repeat: "r"
+    search: "/"
+    audio_analysis: "v"
