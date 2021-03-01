@@ -1,2 +1,9 @@
 tags
-.config/nvim/bundle/**/.git*
+.config/nvim/bundle/fzf/.git
+.config/nvim/bundle/goyo.vim/.git
+.config/nvim/bundle/nerdtree/.git
+.config/nvim/bundle/vifm.vim/.git
+.config/nvim/bundle/vim-css-color/.git
+.config/nvim/bundle/vim-highlightedyank/.git
+.config/nvim/bundle/vim-online-thesaurus/.git
+.config/nvim/bundle/vimtex/.git
