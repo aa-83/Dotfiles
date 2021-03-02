@@ -10,7 +10,7 @@
     padding = 0
     horizontal_padding = 0
     frame_width = 4
-    frame_color = "#711c91"
+    frame_color = "#ea00d9"
 
     # Define a color for the separator.
     # possible values are:
@@ -76,14 +76,14 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#0000b2"
-    foreground = "#ea00d9"
+    foreground = "#0abdc6"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/oomox-cyberpunk-neon_themix
 
 [urgency_normal]
     background = "#0000b2"
-    foreground = "#ea00d9"
+    foreground = "#0abdc6"
     timeout = 5
 
 [urgency_critical]
