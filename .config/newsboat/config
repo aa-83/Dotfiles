@@ -2,6 +2,7 @@
 auto-reload yes
 browser "/usr/bin/firefox %u"
 external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+cache-file "~/.local/share/newsboat/cache.db"
 
 bind-key j down
 bind-key k up

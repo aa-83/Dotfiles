@@ -5,6 +5,8 @@ https://www.archlinux.org/feeds/releases
 https://www.fsf.org/static/fsforg/rss/news.xml
 https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
+https://www.kali.org/rss.xml
+https://tails.boum.org/news/index.en.rss
 "---Tech---"
 https://rawsec.ml/rss.xml Linux
 http://feeds.arstechnica.com/arstechnica/features "Tech News"
@@ -12,6 +14,8 @@ http://feeds.arstechnica.com/arstechnica/index "Tech News"
 https://www.bleepingcomputer.com/feed/
 https://magpi.raspberrypi.org/feed
 https://riscv.org/feed
+https://www.accessnow.org/rss
+https://blog.torproject.org/feed
 "---Gaming---"
 https://twitrss.me/twitter_user_to_rss/?user=day9tv
 https://tl.net/rss/news.xml E-sports
