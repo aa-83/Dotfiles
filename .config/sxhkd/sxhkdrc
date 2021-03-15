@@ -53,13 +53,13 @@ super + control + shift + i
 	xinput enable 'SynPS/2 Synaptics TouchPad'
 
 #Music
-super + z
-	mpc pause
-super + shift + z
-	mpc play
 super + x
-	mpc next
+	mpc pause
 super + shift + x
+	mpc play
+super + z
+	mpc next
+super + shift + z
 	mpc prev
 super + a
     $TERMINAL -e ncmpcpp
