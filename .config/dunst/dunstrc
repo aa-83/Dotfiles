@@ -77,14 +77,14 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#0000b2"
     foreground = "#0abdc6"
-    timeout = 5
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/oomox-cyberpunk-neon_themix
 
 [urgency_normal]
     background = "#0000b2"
     foreground = "#0abdc6"
-    timeout = 5
+    timeout = 3
 
 [urgency_critical]
     background = "#cc2421"
