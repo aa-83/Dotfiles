@@ -31,7 +31,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export GPG_TTY=$(tty1)
 export XINITRC="$XDG_CONFIG_HOME/xinitrc"
 export HISTFILE="$XDG_DATA_HOME/bash/history"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -45,6 +44,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
-eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa arrogant_ambassador)"
+#eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa arrogant_ambassador)"
+eval "$(keychain --dir /home/eirik/.config/.keychain --agents gpg --eval arrogant_ambassador)"
 
 [ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/xinitrc"
