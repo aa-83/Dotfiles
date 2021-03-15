@@ -24,7 +24,7 @@ alias hexedit='hexedit --color' ;
 alias popen='pass open -f' ;
 
 # Config shortcuts
-alias bib='nvim ~/files/texts/latex/bib/bibliografi.bib' ;
+alias bib='nvim ~/documents/latex/bib/bibliografi.bib' ;
 alias nzsh='nvim ~/.config/zsh/.zshrc' ;
 alias nurls='nvim ~/.config/newsboat/urls' ;
 alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
