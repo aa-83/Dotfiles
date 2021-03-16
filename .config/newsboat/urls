@@ -1,13 +1,12 @@
 "---Linux---"
-https://lukesmith.xyz/rss.xml Linux
 https://www.archlinux.org/feeds/news/ Linux
 https://www.archlinux.org/feeds/releases
 https://www.alpinelinux.org/atom.xml
+https://www.kali.org/rss.xml
+https://tails.boum.org/news/index.en.rss
 https://www.fsf.org/static/fsforg/rss/news.xml
 https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
-https://www.kali.org/rss.xml
-https://tails.boum.org/news/index.en.rss
 "---Tech---"
 https://rawsec.ml/rss.xml Linux
 http://feeds.arstechnica.com/arstechnica/features "Tech News"
@@ -35,6 +34,7 @@ https://cdm.link/feed/ "Digital Culture"
 "---Meninger---"
 https://www.haaretz.com/cmlink/1.4605051 Nyheter
 https://feeds.soundcloud.com/users/soundcloud:users:211911700/sounds.rss
+https://lukesmith.xyz/rss.xml Linux
 "---Nyheter---"
 https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
 #https://www.bt.no/rss
