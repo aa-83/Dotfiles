@@ -2,6 +2,7 @@
 https://lukesmith.xyz/rss.xml Linux
 https://www.archlinux.org/feeds/news/ Linux
 https://www.archlinux.org/feeds/releases
+https://www.alpinelinux.org/atom.xml
 https://www.fsf.org/static/fsforg/rss/news.xml
 https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
@@ -17,10 +18,10 @@ https://riscv.org/feed
 https://www.accessnow.org/rss
 https://blog.torproject.org/feed
 "---Gaming---"
-https://twitrss.me/twitter_user_to_rss/?user=day9tv
+#https://twitrss.me/twitter_user_to_rss/?user=day9tv
 https://tl.net/rss/news.xml E-sports
 https://www.liquiddota.com/rss/news.xml E-sports
-https://twitrss.me/twitter_user_to_rss/?user=TeamAretuza
+#https://twitrss.me/twitter_user_to_rss/?user=TeamAretuza
 https://teamleviathangaming.com/feed/
 https://www.rockpapershotgun.com/feed
 https://rogueoutpost.co.uk/index.php/category/articles/feed
