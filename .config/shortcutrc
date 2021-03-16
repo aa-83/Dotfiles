@@ -10,7 +10,7 @@ alias v='cd ~/media/video && pwd' ;
 alias iw='cd ~/media/bilder/wallpapers && pwd' ;
 alias m='cd ~/media/musikk && pwd' ;
 alias mp='cd ~/media/musikk/podcasts && pwd' ;
-alias dl='cd ~/downloads && pwd' ;
+alias dl='cd ~/nedlastinger && pwd' ;
 
 alias s='cd ~/dokumenter/synk && pwd' ;
 alias ss='cd ~/dokumenter/synk/skole/spansk && pwd' ;
