@@ -7,6 +7,8 @@ super + shift + s
 	slock &  mpc pause ; pauseallmpv
 super + w
     $BROWSER
+super + shift + w
+	torbrowser-launcher
 
 #Nettverk
 super + shift + F1
