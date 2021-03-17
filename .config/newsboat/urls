@@ -17,12 +17,12 @@ https://riscv.org/feed
 https://www.accessnow.org/rss
 https://blog.torproject.org/feed
 "---Gaming---"
+https://www.rockpapershotgun.com/feed
 #https://twitrss.me/twitter_user_to_rss/?user=day9tv
 https://tl.net/rss/news.xml E-sports
-https://www.liquiddota.com/rss/news.xml E-sports
+#https://www.liquiddota.com/rss/news.xml E-sports
 #https://twitrss.me/twitter_user_to_rss/?user=TeamAretuza
 https://teamleviathangaming.com/feed/
-https://www.rockpapershotgun.com/feed
 https://rogueoutpost.co.uk/index.php/category/articles/feed
 "---Vitenskap---"
 https://www.nasa.gov/rss/dyn/breaking_news.rss Nasa
@@ -36,20 +36,20 @@ https://www.haaretz.com/cmlink/1.4605051 Nyheter
 https://feeds.soundcloud.com/users/soundcloud:users:211911700/sounds.rss
 https://lukesmith.xyz/rss.xml Linux
 "---Nyheter---"
-https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
+#https://www.klassekampen.no/section/rssfeed&template=rss&mime=xml Nyheter
 #https://www.bt.no/rss
 #https://www.haaretz.com/cmlink/1.4605045 Nyheter
 #https://www.haaretz.com/cmlink/1.4850015 Nyheter
 https://www.haaretz.com/cmlink/1.4850006 Nyheter
 https://www.dr.dk/nyheder/service/feeds/indland
-https://www.dr.dk/nyheder/service/feeds/udland
+#https://www.dr.dk/nyheder/service/feeds/udland
 https://www.dr.dk/nyheder/service/feeds/politik
 https://www.dr.dk/nyheder/service/feeds/kultur
 https://www.dr.dk/Nyheder/Service/feeds/regionale/kbh/
 https://www.independent.co.uk/news/world/rss Nyheter
 https://www.independent.co.uk/sport/rugby/rugby-union/rss Nyheter
 https://www.independent.co.uk/arts-entertainment/rss Nyheter
-https://www.nrk.no/toppsaker.rss Nyheter
+#https://www.nrk.no/toppsaker.rss Nyheter
 https://www.nrk.no/urix/toppsaker.rss Nyheter
 https://www.nrk.no/sport/toppsaker.rss Nyheter
 https://www.nrk.no/kultur/toppsaker.rss Nyheter
