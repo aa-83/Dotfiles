@@ -1,0 +1,2 @@
+#!/bin/sh
+$TERMINAL -e sudo iwctl; pkill -RTMIN+4 dwmblocks

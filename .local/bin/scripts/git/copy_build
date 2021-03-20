@@ -1,0 +1,7 @@
+#!/bin/sh
+cd /opt ;
+cp -rfu dwm ~/dokumenter/git_repositories/ ;
+cp -rfu st ~/dokumenter/git_repositories/ ;
+cp -rfu slock ~/dokumenter/git_repositories/ ;
+cp -rfu dmenu ~/dokumenter/git_repositories/ ;
+cp -rfu dwmblocks ~/dokumenter/git_repositories/ ;

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ ! -f "$1" ];then
+	echo "No such file"
+	exit 1
+fi
+suf="${1##*.}"
+if [ "$suf" != "mp4" ] && [ "$suf" != "mkv" ] && [ "$suf" != "avi" ] && [ "$suf" != "mov" ]  && [ "$suf" != "gif" ] && [ "$suf" != "flv" ];then
+	echo "Input needs to be a video"
+	exit 1
+fi
+
+location="/home/eirik/files/media/images/movie_screenshots/frame.png"
+duration=$(ffmpeg -i "$1" 2>&1 | grep Duration | awk '{print $2}' | tr -d ,)
+seconds=$(echo "$duration" | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
+seconds=${seconds%.*}
+if [ "$seconds" -le 0 ];then
+	echo "Sommat's broke"
+	exit 1
+fi
+randpoint=$((1 + RANDOM % "$seconds"))
+ffmpeg -ss "$randpoint" -i "$1" -vframes 1 "$location" -y >> /dev/null 2>&1 &&
+feh --bg-fill "$location"
+

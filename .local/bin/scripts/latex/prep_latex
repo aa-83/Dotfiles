@@ -1,0 +1,2 @@
+#!/bin/sh
+mkdir aux1/ bbl/ bcf/ blg/ fls/ gz/ latexmk/ log/ out/ pdf/ toc/ xml/

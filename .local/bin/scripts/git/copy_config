@@ -1,0 +1,4 @@
+#!/bin/sh
+cp -rfu \
+~/.config/{aliasrc,shortcutrc,xinitrc,user-dirs.dirs,Xresources,calcurse,dunst,fontconfig,htop,mpv,mpd,neofetch,ncmpcpp,newsboat,nvim,sxhkd,sxiv,tmux,vifm,zathura,zsh,old,spotifyd,spotify-tui} \
+~/dokumenter/git_repositories/Dotfiles/.config

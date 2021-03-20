@@ -1,0 +1,15 @@
+#!/bin/sh
+perl-rename 'y/A-Z/a-z/' * ;
+perl-rename 'y/ - /_/' * ;
+perl-rename 's/ - /_/' * ;
+perl-rename 'y/-/_/' * ;
+perl-rename 'y/ /_/' * ;
+perl-rename 'y/_,/_/' * ;
+perl-rename 's/_,/_/' * ;
+perl-rename 'y/,_/_/' * ;
+perl-rename 's/,_/_/' * ;
+perl-rename 'y/___/_/' * ;
+perl-rename 's/___/_/' * ;
+perl-rename 'y/__/_/' * ;
+perl-rename 's/__/_/' * ;
+
