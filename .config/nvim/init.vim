@@ -43,6 +43,7 @@ set lbr
 
 " Enable Auto Completion
 set wildmode=longest,list,full
+set wildmenu
 
 " Disable Automatic Commenting on New Line
 autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
