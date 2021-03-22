@@ -4,8 +4,7 @@
 !! Set a default font and font size as below:
 st.font: monospace-14;
 dwm.font: CozetteVector-11;
-emacs.font: monospace-14;
-*.font: Inconsolata-g-14;
+*.font: monospace-14;
 *.fontalt0: NotoFontsEmoji-10;
 
 !st.termname: st-256color
