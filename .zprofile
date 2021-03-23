@@ -18,7 +18,7 @@ export READER="zathura"
 export VIEWER="sxiv"
 export STATUSBAR="dwmblocks"
 export DISPLAY=":0"
-export SHELL=/usr/bin/zsh
+export SHELL="/usr/bin/zsh"
 
 # ~/ Clean-up
 export ZDOTDIR="$HOME/.config/zsh"
