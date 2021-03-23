@@ -62,6 +62,6 @@
  "NOTMUCH_CONFIG=/home/eirik/.config/notmuch-config"
  "READER=zathura"
  "LESSHISTFILE=-"
- "WINDOWID=50331654"
- "SHELL=/bin/zsh"
+ "WINDOWID=12582918"
+ "SHELL=/usr/bin/zsh"
  )
