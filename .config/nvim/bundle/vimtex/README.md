@@ -1,6 +1,7 @@
 # VimTeX
 
-VimTeX is a modern [Vim](http://www.vim.org/) and [neovim](https://neovim.io/) filetype and syntax plugin for LaTeX files.
+VimTeX is a modern [Vim](http://www.vim.org/) and [Neovim](https://neovim.io/)
+filetype and syntax plugin for LaTeX files.
 
 [![Gitter](https://badges.gitter.im/vimtex-chat/community.svg)](https://gitter.im/vimtex-chat/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ![CI tests](https://github.com/lervag/vimtex/workflows/CI%20tests/badge.svg)
@@ -8,22 +9,33 @@ VimTeX is a modern [Vim](http://www.vim.org/) and [neovim](https://neovim.io/) f
 
 ## Table of contents
 
-  * [Requirements](#requirements)
-  * [Installation](#installation)
-  * [Quick Start](#quick-start)
-  * [Features](#features)
-  * [Other relevant plugins](#other-relevant-plugins)
-  * [Alternatives](#alternatives)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Other relevant plugins](#other-relevant-plugins)
+  - [Linting and syntax checking](#linting-and-syntax-checking)
+  - [Snippets and templates](#snippets-and-templates)
+  - [Tag navigation](#tag-navigation)
+- [Alternatives](#alternatives)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Requirements
 
-VimTeX requires Vim version 8.0.1453 or neovim version 0.4.3. The requirements
+VimTeX requires Vim version 8.0.1453 or Neovim version 0.4.3. The requirements
 were updated in July 2020 after the release of VimTeX 1.0. If you are stuck
-on older versions of Vim or neovim, then you should not use the most recent
+on older versions of Vim or Neovim, then you should not use the most recent
 version of VimTeX, but instead remain at the v1.0 tag.
 
-Some features require external tools. For example, the default compiler backend relies on [latexmk](http://users.phys.psu.edu/~collins/software/latexmk-jcc/).
-Users are encouraged to read the requirements section in the [documentation](doc/vimtex.txt) (`:h vimtex-requirements`).
+Some features require external tools. For example, the default compiler backend
+relies on [latexmk](http://users.phys.psu.edu/~collins/software/latexmk-jcc/).
+Users are encouraged to read the requirements section in the
+[documentation](doc/vimtex.txt) (`:h vimtex-requirements`).
 
 ## Installation
 
@@ -51,7 +63,8 @@ If you use the new package feature in Vim, please note the following:
   solutions to this. To see which scripts are loaded and in which order, use
   `:scriptnames`.
 * For more information on how to use the Vim native package solution, see
-  [here](https://vi.stackexchange.com/questions/9522/what-is-the-vim8-package-feature-and-how-should-i-use-it) and [here](https://shapeshed.com/vim-packages/).
+  [here](https://vi.stackexchange.com/questions/9522/what-is-the-vim8-package-feature-and-how-should-i-use-it)
+  and [here](https://shapeshed.com/vim-packages/).
 
 ## Quick Start
 
@@ -62,13 +75,18 @@ possibilities provided by VimTeX (see [`:h vimtex`](doc/vimtex.txt)).
 
 ![Quick start gif](media/quick_start.gif?raw=true)
 
+Advanced users and potential developers may also be interested in reading the
+supplementary documents:
+
+* [CONTRIBUTING.md](CONTRIBUTING.md)
+* [DOCUMENTATION.md](DOCUMENTATION.md)
+
 ## Features
 
-Below is a list of features offered by VimTeX.  The features are accessible as
-both commands and mappings.  The mappings generally start with
-`<localleader>l`, but if desired one can disable default mappings to define
-custom mappings.  All features are enabled by default, but each feature may be
-disabled if desired.
+Below is a list of features offered by VimTeX. The features are accessible as
+both commands and mappings. The mappings generally start with `<localleader>l`,
+but if desired one can disable default mappings to define custom mappings. All
+features are enabled by default, but each feature may be disabled if desired.
 
 - Document compilation with
   [latexmk](http://users.phys.psu.edu/~collins/software/latexmk-jcc/),
