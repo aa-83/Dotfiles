@@ -3,7 +3,7 @@
 
 !! Set a default font and font size as below:
 st.font: monospace-14;
-dwm.font: CozetteVector-11;
+dwm.font: monospace-11;
 *.font: monospace-14;
 *.fontalt0: NotoFontsEmoji-10;
 
