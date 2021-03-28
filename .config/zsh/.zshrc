@@ -21,21 +21,43 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' rehash true
 zmodload zsh/complist
 # Include hidden files in autocomplete:
-_comp_options+=(globdots)
 compinit
+_comp_options+=(globdots)
 
-setopt COMPLETE_ALIASES
-setopt AUTOCD
-setopt CORRECT_ALL
-
+setopt always_to_end
+setopt auto_cd
+setopt auto_list
+setopt auto_pushd
+setopt auto_param_slash
+setopt auto_param_keys
+setopt bang_hist
+setopt clobber
+setopt complete_aliases
+setopt correct_all
+setopt complete_in_word
+setopt extended_glob
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt interactive_comments
+setopt list_rows_first
+setopt long_list_jobs
+setopt no_case_glob
+setopt no_nomatch
+setopt nohup
+setopt notify
+setopt pushd_ignore_dups
+setopt pushd_to_home
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=2000000
+SAVEHIST=2000000
 HISTFILE=~/.cache/zsh/history
 
 # vi mode
