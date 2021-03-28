@@ -25,7 +25,7 @@ alias popen='pass open -f' ;
 alias emacs='emacs -fn 'monospace''
 
 # Config shortcuts
-alias bib='nvim ~/documents/latex/bib/bibliografi.bib' ;
+alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;
 alias nzsh='nvim ~/.config/zsh/.zshrc' ;
 alias nurls='nvim ~/.config/newsboat/urls' ;
 alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
