@@ -27,6 +27,7 @@ alias emacs='emacs -fn 'monospace''
 # Config shortcuts
 alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;
 alias nzsh='nvim ~/.config/zsh/.zshrc' ;
+alias ninit='nvim ~/.config/nvim/init.vim' ;
 alias nurls='nvim ~/.config/newsboat/urls' ;
 alias nsxhkd='nvim ~/.config/sxhkd/sxhkdrc' ;
 
