@@ -5,7 +5,7 @@
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/files/diverse/build/oF"
 export PG_OF_PATH="/home/eirik/files/diverse/build/oF"
-export PATH="$PATH:/home/eirik/.local/share/gem/ruby/2.7.0/bin"
+export PATH="$PATH:/home/eirik/.local/share/gem/ruby"
 export PATH="$PATH:/home/eirik/.config/emacs/bin"
 
 # Default Programs
@@ -17,8 +17,9 @@ export BROWSER="firefox"
 export READER="zathura"
 export VIEWER="sxiv"
 export STATUSBAR="dwmblocks"
-export DISPLAY=":0"
-export SHELL="/usr/bin/zsh"
+export PAGER="less"
+#export DISPLAY=":0"
+#export SHELL="/usr/bin/zsh"
 
 # ~/ Clean-up
 export ZDOTDIR="$HOME/.config/zsh"
@@ -44,6 +45,7 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 #fzf
 export FZF_DEFAULT_OPTS='--height 40% --no-reverse'
