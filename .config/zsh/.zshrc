@@ -21,8 +21,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' rehash true
 zmodload zsh/complist
 # Include hidden files in autocomplete:
-compinit
 _comp_options+=(globdots)
+compinit
 
 setopt always_to_end
 setopt auto_cd
