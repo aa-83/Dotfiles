@@ -1,5 +1,5 @@
 #!/bin/sh
 copy_build ;
 copy_config ;
+copy_scripts ;
 cp ~/.zprofile ~/dokumenter/git_repositories/Dotfiles ;
-cp -rfu ~/.local/bin/scripts ~/dokumenter/git_repositories/Dotfiles/.local/bin ;
