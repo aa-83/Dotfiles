@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /home/eirik/.local/bin/scripts ;
+cp -rfu * /home/eirik/dokumenter/git_repositories/Dotfiles/.local/bin/scripts
