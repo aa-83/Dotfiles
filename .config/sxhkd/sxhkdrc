@@ -1,7 +1,7 @@
 #Basic binds
 super + Return
 	$TERMINAL
-super + d
+super + shift + d
 	dmenu_run
 super + shift + s
 	slock &  mpc pause ; pauseallmpv
