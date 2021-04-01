@@ -1,7 +1,7 @@
 autoload -Uz colors && colors
 autoload -Uz promptinit
 
-PROMPT='%B[%b%F{11}%n%f%F{12}@%f%B%F{9}%m%f%b %F{13}%1~%f%B]%b %B%F{14}$%f%b '
+PROMPT='%B[%b%F{#f58700}%n%f%B%F{#0000ff}@%f%b%B%F{#cc0000}%m%f%b %F{#b11cb1}%1~%f%B]%b %B%F{#0abdb6}$%f%b '
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' actionformats \
@@ -123,6 +123,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
