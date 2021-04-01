@@ -1,48 +1,41 @@
 !! Transparency (0-1):
-*.alpha: 0.9
+*.alpha: 0.93
 
 !! Set a default font and font size as below:
 st.font: monospace-14;
-dwm.font: monospace-11;
 *.font: monospace-14;
-*.fontalt0: NotoFontsEmoji-10;
-
-!st.termname: st-256color
-*.borderpx: 2
+*.fontalt0: NotoColorEmoji-11;
 
 !! Set the background, foreground and cursor colors as below:
-/*.background: #282828*/
-/*.foreground: white*/
 *.cursorColor: #ea00d9
 
 !! cyberpunk 16 colour bright
-*background: #091833
-*foreground: #0abdc6
+!!*background: #091843
+!!*foreground: #0abdb6
 
-*color0: #123e7c
-*color8: #416496
+*color0: #091873
+*color8: #091833
 
-*color1: #cc0000
-*color9: #d63232
+*color1: #ff0000
+*color9: #d61200
 
-*color2: #198c19
-*color10: #46a346
+*color2: #00ff00
+*color10: #40ff2f
 
-*color3: #f57800
-*color11: #f79332
+*color3: #ff9000
+*color11: #f07200
 
-*color4: #0000b2
-*color12: #3232c1
+*color4: #0000ff
+*color12: #1220ff
 
-*color5: #711c91
-*color13: #8d49a7
+*color5: #7119a7
+*color13: #ee32e0
 
-*color6: #ea00d9
-*color14: #ee32e0
+*color6: #20f0ff
+*color14: #09dddd
 
-*color7: #0abdc6
-*color15: #0abdc6
-
+*color7: #ea00d9
+*color15: #ea00d9
 
 !! cyberpunk 16 colour dark
 /*background: #000b1e*/
@@ -71,4 +64,3 @@ dwm.font: monospace-11;
 
 /*color7: #b2b2b2*/
 /*color15: #ffffff */
-
