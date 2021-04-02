@@ -23,6 +23,7 @@ alias hex='nvim -b' ;
 alias hexedit='hexedit --color' ;
 alias popen='pass open -f' ;
 alias emacs='emacs -fn 'monospace''
+alias gotop='gotop -c cyberpunk_neon'
 
 # Config shortcuts
 alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;
