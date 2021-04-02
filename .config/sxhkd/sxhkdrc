@@ -26,7 +26,7 @@ super + u
 super + shift + u
 	$TERMINAL -e pcmanfm
 super + i
-    $TERMINAL -e gotop
+    $TERMINAL -e gotop -c cyberpunk_neon
 super + shift + i
 	$TERMINAL -e htop
 super + o
