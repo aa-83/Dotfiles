@@ -184,8 +184,8 @@ set statusline+=%*
 set colorcolumn=80
 set background=light
 "set background=dark
-highlight ColorColumn ctermfg=green
-highlight Comment ctermfg=red
+highlight ColorColumn ctermfg=red
+highlight Comment ctermfg=blue
 
 " Bunch of different setting, should be sorted
 set title
