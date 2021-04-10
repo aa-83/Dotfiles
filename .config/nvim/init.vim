@@ -170,9 +170,9 @@ set statusline+=%{&ff}] "file format
 set statusline+=\ %y      "filetype
 set statusline+=\ %h      "help file flag
 set statusline+=\ %r      "read only flag
-set statusline+=\ %m      "modified flag
 set statusline+=%=      "left/right separator
-set statusline+=%{LinterStatus()}
+set statusline+=\ %m      "modified flag
+set statusline+=\ %{LinterStatus()}
 set statusline+=\ %c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P\     "percent through file
