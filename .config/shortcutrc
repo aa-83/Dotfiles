@@ -3,7 +3,6 @@ alias h='cd ~/ && pwd' ;
 alias t='cd ~/dokumenter && pwd' ;
 alias d='cd ~/dokumenter && pwd' ;
 alias ma='cd ~/dokumenter/man && pwd' ;
-alias b='cd ~/dokumenter/build && pwd' ;
 alias oF='cd ~/dokumenter/build/oF && pwd' ;
 alias i='cd ~/media/bilder && pwd' ;
 alias v='cd ~/media/video && pwd' ;
@@ -11,6 +10,14 @@ alias iw='cd ~/media/bilder/wallpapers && pwd' ;
 alias m='cd ~/media/musikk && pwd' ;
 alias mp='cd ~/media/musikk/podcasts && pwd' ;
 alias dl='cd ~/nedlastinger && pwd' ;
+
+alias b='cd /opt/ && pwd' ;
+alias bdw='cd /opt/dwm && pwd' ;
+alias bdm='cd /opt/dmenu && pwd' ;
+alias bdwb='cd /opt/dwmblocks && pwd' ;
+alias bs='cd /opt/st && pwd' ;
+alias bf='cd /opt/ffmpeg && pwd' ;
+alias bof='cd /opt/of && pwd' ;
 
 alias s='cd ~/dokumenter/synk && pwd' ;
 alias ss='cd ~/dokumenter/synk/skole/spansk && pwd' ;
