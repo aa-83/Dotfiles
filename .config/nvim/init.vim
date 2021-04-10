@@ -167,9 +167,9 @@ set statusline=
 set statusline=%t       "tail of the filename
 set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
-set statusline+=\%h      "help file flag
-set statusline+=\%r      "read only flag
 set statusline+=\ %y      "filetype
+set statusline+=\ %h      "help file flag
+set statusline+=\ %r      "read only flag
 set statusline+=\ %m      "modified flag
 set statusline+=%=      "left/right separator
 set statusline+=%{LinterStatus()}
@@ -185,6 +185,7 @@ set colorcolumn=80
 set background=light
 "set background=dark
 highlight ColorColumn ctermbg=red
+highlight ColorColumn ctermfg=cyan
 highlight Comment ctermfg=blue
 
 " Bunch of different setting, should be sorted
