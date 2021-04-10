@@ -1,2 +1,2 @@
 # Dotfiles
-These are my build- and dotfiles.
+These are my dotfiles.
