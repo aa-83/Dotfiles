@@ -40,10 +40,10 @@ alias gs='cd ~/dokumenter/git_repositories/s&& ls -Atatus && pwd && ls -A' ;
 alias c='cd ~/.config && pwd && ls -A' ;
 alias lb='cd ~/.local/bin && pwd && ls -A' ;
 alias lbs='cd ~/.local/bin/scripts && pwd && ls -A' ;
-alias ls -Ah='cd ~/.local/share && pwd && ls -A' ;
-alias ls -Ap='cd ~/.local/share/password-store && pwd && ls -A' ;
-alias ls -Ag='cd ~/.local/share/gnupg && pwd && ls -A' ;
-alias ls -Am='cd ~/.local/share/mail && pwd && ls -A' ;
+alias ls='cd ~/.local/share && pwd && ls -A' ;
+alias lsp='cd ~/.local/share/password-store && pwd && ls -A' ;
+alias lsg='cd ~/.local/share/gnupg && pwd && ls -A' ;
+alias lsm='cd ~/.local/share/mail && pwd && ls -A' ;
 alias vt='cd ~/.local/share/vifm/Trash && pwd && ls -A' ;
 
 # Mac shortcuts
