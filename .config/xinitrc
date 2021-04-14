@@ -3,7 +3,7 @@ userresources=$HOME/.config/Xresources
 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
-~/.local/bin/scripts/.fehbg &
+wallpaper &
 dwmblocks &
 sxhkd &
 xrdb ~/.config/Xresources &
