@@ -4,7 +4,7 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" ;
 alias snvim='sudo nvim'
 
 # Core utils
-alias ls='ls -hN --color=always --group-directories-first' ;
+alias ls='ls -hFN --color=always --group-directories-first' ;
 alias rm='rm -vI' ;
 alias mv='mv -vi' ;
 alias cp='cp -vi' ;
