@@ -31,7 +31,8 @@ map x :!sxiv -ft * 2>/dev/null &<CR>
 nnoremap o :file &<cr>
 map E :!$EDITOR %f<CR>
 map mkd :mkdir<space>
-map bg :!setbg %f &<CR>
+map bg :!wallpaper %f &<CR>
+map fr :!fr<CR>
 map X :!ext %f &<CR>
 nnoremap s :shell<cr>
 "nnoremap w :view<cr>
