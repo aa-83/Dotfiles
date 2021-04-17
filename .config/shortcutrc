@@ -18,6 +18,7 @@ alias bdwb='cd /opt/dwmblocks && pwd && ls -A' ;
 alias bs='cd /opt/st && pwd && ls -A' ;
 alias bf='cd /opt/ffmpeg && pwd && ls -A' ;
 alias bof='cd /opt/of && pwd && ls -A' ;
+alias p='cd ~/dokumenter/build/patching_dir && pwd && ls -A' ;
 
 alias s='cd ~/dokumenter/synk && pwd && ls -A' ;
 alias ss='cd ~/dokumenter/synk/skole/spansk && pwd && ls -A' ;
