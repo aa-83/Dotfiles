@@ -1,2 +1,13 @@
 #!/bin/sh
-mv *.aux aux1/ & mv *.bbl bbl/ & mv *.bcf bcf/ & mv *.blg blg/ & mv *_latexmk latexmk/ & mv *.fls fls/ & mv *.log log/ & mv *.out out/ & mv *.pdf pdf/ & mv *.xml xml/ & mv *.gz gz/ & mv *.toc toc/
+mv *.aux aux1/ ;
+mv *.bbl bbl/ ;
+mv *.bcf bcf/ ;
+mv *.blg blg/ ;
+mv *_latexmk latexmk/ ;
+mv *.fls fls/ ;
+mv *.log log/ ;
+mv *.out out/ ;
+mv *.pdf pdf/ ;
+mv *.xml xml/ ;
+mv *.gz gz/ ;
+mv *.toc toc/
