@@ -1,5 +1,5 @@
 !! Transparency (0-1):
-*.alpha: 0.93
+*.alpha: 0.9
 
 !! Set a default font and font size as below:
 st.font: monospace-14;
@@ -14,28 +14,28 @@ st.font: monospace-14;
 !!*foreground: #0abdb6
 
 *color0: #091873
-*color8: #091833
+*color8: #091823
 
-*color1: #ff0000
-*color9: #d61200
+*color1: #cc0000
+*color9: #a30000
 
-*color2: #00ff00
-*color10: #40ff2f
+*color2: #00cc00
+*color10: #00a300
 
-*color3: #ff9000
-*color11: #f07200
+*color3: #f07200
+*color11: #c05b00
 
-*color4: #0000ff
-*color12: #1220ff
+*color4: #0000cc
+*color12: #0000a3
 
-*color5: #7119a7
-*color13: #ee32e0
+*color5: #2abdb6
+*color13: #219791
 
-*color6: #20f0ff
-*color14: #09dddd
+*color6: #7f2faf
+*color14: #7119a7
 
 *color7: #ea00d9
-*color15: #ea00d9
+*color15: #a30097
 
 !! cyberpunk 16 colour dark
 /*background: #000b1e*/
