@@ -24,6 +24,7 @@ alias hexedit='hexedit --color' ;
 alias popen='pass open -f' ;
 alias emacs='emacs -fn 'monospace''
 alias gotop='gotop -c cyberpunk_neon'
+alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
 
 # Config shortcuts
 alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;
