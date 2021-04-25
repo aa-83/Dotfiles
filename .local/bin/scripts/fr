@@ -12,4 +12,3 @@ perl-rename 'y/___/_/' * ;
 perl-rename 's/___/_/' * ;
 perl-rename 'y/__/_/' * ;
 perl-rename 's/__/_/' * ;
-
