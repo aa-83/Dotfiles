@@ -141,9 +141,6 @@ map <C-l> <C-w>l
 	autocmd BufWritePre * %s/\n\+\%$//e
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
-" Recompile suckless programs automatically
-"	autocmd BufWritePost config.h,config.def.h !sudo make install
-
 " Update binds when sxhkdrc is updated
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
@@ -154,8 +151,8 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 """"""""""
 """Tags"""
 """"""""""
-set tags=~/.local/share/tags
-set tags=./tags;
+set tags=~/.local/share/.tags
+set tags=./.tags;
 command! MakeTags !ctags -R .
 
 """"""""""""""""
