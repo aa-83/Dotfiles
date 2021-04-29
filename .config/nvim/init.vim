@@ -22,7 +22,7 @@ let g:ale_cpp_gcc_exexutable = '/usr/bin/g++'
 let g:ale_cpp_gcc_options ='-Wall -03'
 let g:ale_c_gcc_exexutable = '/usr/bin/gcc'
 let g:ale_c_gcc_options ='-Wall -03'
-let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+"let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
