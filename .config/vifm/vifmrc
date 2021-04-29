@@ -85,11 +85,14 @@ set vifminfo=dhistory,chistory,tui,shistory,phistory,fhistory,dirstack,registers
 
 
 " file types
-set classify='📁:dir:/,>_ :exe:,📄:reg:,🔗:link:'
+set classify='📁:dir:/, :exe:,📄:reg:,🔗:link:'
 
 " various file names
-set classify+='⬆️ ::../::,>_ ::*.sh::,C ::*.[hc]pp::,C ::*.[hc]::,©️ ::/^copying|license$/::,g ::.git/,,*.git/::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::'
+set classify+='⬆️ ::../::, ::*.sh::,©️ ::/^copying|license$/::, ::.git/,,*.git/,,.git*::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::'
 
+" C files
+set classify+=' ::*.[hc]::'
+set classify+=' ::*.[hc]pp::'
 " Configs
 set classify+='🚧::*.conf::'
 
