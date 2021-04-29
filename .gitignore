@@ -38,9 +38,6 @@
 .config/nvim/bundle/vimtex/.gitignore
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
-.config/vifm/vifminfo.json
-.config/vifm/vifminfo.json_1959041
-.config/vifm/vifminfo.json_224140
-.config/vifm/vifminfo.json_483225
+.config/vifm/vifminfo.json*
 .config/zsh/.zcompdump
 tags
