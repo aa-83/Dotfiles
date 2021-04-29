@@ -22,7 +22,9 @@ super + shift + F12
 super + u
 	$TERMINAL -e vufm
 super + shift + u
-	$TERMINAL -e pcmanfm
+	$TERMINAL -e irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+
+alias irssi='irssi ' ;
 super + i
     $TERMINAL -e gotop -c cyberpunk_neon
 super + shift + i
