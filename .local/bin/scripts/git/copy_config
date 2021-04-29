@@ -1,4 +1,4 @@
 #!/bin/sh
 cp -rfu \
-/home/eirik/.config/{aliasrc,shortcutrc,xinitrc,user-dirs.dirs,Xresources,emacs,doom,calcurse,dunst,fontconfig,htop,gotop,mpv,mpd,neofetch,ncmpcpp,newsboat,nvim,sxhkd,sxiv,tmux,vifm,zathura,zsh,old,spotifyd,spotify-tui} \
+/home/eirik/.config/{aliasrc,shortcutrc,xinitrc,user-dirs.dirs,Xresources,calcurse,dunst,fontconfig,htop,gotop,mpv,mpd,neofetch,ncmpcpp,newsboat,nvim,sxhkd,sxiv,tmux,vifm,zathura,zsh,spotifyd,spotify-tui} \
 /home/eirik/dokumenter/git_repositories/Dotfiles/.config
