@@ -14,6 +14,7 @@
 .config/nvim/bundle/goyo.vim/.git*
 .config/nvim/bundle/neomake/.git*
 .config/nvim/bundle/neosnippet.vim/.git*
+.config/nvim/bundle/neosnippet_snippets/.git*
 .config/nvim/bundle/nerdtree/.git*
 .config/nvim/bundle/syntastic/.git*
 .config/nvim/bundle/ultisnips/.git*
@@ -23,6 +24,7 @@
 .config/nvim/bundle/vim_online-thesaurus/.git*
 .config/nvim/bundle/vim_css_color/.git*
 .config/nvim/bundle/vim_gutentags/.git*
+.config/nvim/bundle/vim_devicons/.git*
 .config/nvim/bundle/vim_highlightedyank/.git*
 .config/nvim/bundle/vimtex/.git*
 .config/spotify-tui/.spotify_token_cache.json
