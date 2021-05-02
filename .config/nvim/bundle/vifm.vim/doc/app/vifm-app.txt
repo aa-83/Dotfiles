@@ -1,4 +1,4 @@
-*vifm-app.txt*    For Vifm version 0.11  Last change: 2021 Mar 19
+*vifm-app.txt*    For Vifm version 0.11  Last change: 2021 Apr 24
 
  Email for bugs and suggestions: <xaizek@posteo.net>
 
@@ -1422,12 +1422,25 @@ The builtin commands are:
     previously set command of the same name.  Builtin commands can't be
     redefined.
 
-    Unlike in vim, user commands do not have to start with a capital letter.
-    However, command name cannot contain numbers or special symbols except
-    for single trailing '?' or '!'.
-
-    User commands are run in a shell by default (see below for other syntax of
-    other options).  To run a command in the background you must mark it as a
+    User commands must start with an upper or lower case letter.  Command
+    name can't contain special symbols except for a single trailing
+    '?' or '!'.  Numbers are allowed provided that they don't cause parsing
+    ambiguity (no command name prefix that precedes a digit can match an
+    existing command unless it has a digit in the same place), for example: >
+      " good
+      :command mp3 command
+      " good
+      :command mp4 command
+      :command mp3! command
+      :command mp4? command
+      " bad
+      :command mp command
+      :command mp44 command
+      " good
+      :command mp4c command
+<
+    User commands are run in a shell by default (see below for syntax of other
+    options).  To run a command in the background you must mark it as a
     background command by adding " &" after the command's action
     (e.g., `:com rm rm %f &`).
 
@@ -2714,14 +2727,21 @@ The command macros may be used in user commands.
   %q        redirect command output to quick view, which is activated if
             disabled.
                                                                *vifm-%s*
-  %s        execute command in split window of active terminal
+  %s        execute command in horizontal split window of active terminal
             multiplexer (ignored if not running inside one).
+                                                               *vifm-%v*
+  %v        same as %s, but splits vertically.
                                                                *vifm-%n*
   %n        forbid using of terminal multiplexer to run the command.
                                                                *vifm-%i*
   %i        completely ignore command output.  For background jobs this
             suppresses error dialogs, while still storing errors
             internally for viewing via |vifm-:jobs| menu.
+
+                                                               *vifm-%Pl*
+  %Pl       pipe list of files to standard input of a background process.
+                                                               *vifm-%Pz*
+  %Pz       same as %Pz, but separates paths by null ('\0') character.
 
                                                                *vifm-%pc*
   %pc       marks the end of the main command and the beginning of the
@@ -2747,8 +2767,9 @@ The command macros may be used in user commands.
 
 Use %% if you need to put a percent sign in your command.
 
-Note that %m, %M, %s, %S, %i, %u and %U macros are mutually exclusive.  Only
-the last one of them on the command will take effect.
+Note that %i, %Iu, %IU, %m, %M, %n, %q, %Pl, %Pz, %s, %S, %u and %U macros
+are mutually exclusive.  Only the last one of them on the command will take
+effect.
 
                                                      *vifm-filename-modifiers*
 You can use file name modifiers after %c, %C, %f, %F, %b, %d and %D macros.
@@ -5062,6 +5083,11 @@ Attributes (permissions or properties) dialog~
 
 h, Space - check/uncheck.
 q - close dialog
+r - (*nix only) (un)set all read bits
+w - (*nix only) (un)set all write bits
+x - (*nix only) (un)set all execute bits
+s - (*nix only) (un)set all special (SetUID, SetGID, Sticky) bits
+e - (*nix only) (un)set recursion (for directories only)
 
 Item states:
 * - checked flag.

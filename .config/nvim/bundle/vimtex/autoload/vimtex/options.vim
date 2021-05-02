@@ -78,9 +78,9 @@ function! vimtex#options#init() abort " {{{1
         \ 'sections' : {
         \   'parse_levels' : 0,
         \   'sections' : [
-        \     'part',
-        \     'chapter',
-        \     'section',
+        \     '%(add)?part',
+        \     '%(chapter|addchap)',
+        \     '%(section|addsec)',
         \     'subsection',
         \     'subsubsection',
         \   ],
@@ -224,7 +224,7 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_indent_bib_enabled', 1)
   call s:init_option('vimtex_indent_tikz_commands', 1)
   call s:init_option('vimtex_indent_conditionals', {
-        \ 'open': '\v%(\\newif)@<!\\if%(field|name|numequal|thenelse)@!',
+        \ 'open': '\v%(\\newif)@<!\\if%(f>|field|name|numequal|thenelse)@!',
         \ 'else': '\\else\>',
         \ 'close': '\\fi\>',
         \})
@@ -270,6 +270,7 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_syntax_conceal_default', 1)
   call s:init_option('vimtex_syntax_conceal', {
         \ 'accents': g:vimtex_syntax_conceal_default,
+        \ 'cites': g:vimtex_syntax_conceal_default,
         \ 'fancy': g:vimtex_syntax_conceal_default,
         \ 'greek': g:vimtex_syntax_conceal_default,
         \ 'math_bounds': g:vimtex_syntax_conceal_default,
@@ -278,12 +279,13 @@ function! vimtex#options#init() abort " {{{1
         \ 'math_super_sub': g:vimtex_syntax_conceal_default,
         \ 'math_symbols': g:vimtex_syntax_conceal_default,
         \ 'styles': g:vimtex_syntax_conceal_default,
-        \ 'cites': g:vimtex_syntax_conceal_default,
         \})
   call s:init_option('vimtex_syntax_conceal_cites', {
         \ 'type': 'brackets',
         \ 'icon': '📖',
+        \ 'verbose': v:true,
         \})
+  call s:init_option('vimtex_syntax_custom_cmds', [])
   call s:init_option('vimtex_syntax_nested', {
         \ 'aliases' : {
         \   'C' : 'c',
@@ -314,6 +316,7 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_syntax_packages', {
         \ 'amsmath': {'load': 2},
         \ 'babel': {'conceal': g:vimtex_syntax_conceal_default},
+        \ 'hyperref': {'conceal': g:vimtex_syntax_conceal_default},
         \})
 
   call s:init_option('vimtex_texcount_custom_arg', '')
@@ -323,12 +326,6 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_text_obj_linewise_operators', ['d', 'y'])
 
   call s:init_option('vimtex_toc_enabled', 1)
-  call s:init_option('vimtex_toc_custom_matchers', [])
-  call s:init_option('vimtex_toc_show_preamble', 1)
-  call s:init_option('vimtex_toc_todo_labels', {
-        \ 'TODO': 'TODO: ',
-        \ 'FIXME': 'FIXME: '
-        \})
   call s:init_option('vimtex_toc_config', {
         \ 'name' : 'Table of contents (VimTeX)',
         \ 'mode' : 1,
@@ -360,9 +357,17 @@ function! vimtex#options#init() abort " {{{1
         \ 'tocdepth' : 3,
         \ 'todo_sorted' : 1,
         \})
+  call s:init_option('vimtex_toc_config_matchers', {})
+  call s:init_option('vimtex_toc_custom_matchers', [])
+  call s:init_option('vimtex_toc_show_preamble', 1)
+  call s:init_option('vimtex_toc_todo_labels', {
+        \ 'TODO': 'TODO: ',
+        \ 'FIXME': 'FIXME: '
+        \})
 
   call s:init_option('vimtex_view_enabled', 1)
   call s:init_option('vimtex_view_automatic', 1)
+  call s:init_option('vimtex_view_automatic_xwin', 1)
   call s:init_option('vimtex_view_method', 'general')
   call s:init_option('vimtex_view_use_temp_files', 0)
   call s:init_option('vimtex_view_forward_search_on_start', 1)
