@@ -12,51 +12,26 @@ st.font: monospace-14;
 !!*background: #091843
 !!*foreground: #0abdb6
 
-!! cyberpunk 16 colour bright
-*color8: #091843
-*color0: #091843
+*color0:  #123e7c
+*color8:  #091843
 
-*color1: #f00000
-*color9: #830000
+*color1:  #ff0000
+*color9:  #ff2020
 
-*color2: #00f000
-*color10: #008300
+*color2:  #00ff00
+*color10:  #20ff20
 
-*color3: #ff6500
-*color11: #c05b00
+*color3:  #f57800
+*color11:  #f57830
 
-*color12: #0000f0
-*color4: #000083
+*color4:  #0000FF
+*color12:  #14ff40
 
-*color13: #2abdb6
-*color5: #218781
+*color5:  #711c91
+*color13:  #d300c4
 
-*color14: #7f2faf
-*color6: #7119a7
+*color6:  #0abdc6
+*color14:  #123e7c
 
-*color15: #ea00d9
-*color7: #a30097
-
-!!*color0: #091873
-!!*color8: #091823
-
-!!*color1: #cc0000
-!!*color9: #a30000
-
-!!*color2: #00cc00
-!!*color10: #00a300
-
-!!*color3: #f07200
-!!*color11: #c05b00
-
-!!*color4: #0000cc
-!!*color12: #0000a3
-
-!!*color5: #2abdb6
-!!*color13: #219791
-
-!!*color6: #7f2faf
-!!*color14: #7119a7
-
-!!*color7: #ea00d9
-!!*color15: #a30097
+*color7:  #ea00d9
+*color15:  #d7d7d5
