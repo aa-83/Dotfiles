@@ -47,12 +47,6 @@ export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
-#fzf
-export FZF_DEFAULT_OPTS="--height 50% --no-reverse"
-export FZF_CTRL_T_OPTS="--select-1 --exit-0"
-export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-
 eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa Eirik)"
 #eval "$(keychain --dir /home/eirik/.config/.keychain --agents gpg --eval Eirik)"
 
