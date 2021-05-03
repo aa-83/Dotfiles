@@ -35,7 +35,8 @@ setopt clobber
 setopt complete_aliases
 setopt correct_all
 setopt complete_in_word
-setopt extended_glob
+#setopt extended_glob
+setopt globdots
 setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -117,6 +118,16 @@ autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo
 # Fuzzy plugin
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+#fzf
+export FZF_DEFAULT_COMMAND='find .'
+export FZF_DEFAULT_OPTS=" --layout=reverse --info=inline --height=50% --multi --preview-window=:hidden --preview '([[ -f {} ]] && cat {}) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008' --prompt='∼ ' --pointer='▶' --marker='✓' --bind '?:toggle-preview' --bind 'ctrl-a:select-all' --bind 'ctrl-y:execute-silent(echo {+} | xclip)' --bind 'ctrl-o:execute(nvim {1} > /dev/tty)+abort'"
+#export FZF_DEFAULT_OPTS=" --layout=reverse --info=inline --height=50% --multi --preview-window=:hidden --preview '([[ -f {} ]] && cat {}) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008' --prompt='∼ ' --pointer='▶' --marker='✓' --bind '?:toggle-preview' --bind 'ctrl-a:select-all' --bind 'ctrl-y:execute-silent(echo {+} | xclip)' --bind 'ctrl-o:execute(echo {+} | xargs -to nvim)+abort'"
+export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+export FZF_CTRL_T_COMMAND='find .'
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_ALT_C_COMMAND='find .'
 
 # Search for missing packages
 source /usr/share/doc/pkgfile/command-not-found.zsh
