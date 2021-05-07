@@ -116,20 +116,21 @@ alias help=run-help
 autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
 
 # Fuzzy plugin
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh 2>/dev/null
+source /usr/share/fzf/completion.zsh 2>/dev/null
 
 #fzf
-export FZF_DEFAULT_COMMAND='find .'
+
+export FZF_DEFAULT_COMMAND="find -type d,f 2>/dev/null"
 export FZF_DEFAULT_OPTS=" --border=sharp --layout=reverse --info=inline --height=50% --multi --preview-window=:hidden --preview '([[ -f {} ]] && cat {}) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' --color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008' --prompt='∼ ' --pointer='>' --marker='*' --bind '?:toggle-preview' --bind 'ctrl-a:select-all' --bind 'ctrl-y:execute-silent(echo {+} | xclip)' --bind 'ctrl-o:execute(nvim {1} > /dev/tty)+abort'"
+export FZF_CTRL_T_COMMAND="find -type f 2>/dev/null"
 export FZF_CTRL_T_OPTS="--select-1 --exit-0"
-export FZF_CTRL_T_COMMAND='find .'
-export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_ALT_C_COMMAND="find -type d 2>/dev/null"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-export FZF_ALT_C_COMMAND='find .'
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 # Search for missing packages
-source /usr/share/doc/pkgfile/command-not-found.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
 
 # Load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
