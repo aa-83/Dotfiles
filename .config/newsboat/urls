@@ -1,33 +1,32 @@
-"---Linux---"
+"---Distros---"
 https://www.archlinux.org/feeds/news/ Linux
 https://www.archlinux.org/feeds/releases
 https://www.alpinelinux.org/atom.xml
 https://www.kali.org/rss.xml
 https://tails.boum.org/news/index.en.rss
+"---Linux News---"
 https://www.fsf.org/static/fsforg/rss/news.xml
 https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
+https://rawsec.ml/rss.xml Linux
 #https://h4ck3r9.space/rss.xml
 "---Raspberry Pi & Arduino---"
+https://magpi.raspberrypi.org/feed
+https://riscv.org/feed
 https://pi-hole.net/feed
 https://pimylifeup.com/feed
 https://feeds.feedburner.com/smarthomebeginr?format=xml
 https://blog.adafruit.com/feed
 "---Tech---"
-https://rawsec.ml/rss.xml Linux
 http://feeds.arstechnica.com/arstechnica/features "Tech News"
 http://feeds.arstechnica.com/arstechnica/index "Tech News"
 https://www.bleepingcomputer.com/feed/
-https://magpi.raspberrypi.org/feed
-https://riscv.org/feed
 https://www.accessnow.org/rss
 https://blog.torproject.org/feed
 "---Gaming---"
 https://www.rockpapershotgun.com/feed
-#https://twitrss.me/twitter_user_to_rss/?user=day9tv
 https://tl.net/rss/news.xml E-sports
 #https://www.liquiddota.com/rss/news.xml E-sports
-#https://twitrss.me/twitter_user_to_rss/?user=TeamAretuza
 https://teamleviathangaming.com/feed/
 https://rogueoutpost.co.uk/index.php/category/articles/feed
 "---Vitenskap---"
