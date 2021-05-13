@@ -124,7 +124,7 @@ nmap <Leader>hr :%!xxd<CR> :set filetype=xxd<CR>
 nmap <Leader>hw :%!xxd -r<CR> :set binary<CR> :set filetype=<CR>
 
 " Spell Check
-map <leader>oe :setlocal spell! spelllang=en_us<cr>
+map <leader>oe :setlocal spell! spelllang=en_gb<cr>
 map <leader>on :setlocal spell! spelllang=nb_no<cr>
 
 " Fix splits
@@ -218,4 +218,6 @@ set smarttab
 set linebreak
 set cmdheight=1
 set modifiable
+set complete+=kspell
+set completeopt=menuone,noinsert
 set shortmess-=c
