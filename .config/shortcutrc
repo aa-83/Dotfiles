@@ -21,7 +21,7 @@ alias bof='cd /opt/of && pwd && ls -A' ;
 alias p='cd ~/dokumenter/build/patching_dir && pwd && ls -A' ;
 
 alias s='cd ~/dokumenter/synk && pwd && ls -A' ;
-alias ss='cd ~/dokumenter/synk/skole/spansk && pwd && ls -A' ;
+alias sp='cd ~/dokumenter/synk/skole/spansk && pwd && ls -A' ;
 alias a='cd ~/dokumenter/synk/arbeid && pwd && ls -A' ;
 alias sk='cd ~/dokumenter/synk/skole/ddsks/master/andre_år/andre_semester && pwd && ls -A' ;
 alias ho='cd ~/dokumenter/synk/hobby && pwd && ls -A' ;
