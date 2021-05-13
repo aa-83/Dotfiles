@@ -3,10 +3,9 @@
 #
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$PATH:/home/eirik/files/diverse/build/oF"
-export PG_OF_PATH="/home/eirik/files/diverse/build/oF"
 export PATH="$PATH:/home/eirik/.local/share/gem/ruby"
-export PATH="$PATH:/home/eirik/.config/emacs/bin"
+#export PATH="$PATH:/home/eirik/files/diverse/build/oF"
+#export PG_OF_PATH="/home/eirik/files/diverse/build/oF"
 
 # Default Programs
 export TERMINAL="st"
@@ -18,8 +17,6 @@ export READER="zathura"
 export VIEWER="sxiv"
 export STATUSBAR="dwmblocks"
 export PAGER="less"
-#export DISPLAY=":0"
-#export SHELL="/usr/bin/zsh"
 
 # ~/ Clean-up
 export ZDOTDIR="$HOME/.config/zsh"
