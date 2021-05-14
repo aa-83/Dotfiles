@@ -15,23 +15,23 @@ st.font: monospace-14;
 *color0:  #123e7c
 *color8:  #091843
 
-*color1:  #ff0000
-*color9:  #ff2020
+*color1:  #ff00a0
+*color9:  #ff0000
 
 *color2:  #00ff00
-*color10:  #20ff20
+*color10:  #60bf00
 
 *color3:  #f57800
-*color11:  #f57830
+*color11:  #f57860
 
-*color4:  #0000FF
-*color12:  #14ff40
+*color4:  #0030FF
+*color12:  #0030bf
 
 *color5:  #711c91
 *color13:  #d300c4
 
 *color6:  #0abdc6
-*color14:  #123e7c
+*color14:  #127e9c
 
 *color7:  #ea00d9
 *color15:  #d7d7d5
