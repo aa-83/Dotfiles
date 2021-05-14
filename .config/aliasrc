@@ -1,7 +1,7 @@
 #!/bin/sh
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" ;
-alias snvim='sudo nvim'
+alias snvim='sudo nvim' ;
 
 # Core utils
 alias ls='ls -hFN --color=always --group-directories-first' ;
@@ -12,9 +12,9 @@ alias mkdir='mkdir -pv' ;
 alias grep='grep --color=auto' ;
 alias diff='diff --color=auto' ;
 alias ip='ip -color=auto' ;
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..='cd ..' ;
+alias ...='cd ../..' ;
+alias ....='cd ../../..' ;
 
 # Software specific aliases
 alias yt='youtube-dl --add-metadata -i' ;
@@ -22,9 +22,8 @@ alias yta='yt -x -f bestaudio/best' ;
 alias hex='nvim -b' ;
 alias hexedit='hexedit --color' ;
 alias popen='pass open -f' ;
-alias emacs='emacs -fn 'monospace''
-alias gotop='gotop -c cyberpunk_neon'
-alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
+alias gotop='gotop -c cyberpunk_neon' ;
+alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf' ;
 
 # Config shortcuts
 alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;
