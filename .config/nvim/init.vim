@@ -39,12 +39,15 @@ endfunction
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
 " Goyo
 "Turn on Goyo for Prose Writing
 map <leader>f :Goyo \| set bg=light \| set linebreak<cr>
 "Enable Goyo by default for mutt writing
-"	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-"	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 "Quit Vim if this is the only remaining buffer
@@ -77,7 +80,7 @@ call neomake#configure#automake('w')
 	autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 		\ quit | endif
 " Toggle Nerdtree with leader n t
-map <leader>nt :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Netrw
 " File browsing fixes
@@ -96,11 +99,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { 'type': 'style' }
 
 "Ultisnips
-let g:UltiSnipsExpandTrigger='<c-tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-b>'
-let g:UltiSnipsJumpBackwardTrigger='<c-z>'
+let g:UltiSnipsExpandTrigger = '<c-e>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardrigger = '<c-k>'
 
 " Vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
 let g:vimtex_compiler_program='nvr'
 
 """"""""""""""""""""""""""""""
@@ -179,6 +185,7 @@ set statusline+=%*
 
 " Colours
 set colorcolumn=80
+set termguicolors
 set background=light
 "set background=dark
 highlight ColorColumn ctermbg=red
