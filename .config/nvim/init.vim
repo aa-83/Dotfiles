@@ -41,6 +41,7 @@ let g:ale_set_quickfix = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('max_list', 10)
 
 " Goyo
 "Turn on Goyo for Prose Writing
