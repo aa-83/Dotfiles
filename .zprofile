@@ -4,6 +4,7 @@
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/.local/share/gem/ruby"
+export PATH="$PATH:/home/eirik/.local/share/go/bin"
 #export PATH="$PATH:/home/eirik/files/diverse/build/oF"
 #export PG_OF_PATH="/home/eirik/files/diverse/build/oF"
 
@@ -43,6 +44,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export STARDICT_DATA_DIR="$XDG_DATA_HOME/stardict/dic"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_lie_hegre_rsa Eirik)"
 #eval "$(keychain --dir /home/eirik/.config/.keychain --agents gpg --eval Eirik)"
