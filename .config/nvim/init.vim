@@ -47,8 +47,8 @@ call deoplete#custom#option('max_list', 10)
 "Turn on Goyo for Prose Writing
 map <leader>f :Goyo \| set bg=light \| set linebreak<cr>
 "Enable Goyo by default for mutt writing
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+"	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+"	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 "Quit Vim if this is the only remaining buffer
@@ -132,7 +132,7 @@ nmap <Leader>hw :%!xxd -r<CR> :set binary<CR> :set filetype=<CR>
 
 " Spell Check
 map <leader>oe :setlocal spell! spelllang=en_gb<cr>
-map <leader>on :setlocal spell! spelllang=nb_no<cr>
+map <leader>on :setlocal spell! spelllang=nb<cr>
 
 " Fix splits
 set splitbelow splitright
