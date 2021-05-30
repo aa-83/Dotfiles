@@ -1,7 +1,10 @@
 autoload -Uz colors && colors
 autoload -Uz promptinit
 
+# Left prompt
 PROMPT='%B[%b%F{#f58700}%n%f%B%F{#0000ff}@%f%b%B%F{#cc0000}%m%f%b %F{#b11cb1}%1~%f%B]%b %B%F{#0abdb6}$%f%b '
+
+# Right prompt
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' actionformats \
