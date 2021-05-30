@@ -21,8 +21,8 @@ st.font: monospace-14;
 *color2:  #00ff00
 *color10:  #60bf00
 
+*color11:  #f54800
 *color3:  #f57800
-*color11:  #f57860
 
 *color4:  #0030FF
 *color12:  #0030bf
