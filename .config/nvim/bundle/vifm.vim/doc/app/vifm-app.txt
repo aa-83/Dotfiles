@@ -1,4 +1,4 @@
-*vifm-app.txt*    For Vifm version 0.11  Last change: 2021 Apr 24
+*vifm-app.txt*    For Vifm version 0.11  Last change: 2021 Mar 29
 
  Email for bugs and suggestions: <xaizek@posteo.net>
 
@@ -33,6 +33,7 @@
 |vifm-color-schemes|      Details on using color schemes in vifm.
 |vifm-trash|              Details about trash directory in vifm.
 |vifm-clientserver|       Client-server communication.
+|vifm-ext-rename|         About editing buffer of file names in an editor.
 |vifm-plugin|             Using the vifm.vim plugin.
 |vifm-reserved|           List of reserved commands.
 |vifm-env-vars|           Environment variables that affect vifm or set by it.
@@ -518,7 +519,8 @@ i                                              *vifm-i*
 
 
 cw                                             *vifm-cw*
-    change word is used to rename a file or files.
+    change word is used to rename a file or files.  If multiple files are
+    selected, behaves as |vifm-:rename| command run without arguments.
 
 cW                                             *vifm-cW*
     change WORD is used to change only name of file (without extension).
@@ -811,6 +813,9 @@ gu, u                                          *vifm-v_gu* *vifm-v_u*
 
 gU, U                                          *vifm-v_gU* *vifm-v_U*
     make names of selected files uppercase.
+
+cw                                             *vifm-v_cw*
+    same as running |vifm-:rename| command without arguments.
 
 --------------------------------------------------------------------------------
 *vifm-view*
@@ -2203,8 +2208,8 @@ order using the '.' operator.  Any whitespace is ignored.
 
                                                *vifm-:rename*
 :[range]rename[!]
-    rename files using vi to edit names. ! means go recursively through
-    directories.
+    rename files by editing their names in an editor.  "!" renames files
+    recursively in subdirectories.  See |vifm-ext-rename|.
 :[range]rename name1 name2...
     rename each of selected files to a corresponding name.
 
@@ -2732,7 +2737,7 @@ The command macros may be used in user commands.
                                                                *vifm-%v*
   %v        same as %s, but splits vertically.
                                                                *vifm-%n*
-  %n        forbid using of terminal multiplexer to run the command.
+  %n        forbid use of terminal multiplexer to run the command.
                                                                *vifm-%i*
   %i        completely ignore command output.  For background jobs this
             suppresses error dialogs, while still storing errors
@@ -2767,7 +2772,7 @@ The command macros may be used in user commands.
 
 Use %% if you need to put a percent sign in your command.
 
-Note that %i, %Iu, %IU, %m, %M, %n, %q, %Pl, %Pz, %s, %S, %u and %U macros
+Note that %i, %Iu, %IU, %m, %M, %n, %q, %Pl, %Pz, %s, %S, %u, %U and %v macros
 are mutually exclusive.  Only the last one of them on the command will take
 effect.
 
@@ -3605,6 +3610,7 @@ view mode).
     item               default  meaning ~
     graphicsdelay:num  0        delay before drawing graphics (microseconds)
     hardgraphicsclear  unset    redraw screen to get rid of graphics
+    toptreestats       unset    show file counts before the tree
 
 graphicsdelay is needed if terminal requires some timeout before it can
 draw graphics (otherwise it gets lost).
@@ -3935,6 +3941,8 @@ default: ""
 Determines the content of the status line (the line right above command-line).
 Empty string means use same format like in previous versions.  Following macros
 are supported:
+    %N - line break (increases height of the status line accordingly), ignores
+         %[ %] blocks
     %t - file name (considering value of the |vifm-'classify'| option)
     %T - symbolic link target (empty for other filetypes)
     %f - file name relative to current directory (considers 'classify')
@@ -5810,6 +5818,28 @@ option.  Name of the current one is available via v:servername.
 v:servername                                   *vifm-servername-variable*
     server name of the running vifm instance.  Empty if client-server feature
     is disabled.
+
+--------------------------------------------------------------------------------
+*vifm-ext-rename*
+
+When an editor is run to edit list of file names, contents of the temporary file
+has the following format:
+ 1. Order of lines correspond to the order of files in a view.
+ 2. Lines that start with a "#" are comments and are ignored.
+ 3. Single backslash at the beginning of a line is ignored, so that a file
+    starting with a backslash will appear like "\#name".
+
+If an operation was rejected due to issues with file names, next time you'll see
+the following in this order:
+ 1. Last error (in comments).
+ 2. Original file names (in comments).
+ 3. Failed list of new names.
+
+Mind that |vifm-plugin| will extract list of original names and show them in a
+vertical split.
+
+You can cancel renaming by removing all non-comments from the buffer.  This
+also erases information about previous edits.
 
 --------------------------------------------------------------------------------
 *vifm-plugin*

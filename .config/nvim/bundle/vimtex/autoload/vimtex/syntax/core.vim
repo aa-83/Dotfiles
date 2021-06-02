@@ -19,6 +19,7 @@ function! vimtex#syntax#core#init() abort " {{{1
   syntax cluster texClusterOpt contains=
         \texCmd,
         \texComment,
+        \texGroup,
         \texLength,
         \texOpt,
         \texOptEqual,
@@ -26,9 +27,11 @@ function! vimtex#syntax#core#init() abort " {{{1
         \@NoSpell
 
   syntax cluster texClusterMath contains=
-        \texCmdEnv,
+        \texCmdEnvM,
         \texCmdFootnote,
         \texCmdGreek,
+        \texCmdMinipage,
+        \texCmdParbox,
         \texCmdRef,
         \texCmdSize,
         \texCmdStyle,
@@ -67,37 +70,6 @@ function! vimtex#syntax#core#init() abort " {{{1
   syntax match texSpecialChar "\\[SP@]\ze[^a-zA-Z@]"
   syntax match texSpecialChar "\^\^\%(\S\|[0-9a-f]\{2}\)"
   syntax match texSpecialChar "\\[,;:!]"
-
-  " }}}2
-  " {{{2 Comments
-
-  " * In documented TeX Format, actual comments are defined by leading "^^A".
-  "   Almost all other lines start with one or more "%", which may be matched
-  "   as comment characters. The remaining part of the line can be interpreted
-  "   as TeX syntax.
-  " * For more info on dtx files, see e.g.
-  "   https://ctan.uib.no/info/dtxtut/dtxtut.pdf
-  if expand('%:e') ==# 'dtx'
-    syntax match texComment "\^\^A.*$"
-    syntax match texComment "^%\+"
-  elseif g:vimtex_syntax_nospell_comments
-    syntax match texComment "%.*$" contains=@NoSpell
-  else
-    syntax match texComment "%.*$" contains=@Spell
-  endif
-
-  " Do not check URLs and acronyms in comments
-  " Source: https://github.com/lervag/vimtex/issues/562
-  syntax match texCommentURL "\w\+:\/\/[^[:space:]]\+"
-        \ containedin=texComment contained contains=@NoSpell
-  syntax match texCommentAcronym '\v<(\u|\d){3,}s?>'
-        \ containedin=texComment contained contains=@NoSpell
-
-  " Todo and similar within comments
-  syntax case ignore
-  syntax keyword texCommentTodo combak fixme todo xxx
-        \ containedin=texComment contained
-  syntax case match
 
   " }}}2
   " {{{2 Commands: general
@@ -306,23 +278,126 @@ function! vimtex#syntax#core#init() abort " {{{1
   syntax match texCmdEnv "\v\\%(begin|end)>" nextgroup=texEnvArgName
   call vimtex#syntax#core#new_arg('texEnvArgName', {
         \ 'contains': 'texComment,@NoSpell',
-        \ 'next': 'texEnvOpt'
+        \ 'next': 'texEnvOpt',
         \})
-  call vimtex#syntax#core#new_opt('texEnvOpt',
-        \ {'contains': 'texComment,@NoSpell'})
+  call vimtex#syntax#core#new_opt('texEnvOpt')
 
-  " Tabular arguments
+  " {{{2 Commands: \begin{tabular}
+
   syntax match texCmdTabular "\\begin{tabular}"
-        \ nextgroup=texTabularOpt,texTabularArg skipwhite skipnl contains=texCmdEnv
-  call vimtex#syntax#core#new_opt('texTabularOpt', {'next': 'texTabularArg', 'contains': 'texComment,@NoSpell'})
-  call vimtex#syntax#core#new_arg('texTabularArg', {'contains': '@texClusterTabular'})
+        \ skipwhite skipnl
+        \ nextgroup=texTabularOpt,texTabularArg
+        \ contains=texCmdEnv
+  call vimtex#syntax#core#new_opt('texTabularOpt', {
+        \ 'next': 'texTabularArg',
+        \ 'contains': 'texComment,@NoSpell',
+        \})
+  call vimtex#syntax#core#new_arg('texTabularArg', {
+        \ 'contains': '@texClusterTabular'
+        \})
 
-  syntax match texTabularCol       "[lcr]" contained
-  syntax match texTabularCol       "p"     contained nextgroup=texTabularLength
-  syntax match texTabularAtSep     "@"     contained nextgroup=texTabularLength
+  syntax match texTabularCol   "[lcr]" contained
+  syntax match texTabularCol   "p"     contained nextgroup=texTabularLength
+  syntax match texTabularAtSep "@"     contained nextgroup=texTabularLength
   syntax cluster texClusterTabular contains=texTabular.*
 
-  call vimtex#syntax#core#new_arg('texTabularLength', {'contains': 'texLength,texCmd'})
+  call vimtex#syntax#core#new_arg('texTabularLength', {
+        \ 'contains': 'texLength,texCmd'
+        \})
+
+  " {{{2 Commands: \begin{minipage}[position][height][inner-pos]{width}
+
+  " Reference: http://latexref.xyz/minipage.html
+
+  syntax match texCmdMinipage "\\begin{minipage}"
+        \ skipwhite skipnl
+        \ nextgroup=texMinipageOptPos,texMinipageArgWidth
+        \ contains=texCmdEnv
+
+  call vimtex#syntax#core#new_opt('texMinipageOptPos', {
+        \ 'next': 'texMinipageOptHeight,texMinipageArgWidth',
+        \ 'contains': 'texBoxOptPosVal,texComment',
+        \})
+  call vimtex#syntax#core#new_opt('texMinipageOptHeight', {
+        \ 'next': 'texMinipageOptIPos,texMinipageArgWidth',
+        \ 'contains': 'texLength,texCmd,texComment',
+        \})
+  call vimtex#syntax#core#new_opt('texMinipageOptIPos', {
+        \ 'next': 'texMinipageArgWidth',
+        \ 'contains': 'texBoxOptIPosVal,texComment',
+        \})
+  call vimtex#syntax#core#new_arg('texMinipageArgWidth', {
+        \ 'contains': 'texLength,texCmd,texComment',
+        \})
+
+  " These are also used inside \parbox options
+  syntax match texBoxOptPosVal "[bcmt]" contained
+  syntax match texBoxOptIPosVal "[bcst]" contained
+
+  " {{{2 Commands: \parbox[position][height][inner-pos]{width}{contents}
+
+  " Reference: http://latexref.xyz/_005cparbox.html
+
+  syntax match texCmdParbox "\\parbox\>"
+        \ skipwhite skipnl
+        \ nextgroup=texParboxOptPos,texParboxArgWidth
+
+  call vimtex#syntax#core#new_opt('texParboxOptPos', {
+        \ 'next': 'texParboxOptHeight,texParboxArgWidth',
+        \ 'contains': 'texBoxOptPosVal,texComment',
+        \})
+  call vimtex#syntax#core#new_opt('texParboxOptHeight', {
+        \ 'next': 'texParboxOptIPos,texParboxArgWidth',
+        \ 'contains': 'texLength,texCmd,texComment',
+        \})
+  call vimtex#syntax#core#new_opt('texParboxOptIPos', {
+        \ 'next': 'texParboxArgWidth',
+        \ 'contains': 'texBoxOptIPosVal,texComment',
+        \})
+  call vimtex#syntax#core#new_arg('texParboxArgWidth', {
+        \ 'next': 'texParboxArgContent',
+        \ 'contains': 'texLength,texCmd,texComment',
+        \})
+  call vimtex#syntax#core#new_arg('texParboxArgContent')
+
+  " }}}2
+  " {{{2 Comments
+
+  " * In documented TeX Format, actual comments are defined by leading "^^A".
+  "   Almost all other lines start with one or more "%", which may be matched
+  "   as comment characters. The remaining part of the line can be interpreted
+  "   as TeX syntax.
+  " * For more info on dtx files, see e.g.
+  "   https://ctan.uib.no/info/dtxtut/dtxtut.pdf
+  if expand('%:e') ==# 'dtx'
+    syntax match texComment "\^\^A.*$"
+    syntax match texComment "^%\+"
+  elseif g:vimtex_syntax_nospell_comments
+    syntax match texComment "%.*$" contains=@NoSpell
+  else
+    syntax match texComment "%.*$" contains=@Spell
+  endif
+
+  " Do not check URLs and acronyms in comments
+  " Source: https://github.com/lervag/vimtex/issues/562
+  syntax match texCommentURL "\w\+:\/\/[^[:space:]]\+"
+        \ containedin=texComment contained contains=@NoSpell
+  syntax match texCommentAcronym '\v<(\u|\d){3,}s?>'
+        \ containedin=texComment contained contains=@NoSpell
+
+  " Todo and similar within comments
+  syntax case ignore
+  syntax keyword texCommentTodo combak fixme todo xxx
+        \ containedin=texComment contained
+  syntax case match
+
+  " Highlight \iffalse ... \fi blocks as comments
+  syntax region texComment matchgroup=texCmd
+        \ start="^\s*\\iffalse\>" end="\\fi\>"
+        \ contains=texCommentConditionals
+  syntax region texCommentConditionals matchgroup=texComment
+        \ start="\\if\w\+" end="\\fi\>"
+        \ contained transparent
 
   " }}}2
   " {{{2 Zone: Verbatim
@@ -435,6 +510,16 @@ function! vimtex#syntax#core#init() abort " {{{1
   " Bold and italic commands
   call s:match_bold_italic_math()
 
+  " Environments inside math zones
+  " * This is used to restrict the whitespace between environment name and
+  "   the option group (see https://github.com/lervag/vimtex/issues/2043).
+  syntax match texCmdEnvM "\v\\%(begin|end)>" contained nextgroup=texEnvMArgName
+  call vimtex#syntax#core#new_arg('texEnvMArgName', {
+        \ 'contains': 'texComment,@NoSpell',
+        \ 'next': 'texEnvOpt',
+        \ 'skipwhite': v:false
+        \})
+
   " Support for array environment
   syntax match texMathCmdEnv contained contains=texCmdMathEnv "\\begin{array}" nextgroup=texMathArrayArg skipwhite skipnl
   syntax match texMathCmdEnv contained contains=texCmdMathEnv "\\end{array}"
@@ -519,13 +604,17 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texSpecialChar      SpecialChar
   highlight def link texSymbol           SpecialChar
   highlight def link texTitleArg         Underlined
-  highlight def texStyleBold gui=bold        cterm=bold
-  highlight def texStyleBoth gui=bold,italic cterm=bold,italic
-  highlight def texStyleItal gui=italic      cterm=italic
+  highlight def texStyleBold     gui=bold        cterm=bold
+  highlight def texStyleBoth     gui=bold,italic cterm=bold,italic
+  highlight def texStyleItal     gui=italic      cterm=italic
+  highlight def texMathStyleBold gui=bold        cterm=bold
+  highlight def texMathStyleItal gui=italic      cterm=italic
 
   " Inherited groups
   highlight def link texArgNew             texCmd
   highlight def link texAuthorOpt          texOpt
+  highlight def link texBoxOptPosVal       texSymbol
+  highlight def link texBoxOptIPosVal      texBoxOptPosVal
   highlight def link texCmdAccent          texCmd
   highlight def link texCmdAuthor          texCmd
   highlight def link texCmdBib             texCmd
@@ -533,6 +622,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texCmdConditional     texCmd
   highlight def link texCmdDef             texCmdNew
   highlight def link texCmdEnv             texCmd
+  highlight def link texCmdEnvM            texCmdEnv
   highlight def link texCmdE3              texCmd
   highlight def link texCmdFootnote        texCmd
   highlight def link texCmdGreek           texMathCmd
@@ -547,6 +637,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texCmdNewenv          texCmd
   highlight def link texCmdNoSpell         texCmd
   highlight def link texCmdPackage         texCmd
+  highlight def link texCmdParbox          texCmd
   highlight def link texCmdPart            texCmd
   highlight def link texCmdRef             texCmd
   highlight def link texCmdRefConcealed    texCmdRef
@@ -572,6 +663,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texE3Parm             texParm
   highlight def link texE3Var              texCmd
   highlight def link texEnvOpt             texOpt
+  highlight def link texEnvMArgName        texEnvArgName
   highlight def link texFileArg            texArg
   highlight def link texFileOpt            texOpt
   highlight def link texFilesArg           texFileArg
@@ -580,6 +672,9 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texLetArgEqual        texSymbol
   highlight def link texLetArgName         texArgNew
   highlight def link texLigature           texSymbol
+  highlight def link texMinipageOptHeight  texError
+  highlight def link texMinipageOptIPos    texError
+  highlight def link texMinipageOptPos     texError
   highlight def link texMathArg            texMathZone
   highlight def link texMathArrayArg       texOpt
   highlight def link texMathCmd            texCmd
@@ -609,6 +704,9 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texNewenvOpt          texOpt
   highlight def link texNewenvParm         texParm
   highlight def link texOptEqual           texSymbol
+  highlight def link texParboxOptHeight    texError
+  highlight def link texParboxOptIPos      texError
+  highlight def link texParboxOptPos       texError
   highlight def link texRefOpt             texOpt
   highlight def link texRefConcealedOpt1   texRefOpt
   highlight def link texRefConcealedOpt2   texRefOpt
@@ -632,6 +730,7 @@ function! vimtex#syntax#core#new_arg(grp, ...) abort " {{{1
         \ 'next': '',
         \ 'matchgroup': 'matchgroup=texDelim',
         \ 'opts': 'contained',
+        \ 'skipwhite': v:true,
         \}, a:0 > 0 ? a:1 : {})
 
   execute 'syntax region' a:grp
@@ -639,7 +738,9 @@ function! vimtex#syntax#core#new_arg(grp, ...) abort " {{{1
         \ l:cfg.matcher
         \ l:cfg.opts
         \ (empty(l:cfg.contains) ? '' : 'contains=' . l:cfg.contains)
-        \ (empty(l:cfg.next) ? '' : 'nextgroup=' . l:cfg.next . ' skipwhite skipnl')
+        \ (empty(l:cfg.next) ? ''
+        \   : 'nextgroup=' . l:cfg.next
+        \     . (l:cfg.skipwhite ? ' skipwhite skipnl' : ''))
 endfunction
 
 " }}}1
@@ -712,7 +813,7 @@ function! vimtex#syntax#core#new_cmd(cfg) abort " {{{1
   if l:cfg.arg
     let l:nextgroups += [l:group_arg]
 
-    let l:arg_cfg = {'opts': 'contained keepend'}
+    let l:arg_cfg = {'opts': 'contained'}
     if l:cfg.conceal && empty(l:cfg.concealchar)
       let l:arg_cfg.opts .= ' concealends'
     endif
@@ -861,19 +962,22 @@ function! s:match_bold_italic_math() abort " {{{1
         \ (g:vimtex_syntax_conceal.styles ? ['conceal', 'concealends'] : ['', ''])
 
   let l:map = {
-        \ 'texMathCmdStyleBold': 'texStyleBold',
-        \ 'texMathCmdStyleItal': 'texStyleItal',
+        \ 'texMathCmdStyleBold': 'texMathStyleBold',
+        \ 'texMathCmdStyleItal': 'texMathStyleItal',
         \}
 
   for [l:group, l:pattern] in [
+        \ ['texMathCmdStyleBold', 'bm'],
         \ ['texMathCmdStyleBold', 'mathbf'],
         \ ['texMathCmdStyleItal', 'mathit'],
-        \ ['texMathCmdStyleBold', 'bm'],
         \]
     execute 'syntax match' l:group '"\\' . l:pattern . '\>"'
           \ 'contained skipwhite nextgroup=' . l:map[l:group]
           \ l:conceal
   endfor
+
+  execute 'syntax region texMathStyleBold matchgroup=texDelim start="{" end="}" contained contains=@texClusterMath' l:concealends
+  execute 'syntax region texMathStyleItal matchgroup=texDelim start="{" end="}" contained contains=@texClusterMath' l:concealends
 
   if g:vimtex_syntax_conceal.styles
     syntax match texMathCmdStyle "\v\\math%(rm|tt|normal|sf)>"

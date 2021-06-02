@@ -237,6 +237,8 @@ function! s:toc.create() abort dict " {{{1
   setlocal noswapfile
   setlocal nowrap
   setlocal tabstop=8
+  setlocal winfixwidth
+  setlocal winfixheight
 
   if self.hide_line_numbers
     setlocal nonumber
@@ -601,9 +603,6 @@ function! s:toc.activate_entry(entry, close_after) abort dict "{{{1
   " Keep or close toc window (based on options)
   if a:close_after && self.split_pos !=# 'full'
     call self.close()
-  else
-    " Return to toc window
-    execute toc_winnr . 'wincmd w'
   endif
 
   " Allow user entry points through autocmd events
