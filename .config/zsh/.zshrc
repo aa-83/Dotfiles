@@ -33,14 +33,14 @@ setopt auto_list
 setopt auto_pushd
 setopt auto_param_slash
 setopt auto_param_keys
-setopt bang_hist
+#setopt bang_hist
 setopt clobber
 setopt complete_aliases
 setopt correct_all
 setopt complete_in_word
 #setopt extended_glob
 setopt globdots
-setopt extended_history
+#setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
