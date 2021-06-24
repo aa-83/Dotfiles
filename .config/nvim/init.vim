@@ -3,13 +3,11 @@
 """""""""""""""""""
 
 " This is needed for plugins
-set nocompatible
+"set nocompatible
 execute pathogen#infect('~/.config/nvim/bundle/{}')
 syntax enable
+set autoindent
 filetype plugin indent on
-
-" Reload init.vim on change
-autocmd BufWritePost /home/eirik/.config/nvim/init.vim source %
 
 """""""""""""""""""""
 """Plugin settings"""
@@ -206,7 +204,6 @@ set number relativenumber
 set textwidth=80
 set history=5000
 set shiftwidth=4
-set tabstop=4
 set softtabstop=4
 set display=lastline
 set backspace=eol,start,indent
