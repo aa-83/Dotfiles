@@ -1,0 +1,6 @@
+pane	terminal	1	:>_	1	:*	1	:/home/eirik	1	zsh	:
+pane	terminal	2	:irssi	0	:-	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+pane	terminal	2	:irssi	0	:-	2	:/home/eirik	0	perl	:
+window	terminal	1	1	:*	5776,123x31,0,0,17
+window	terminal	2	0	:-	668f,123x31,0,0{109x31,0,0,18,13x31,110,0,19}
+state	terminal	

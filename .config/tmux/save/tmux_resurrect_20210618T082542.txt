@@ -1,0 +1,20 @@
+pane	3	1	:zsh	1	:*	1	:/home/eirik	1	zsh	:
+pane	system_monitor	1	:gotop	1	:*	1	:/home/eirik	1	gotop	:gotop -c cyberpunk_neon -c cyberpunk_neon
+pane	system_monitor	2	:htop	0	:	1	:/home/eirik	1	htop	:htop
+pane	system_monitor	3	:iwctl	0	:	1	:/home/eirik	1	iwctl	:iwctl
+pane	system_monitor	4	:bmon	0	:-	1	:/home/eirik	1	bmon	:bmon
+pane	terminal	1	:>_	1	:*	1	:/home/eirik	1	zsh	:
+pane	web	1	:irssi	1	:*	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+pane	web	1	:irssi	1	:*	2	:/home/eirik	0	perl	:
+pane	web	2	:ssh	0	:-	1	:/home/eirik	1	ssh	:ssh eirik@10.100.0.1
+pane	web	3	:zsh	0	:	1	:/home/eirik/dokumenter/git_repositories/Dotfiles	1	zsh	:
+window	3	1	1	:*	ae7e,123x31,0,0,1
+window	system_monitor	1	1	:*	b05f,61x14,0,0,2
+window	system_monitor	2	0	:	ae80,123x31,0,0,3
+window	system_monitor	3	0	:	ae81,123x31,0,0,4
+window	system_monitor	4	0	:-	ae82,123x31,0,0,5
+window	terminal	1	1	:*	5776,123x31,0,0,17
+window	web	1	1	:*	262f,123x31,0,0{109x31,0,0,8,13x31,110,0,16}
+window	web	2	0	:-	ae86,123x31,0,0,9
+window	web	3	0	:	576f,123x31,0,0,10
+state	terminal	
