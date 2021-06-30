@@ -33,6 +33,7 @@ map E :!$EDITOR %f<CR>
 map mkd :mkdir<space>
 map bg :!wallpaper %f &<CR>
 map fr :!fr<CR>
+map -x :!chmod -x *.pdf<CR>
 map X :!ext %f &<CR>
 nnoremap s :shell<cr>
 "nnoremap w :view<cr>
