@@ -28,16 +28,17 @@ map <C-v> <C-w>v
 
 map R :restart<CR>
 map x :!sxiv -ft * 2>/dev/null &<CR>
-nnoremap o :file &<cr>
 map E :!$EDITOR %f<CR>
 map mkd :mkdir<space>
 map bg :!wallpaper %f &<CR>
 map fr :!fr<CR>
 map -x :!chmod -x *.pdf<CR>
 map X :!ext %f &<CR>
+
 nnoremap s :shell<cr>
 "nnoremap w :view<cr>
 "vnoremap w :view<cr>gv
+nnoremap o :file &<cr>
 nnoremap yd :!echo %d | xclip %i<cr>
 nnoremap yf :!echo %c:p | xclip %i<cr>
 nnoremap I cw<c-a>
@@ -47,6 +48,50 @@ nnoremap ,w :set wrap!<cr>
 nmap <space> tj
 nmap q ZQ
 
+" Directory shortcuts
+nnoremap gh :cd ~/<CR>
+nnoremap gt :cd ~/dokumenter<CR>
+nnoremap gd :cd ~/dokumenter<CR>
+nnoremap gma :cd ~/dokumenter/man<CR>
+nnoremap goF :cd ~/dokumenter/build/oF<CR>
+nnoremap gi :cd ~/media/bilder<CR>
+nnoremap gv :cd ~/media/video<CR>
+nnoremap giw :cd ~/media/bilder/wallpapers<CR>
+nnoremap gm :cd ~/media/musikk<CR>
+nnoremap gmp :cd ~/media/musikk/podcasts<CR>
+nnoremap gdl :cd ~/nedlastinger<CR>
+nnoremap gb :cd /opt/<CR>
+nnoremap gbdw :cd /opt/dwm<CR>
+nnoremap gbdm :cd /opt/dmenu<CR>
+nnoremap gbdwb :cd /opt/dwmblocks<CR>
+nnoremap gbs :cd /opt/st<CR>
+nnoremap gbf :cd /opt/ffmpeg<CR>
+nnoremap gbof :cd /opt/of<CR>
+nnoremap gp :cd ~/dokumenter/build/patching_dir<CR>
+nnoremap gs :cd ~/dokumenter/synk<CR>
+nnoremap ga :cd ~/dokumenter/synk/arbeid<CR>
+nnoremap gho :cd ~/dokumenter/synk/hobby<CR>
+nnoremap gap :cd ~/dokumenter/synk/arbeid/produksjoner<CR>
+nnoremap gapp :cd ~/dokumenter/artistic_practice/portfolio<CR>
+nnoremap gapr :cd ~/dokumenter/artistic_practice/artistic_research<CR>
+nnoremap ggr :cd ~/dokumenter/git_repositories<CR>
+nnoremap gg. :cd ~/dokumenter/git_repositories/Dotfiles<CR>
+nnoremap ggdw :cd ~/dokumenter/git_repositories/dwm<CR>
+nnoremap ggdwb :cd ~/dokumenter/git_repositories/dwmblocks<CR>
+nnoremap ggdm :cd ~/dokumenter/git_repositories/dmenu<CR>
+nnoremap ggst :cd ~/dokumenter/git_repositories/st<CR>
+nnoremap ggsl :cd ~/dokumenter/git_repositories/slock<CR>
+nnoremap ggs :cd ~/dokumenter/git_repositories/slstatus<CR>
+nnoremap gc :cd ~/.config<CR>
+nnoremap glb :cd ~/.local/bin<CR>
+nnoremap glbs :cd ~/.local/bin/scripts<CR>
+nnoremap glsh :cd ~/.local/share<CR>
+nnoremap glsp :cd ~/.local/share/password-store<CR>
+nnoremap glsg :cd ~/.local/share/gnupg<CR>
+nnoremap glsm :cd ~/.local/share/mail<CR>
+nnoremap gvt :cd ~/.local/share/vifm/Trash<CR>
+
+" File settings
 fileview */ tree %c -L 1 --dirsfirst
 fileview ../ tree %c -L 1 --dirsfirst
 fileviewer *.html w3m -dump %c
