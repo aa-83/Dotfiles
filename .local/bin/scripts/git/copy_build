@@ -3,4 +3,5 @@ cd /opt ;
 cp -rfu dwm /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu st /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu slock /home/eirik/dokumenter/git_repositories/ ;
+cp -rfu surf /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu dmenu /home/eirik/dokumenter/git_repositories/ ;
