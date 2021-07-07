@@ -4,4 +4,3 @@ cp -rfu dwm /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu st /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu slock /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu dmenu /home/eirik/dokumenter/git_repositories/ ;
-cp -rfu dwmblocks /home/eirik/dokumenter/git_repositories/ ;
