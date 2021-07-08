@@ -158,7 +158,6 @@ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 """"""""""
 """Tags"""
 """"""""""
-set tags=~/.local/share/.tags
 set tags=./.tags;
 command! MakeTags !ctags -R .
 
@@ -228,3 +227,10 @@ set modifiable
 set complete+=kspell
 set completeopt=menuone,noinsert
 set shortmess-=c
+set exrc
+set secure
+
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+augroup END
