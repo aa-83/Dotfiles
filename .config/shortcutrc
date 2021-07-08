@@ -13,9 +13,11 @@ alias dl='cd ~/nedlastinger && pwd && ls -A' ;
 
 alias b='cd /opt/ && pwd && ls -A' ;
 alias bdw='cd /opt/dwm && pwd && ls -A' ;
+alias bdwb='cd /opt/dwm/dwmblocks && pwd && ls -A' ;
 alias bdm='cd /opt/dmenu && pwd && ls -A' ;
-alias bdwb='cd /opt/dwmblocks && pwd && ls -A' ;
 alias bs='cd /opt/st && pwd && ls -A' ;
+alias bsl='cd /opt/slock && pwd && ls -A' ;
+alias bsu='cd /opt/surf && pwd && ls -A' ;
 alias bf='cd /opt/ffmpeg && pwd && ls -A' ;
 alias bof='cd /opt/of && pwd && ls -A' ;
 alias p='cd ~/dokumenter/build/patching_dir && pwd && ls -A' ;
@@ -30,11 +32,10 @@ alias apr='cd ~/dokumenter/artistic_practice/artistic_research && pwd && ls -A' 
 alias gr='cd ~/dokumenter/git_repositories && pwd && ls -A' ;
 alias g.='cd ~/dokumenter/git_repositories/Dotfiles && pwd && ls -A' ;
 alias gdw='cd ~/dokumenter/git_repositories/dwm && pwd && ls -A' ;
-alias gdwb='cd ~/dokumenter/git_repositories/dwmblocks && pwd && ls -A' ;
 alias gdm='cd ~/dokumenter/git_repositories/dmenu && pwd && ls -A' ;
 alias gst='cd ~/dokumenter/git_repositories/st && pwd && ls -A' ;
 alias gsl='cd ~/dokumenter/git_repositories/slock && pwd && ls -A' ;
-alias gs='cd ~/dokumenter/git_repositories/s&& ls -Atatus && pwd && ls -A' ;
+alias gsu='cd ~/dokumenter/git_repositories/surf && pwd && ls -A' ;
 
 alias c='cd ~/.config && pwd && ls -A' ;
 alias lb='cd ~/.local/bin && pwd && ls -A' ;
