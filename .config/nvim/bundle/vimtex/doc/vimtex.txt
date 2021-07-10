@@ -63,6 +63,7 @@ CONTENTS                                                      *vimtex-contents*
       nvim-completion-manager                   |vimtex-complete-ncm|
       YouCompleteMe                             |vimtex-complete-youcompleteme|
       VimCompletesMe                            |vimtex-complete-vcm|
+      nvim-compe                                |vimtex-complete-nvim-compe|
   Folding                                       |vimtex-folding|
   Indentation                                   |vimtex-indent|
   Syntax highlighting                           |vimtex-syntax|
@@ -473,10 +474,10 @@ Formatting~
 
 Filetype plugin for bib files~
                                                        *vimtex-nf-ftplugin-bib*
-  VimTeX is not a filetype plugin for bibliography (`.bib`) files. However,
-  it does include a couple of minor things, such as setting the 'comments' and
-  'commentstring' options and a simple indentation expression, see
-  |g:vimtex_indent_bib_enabled|.
+  VimTeX is not a full filetype plugin for bibliography (`.bib`) files. However,
+  it does alter the 'comments' and 'commentstring' options and provide basic
+  indentation and folding; see |g:vimtex_indent_bib_enabled| and
+  |g:vimtex_fold_bib_enabled|, respectively.
 
   Here are a couple of other related Vim plugins and external tools that might
   be of interest:
@@ -1133,8 +1134,8 @@ OPTIONS                                                        *vimtex-options*
     If zero, then the cite completion is "smart", i.e. not simple. This
     behaviour is described in more detail in |vimtex-complete-cites|.
 
-    Note: It is usually better to use the "simple" mode, that is, set this to
-          1, if you use an autocomplete plugin (|vimtex-complete-auto|).
+    Note: It is usually better to use the "simple" mode if you use an
+          autocomplete plugin (|vimtex-complete-auto|).
 
                                                *g:vimtex_complete_bib.menu_fmt*
   menu_fmt~
@@ -1150,10 +1151,20 @@ OPTIONS                                                        *vimtex-options*
       @type          Type of entry
 
     If the key is set to an empty string, then the `menu` entry is not added
-    to the completion canidates.
+    to the completion candidates. Since the author list can be large, the
+    @author_all is truncated to 20 characters. This can be modified with the
+    `auth_len` key (see below).
 
-    Note: If you change this option, you should also clear the related cache
-    files (i.e. `~/.cache/vimtex/bibcomplete*.json` on Linux systems).
+    Note: If you change this option, you should clear the related cache
+          files: `:VimtexClearCache bibcomplete` (|VimtexClearCache|)
+
+  auth_len~
+    Default value: 20
+    Truncation length for author list with the @author_all format key in the
+    `menu_fmt` string.
+
+    Note: If you change this option, you should clear the related cache
+          files: `:VimtexClearCache bibcomplete` (|VimtexClearCache|)
 
   abbr_fmt~
     Default value: `''`
@@ -1623,6 +1634,29 @@ OPTIONS                                                        *vimtex-options*
           \ },
           \}
 
+*g:vimtex_fold_bib_enabled*
+  Use this option to enable/disable folding in .bib files.
+
+  Note: The default value is the same as |g:vimtex_fold_enabled|. Thus, it
+        suffices to enabled folds for tex files to also enable for bib files.
+        But if you want to enable in tex files but keep bib folding disabled,
+        then you must set this option to 0 or |v:false|.
+
+  Default value: |g:vimtex_fold_enabled|
+
+*g:vimtex_fold_bib_max_key_width*
+  This option is used to specify a length to truncate identifiers (e.g.
+  `@article{Key}`) to, in the foldtext for bib files. The default of 0
+  indicates no truncation, i.e. VimTeX will parse the bib file to determine
+  the longest such identifier and align all foldtext titles such that they
+  come after the identifiers.
+
+  If you have a handful of cite keys that are exceptionally long, setting this
+  manually may be useful as it makes sure that there is some space for the
+  titles in the foldtext.
+
+  Default value: 0
+
 *g:vimtex_format_enabled*
   If enabled, VimTeX uses a custom |formatexpr| that should handle inline
   comments and environments. That is, if it is enabled, comments at end of
@@ -1633,7 +1667,7 @@ OPTIONS                                                        *vimtex-options*
 
 *g:vimtex_grammar_textidote*
   This option is used to configure the `textidote` grammar and document checker,
-  see |vimtex-grammar-textidote|. It is a dictionary with the following keys 
+  see |vimtex-grammar-textidote|. It is a dictionary with the following keys
 
     jar~
       The path to `textidote.jar`. This key must be defined if you want to use
@@ -2229,6 +2263,7 @@ OPTIONS                                                        *vimtex-options*
 
     amsmath~
       `load`  is 2 by default
+    amssymb~
     array~
     asymptote~
     babel~
@@ -3102,6 +3137,17 @@ COMMANDS                                                      *vimtex-commands*
                                 see |vimtex-subfiles|. See also
                                 |g:vimtex_subfile_start_local|.
 
+                                             *:VimtexClearCache*
+:VimtexClearCache {name}  Clear all cache files that matches `name`. This is
+                          useful for instance to clear the `bibcomplete` cache
+                          when you change the completion options, see
+                          |g:vimtex_complete_bib.menu_fmt|.
+
+                          To clear all cache files: `:VimtexClearCache ALL`
+
+                          The cache files can be cleared manually. They are
+                          located at |g:vimtex_cache_root|.
+
 ------------------------------------------------------------------------------
 MAP DEFINITIONS                                               *vimtex-mappings*
 
@@ -3570,13 +3616,14 @@ Associated settings:
 ------------------------------------------------------------------------------
 COMPLETE CITATIONS                                      *vimtex-complete-cites*
 
-Citation completion is triggered by '\cite{' commands.  The completion parses
+Citation completion is triggered by `'\cite{'` commands. The completion parses
 included bibliography files (`*.bib`) and `thebibliography` environments to
 gather the completion candidates.
 
-By default, cite completion is "smart" in that it allows to complete on
-author name, title and similar. As an example, assume that a bibliography file
-is included with the following entry: >
+By default, cite completion is "smart" in that it allows to complete on author
+names, title, and similar by matching against the completion menu. The menu
+format is defined by |g:vimtex_complete_bib.menu_fmt|. As an example, assume
+that a bibliography file is included with the following entry: >
 
         @book { knuth1981,
                 author = "Donald E. Knuth",
@@ -3590,9 +3637,11 @@ Then the bibliography key `knuth1981` will be completed with e.g.: >
         \cite{algo<CTRL-X><CTRL-O>
         \cite{Don.*Knuth<CTRL-X><CTRL-O>
 
-In particular, note that regular expressions (or vim patterns) can be used
-after '\cite{' to search for candidates. By default, the regex is applied to
-the completion menu, which is defined by |g:vimtex_complete_bib.menu_fmt|.
+As is shown in the last example, the search string (e.g. `Don.*Knuth`) is
+applied as a regular expression. One should note that the default menu format
+does not include the cite key, in which case the key can not be used for
+filtering completion candidates. Again, see |g:vimtex_complete_bib.menu_fmt|
+for more details.
 
 However, if one prefers, one may set the `simple` key of |g:vimtex_complete_bib|
 to only allow completion on the bibkeys directly. This should typically work
@@ -3694,11 +3743,11 @@ Note: If you want to change the default value of `TEXMFHOME` in your shell
 AUTOCOMPLETE                                             *vimtex-complete-auto*
 
 Vim does not provide automatic completion by itself, but there exist at least
-several good plugins that provide this: |coc-nvim|, |deoplete|, |neocomplete|, |ncm2|,
-|nvim-completion-manager| and |youcompleteme|.  Moreover, there is |VimCompletesMe|
-that overrides <tab> to trigger different built-in completions, such as the
-omni-completion by VimTeX, depending on the context. See below for
-descriptions on how to setup these with VimTeX.
+several good plugins that provide this: |coc-nvim|, |deoplete|, |neocomplete|,
+|ncm2|, |nvim-completion-manager|, |youcompleteme|, and |nvim-compe|.
+Moreover, there is |VimCompletesMe| that overrides <tab> to trigger different
+built-in completions, such as the omni-completion by VimTeX, depending on the
+context. See below for descriptions on how to setup these with VimTeX.
 
 coc.nvim~
                                                      *vimtex-complete-coc.nvim*
@@ -3928,7 +3977,7 @@ To enable automatic completion with |youcompleteme|, use the following options: 
 VimCompletesMe~
                                                           *vimtex-complete-vcm*
 A plugin that maps <tab> to trigger the built-in completion that is most
-suitable to the current contex.  The plugin is available here:
+suitable to the current context.  The plugin is available here:
 https://github.com/ajh17/VimCompletesMe.
 
 The following options may be used to enable completion with the <tab> trigger
@@ -3940,13 +3989,42 @@ for LaTeX documents with |VimCompletesMe| and VimTeX's omni completion function:
         \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
   augroup END
 
+nvim-compe~
+                                                   *vimtex-complete-nvim-compe*
+|nvim-compe| is an automatic completion plugin for Neovim. It has support for
+many different completion sources, including omni-completion, making it is
+easy to use with VimTeX. The plugin is available here:
+https://github.com/hrsh7th/nvim-compe.
+
+The omni-completion source can be enabled for TeX/LaTeX files by adding `omni`
+to the completion sources and specifying the `tex` filetype. For example, in
+Lua, it should look something like this: >
+
+  require("compe").setup({
+      source = {
+          omni = {
+              filetypes = {'tex'},
+          },
+      },
+      -- the rest of your compe config...
+  })
+
+And in Vimscript, it should look something like this: >
+
+  let g:compe.source = {
+        \ 'omni': {
+        \  'filetypes': ['tex'],
+        \ }
+        \}
+
 ==============================================================================
 FOLDING                                                        *vimtex-folding*
+                                                           *vimtex-bib-folding*
 
 VimTeX can fold documents according to the LaTeX structure (part, chapter,
-section and subsection).  Folding is turned off by default, but it can be
-enabled if desired, either through the option |g:vimtex_fold_enabled|, or
-manually with >
+section and subsection).  Folding in tex files is turned off by default, but
+can be enabled if desired, either through the option |g:vimtex_fold_enabled|,
+or manually with >
 
   set foldmethod=expr
   set foldexpr=vimtex#fold#level(v:lnum)
@@ -3968,12 +4046,19 @@ In order to get slightly cleaner fold text, I recommend setting the global
 
 Note: Remember to include the whitespace after backslash!
 
+In addition, VimTeX also provides basic folding in bibtex files. This is
+disabled by default, but will be enabled if |g:vimtex_fold_enabled| is set to
+1 or |v:true|. It can also be individually configured with
+|g:vimtex_fold_bib_enabled|.
+
 Associated settings:
 * |g:vimtex_fold_enabled|
 * |g:vimtex_fold_manual|
 * |g:vimtex_fold_levelmarker|
 * |g:vimtex_fold_types|
 * |g:vimtex_fold_types_defaults|
+* |g:vimtex_fold_bib_enabled|
+* |g:vimtex_fold_bib_max_key_width|
 
 ==============================================================================
 INDENTATION                                                     *vimtex-indent*
@@ -5132,8 +5217,8 @@ A: First, see and follow the guidelines in |vimtex_viewer_sumatrapdf|. Forward
    SumatraPDF that depends on which version of Vim you are using. The
    following advice is for `neovim`; things should be simpler for Vim.
 
-   1. First, ensure that `neovim-remote` is installed (e.g. `pip install
-      neovim-remote`).
+   1. First, ensure that `neovim-remote` is installed (e.g.
+      `pip install neovim-remote`).
 
    2. Add some configuration to your vimrc file to detect the servername: >
 
@@ -5763,4 +5848,4 @@ named vim-latex, which conflicted with Vim LaTeX-Suite which is also known as
 vim-latex.
 
 ==============================================================================
- vim:tw=78:ts=8:ft=help:norl:
+ vim:tw=78:ts=8:ft=help:norl:fdm=marker:

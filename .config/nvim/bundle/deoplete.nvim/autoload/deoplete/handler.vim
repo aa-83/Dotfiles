@@ -283,6 +283,11 @@ function! s:is_skip_text(event) abort
     return 1
   endif
 
+  " Check input queue
+  if getchar(1) != 0
+    return 1
+  endif
+
   let lastchar = matchstr(input, '.$')
   let skip_multibyte = deoplete#custom#_get_option('skip_multibyte')
   if skip_multibyte && len(lastchar) != strwidth(lastchar)
@@ -322,11 +327,11 @@ function! s:matched_indentkeys(input) abort
   endif
 
   " Note: check the last word
-  let checkstr = matchstr(a:input, '\w+$')
+  let checkstr = matchstr(a:input, '\w\+$')
 
   for word in filter(map(split(&l:indentkeys, ','),
-        \ { _, val -> matchstr(val, 'e\\|=\\zs.*') }),
-        \ { _, val -> val !=# '' && val =~# '\\h\\w*' })
+        \ { _, val -> matchstr(val, 'e\|=\zs.*') }),
+        \ { _, val -> val !=# '' && val =~# '\h\w*' })
 
     if word ==# 'e'
       let word = 'else'

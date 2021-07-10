@@ -21,7 +21,6 @@ function! vimtex#compiler#latexmk#wrap_option(name, value) abort " {{{1
 endfunction
 
 "}}}1
-
 function! vimtex#compiler#latexmk#get_rc_opt(root, opt, type, default) abort " {{{1
   "
   " Parse option from .latexmkrc.
@@ -90,6 +89,7 @@ function! vimtex#compiler#latexmk#get_rc_opt(root, opt, type, default) abort " {
 endfunction
 
 " }}}1
+
 
 let s:compiler = {
       \ 'name' : 'latexmk',
@@ -263,7 +263,7 @@ function! s:compiler.build_cmd() abort dict " {{{1
               \ 'failure_cmd' : 'vimtex_compiler_callback_failure',
               \})
           let l:func = 'echo ' . l:val
-          let l:cmd .= vimtex#compiler#latexmk#wrap_option(l:opt, l:func)
+          let l:cmd .= s:wrap_option_appendcmd(l:opt, l:func)
         endfor
       elseif empty(v:servername)
         call vimtex#log#warning('Can''t use callbacks with empty v:servername')
@@ -280,7 +280,7 @@ function! s:compiler.build_cmd() abort dict " {{{1
                 \ . vimtex#util#shellescape('""')
                 \ . ' --servername ' . vimtex#util#shellescape(v:servername)
                 \ . ' --remote-expr ' . l:callback
-          let l:cmd .= vimtex#compiler#latexmk#wrap_option(l:opt, l:func)
+          let l:cmd .= s:wrap_option_appendcmd(l:opt, l:func)
         endfor
       endif
     endif
@@ -620,3 +620,21 @@ function! s:callback_nvim_exit(id, data, event) abort dict " {{{1
 endfunction
 
 " }}}1
+
+
+"
+" Utility functions
+"
+function! s:wrap_option_appendcmd(name, value) abort " {{{1
+  " Note: On Linux, we use double quoted perl strings; these interpolate
+  "       variables. One should therefore NOT pass values that contain `$`.
+  let l:win_cmd_sep = has('nvim') ? '^&' : '&'
+  let l:common = printf('$%s = ($%s ? $%s', a:name, a:name, a:name)
+  return has('win32')
+        \ ? printf(' -e "%s . '' %s '' : '''') . ''%s''"',
+        \          l:common, l:win_cmd_sep, a:value)
+        \ : printf(' -e ''%s . " ; " : "") . "%s"''',
+        \          l:common, a:value)
+endfunction
+
+"}}}1

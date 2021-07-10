@@ -139,6 +139,11 @@ function! vimtex#syntax#core#init() abort " {{{1
   syntax match texCmdConditional nextgroup=texConditionalArg skipwhite skipnl "\\\(if[a-zA-Z@]\+\|fi\|else\)\>"
   call vimtex#syntax#core#new_arg('texConditionalArg')
 
+  " \@ifnextchar
+  syntax match texCmdConditionalINC "\\\w*@ifnextchar\>"
+        \ nextgroup=texConditionalINCChar skipwhite skipnl
+  syntax match texConditionalINCChar "\S" contained
+
   " Various commands that take a file argument (or similar)
   syntax match texCmdInput   nextgroup=texFileArg              skipwhite skipnl "\\input\>"
   syntax match texCmdInput   nextgroup=texFileArg              skipwhite skipnl "\\include\>"
@@ -620,6 +625,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texCmdBib             texCmd
   highlight def link texCmdClass           texCmd
   highlight def link texCmdConditional     texCmd
+  highlight def link texCmdConditionalINC  texCmdConditional
   highlight def link texCmdDef             texCmdNew
   highlight def link texCmdEnv             texCmd
   highlight def link texCmdEnvM            texCmdEnv
@@ -654,6 +660,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texCommentAcronym     texComment
   highlight def link texCommentURL         texComment
   highlight def link texConditionalArg     texArg
+  highlight def link texConditionalINCChar texSymbol
   highlight def link texDefArgName         texArgNew
   highlight def link texDefParm            texParm
   highlight def link texE3Cmd              texCmd
@@ -1316,8 +1323,6 @@ function! s:match_math_symbols() abort " {{{1
   syntax match texMathSymbol "\\wp\>"                contained conceal cchar=℘
   syntax match texMathSymbol "\\wr\>"                contained conceal cchar=≀
   syntax match texMathSymbol '\\implies\>'           contained conceal cchar=⇒
-  syntax match texMathSymbol '\\geqslant\>'          contained conceal cchar=⩾
-  syntax match texMathSymbol '\\leqslant\>'          contained conceal cchar=⩽
   syntax match texMathSymbol '\\choose\>'            contained conceal cchar=C
   syntax match texMathSymbol '\\sqrt\>'              contained conceal cchar=√
   syntax match texMathSymbol '\\sqrt\[3]'            contained conceal cchar=∛

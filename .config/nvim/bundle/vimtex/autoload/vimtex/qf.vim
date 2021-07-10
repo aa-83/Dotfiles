@@ -83,6 +83,7 @@ function! vimtex#qf#open(force) abort " {{{1
     let s:previous_window = win_getid()
     botright cwindow
     if g:vimtex_quickfix_mode == 2
+      redraw
       call win_gotoid(s:previous_window)
     endif
     if g:vimtex_quickfix_autoclose_after_keystrokes > 0
@@ -99,7 +100,7 @@ endfunction
 function! vimtex#qf#setqflist(...) abort " {{{1
   if !exists('b:vimtex.qf.addqflist') | return | endif
 
-  if a:0 > 0
+  if a:0 > 0 && !empty(a:1)
     let l:tex = a:1
     let l:log = fnamemodify(l:tex, ':r') . '.log'
     let l:blg = fnamemodify(l:tex, ':r') . '.blg'
