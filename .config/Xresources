@@ -2,14 +2,14 @@
 *.alpha: 0.9
 
 !! Set a default font and font size as below:
-st.font: monospace-14;
+st.font: monospace-10;
 *.font: monospace-14;
 *.fontalt0: NotoColorEmoji-11;
 *.fontalt1: NerdFontComplete-11;
 
 !! Set the background, foreground and cursor colors as below:
 *.cursorColor: #ff00ff
-*background: #091833
+!!*background: #091833
 !!*foreground: #0abdb6
 
 *color0:  #123e7c
