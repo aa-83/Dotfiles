@@ -16,7 +16,6 @@ syncthing -no-browser &
 protonmail-bridge --no-window &
 expressvpn connect smart &
 oppdater &
-
 xinput disable SynPS/2\ Synaptics\ TouchPad &
 
 exec dwm
