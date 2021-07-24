@@ -2,7 +2,7 @@
 *.alpha: 0.9
 
 !! Set a default font and font size as below:
-st.font: monospace-10;
+st.font: monospace-13;
 *.font: monospace-14;
 *.fontalt0: NotoColorEmoji-11;
 *.fontalt1: NerdFontComplete-11;
