@@ -2,6 +2,8 @@
 perl-rename 'y/A-Z/a-z/' * ;
 perl-rename 'y/ - /_/' * ;
 perl-rename 's/ - /_/' * ;
+perl-rename 'y/_-_/_/' * ;
+perl-rename 's/_-_/_/' * ;
 perl-rename 'y/-/_/' * ;
 perl-rename 'y/ /_/' * ;
 perl-rename 'y/_,/_/' * ;
