@@ -1,7 +1,0 @@
-pane	terminal	1	:>_	1	:*	1	:/home/eirik	1	zsh	:
-pane	terminal	2	:irssi	0	:	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
-pane	terminal	3	:ssh	0	:-	1	:/home/eirik	1	ssh	:ssh eirik@10.100.0.1
-window	terminal	1	1	:*	d777,123x31,0,0,28
-window	terminal	2	0	:	d778,123x31,0,0,29
-window	terminal	3	0	:-	5770,123x31,0,0,30
-state	terminal	

@@ -1,8 +1,0 @@
-pane	terminal	1	:>_	1	:*	1	:/home/eirik	1	zsh	:
-pane	terminal	2	:irssi	0	:-	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
-pane	terminal	2	:irssi	0	:-	2	:/home/eirik	0	perl	:
-pane	terminal	3	:ssh	0	:	1	:/home/eirik	1	zsh	:
-window	terminal	1	1	:*	bc3e,136x34,0,0,1
-window	terminal	2	0	:-	f5e8,136x34,0,0{122x34,0,0,2,13x34,123,0,31}
-window	terminal	3	0	:	bc40,136x34,0,0,3
-state	terminal	
