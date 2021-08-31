@@ -3,8 +3,8 @@
 # Displays todays precipication chance (☔) and daily low (🥶) and high (🌞).
 # Usually intended for the statusbar.
 
-LOCATION="copenhagen"
-#LOCATION="oslo"
+#LOCATION="copenhagen"
+LOCATION="oslo"
 #LOCATION="bergen"
 #LOCATION="arendal"
 #LOCATION="maurset_eidfjord"
