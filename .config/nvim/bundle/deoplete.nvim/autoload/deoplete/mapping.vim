@@ -46,8 +46,10 @@ function! s:check_completion_info(candidates) abort
         \ { _, val -> val.word })) ==# old_candidates
 endfunction
 function! deoplete#mapping#_can_complete() abort
-  return has_key(get(g:, 'deoplete#_context', {}), 'candidates')
-        \ && !s:check_completion_info(g:deoplete#_context.candidates)
+  let context = get(g:, 'deoplete#_context', {})
+  return has_key(context, 'candidates') && has_key(context, 'event')
+        \ && has_key(context, 'input')
+        \ && !s:check_completion_info(context.candidates)
         \ && &modifiable
 endfunction
 function! deoplete#mapping#_complete() abort
@@ -105,6 +107,10 @@ function! deoplete#mapping#_prev_complete() abort
   return ''
 endfunction
 function! deoplete#mapping#_set_completeopt(is_async) abort
+  if !deoplete#custom#_get_option('overwrite_completeopt')
+    return
+  endif
+
   if !exists('g:deoplete#_saved_completeopt')
     let g:deoplete#_saved_completeopt = &completeopt
   endif

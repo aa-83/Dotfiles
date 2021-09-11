@@ -16,6 +16,7 @@ function! vimtex#options#init() abort " {{{1
         \])
 
   call s:init_option('vimtex_compiler_enabled', 1)
+  call s:init_option('vimtex_compiler_silent', 0)
   call s:init_option('vimtex_compiler_method', 'latexmk')
   call s:init_option('vimtex_compiler_progname',
         \ has('nvim') && executable('nvr')
@@ -297,6 +298,8 @@ function! vimtex#options#init() abort " {{{1
         \   'csharp' : 'cs',
         \ },
         \ 'ignored' : {
+        \   'sh' : ['shSpecial'],
+        \   'bash' : ['shSpecial'],
         \   'cs' : [
         \     'csBraces',
         \   ],
@@ -376,6 +379,7 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_view_method', 'general')
   call s:init_option('vimtex_view_use_temp_files', 0)
   call s:init_option('vimtex_view_forward_search_on_start', 1)
+  call s:init_option('vimtex_view_reverse_search_edit_cmd', 'edit')
 
   " OS dependent defaults
   let l:os = vimtex#util#get_os()

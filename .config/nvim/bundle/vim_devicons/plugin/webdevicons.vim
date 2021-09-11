@@ -197,6 +197,7 @@ function! s:setDictionaries()
         \ 'yaml'     : '',
         \ 'toml'     : '',
         \ 'bat'      : '',
+        \ 'mk'       : '',
         \ 'jpg'      : '',
         \ 'jpeg'     : '',
         \ 'bmp'      : '',
@@ -277,7 +278,8 @@ function! s:setDictionaries()
         \ 'xcplayground' : '',
         \ 'tex'      : 'ﭨ',
         \ 'r'        : 'ﳒ',
-        \ 'rproj'    : '鉶'
+        \ 'rproj'    : '鉶',
+        \ 'sol'      : 'ﲹ'
         \}
 
   let s:file_node_exact_matches = {
@@ -490,9 +492,9 @@ endfunction
 
 " a:1 (bufferName), a:2 (isDirectory)
 " scope: public
-function! WebDevIconsGetFileTypeSymbol(...)
+function! WebDevIconsGetFileTypeSymbol(...) abort
   if a:0 == 0
-    let fileNodeExtension = expand('%:e')
+    let fileNodeExtension = !empty(expand('%:e')) ? expand('%:e') : &filetype
     let fileNode = expand('%:t')
     let isDirectory = 0
   else

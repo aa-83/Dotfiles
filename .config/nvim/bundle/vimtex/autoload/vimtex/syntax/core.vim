@@ -261,6 +261,15 @@ function! vimtex#syntax#core#init() abort " {{{1
   call vimtex#syntax#core#new_opt('texRefOpt', {'next': 'texRefOpt,texRefArg'})
   call vimtex#syntax#core#new_arg('texRefArg', {'contains': 'texComment,@NoSpell'})
 
+  " \bibitem[label]{marker}
+  syntax match texCmdBibitem "\\bibitem\>"
+        \ nextgroup=texBibitemOpt,texBibitemArg skipwhite skipnl
+  call vimtex#syntax#core#new_opt('texBibitemOpt', {
+        \ 'next': 'texBibitemArg'
+        \})
+  call vimtex#syntax#core#new_arg('texBibitemArg',
+        \ {'contains': 'texComment,@NoSpell'})
+
   " Sections and parts
   syntax match texCmdPart "\\\(front\|main\|back\)matter\>"
   syntax match texCmdPart "\\part\>"                    nextgroup=texPartArgTitle
@@ -275,9 +284,10 @@ function! vimtex#syntax#core#init() abort " {{{1
 
   " Add @NoSpell for commands per configuration (TOP,@Spell implies NoSpell!)
   for l:macro in g:vimtex_syntax_nospell_commands
-    execute 'syntax match texCmdNoSpell nextgroup=texNoSpellArg skipwhite skipnl "\\' . l:macro . '"'
+    execute 'syntax match texCmdNoSpell nextgroup=texNoSpellOpt,texNoSpellArg skipwhite skipnl "\\' . l:macro . '"'
   endfor
-  call vimtex#syntax#core#new_arg('texNoSpellArg', {'contains': 'TOP,@Spell'})
+  call vimtex#syntax#core#new_opt('texNoSpellOpt', {'next': 'texNoSpellArg'})
+  call vimtex#syntax#core#new_arg('texNoSpellArg', {'next': 'texNoSpellArg', 'contains': 'TOP,@Spell'})
 
   " \begin \end environments
   syntax match texCmdEnv "\v\\%(begin|end)>" nextgroup=texEnvArgName
@@ -364,6 +374,32 @@ function! vimtex#syntax#core#init() abort " {{{1
         \ 'contains': 'texLength,texCmd,texComment',
         \})
   call vimtex#syntax#core#new_arg('texParboxArgContent')
+
+  " }}}2
+  " {{{2 Commands: Theorems
+
+  " Reference: LaTeX 2e Unofficial reference guide, section 12.9
+  "            https://texdoc.org/serve/latex2e/0
+
+  " \newtheorem
+  syntax match texCmdNewthm "\\newtheorem\>"
+        \ nextgroup=texNewthmArgName skipwhite skipnl
+  call vimtex#syntax#core#new_arg('texNewthmArgName', {
+        \ 'next': 'texNewthmOptCounter,texNewthmArgPrinted',
+        \ 'contains': 'TOP,@Spell'
+        \})
+  call vimtex#syntax#core#new_opt('texNewthmOptCounter',
+        \ {'next': 'texNewthmArgPrinted'}
+        \)
+  call vimtex#syntax#core#new_arg('texNewthmArgPrinted',
+        \ {'next': 'texNewthmOptNumberby'}
+        \)
+  call vimtex#syntax#core#new_opt('texNewthmOptNumberby')
+
+  " \begin{mytheorem}[custom title]
+  call vimtex#syntax#core#new_opt('texTheoremEnvOpt', {
+        \ 'contains': 'TOP,@NoSpell'
+        \})
 
   " }}}2
   " {{{2 Comments
@@ -526,9 +562,12 @@ function! vimtex#syntax#core#init() abort " {{{1
         \})
 
   " Support for array environment
-  syntax match texMathCmdEnv contained contains=texCmdMathEnv "\\begin{array}" nextgroup=texMathArrayArg skipwhite skipnl
+  syntax match texMathCmdEnv contained contains=texCmdMathEnv "\\begin{array}"
+        \ nextgroup=texMathArrayArg skipwhite skipnl
   syntax match texMathCmdEnv contained contains=texCmdMathEnv "\\end{array}"
-  call vimtex#syntax#core#new_arg('texMathArrayArg', {'contains': ''})
+  call vimtex#syntax#core#new_arg('texMathArrayArg', {
+        \ 'contains': '@texClusterTabular'
+        \})
 
   call s:match_math_sub_super()
   call s:match_math_delims()
@@ -581,6 +620,23 @@ function! vimtex#syntax#core#init() abort " {{{1
 endfunction
 
 " }}}1
+function! vimtex#syntax#core#init_post() abort " {{{1
+  if exists('b:vimtex_syntax_did_postinit') | return | endif
+  let b:vimtex_syntax_did_postinit = 1
+
+  " Add texTheoremEnvBgn for custom theorems
+  for l:envname in s:gather_newtheorems()
+    execute 'syntax match texTheoremEnvBgn'
+          \ printf('"\\begin{%s}"', l:envname)
+          \ 'nextgroup=texTheoremEnvOpt skipwhite skipnl'
+          \ 'contains=texCmdEnv'
+  endfor
+
+  call vimtex#syntax#packages#init()
+endfunction
+
+" }}}1
+
 function! vimtex#syntax#core#init_highlights() abort " {{{1
   " See :help group-name for list of conventional group names
 
@@ -618,11 +674,14 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   " Inherited groups
   highlight def link texArgNew             texCmd
   highlight def link texAuthorOpt          texOpt
+  highlight def link texBibitemArg         texArg
+  highlight def link texBibitemOpt         texOpt
   highlight def link texBoxOptPosVal       texSymbol
   highlight def link texBoxOptIPosVal      texBoxOptPosVal
   highlight def link texCmdAccent          texCmd
   highlight def link texCmdAuthor          texCmd
   highlight def link texCmdBib             texCmd
+  highlight def link texCmdBibitem         texCmd
   highlight def link texCmdClass           texCmd
   highlight def link texCmdConditional     texCmd
   highlight def link texCmdConditionalINC  texCmdConditional
@@ -641,6 +700,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texCmdNew             texCmd
   highlight def link texCmdNewcmd          texCmdNew
   highlight def link texCmdNewenv          texCmd
+  highlight def link texCmdNewthm          texCmd
   highlight def link texCmdNoSpell         texCmd
   highlight def link texCmdPackage         texCmd
   highlight def link texCmdParbox          texCmd
@@ -710,6 +770,10 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texNewenvArgName      texEnvArgName
   highlight def link texNewenvOpt          texOpt
   highlight def link texNewenvParm         texParm
+  highlight def link texNewthmArgName      texArg
+  highlight def link texNewthmOptCounter   texOpt
+  highlight def link texNewthmOptNumberby  texOpt
+  highlight def link texNoSpellOpt         texOpt
   highlight def link texOptEqual           texSymbol
   highlight def link texParboxOptHeight    texError
   highlight def link texParboxOptIPos      texError
@@ -724,6 +788,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texTabularChar        texSymbol
   highlight def link texTabularCol         texOpt
   highlight def link texTabularOpt         texEnvOpt
+  highlight def link texTheoremEnvOpt      texEnvOpt
   highlight def link texVerbZone           texZone
   highlight def link texVerbZoneInline     texVerbZone
 endfunction
@@ -1842,6 +1907,17 @@ function! s:match_conceal_cites_icon() abort " {{{1
   execute 'syntax match texCmdRefConcealed'
         \ '"\\cite[tp]\?\*\?\%(\[[^]]*\]\)\{,2}{[^}]*}"'
         \ 'conceal cchar=' . g:vimtex_syntax_conceal_cites.icon
+endfunction
+
+" }}}1
+
+function! s:gather_newtheorems() abort " {{{1
+  let l:lines = vimtex#parser#preamble(b:vimtex.tex)
+
+  call filter(l:lines, {_, x -> x =~# '^\s*\\newtheorem\>'})
+  call map(l:lines, {_, x -> matchstr(x, '^\s*\\newtheorem\>\*\?{\zs[^}]*')})
+
+  return l:lines
 endfunction
 
 " }}}1

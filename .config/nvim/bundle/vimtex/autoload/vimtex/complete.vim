@@ -117,6 +117,7 @@ function! s:completer_bib.gather_candidates() dict abort " {{{2
 
   let l:cache = vimtex#cache#open('bibcomplete', {
         \ 'local': 1,
+        \ 'validate': g:vimtex_complete_bib,
         \ 'default': {'result': [], 'ftime': -1}
         \})
 
@@ -450,7 +451,14 @@ let s:completer_inc = {
       \}
 
 function! s:completer_inc.complete(regex) dict abort " {{{2
-  let self.candidates = split(globpath(b:vimtex.root, '**/*.tex'), '\n')
+  let self.candidates = globpath(b:vimtex.root, '**/*.tex', 0, 1)
+
+  " Add .tikz files if appropriate
+  if has_key(b:vimtex.packages, 'tikz') && self.context !~# '\\subfile'
+    call extend(self.candidates,
+          \ globpath(b:vimtex.root, '**/*.tikz', 0, 1))
+  endif
+
   let self.candidates = map(self.candidates,
         \ 'strpart(v:val, len(b:vimtex.root)+1)')
   call s:filter(self.candidates, a:regex)
@@ -478,7 +486,7 @@ let s:completer_pdf = {
       \}
 
 function! s:completer_pdf.complete(regex) dict abort " {{{2
-  let self.candidates = split(globpath(b:vimtex.root, '**/*.pdf'), '\n')
+  let self.candidates = globpath(b:vimtex.root, '**/*.pdf', 0, 1)
   let self.candidates = map(self.candidates,
         \ 'strpart(v:val, len(b:vimtex.root)+1)')
   call s:filter(self.candidates, a:regex)
@@ -497,7 +505,8 @@ let s:completer_sta = {
       \}
 
 function! s:completer_sta.complete(regex) dict abort " {{{2
-  let self.candidates = substitute(globpath(b:vimtex.root, '**/*.tex'), '\.tex', '', 'g')
+  let self.candidates = substitute(
+        \ globpath(b:vimtex.root, '**/*.tex'), '\.tex', '', 'g')
   let self.candidates = split(self.candidates, '\n')
   let self.candidates = map(self.candidates,
         \ 'strpart(v:val, len(b:vimtex.root)+1)')
@@ -591,7 +600,7 @@ function! s:completer_gls.parse_glsbib() dict abort " {{{2
   if empty(l:filename) | return [] | endif
 
   let l:candidates = []
-  for l:entry in vimtex#parser#bib(l:filename, {'backend': 'bibparse'})
+  for l:entry in vimtex#parser#bib(l:filename, {'backend': 'vim'})
     call add(l:candidates, {
           \ 'word': l:entry.key,
           \ 'menu': get(l:entry, 'name', '--'),
@@ -819,8 +828,9 @@ function! s:gather_candidates_from_newcommands(lines, label) abort " {{{1
   "   a:label   Label to use in the menu
 
   let l:re = '\v\\%(%(provide|renew|new)command'
-        \ . '|%(New|Declare|Provide|Renew)%(Expandable)?DocumentCommand)'
-  let l:re_match = l:re . '\*?\{\\?\zs[^}]*'
+        \ . '|%(New|Declare|Provide|Renew)%(Expandable)?DocumentCommand'
+        \ . '|DeclarePairedDelimiter)'
+  let l:re_match = l:re . '\*?%(\{\\?\zs[^}]*|\\\zs\w+)'
 
   return map(filter(a:lines, 'v:val =~# l:re'), {_, x -> {
         \ 'word': matchstr(x, l:re_match),

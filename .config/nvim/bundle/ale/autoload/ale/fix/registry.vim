@@ -17,6 +17,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['python'],
 \       'description': 'Fix import issues with autoimport.',
 \   },
+\   'autoflake': {
+\       'function': 'ale#fixers#autoflake#Fix',
+\       'suggested_filetypes': ['python'],
+\       'description': 'Fix flake issues with autoflake.',
+\   },
 \   'autopep8': {
 \       'function': 'ale#fixers#autopep8#Fix',
 \       'suggested_filetypes': ['python'],
@@ -241,6 +246,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['go'],
 \       'description': 'Fix Go files imports with goimports.',
 \   },
+\   'golines': {
+\       'function': 'ale#fixers#golines#Fix',
+\       'suggested_filetypes': ['go'],
+\        'description': 'Fix Go file long lines with golines',
+\   },
 \   'gomod': {
 \       'function': 'ale#fixers#gomod#Fix',
 \       'suggested_filetypes': ['gomod'],
@@ -295,6 +305,11 @@ let s:default_registry = {
 \       'function': 'ale#fixers#stylish_haskell#Fix',
 \       'suggested_filetypes': ['haskell'],
 \       'description': 'Refactor Haskell files with stylish-haskell.',
+\   },
+\   'purs-tidy': {
+\       'function': 'ale#fixers#purs_tidy#Fix',
+\       'suggested_filetypes': ['purescript'],
+\       'description': 'Format PureScript files with purs-tidy.',
 \   },
 \   'purty': {
 \       'function': 'ale#fixers#purty#Fix',
@@ -375,6 +390,16 @@ let s:default_registry = {
 \       'function': 'ale#fixers#dartfmt#Fix',
 \       'suggested_filetypes': ['dart'],
 \       'description': 'Fix Dart files with dartfmt.',
+\   },
+\   'dart-format': {
+\       'function': 'ale#fixers#dart_format#Fix',
+\       'suggested_filetypes': ['dart'],
+\       'description': 'Fix Dart files with dart format.',
+\   },
+\   'dotnet-format': {
+\       'function': 'ale#fixers#dotnet_format#Fix',
+\       'suggested_filetypes': ['cs'],
+\       'description': 'Fix C# files with dotnet format.',
 \   },
 \   'xmllint': {
 \       'function': 'ale#fixers#xmllint#Fix',

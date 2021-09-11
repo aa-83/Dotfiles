@@ -35,9 +35,9 @@ current buffer.
 
 Note: deoplete may consume more memory than other plugins do.
 
-Improvements in deoplete in comparison to |neocomplete|:
+Improvements in deoplete in comparison to neocomplete:
 
-1. Real asynchronous completion behavior like |YouCompleteMe| by default.
+1. Real asynchronous completion behavior like YouCompleteMe by default.
 2. Uses Python3 to implement sources.
 3. Removes legacy interface.
 4. Requires |+python3|.
@@ -262,6 +262,14 @@ on_insert_enter
 on_text_changed_i
 		Deoplete enables the auto completion on |TextChangedI| autocmd
 		if this value is True.
+
+		Default value: v:true
+
+				*deoplete-options-overwrite_completeopt*
+overwrite_completeopt
+		Deoplete overwrites 'completeopt' option.
+		You can disable the feature but if you change it, deoplete may
+		not work.
 
 		Default value: v:true
 
@@ -577,8 +585,7 @@ deoplete#smart_close_popup()
 		inoremap <expr><BS>
 		\ deoplete#smart_close_popup()."\<C-h>"
 <
-		Note: This mapping conflicts with |SuperTab| or |endwise|
-		plugins.
+		Note: This mapping conflicts with SuperTab or endwise plugins.
 		Note: This key mapping is for <C-h> or <BS> keymappings.
 
 					*deoplete#undo_completion()*
@@ -914,8 +921,7 @@ converter_reorder_attr
 				*deoplete-filter-converter_auto_paren*
 converter_auto_paren
 		It adds parentheses character in a candidate's word.
-		It is useful if you use |neopairs| or |neosnippet|
-		plugins.
+		It is useful if you use neopairs or neosnippet plugins.
 
 				*deoplete-filter-converter_case*
 converter_case
@@ -948,6 +954,7 @@ converter_truncate_menu
 				*deoplete-filter-converter_word_abbr*
 converter_word_abbr
 		Convert candidate word to abbr.
+
 CREATE SOURCE					*deoplete-create-source*
 
 To create source, you should read default sources implementation in
@@ -1051,6 +1058,7 @@ gather_candidates
 		candidates, the user cannot then filter the candidates by
 		fuzzy match.
 
+			*deoplete-source-attribute-get_complete_position*
 get_complete_position
 		(Function)			(Optional)
 		It is called to get the position of the current completion.
@@ -1068,7 +1076,7 @@ get_complete_position
 
 		This is useful if you want to complete terms that are more.
 
-					*deoplete-source-attribute-ignore_case*
+				*deoplete-source-attribute-ignore_case*
 ignore_case
 		If it is True, deoplete ignores case.
 
@@ -1641,7 +1649,7 @@ A: You can disable the messages through the 'shortmess' option. >
 
 	set shortmess+=c
 
-Q: I want to use the auto select feature like |neocomplete|.
+Q: I want to use the auto select feature like neocomplete.
 
 A: You can use it by the 'completeopt' option. >
 
@@ -1864,7 +1872,7 @@ A: Please use |deoplete-options-auto_complete|. >
 
 Q: I want to use C/C++ omni completion with deoplete.
 
-A: You should use |deoplete-clangx|.
+A: You should use deoplete-clangx.
 
    https://github.com/Shougo/deoplete-clangx
 
@@ -2001,6 +2009,15 @@ A: deoplete is:
 
    I don't think deoplete is the best for everyone.  Please choose auto
    completion plugin.
+
+Q: deoplete with coc.nvim does not work.
+https://github.com/Shougo/deoplete.nvim/issues/1192
+
+A: Unfortunately, both deoplete and coc.nvim provide auto completion feature.
+   So deoplete conflicts with coc.nvim.
+   You cannot use both. You need to choose coc.nvim or deoplete.
+   Note: But to change |deoplete-options-overwrite_completeopt| may work for
+   you.
 
 ==============================================================================
 COMPATIBILITY					*deoplete-compatibility*
