@@ -1,0 +1,7 @@
+pane	terminal	1	1	:*	1	:/home/eirik	1	zsh	:
+pane	terminal	2	0	:	1	:/home/eirik	1	zsh	:
+pane	terminal	3	0	:-	1	:/home/eirik	1	zsh	:
+window	terminal	1	:>_	1	:*	bc3e,136x34,0,0,1	off
+window	terminal	2	:irssi	0	:	5e54,136x34,0,0,15	off
+window	terminal	3	:ssh	0	:-	5e55,136x34,0,0,16	off
+state	terminal	

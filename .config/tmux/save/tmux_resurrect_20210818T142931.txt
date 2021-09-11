@@ -1,3 +1,0 @@
-pane	terminal	1	:>_	1	:*	1	:/home/eirik	1	zsh	:
-window	terminal	1	1	:*	bc3e,136x34,0,0,1
-state	terminal	
