@@ -3,29 +3,30 @@ servers = (
     address = "irc.indymedia.org";
     chatnet = "indymedia";
     port = "6697";
-    use_tls = "yes";
-    tls_cert = "~/.local/share/irssi/certs/eirik_irc.pem";
-    tls_verify = "yes";
+    use_ssl = "yes";
+    ssl_cert = "~/.local/share/irssi/certs/indymedia.pem";
+    ssl_verify = "yes";
     autoconnect = "yes";
   },
   {
     address = "irc.libera.chat";
     chatnet = "liberachat";
     port = "6697";
-    use_tls = "yes";
-    tls_cert = "~/.local/share/irssi/certs/eirik_irc.pem";
-    tls_verify = "yes";
+    use_ssl = "yes";
+    ssl_cert = "~/.local/share/irssi/certs/libera.pem";
+    ssl_verify = "yes";
     autoconnect = "yes";
   },
   {
     address = "irc.oftc.net";
     chatnet = "OFTC";
     port = "6697";
-    use_tls = "yes";
-    tls_cert = "~/.local/share/irssi/certs/eirik_irc.pem";
-    tls_verify = "yes";
+    use_ssl = "yes";
+    ssl_cert = "~/.local/share/irssi/certs/oftc.pem";
+    ssl_verify = "yes";
     autoconnect = "yes";
-  }
+  },
+
 );
 
 OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
@@ -214,7 +215,7 @@ settings = {
   };
 };
 ignores = ( { level = "JOINS PARTS QUITS"; } );
-keyboard = ( 
+keyboard = (
   { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
 );
 logs = { };
@@ -222,5 +223,5 @@ hilights = ( { text = "nick"; nick = "yes"; word = "yes"; } );
 chatnets = {
   OFTC = { type = "IRC"; nick = "EirikLH"; };
   indymedia = { type = "IRC"; };
-  liberachat = { type = "IRC"; };
+  liberachat = { type = "IRC"; sasl_mechanism = "EXTERNAL"; };
 };
