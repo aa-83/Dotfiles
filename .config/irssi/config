@@ -196,6 +196,7 @@ statusbar = {
     };
   };
 };
+
 settings = {
   core = {
     real_name = "Unknown";
@@ -203,6 +204,7 @@ settings = {
     nick = "eirik";
     timestamp_format = "%H:%M:%S";
   };
+
   "fe-text" = { actlist_sort = "refnum"; term_force_colors = "yes"; };
   "fe-common/core" = {
     autolog = "yes";
@@ -214,12 +216,16 @@ settings = {
     show_nickmode_empty = "no";
   };
 };
+
 ignores = ( { level = "JOINS PARTS QUITS"; } );
+
 keyboard = (
   { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
 );
 logs = { };
+
 hilights = ( { text = "nick"; nick = "yes"; word = "yes"; } );
+
 chatnets = {
   OFTC = { type = "IRC"; nick = "EirikLH"; };
   indymedia = { type = "IRC"; };
