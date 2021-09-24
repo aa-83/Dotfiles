@@ -1,7 +1,6 @@
 #!/bin/sh
 # Use neovim for vim if present.
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" ;
-alias snvim='sudo nvim' ;
+command -v nvim >/dev/null && alias vim='nvim' vimdiff='nvim -d' snvim='sudo nvim' ;
 
 # Core utils
 alias ls='ls -hFN --color=always --group-directories-first' ;
