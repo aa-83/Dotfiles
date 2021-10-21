@@ -1,5 +1,0 @@
-pane	terminal	1	1	:*	1	:/home/eirik	1	zsh	:
-pane	terminal	2	0	:-	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
-window	terminal	1	:>_	1	:*	bc3e,136x34,0,0,1	off
-window	terminal	2	:zsh	0	:-	bc3f,136x34,0,0,2	:
-state	terminal	

@@ -4,7 +4,6 @@ userresources=$HOME/.config/Xresources
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
 wallpaper &
-dwmblocks &
 sxhkd &
 xrdb ~/.config/Xresources &
 unclutter &
@@ -15,7 +14,7 @@ remaps &
 syncthing -no-browser &
 protonmail-bridge --no-window &
 expressvpn connect norway &
-oppdater &
 xinput disable SynPS/2\ Synaptics\ TouchPad &
+dwmblocks &
 
 exec dwm
