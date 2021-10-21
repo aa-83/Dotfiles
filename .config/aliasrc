@@ -6,7 +6,7 @@ command -v nvim >/dev/null && alias vim='nvim' vimdiff='nvim -d' snvim='sudo nvi
 alias ls='ls -hFN --color=always --group-directories-first' ;
 alias rm='rm -vI' ;
 alias mv='mv -vi' ;
-alias cp='cp -vi' ;
+alias cp='cp -v' ;
 alias mkdir='mkdir -pv' ;
 alias grep='grep --color=auto' ;
 alias diff='diff --color=auto' ;
