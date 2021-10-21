@@ -14,24 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik/files/diverse/.voidrice
-	.local
-3
-d/home/eirik/files/diverse/.voidrice/.local
-	bin
-1
-d/home/eirik/files/diverse/.voidrice
-	.local
-3
-d/home/eirik/files/diverse/.voidrice/.local
-	bin
-1
-d/home/eirik/files/diverse/.voidrice/.local/bin
-	statusbar
-3
-d/home/eirik/files/diverse/.voidrice/.local/bin/statusbar
-	pacpackages
-18
 d/home/eirik
 	..
 0
@@ -65,9 +47,6 @@ d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semeste
 d/home/eirik
 	..
 1
-d/home/eirik
-	.emacs.d
-3
 d/home/eirik/.emacs.d
 	..
 0
@@ -90,105 +69,159 @@ d/home/eirik/.thumbnails
 	normal
 2
 d/home/eirik
-	downloads
-8
+	..
+0
+d/home
+	eirik
+1
+d/home/eirik
+	media
+13
+d/home/eirik/media
+	musikk
+3
+d/home/eirik/media/musikk
+	afrorack
+1
+d/home/eirik/media/musikk/afrorack
+	techno_in_the_garden.mp3
+5
+d/home/eirik/media/musikk
+	atomic_dancer
+2
+d/home/eirik/media/musikk/atomic_dancer
+	..
+0
+d/home/eirik/media/musikk
+	atomic_dancer
+2
+d/home/eirik/media
+	musikk
+3
+d/home/eirik
+	.config
+2
+d/home/eirik/.config
+	vifm
+36
+d/home/eirik/.config/vifm
+	vifmrc
+5
+d/home/eirik/.config
+	vifm
+36
+d/home/eirik
+	media
+13
+d/home/eirik/media
+	musikk
+3
+d/home/eirik/media/musikk
+	atomic_dancer
+2
+d/home/eirik/media/musikk/atomic_dancer
+	truncate_diffraction_extra_long.wav
+4
+d/home/eirik/.config/isync
+	mbsyncrc
+1
 
 # Right window history (oldest to newest):
 D/home/eirik/files/texts/synk/universitet/ddsks/master
-
+	
 0
 D/home/eirik/files/media/music/the_blues_brothers
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu/books
-
+	
 0
 D/home/eirik/files/texts/synk/memes/images
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu
-
+	
 0
 D/home/eirik/files/texts/synk/hobby
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/cyberpunk_2020
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/call_of_cthulhu/sourcebooks
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/hobby/gw/warhammer
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/et_dukkehjem/prøverapporter
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/hovedscenen/vildanden
-
+	
 0
 D/home/eirik
-
+	
 0
 D/home/eirik/files/diverse/build/dwmblocks
-
+	
 0
 D/home/eirik
-
+	
 0
 D/mnt/4tb/video/serier/animasjon/futurama
-
+	
 0
 D/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester
-
+	
 0
 D/home/eirik
-
+	
 0
-D/home/eirik
-
+D/home/eirik/.config/isync
+	
 0
 
 # Command line history (oldest to newest):

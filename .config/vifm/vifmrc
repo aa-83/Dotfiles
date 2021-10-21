@@ -1,4 +1,4 @@
-" vim: filetype=vifm
+" vim: filetype=vifm :
 
 set vicmd=$EDITOR
 set dotfiles
@@ -9,6 +9,8 @@ set sortorder
 set undolevels=100
 set wildmenu
 set wildstyle=popup
+set vimhelp
+set norunexec
 set scrolloff=4
 set ignorecase
 set smartcase
@@ -16,7 +18,9 @@ set nohlsearch
 set incsearch
 set number relativenumber
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set timefmt=%y/%m/%d\ %H:%M:%S
 colorscheme eirik
+"set previewoptions+=graphicsdelay:0
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -104,7 +108,12 @@ fileviewer *.odt odt2txt %c -
 filetype *.csv,*xls,*.xlsx,*.ods libreoffice %c
 fileviewer *.csv sed "s/,,,,/,,-,,/g;s/,,/ /g" %c | column -t | sed "s/ - /  /g" | cut -c -%pw
 
-filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus mpv --no-audio-display %c
+
+filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+       \ ffplay -nodisp -autoexit %c,
+       \ mplayer %f,
+fileviewer *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus mediainfo %c
+
 filextype *.ps,*.eps,*.ps.gz,*.djvu,*.epub,*.cbz,*.cbr,*.cb7 zathura %f 2>/dev/null &,
 filextype *.pdf zathura %c %i &,
 fileviewer *.pdf vifmimg pdfpreview %px %py %pw %ph %c %pc vifmimg clear
@@ -131,10 +140,10 @@ set vifminfo=dhistory,chistory,tui,shistory,phistory,fhistory,dirstack,registers
 
 
 " file types
-set classify='📁:dir:/, :exe:,📄:reg:,🔗:link:'
+set classify='📁:dir:/,>_:exe:,📄:reg:,🔗:link:'
 
 " various file names
-set classify+='⬆️ ::../::, ::*.sh::,©️ ::/^copying|license$/::, ::.git/,,*.git/,,.git*::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::'
+set classify+='⬆️ ::../::,>_::*.sh::,©️ ::/^copying|license$/::,git::.git/,,*.git/,,.git*::,📚::*.epub,,*.fb2,,*.djvu::,📑::*.pdf::,🌍::*.htm,,*.html,,**.[sx]html,,*.xml::,💽::*.iso,,*.img::,🎨::*.css::'
 
 " C files
 set classify+='C ::*.[hc]::'
