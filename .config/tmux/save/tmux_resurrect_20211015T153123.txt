@@ -1,0 +1,31 @@
+pane	kontor	1	0	:-	1	:/home/eirik/dokumenter	1	zsh	:
+pane	kontor	2	1	:*	1	:/home/eirik	1	zsh	:
+pane	kontor	3	0	:	1	:/home/eirik	1	neomutt	:neomutt
+pane	kontor	4	0	:	1	:/home/eirik	1	calcurse	:calcurse -D /home/eirik/.config/calcurse/ -D /home/eirik/.config/calcurse/
+pane	media	1	0	:-	1	:/home/eirik	1	ncmpcpp	:ncmpcpp
+pane	media	1	0	:-	2	:/home/eirik	0	zsh	:
+pane	media	2	0	:	1	:/home/eirik	0	zsh	:
+pane	media	2	0	:	2	:/home/eirik	1	zsh	:
+pane	media	3	1	:*	1	:/home/eirik	1	newsboat	:newsboat
+pane	system_monitor	1	0	:-	1	:/home/eirik	1	gotop	:gotop -c cyberpunk_neon -c cyberpunk_neon -c cyberpunk_neon
+pane	system_monitor	2	1	:*	1	:/home/eirik	1	htop	:htop
+pane	system_monitor	3	0	:	1	:/home/eirik	1	zsh	:
+pane	system_monitor	4	0	:	1	:/home/eirik	1	bmon	:bmon
+pane	terminal	1	1	:*	1	:/home/eirik	1	zsh	:
+pane	terminal	2	0	:-	1	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+pane	terminal	3	0	:	1	:/home/eirik	1	ssh	:ssh eirik@192.168.0.13
+window	kontor	1	:latex	0	:-	bc3e,136x34,0,0,1	off
+window	kontor	2	:vufm	1	:*	bc3f,136x34,0,0,2	off
+window	kontor	3	:neomutt	0	:	bc40,136x34,0,0,3	off
+window	kontor	4	:calcurse	0	:	bc41,136x34,0,0,4	off
+window	media	1	:ncmpcpp	0	:-	c188,136x34,0,0[136x24,0,0,5,136x9,0,25,6]	:
+window	media	2	:spotify	0	:	4e92,136x34,0,0[136x27,0,0,7,136x6,0,28,8]	off
+window	media	3	:newsboat	1	:*	bc46,136x34,0,0,9	:
+window	system_monitor	1	:gotop	0	:-	5e4f,136x34,0,0,10	off
+window	system_monitor	2	:htop	1	:*	5e50,136x34,0,0,11	off
+window	system_monitor	3	:iwmon	0	:	5e51,136x34,0,0,12	off
+window	system_monitor	4	:bmon	0	:	5e52,136x34,0,0,13	off
+window	terminal	1	:>_	1	:*	5e53,136x34,0,0,14	off
+window	terminal	2	:irssi	0	:-	5e54,136x34,0,0,15	off
+window	terminal	3	:ssh	0	:	5e55,136x34,0,0,16	off
+state	terminal	system_monitor
