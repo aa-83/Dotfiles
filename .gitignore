@@ -9,3 +9,4 @@
 .config/spotify-tui/client.yml
 .config/zsh/.zcompdump
 tags
+tags.*
