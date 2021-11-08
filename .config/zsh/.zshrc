@@ -113,14 +113,14 @@ man() {
 
 
 # Help-function
-#autoload -Uz run-help
-#unalias run-help
-#alias help=run-help
-#autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
+autoload -Uz run-help
+unalias run-help
+alias help=run-help
+autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
 
 # Fuzzy plugin
-#source /usr/share/fzf/key-bindings.zsh 2>/dev/null
-#source /usr/share/fzf/completion.zsh 2>/dev/null
+source /usr/share/fzf/key-bindings.zsh 2>/dev/null
+source /usr/share/fzf/completion.zsh 2>/dev/null
 
 #fzf
 
@@ -139,15 +139,15 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 # Search for missing packages
-#source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
+source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
 
 # Load zsh-autosuggestions
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
 # Load zsh-syntax-highlighting; should be last.
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # Mac placements
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+#source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
