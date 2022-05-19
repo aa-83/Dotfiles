@@ -2,6 +2,9 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 
+\renewcommand{\emph}{\textbf}
+\renewcommand\emph{\textbf}
+
 \begin{document}
 
 $a_1$
@@ -24,6 +27,7 @@ $a^{\hat k}$
 \begin{equation}
   \bigl\lvert x \bigr\rvert
   \operatorname{test}(a) = 1
+  \int f = \iiint g
 \end{equation}
 
 $\langle \| \\ \rangle$
@@ -38,7 +42,12 @@ $\mathrm{Re} = \cdots$
 
 \begin{equation}
   \mathbb{P}(x \,|\, y) \!= \dots
+  \label{eq:test-ref}
 \end{equation}
+
+Let's refer to \eqref{eq:test-ref}.
+
+Let's refer to Eq. \ref{eq:test-ref}.
 
 $\bar a$
 $\bar{a}$
@@ -56,5 +65,21 @@ $\bar{a}$
 \href{url}{text}
 
 \keyw{Piecewise \textbf{test} splines}
+
+\begin{equation}
+  \sum_{i=1}^n a_i = 0
+\end{equation}
+
+$$\lVert \mathrm{w} \rVert_2^2$$
+
+\chapter{test}
+
+\section{test}
+
+\subsection{testing}
+
+\subsubsection{testing}
+
+Test tilde: \tilde n
 
 \end{document}

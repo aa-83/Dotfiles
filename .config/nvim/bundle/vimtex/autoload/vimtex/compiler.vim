@@ -35,12 +35,7 @@ endfunction
 function! vimtex#compiler#init_state(state) abort " {{{1
   if !g:vimtex_compiler_enabled | return | endif
 
-  let a:state.compiler = s:init_compiler({
-        \ 'root': a:state.root,
-        \ 'target' : a:state.base,
-        \ 'target_path' : a:state.tex,
-        \ 'tex_program' : a:state.tex_program,
-        \})
+  let a:state.compiler = s:init_compiler({'state': a:state})
 endfunction
 
 " }}}1
@@ -115,7 +110,16 @@ endfunction
 
 " }}}1
 function! vimtex#compiler#compile_ss() abort " {{{1
+  if b:vimtex.compiler.is_running()
+    call vimtex#log#info(
+          \ 'Compiler is already running, use :VimtexStop to stop it!')
+    return
+  endif
+
   call b:vimtex.compiler.start_single()
+
+  if g:vimtex_compiler_silent | return | endif
+  call vimtex#log#info('Compiler started in background!')
 endfunction
 
 " }}}1
@@ -128,13 +132,12 @@ function! vimtex#compiler#compile_selected(type) abort range " {{{1
 
   let l:file = vimtex#parser#selection_to_texfile(l:opts)
   if empty(l:file) | return | endif
+  let l:tex_program = b:vimtex.get_tex_program()
+  let l:file.get_tex_program = {-> l:tex_program}
 
   " Create and initialize temporary compiler
   let l:compiler = s:init_compiler({
-        \ 'root' : l:file.root,
-        \ 'target' : l:file.base,
-        \ 'target_path' : l:file.tex,
-        \ 'tex_program' : b:vimtex.tex_program,
+        \ 'state' : l:file,
         \ 'continuous' : 0,
         \ 'callback' : 0,
         \})
@@ -186,15 +189,11 @@ endfunction
 function! vimtex#compiler#start() abort " {{{1
   if b:vimtex.compiler.is_running()
     call vimtex#log#warning(
-          \ 'Compiler is already running for `' . self.target . "'")
+          \ 'Compiler is already running for `' . b:vimtex.base . "'")
     return
   endif
 
   call b:vimtex.compiler.start()
-
-  if b:vimtex.compiler.continuous
-    let b:vimtex.compiler.check_timer = s:check_if_running_start()
-  endif
 
   if g:vimtex_compiler_silent | return | endif
 
@@ -214,15 +213,14 @@ endfunction
 function! vimtex#compiler#stop() abort " {{{1
   if !b:vimtex.compiler.is_running()
     call vimtex#log#warning(
-          \ 'There is no process to stop (' . b:vimtex.compiler.target . ')')
+          \ 'There is no process to stop (' . b:vimtex.base . ')')
     return
   endif
 
   call b:vimtex.compiler.stop()
-  silent! call timer_stop(b:vimtex.compiler.check_timer)
 
   if g:vimtex_compiler_silent | return | endif
-  call vimtex#log#info('Compiler stopped (' . b:vimtex.compiler.target . ')')
+  call vimtex#log#info('Compiler stopped (' . b:vimtex.base . ')')
 endfunction
 
 " }}}1
@@ -231,7 +229,7 @@ function! vimtex#compiler#stop_all() abort " {{{1
     if exists('l:state.compiler.is_running')
           \ && l:state.compiler.is_running()
       call l:state.compiler.stop()
-      call vimtex#log#info('Compiler stopped (' . l:state.compiler.target . ')')
+      call vimtex#log#info('Compiler stopped (' . l:state.compiler.state.base . ')')
     endif
   endfor
 endfunction
@@ -311,39 +309,12 @@ endfunction
 " }}}1
 
 
-let s:check_timers = {}
-function! s:check_if_running_start() abort " {{{1
-  let l:timer = timer_start(50, function('s:check_if_running'), {'repeat': 20})
-
-  let s:check_timers[l:timer] = {
-        \ 'compiler' : b:vimtex.compiler,
-        \ 'vimtex_id' : b:vimtex_id,
-        \}
-
-  return l:timer
-endfunction
-
-" }}}1
-function! s:check_if_running(timer) abort " {{{1
-  if s:check_timers[a:timer].compiler.is_running() | return | endif
-
-  call timer_stop(a:timer)
-
-  if get(b:, 'vimtex_id', -1) == s:check_timers[a:timer].vimtex_id
-    call vimtex#compiler#output()
-  endif
-  call vimtex#log#error('Compiler did not start successfully!')
-
-  unlet s:check_timers[a:timer].compiler.check_timer
-  unlet s:check_timers[a:timer]
-endfunction
-
-" }}}1
-
-
 let s:output_factory = {}
 function! s:output_factory.create(file) dict abort " {{{1
+  let l:vimtex = b:vimtex
   silent execute 'split' a:file
+  let b:vimtex = l:vimtex
+
   setlocal autoread
   setlocal nomodifiable
   setlocal bufhidden=wipe
@@ -432,7 +403,7 @@ endfunction
 
 " {{{1 Initialize module
 
-if !g:vimtex_compiler_enabled | finish | endif
+if !get(g:, 'vimtex_compiler_enabled') | finish | endif
 
 augroup vimtex_compiler
   autocmd!

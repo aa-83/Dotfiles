@@ -31,30 +31,22 @@ function! s:compiler.__build_cmd() abort dict " {{{1
         \ . ' --latex-cmd ' . self.get_engine()
         \ . ' -O '
         \ . (empty(self.build_dir) ? '.' : fnameescape(self.build_dir))
-        \ . ' ' . vimtex#util#shellescape(self.target)
+        \ . ' ' . vimtex#util#shellescape(self.state.base)
 endfunction
 
 " }}}1
 
 function! s:compiler.clean(...) abort dict " {{{1
-  let l:cmd = (has('win32')
-        \   ? 'cd /D "' . self.root . '" & '
-        \   : 'cd ' . vimtex#util#shellescape(self.root) . '; ')
-        \ . 'latexrun --clean-all'
-        \ . ' -O '
-        \   . (empty(self.build_dir) ? '.' : fnameescape(self.build_dir))
-  call vimtex#process#run(l:cmd)
+  let l:cmd = printf('latexrun --clean-all -O %s',
+        \ empty(self.build_dir) ? '.' : fnameescape(self.build_dir))
+  call vimtex#jobs#run(l:cmd, {'cwd': self.state.root})
 endfunction
 
 " }}}1
 function! s:compiler.get_engine() abort dict " {{{1
-  return get(extend(g:vimtex_compiler_latexrun_engines,
-        \ {
-        \  '_'                : 'pdflatex',
-        \  'pdflatex'         : 'pdflatex',
-        \  'lualatex'         : 'lualatex',
-        \  'xelatex'          : 'xelatex',
-        \ }, 'keep'), self.tex_program, '_')
+  return get(g:vimtex_compiler_latexrun_engines,
+        \ self.state.get_tex_program(),
+        \ g:vimtex_compiler_latexrun_engines._)
 endfunction
 
 " }}}1

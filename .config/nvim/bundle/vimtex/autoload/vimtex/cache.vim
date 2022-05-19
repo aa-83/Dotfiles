@@ -10,6 +10,17 @@ endfunction
 
 " }}}1
 
+function! vimtex#cache#path(name) abort " {{{1
+  let l:root = s:root()
+  if !isdirectory(l:root)
+    call mkdir(l:root, 'p')
+  endif
+
+  return vimtex#paths#join(l:root, a:name)
+endfunction
+
+" }}}1
+
 function! vimtex#cache#open(name, ...) abort " {{{1
   let l:opts = a:0 > 0 ? a:1 : {}
   let l:name = get(l:opts, 'local') ? s:local_name(a:name) : a:name
@@ -64,8 +75,7 @@ function! vimtex#cache#clear(name) abort " {{{1
   if empty(a:name) | return | endif
 
   if a:name ==# 'ALL'
-    let l:caches = globpath(s:root(),
-          \ (a:name ==# 'ALL' ? '' : a:name) . '*.json', 0, 1)
+    let l:caches = globpath(s:root(), '*.json', 0, 1)
     for l:file in map(l:caches, {_, x -> fnamemodify(x, ':t:r')})
       let l:cache = vimtex#cache#open(l:file)
       call l:cache.clear()
@@ -109,13 +119,8 @@ function! s:cache.init(name, opts) dict abort " {{{1
   let new = deepcopy(self)
   unlet new.init
 
-  let l:root = s:root()
-  if !isdirectory(l:root)
-    call mkdir(l:root, 'p')
-  endif
-
   let new.name = a:name
-  let new.path = l:root . '/' . a:name . '.json'
+  let new.path = vimtex#cache#path(a:name . '.json')
   let new.local = get(a:opts, 'local')
   let new.persistent = get(a:opts, 'persistent',
         \ get(g:, 'vimtex_cache_persistent', 1))
@@ -128,11 +133,18 @@ function! s:cache.init(name, opts) dict abort " {{{1
   let new.ftime = -1
   let new.modified = 0
 
-  if has_key(a:opts, 'validate')
+  " Validate cache
+  if new.persistent
+    let l:validation = get(a:opts, 'validate', s:_version)
+    if type(l:validation) == v:t_dict
+      let l:validation._version = s:_version
+    endif
     call new.read()
-    if get(new.data, '__validate', {}) != a:opts.validate
+    if !has_key(new.data, '__validate')
+          \ || type(new.data.__validate) != type(l:validation)
+          \ || new.data.__validate != l:validation
       call new.clear()
-      let new.data.__validate = deepcopy(a:opts.validate)
+      let new.data.__validate = deepcopy(l:validation)
       call new.write()
     endif
   endif
@@ -176,9 +188,10 @@ function! s:cache.write() dict abort " {{{1
     return
   endif
 
-  if !self.modified | return | endif
-
   call self.read()
+
+  if !self.modified || empty(self.data) | return | endif
+
   call writefile([json_encode(self.data)], self.path)
   let self.ftime = getftime(self.path)
   let self.modified = 0
@@ -187,12 +200,23 @@ endfunction
 " }}}1
 function! s:cache.read() dict abort " {{{1
   if !self.persistent | return | endif
+  if getftime(self.path) <= self.ftime | return | endif
 
-  if getftime(self.path) > self.ftime
-    let self.ftime = getftime(self.path)
-    call extend(self.data,
-          \ json_decode(join(readfile(self.path))), 'keep')
+  let self.ftime = getftime(self.path)
+  let l:contents = join(readfile(self.path))
+  if empty(l:contents) | return | endif
+
+  let l:data = json_decode(l:contents)
+
+  if type(l:data) != v:t_dict
+    call vimtex#log#warning(
+          \ 'Inconsistent cache data while reading: ' . self.name,
+          \ 'Decoded data type: ' . type(l:data)
+          \)
+    return
   endif
+
+  call extend(self.data, l:data, 'keep')
 endfunction
 
 " }}}1
@@ -230,3 +254,6 @@ function! s:local_name(name) abort " {{{1
 endfunction
 
 " }}}1
+
+
+let s:_version = 'cache_v1'

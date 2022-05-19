@@ -6,7 +6,6 @@
 #LOCATION="copenhagen"
 LOCATION="oslo"
 #LOCATION="bergen"
-#LOCATION="arendal"
 #LOCATION="maurset_eidfjord"
 
 # If we have internet, get a weather report from wttr.in and store it locally.

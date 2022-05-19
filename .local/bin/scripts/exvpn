@@ -1,2 +1,2 @@
 #!/bin/sh
-expressvpn disconnect && expressvpn connect smart && ping5
+expressvpn disconnect && expressvpn connect norway && ping5

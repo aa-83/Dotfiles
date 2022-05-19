@@ -285,6 +285,8 @@ function! s:toc.create() abort dict " {{{1
   nnoremap <silent><buffer><nowait> -             :call b:toc.decrease_depth()<cr>
   nnoremap <silent><buffer><nowait> +             :call b:toc.increase_depth()<cr>
 
+  command! -buffer VimtexTocToggle call b:toc.close()
+
   for [type, key] in items(self.layer_keys)
     execute printf(
           \ 'nnoremap <silent><buffer><nowait> %s'
@@ -370,7 +372,7 @@ function! s:toc.set_syntax() abort dict "{{{1
   syntax match VimtexTocIncl /\w\+ incl:/ contained
         \ nextgroup=VimtexTocInclPath
 
-  syntax match VimtexTocLabelsSecs /\v(chap|sec):.*$/ contained
+  syntax match VimtexTocLabelsSecs /\v(chap|(sub)*sec):.*$/ contained
   syntax match VimtexTocLabelsEq   /eq:.*$/ contained
   syntax match VimtexTocLabelsFig  /fig:.*$/ contained
   syntax match VimtexTocLabelsTab  /tab:.*$/ contained

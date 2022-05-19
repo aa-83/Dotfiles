@@ -17,6 +17,7 @@ Advanced fzf examples
   * [Using fzf as the secondary filter](#using-fzf-as-the-secondary-filter)
   * [Using fzf as interative Ripgrep launcher](#using-fzf-as-interative-ripgrep-launcher)
   * [Switching to fzf-only search mode](#switching-to-fzf-only-search-mode)
+  * [Switching between Ripgrep mode and fzf mode](#switching-between-ripgrep-mode-and-fzf-mode)
 * [Log tailing](#log-tailing)
 * [Key bindings for git objects](#key-bindings-for-git-objects)
   * [Files listed in `git status`](#files-listed-in-git-status)
@@ -405,6 +406,40 @@ IFS=: read -ra selected < <(
 - We reverted `--color` option for customizing how the matching chunks are
   displayed in the second phase
 
+### Switching between Ripgrep mode and fzf mode
+
+*(Requires fzf 0.30.0 or above)*
+
+fzf 0.30.0 added `rebind` action so we can "rebind" the bindings that were
+previously "unbound" via `unbind`.
+
+This is an improved version of the previous example that allows us to switch
+between Ripgrep launcher mode and fzf-only filtering mode via CTRL-R and
+CTRL-F.
+
+```sh
+#!/usr/bin/env bash
+
+# Switch between Ripgrep launcher mode (CTRL-R) and fzf filtering mode (CTRL-F)
+RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+INITIAL_QUERY="${*:-}"
+IFS=: read -ra selected < <(
+  FZF_DEFAULT_COMMAND="$RG_PREFIX $(printf %q "$INITIAL_QUERY")" \
+  fzf --ansi \
+      --color "hl:-1:underline,hl+:-1:underline:reverse" \
+      --disabled --query "$INITIAL_QUERY" \
+      --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
+      --bind "ctrl-f:unbind(change,ctrl-f)+change-prompt(2. fzf> )+enable-search+clear-query+rebind(ctrl-r)" \
+      --bind "ctrl-r:unbind(ctrl-r)+change-prompt(1. ripgrep> )+disable-search+reload($RG_PREFIX {q} || true)+rebind(change,ctrl-f)" \
+      --prompt '1. Ripgrep> ' \
+      --delimiter : \
+      --header '╱ CTRL-R (Ripgrep mode) ╱ CTRL-F (fzf mode) ╱' \
+      --preview 'bat --color=always {1} --highlight-line {2}' \
+      --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
+)
+[ -n "${selected[0]}" ] && vim "${selected[0]}" "+${selected[1]}"
+```
+
 Log tailing
 -----------
 
@@ -429,30 +464,34 @@ Admittedly, that was a silly example. Here's a practical one for browsing
 Kubernetes pods.
 
 ```bash
-#!/usr/bin/env bash
-
-read -ra tokens < <(
-  kubectl get pods --all-namespaces |
-    fzf --info=inline --layout=reverse --header-lines=1 --border \
+pods() {
+  FZF_DEFAULT_COMMAND="kubectl get pods --all-namespaces" \
+    fzf --info=inline --layout=reverse --header-lines=1 \
         --prompt "$(kubectl config current-context | sed 's/-context$//')> " \
-        --header $'Press CTRL-O to open log in editor\n\n' \
-        --bind ctrl-/:toggle-preview \
-        --bind 'ctrl-o:execute:${EDITOR:-vim} <(kubectl logs --namespace {1} {2}) > /dev/tty' \
-        --preview-window up,follow \
-        --preview 'kubectl logs --follow --tail=100000 --namespace {1} {2}' "$@"
-)
-[ ${#tokens} -gt 1 ] &&
-  kubectl exec -it --namespace "${tokens[0]}" "${tokens[1]}" -- bash
+        --header $'╱ Enter (kubectl exec) ╱ CTRL-O (open log in editor) ╱ CTRL-R (reload) ╱\n\n' \
+        --bind 'ctrl-/:change-preview-window(80%,border-bottom|hidden|)' \
+        --bind 'enter:execute:kubectl exec -it --namespace {1} {2} -- bash > /dev/tty' \
+        --bind 'ctrl-o:execute:${EDITOR:-vim} <(kubectl logs --all-containers --namespace {1} {2}) > /dev/tty' \
+        --bind 'ctrl-r:reload:$FZF_DEFAULT_COMMAND' \
+        --preview-window up:follow \
+        --preview 'kubectl logs --follow --all-containers --tail=10000 --namespace {1} {2}' "$@"
+}
 ```
 
 ![image](https://user-images.githubusercontent.com/700826/113473547-1d7a4880-94a5-11eb-98ef-9aa6f0ed215a.png)
 
 - The preview window will *"log tail"* the pod
     - Holding on to a large amount of log will consume a lot of memory. So we
-      limited the initial log amount with `--tail=100000`.
-- With `execute` binding, you can press CTRL-O to open the log in your editor
-  without leaving fzf
-- Select a pod (with an enter key) to `kubectl exec` into it
+      limited the initial log amount with `--tail=10000`.
+- `execute` bindings allow you to run any command without leaving fzf
+    - Press enter key on a pod to `kubectl exec` into it
+    - Press CTRL-O to open the log in your editor
+- Press CTRL-R to reload the pod list
+- Press CTRL-/ repeatedly to to rotate through a different sets of preview
+  window options
+    1. `80%,border-bottom`
+    1. `hidden`
+    1. Empty string after `|` translates to the default options from `--preview-window`
 
 Key bindings for git objects
 ----------------------------

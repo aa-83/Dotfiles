@@ -23,6 +23,9 @@ from UltiSnips.snippet.source import (
     find_all_snippet_files,
     find_snippet_files,
 )
+from UltiSnips.snippet.source.file.common import (
+    normalize_file_path,
+)
 from UltiSnips.text import escape
 from UltiSnips.vim_state import VimState, VisualContentPreserver
 from UltiSnips.buffer_proxy import use_proxy_buffer, suspend_proxy_edits
@@ -97,7 +100,9 @@ def _get_potential_snippet_filenames_to_edit(
         potentials.update(ft_snippets_files)
         if not ft_snippets_files:
             # If there is no snippet file yet, we just default to `ft.snippets`.
-            potentials.add(os.path.join(snippet_dir, ft + ".snippets"))
+            fpath = os.path.join(snippet_dir, ft + ".snippets")
+            fpath = normalize_file_path(fpath)
+            potentials.add(fpath)
     return potentials
 
 
@@ -172,7 +177,7 @@ class SnippetManager:
         vim_helper.command("let g:ulti_expand_res = 1")
         if not self._try_expand():
             vim_helper.command("let g:ulti_expand_res = 0")
-            self._handle_failure(self.expand_trigger)
+            self._handle_failure(self.expand_trigger, True)
 
     @err_to_scratch_buffer.wrap
     def expand_or_jump(self):
@@ -190,7 +195,7 @@ class SnippetManager:
             rv = self._jump(JumpDirection.FORWARD)
         if not rv:
             vim_helper.command("let g:ulti_expand_or_jump_res = 0")
-            self._handle_failure(self.expand_trigger)
+            self._handle_failure(self.expand_trigger, True)
 
     @err_to_scratch_buffer.wrap
     def snippets_in_current_scope(self, search_all):
@@ -623,11 +628,14 @@ class SnippetManager:
         """Called whenever we leave the insert mode."""
         self._vstate.restore_unnamed_register()
 
-    def _handle_failure(self, trigger):
+    def _handle_failure(self, trigger, pass_through=False):
         """Mainly make sure that we play well with SuperTab."""
         if trigger.lower() == "<tab>":
             feedkey = "\\" + trigger
         elif trigger.lower() == "<s-tab>":
+            feedkey = "\\" + trigger
+        elif pass_through:
+            # pass through the trigger key if it did nothing
             feedkey = "\\" + trigger
         else:
             feedkey = None

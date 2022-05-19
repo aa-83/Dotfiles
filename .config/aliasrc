@@ -16,8 +16,8 @@ alias ...='cd ../..' ;
 alias ....='cd ../../..' ;
 
 # Software specific aliases
-alias yt='youtube-dl --add-metadata -i' ;
-alias yta='yt -x -f bestaudio/best' ;
+alias yt='yt-dlp --add-metadata -i' ;
+alias yta='yt-dlp -x -f bestaudio/best' ;
 alias ftf='fzf-tmux -r'
 alias hex='nvim -b' ;
 alias hexedit='hexedit --color' ;
