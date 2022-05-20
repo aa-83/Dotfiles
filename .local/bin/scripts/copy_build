@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /opt ;
+cd /home/eirik/dokumenter/build ;
 cp -rfu dwm /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu st /home/eirik/dokumenter/git_repositories/ ;
 cp -rfu slock /home/eirik/dokumenter/git_repositories/ ;
