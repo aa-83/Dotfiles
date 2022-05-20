@@ -38,19 +38,21 @@ super + shift p
 
 # Software
 super + e
-	bless
+    bless
 super + shift + e
-	audacity
+    audacity
 super + r
-	qbittorrent
+    qbittorrent
 super + shift + r
     pd
+super + control + d
+    discord-canary
 
 #Misc
 super + control + shift + u
-	xinput disable 'SynPS/2 Synaptics TouchPad'
+    xinput disable 'SynPS/2 Synaptics TouchPad'
 super + control + shift + i
-	xinput enable 'SynPS/2 Synaptics TouchPad'
+    xinput enable 'SynPS/2 Synaptics TouchPad'
 
 #Music
 super + x
