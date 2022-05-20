@@ -13,7 +13,6 @@ mpd &
 remaps &
 syncthing -no-browser &
 protonmail-bridge --no-window &
-expressvpn connect norway &
 xinput disable SynPS/2\ Synaptics\ TouchPad &
 dwmblocks &
 
