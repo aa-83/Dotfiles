@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/eirik/.config/tmux/plugins/tmux-mem-cpu-load -I/home/eirik/.config/tmux/plugins/tmux-mem-cpu-load/common
 
-CXX_FLAGS =  -std=c++11 -Os -DNDEBUG
+CXX_FLAGS = -Os -DNDEBUG -std=gnu++11
 
