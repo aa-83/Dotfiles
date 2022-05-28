@@ -11,15 +11,15 @@ alias m='cd ~/media/musikk && pwd && ls -A' ;
 alias mp='cd ~/media/musikk/podcasts && pwd && ls -A' ;
 alias dl='cd ~/nedlastinger && pwd && ls -A' ;
 
-alias b='cd /opt/ && pwd && ls -A' ;
-alias bdw='cd /opt/dwm && pwd && ls -A' ;
-alias bdwb='cd /opt/dwm/dwmblocks && pwd && ls -A' ;
-alias bdm='cd /opt/dmenu && pwd && ls -A' ;
-alias bs='cd /opt/st && pwd && ls -A' ;
-alias bsl='cd /opt/slock && pwd && ls -A' ;
-alias bsu='cd /opt/surf && pwd && ls -A' ;
-alias bf='cd /opt/ffmpeg && pwd && ls -A' ;
-alias bof='cd /opt/of && pwd && ls -A' ;
+alias b='cd /home/eirik/dokumenter/build/ && pwd && ls -A' ;
+alias bdw='cd /home/eirik/dokumenter/build/dwm && pwd && ls -A' ;
+alias bdwb='cd /home/eirik/dokumenter/build/dwm/dwmblocks && pwd && ls -A' ;
+alias bdm='cd /home/eirik/dokumenter/build/dmenu && pwd && ls -A' ;
+alias bs='cd /home/eirik/dokumenter/build/st && pwd && ls -A' ;
+alias bsl='cd /home/eirik/dokumenter/build/slock && pwd && ls -A' ;
+alias bsu='cd /home/eirik/dokumenter/build/surf && pwd && ls -A' ;
+alias bf='cd /home/eirik/dokumenter/build/ffmpeg && pwd && ls -A' ;
+alias bof='cd /home/eirik/dokumenter/build/of && pwd && ls -A' ;
 alias p='cd ~/dokumenter/build/patching_dir && pwd && ls -A' ;
 
 alias s='cd ~/dokumenter/synk && pwd && ls -A' ;
