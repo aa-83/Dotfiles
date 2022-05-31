@@ -1,0 +1,9 @@
+pane	terminal	1	1	:*	1	archibald	:/home/eirik	1	zsh	:
+pane	terminal	2	0	:-	1	archibald	:/home/eirik/.config/mutt	1	neomutt	:neomutt
+pane	terminal	3	0	:	1	archibald	:/home/eirik/.config/irssi	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+pane	terminal	4	0	:	1	archibald	:/home/eirik	1	zsh	:
+window	terminal	1	:>_	1	:*	bc3e,136x34,0,0,1	off
+window	terminal	2	:mail	0	:-	bc3f,136x34,0,0,2	off
+window	terminal	3	:irssi	0	:	bc40,136x34,0,0,3	off
+window	terminal	4	:ssh	0	:	bc41,136x34,0,0,4	off
+state	terminal	
