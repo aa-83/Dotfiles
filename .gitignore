@@ -3,6 +3,7 @@
 .config/**/*.log
 .config/**/*.git*
 .config/**/*.json*
+.config/**/*pycache*
 .config/mpd/mpdstate
 .config/ncmpcpp/bindings.backup
 .config/newsboat/.update
