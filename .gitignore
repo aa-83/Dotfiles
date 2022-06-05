@@ -8,5 +8,6 @@
 .config/newsboat/.update
 .config/spotify-tui/client.yml
 .config/zsh/.zcompdump
+.config/**/vifminfo
 tags
 tags.*
