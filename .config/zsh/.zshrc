@@ -143,11 +143,11 @@ source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
 
 # Load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # Mac placements
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ea00d9"
 #source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
