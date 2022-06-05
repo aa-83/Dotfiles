@@ -1,4 +1,20 @@
 #!/bin/sh
 cp -rfu \
-/home/eirik/.config/{aliasrc,irssi,shortcutrc,xinitrc,user-dirs.dirs,Xresources,calcurse,dunst,fontconfig,htop,gotop,mpv,mpd,neofetch,ncmpcpp,newsboat,nvim,sxhkd,sxiv,tmux,vifm,zathura,zsh,spotifyd,spotify-tui} \
+/home/eirik/.config/calcurse	\
+/home/eirik/.config/dunst	\
+/home/eirik/.config/htop	\
+/home/eirik/.config/irssi	\
+/home/eirik/.config/mpd		\
+/home/eirik/.config/mpv		\
+/home/eirik/.config/ncmpcpp	\
+/home/eirik/.config/neofetch	\
+/home/eirik/.config/newsboat	\
+/home/eirik/.config/nvim	\
+/home/eirik/.config/sxiv	\
+/home/eirik/.config/tmux	\
+/home/eirik/.config/vifm	\
+/home/eirik/.config/zathura	\
+/home/eirik/.config/zsh		\
+/home/eirik/.config/aliasrc	\
+/home/eirik/.config/shortcutrc	\
 /home/eirik/dokumenter/git_repositories/Dotfiles/.config
