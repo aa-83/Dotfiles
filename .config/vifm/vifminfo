@@ -14,69 +14,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/eirik
-	..
-0
-d/mnt/4tb/video/serier/animasjon/futurama
-	01
-1
-d/mnt/4tb/video/serier/animasjon
-	futurama
-4
-d/mnt/4tb/video/serier/animasjon/futurama
-	07
-8
-d/mnt/4tb/video/serier/animasjon/futurama/07
-	..
-0
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester
-	international_semester
-2
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester
-	nationaltheatret
-4
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret
-	torshov
-2
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov
-	linda_vista
-2
-d/home/eirik/files/texts/synk/universitet/ddsks/master/andre_år/første_semester/international_semester/nationaltheatret/torshov/linda_vista
-	plot_test.pdf
-20
-d/home/eirik
-	..
-1
-d/home/eirik/.emacs.d
-	..
-0
-d/home/eirik
-	.thumbnails
-8
-d/home/eirik/.thumbnails
-	large
-1
-d/home/eirik/.thumbnails/large
-	..
-0
-d/home/eirik/.thumbnails
-	normal
-2
-d/home/eirik/.thumbnails/normal
-	05b8b3d622acd3ecd10ba250f7d710d0.png
-1
-d/home/eirik/.thumbnails
-	normal
-2
-d/home/eirik
-	..
-0
-d/home
-	eirik
-1
-d/home/eirik
-	media
-13
 d/home/eirik/media
 	musikk
 3
@@ -125,11 +62,71 @@ d/home/eirik/media/musikk/atomic_dancer
 d/home/eirik/.config/isync
 	mbsyncrc
 1
+d/etc/X11/Xsession.d
+	99x11-common_start
+11
+d/etc/X11
+	Xsession.d
+3
+d/home/eirik
+	FuckedHard18 - Stevie Shae-fmJBJyxqSIn.m4a
+18
+d/etc/X11/xorg.conf.d
+	20-nvidia.conf
+2
+d/home/eirik/dokumenter/synk/hobby/x_wing
+	swz_scenarios_jan22.pdf
+6
+d/home/eirik/dokumenter/synk/hobby
+	x_wing
+11
+d/home/eirik/dokumenter/synk
+	hobby
+5
+d/home/eirik/dokumenter/synk/hobby
+	x_wing
+11
+d/home/eirik/dokumenter/synk/hobby/x_wing
+	..
+0
+d/home/eirik/media/bilder
+	deathburger
+1
+d/home/eirik/media/bilder/deathburger
+	death_burger_02_voodoo_boys_v21.jpg
+4
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2
+	prebuild
+5
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild
+	..
+0
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2
+	prebuild
+5
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild
+	subtitles
+2
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild/subtitles
+	en
+3
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild/subtitles/en
+	Ep_003_Return_to_Sender.srt
+5
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild/subtitles
+	en
+3
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2/prebuild
+	swf
+3
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2
+	mss64dsp.flt
+13
+d/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection
+	installscript.vdf
+20
 
 # Right window history (oldest to newest):
-D/home/eirik/files/texts/synk/universitet/ddsks/master
-	
-0
 D/home/eirik/files/media/music/the_blues_brothers
 	
 0
@@ -223,6 +220,24 @@ D/home/eirik
 D/home/eirik/.config/isync
 	
 0
+D/etc/X11/Xsession.d
+	
+0
+D/home/eirik
+	
+0
+D/etc/X11/xorg.conf.d
+	
+0
+D/home/eirik/dokumenter/synk/hobby/x_wing
+	
+0
+D/home/eirik/media/bilder
+	
+0
+D/home/eirik/.steam/debian-installation/steamapps/common/Halo The Master Chief Collection/halo2
+	
+0
 
 # Command line history (oldest to newest):
 :tree
@@ -230,15 +245,11 @@ D/home/eirik/.config/isync
 :mkdir quentin_tarantino
 :fr
 :! fr
+:q
 
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
-pst_v03
-pst_v04
-pst_v05
-pst_v06
-pst_v07
 pst_v08
 pst_v09
 pzizek_why_i_am_still_a_communist.mkv
@@ -271,6 +282,11 @@ phellboy_(2004)
 phellboy_(2019)
 phellboy_the_golden_army
 pantman_and_the_wasp
+prulesreference_v1.4.pdf
+pban_list_jan22.pdf
+perrata_1.4.pdf
+pscenarios_jan22.pdf
+prules_reference_v1.4.pdf
 
 # Local filter history (oldest to newest):
 

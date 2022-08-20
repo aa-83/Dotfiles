@@ -1,15 +1,17 @@
 #!/bin/sh
-alias h='cd ~/ && pwd && ls -A' ;
-alias t='cd ~/dokumenter && pwd && ls -A' ;
-alias d='cd ~/dokumenter && pwd && ls -A' ;
-alias ma='cd ~/dokumenter/man && pwd && ls -A' ;
-alias oF='cd ~/dokumenter/build/oF && pwd && ls -A' ;
-alias i='cd ~/media/bilder && pwd && ls -A' ;
-alias v='cd ~/media/video && pwd && ls -A' ;
-alias iw='cd ~/media/bilder/wallpapers && pwd && ls -A' ;
-alias m='cd ~/media/musikk && pwd && ls -A' ;
-alias mp='cd ~/media/musikk/podcasts && pwd && ls -A' ;
-alias dl='cd ~/nedlastinger && pwd && ls -A' ;
+alias h='cd /home/eirik/ && pwd && ls -A' ;
+alias t='cd /home/eirik/dokumenter && pwd && ls -A' ;
+alias d='cd /home/eirik/dokumenter && pwd && ls -A' ;
+alias ma='cd /home/eirik/dokumenter/man && pwd && ls -A' ;
+alias oF='cd /home/eirik/dokumenter/build/oF && pwd && ls -A' ;
+alias i='cd /home/eirik/media/bilder && pwd && ls -A' ;
+alias v='cd /home/eirik/media/video && pwd && ls -A' ;
+alias iw='cd /home/eirik/media/bilder/wallpapers && pwd && ls -A' ;
+alias m='cd /home/eirik/media/musikk && pwd && ls -A' ;
+alias mp='cd /home/eirik/media/musikk/podcasts && pwd && ls -A' ;
+alias dl='cd /home/eirik/nedlastinger && pwd && ls -A' ;
+alias gmail='cd /home/eirik/.local/share/mail/elhegre@gmail.com && pwd && ls -A' ;
+alias pmail='cd /home/eirik/.local/share/mail/elhegre@protonmail.com && pwd && ls -A' ;
 
 alias b='cd /home/eirik/dokumenter/build/ && pwd && ls -A' ;
 alias bdw='cd /home/eirik/dokumenter/build/dwm && pwd && ls -A' ;
@@ -20,31 +22,31 @@ alias bsl='cd /home/eirik/dokumenter/build/slock && pwd && ls -A' ;
 alias bsu='cd /home/eirik/dokumenter/build/surf && pwd && ls -A' ;
 alias bf='cd /home/eirik/dokumenter/build/ffmpeg && pwd && ls -A' ;
 alias bof='cd /home/eirik/dokumenter/build/of && pwd && ls -A' ;
-alias p='cd ~/dokumenter/build/patching_dir && pwd && ls -A' ;
+alias p='cd /home/eirik/dokumenter/build/patching_dir && pwd && ls -A' ;
 
-alias s='cd ~/dokumenter/synk && pwd && ls -A' ;
-alias a='cd ~/dokumenter/synk/arbeid && pwd && ls -A' ;
-alias ho='cd ~/dokumenter/synk/hobby && pwd && ls -A' ;
-alias ap='cd ~/dokumenter/synk/arbeid/produksjoner && pwd && ls -A' ;
-alias app='cd ~/dokumenter/artistic_practice/portfolio && pwd && ls -A' ;
-alias apr='cd ~/dokumenter/artistic_practice/artistic_research && pwd && ls -A' ;
+alias s='cd /home/eirik/dokumenter/synk && pwd && ls -A' ;
+alias a='cd /home/eirik/dokumenter/synk/arbeid && pwd && ls -A' ;
+alias ho='cd /home/eirik/dokumenter/synk/hobby && pwd && ls -A' ;
+alias ap='cd /home/eirik/dokumenter/synk/arbeid/produksjoner && pwd && ls -A' ;
+alias app='cd /home/eirik/dokumenter/artistic_practice/portfolio && pwd && ls -A' ;
+alias apr='cd /home/eirik/dokumenter/artistic_practice/artistic_research && pwd && ls -A' ;
 
-alias gr='cd ~/dokumenter/git_repositories && pwd && ls -A' ;
-alias g.='cd ~/dokumenter/git_repositories/Dotfiles && pwd && ls -A' ;
-alias gdw='cd ~/dokumenter/git_repositories/dwm && pwd && ls -A' ;
-alias gdm='cd ~/dokumenter/git_repositories/dmenu && pwd && ls -A' ;
-alias gst='cd ~/dokumenter/git_repositories/st && pwd && ls -A' ;
-alias gsl='cd ~/dokumenter/git_repositories/slock && pwd && ls -A' ;
-alias gsu='cd ~/dokumenter/git_repositories/surf && pwd && ls -A' ;
+alias gr='cd /home/eirik/dokumenter/git_repositories && pwd && ls -A' ;
+alias g.='cd /home/eirik/dokumenter/git_repositories/Dotfiles && pwd && ls -A' ;
+alias gdw='cd /home/eirik/dokumenter/git_repositories/dwm && pwd && ls -A' ;
+alias gdm='cd /home/eirik/dokumenter/git_repositories/dmenu && pwd && ls -A' ;
+alias gst='cd /home/eirik/dokumenter/git_repositories/st && pwd && ls -A' ;
+alias gsl='cd /home/eirik/dokumenter/git_repositories/slock && pwd && ls -A' ;
+alias gsu='cd /home/eirik/dokumenter/git_repositories/surf && pwd && ls -A' ;
 
-alias c='cd ~/.config && pwd && ls -A' ;
-alias lb='cd ~/.local/bin && pwd && ls -A' ;
-alias lbs='cd ~/.local/bin/scripts && pwd && ls -A' ;
-alias lsh='cd ~/.local/share && pwd && ls -A' ;
-alias lsp='cd ~/.local/share/password-store && pwd && ls -A' ;
-alias lsg='cd ~/.local/share/gnupg && pwd && ls -A' ;
-alias lsm='cd ~/.local/share/mail && pwd && ls -A' ;
-alias vt='cd ~/.local/share/vifm/Trash && pwd && ls -A' ;
+alias c='cd /home/eirik/.config && pwd && ls -A' ;
+alias lb='cd /home/eirik/.local/bin && pwd && ls -A' ;
+alias lbs='cd /home/eirik/.local/bin/scripts && pwd && ls -A' ;
+alias lsh='cd /home/eirik/.local/share && pwd && ls -A' ;
+alias lsp='cd /home/eirik/.local/share/password-store && pwd && ls -A' ;
+alias lsg='cd /home/eirik/.local/share/gnupg && pwd && ls -A' ;
+alias lsm='cd /home/eirik/.local/share/mail && pwd && ls -A' ;
+alias vt='cd /home/eirik/.local/share/vifm/Trash && pwd && ls -A' ;
 
 # Mac shortcuts
 #alias hdd='cd /Volumes/hdd_1tb && pwd && ls -A' ;
