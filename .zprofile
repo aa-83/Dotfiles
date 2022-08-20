@@ -1,12 +1,12 @@
-#
+    #
 # ~/.profile
 #
 # Adds '/.local/bin' to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/.local/share/gem/ruby"
 export PATH="$PATH:/home/eirik/.local/share/go/bin"
-export PATH="$PATH:/home/eirik/dokumenter/build/openFrameworks"
-export PG_OF_PATH="/home/eirik/dokumenter/build/openFrameworks"
+export PATH="$PATH:/home/eirik/dokumenter/git_repositories/openFrameworks"
+export PG_OF_PATH="/home/eirik/dokumenter/git_repositories/openFrameworks/apps/projectGenerator"
 
 # Default Programs
 export TERMINAL="st"
