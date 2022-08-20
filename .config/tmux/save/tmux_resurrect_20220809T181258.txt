@@ -1,0 +1,11 @@
+pane	terminal	1	0	:-	1	eirik@macarena:~	:/home/eirik	1	zsh	:
+pane	terminal	2	0	:	1	archibald	:/home/eirik/.config/mutt	1	neomutt	:neomutt
+pane	terminal	3	0	:	1	archibald	:/home/eirik	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
+pane	terminal	4	1	:*	1	eirik@rasputin: ~	:/home/eirik	0	ssh	:ssh eirik@192.168.0.14
+pane	terminal	4	1	:*	2	eirik@rasputin: ~	:/etc/wireguard	0	ssh	:ssh eirik@192.168.0.14
+pane	terminal	4	1	:*	3	archibald.conf + (/etc/wireguard) - NVIM	:/etc/wireguard	1	ssh	:ssh eirik@192.168.0.30
+window	terminal	1	:>_	0	:-	d19e,240x59,0,0,1	off
+window	terminal	2	:mail	0	:	d19f,240x59,0,0,2	off
+window	terminal	3	:irssi	0	:	d1a0,240x59,0,0,3	off
+window	terminal	4	:ssh	1	:*	7b6f,240x59,0,0{120x59,0,0[120x29,0,0,4,120x29,0,30,8],119x59,121,0,6}	off
+state	terminal	
