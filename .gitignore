@@ -8,6 +8,7 @@
 .config/ncmpcpp/bindings.backup
 .config/newsboat/.update
 .config/spotify-tui/client.yml
+.config/tmux/save
 .config/zsh/.zcompdump
 .config/**/vifminfo
 tags

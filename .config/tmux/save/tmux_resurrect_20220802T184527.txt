@@ -1,9 +1,0 @@
-pane	terminal	1	1	:*	1	pulsemixer	:/home/eirik	1	zsh	:
-pane	terminal	2	0	:-	1	archibald	:/home/eirik/.config/mutt	1	neomutt	:neomutt
-pane	terminal	3	0	:	1	archibald	:/home/eirik/.config/irssi	1	zsh	:
-pane	terminal	4	0	:	1	archibald	:/home/eirik	1	ssh	:ssh eirik@rasputin
-window	terminal	1	:>_	1	:*	c8be,190x47,0,0,1	off
-window	terminal	2	:mail	0	:-	c8bf,190x47,0,0,2	off
-window	terminal	3	:irssi	0	:	c8c0,190x47,0,0,3	off
-window	terminal	4	:ssh	0	:	c8c1,190x47,0,0,4	off
-state	terminal	

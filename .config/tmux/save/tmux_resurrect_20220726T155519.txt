@@ -1,9 +1,0 @@
-pane	terminal	1	1	:*	1	franzferdinand	:/home/eirik/dokumenter/synk/administrativt/skatt/skattemelding_danmark_2021	1	zsh	:
-pane	terminal	2	0	:-	1	archibald	:/home/eirik/.config/mutt	1	neomutt	:neomutt
-pane	terminal	3	0	:	1	archibald	:/home/eirik/.config/irssi	1	irssi	:irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi --config=/home/eirik/.config/irssi/config --home=/home/eirik/.local/share/irssi
-pane	terminal	4	0	:	1	archibald	:/home/eirik	1	ssh	:ssh eirik@rasputin
-window	terminal	1	:>_	1	:*	cdc3,192x48,0,0,6	off
-window	terminal	2	:mail	0	:-	cdbf,192x48,0,0,2	off
-window	terminal	3	:irssi	0	:	cdc0,192x48,0,0,3	off
-window	terminal	4	:ssh	0	:	cdc1,192x48,0,0,4	off
-state	terminal	
