@@ -1,3 +1,5 @@
+.config/nvim/bundle/neco_syntax/.git
+.config/nvim/bundle/neco_syntax/.gitignore
 .config/**/*.pid
 .config/**/*.db
 .config/**/*.log
