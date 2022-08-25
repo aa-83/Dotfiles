@@ -1,6 +1,7 @@
 .config/**/*.pid
 .config/**/*.db
 .config/**/*.log
+.config/**/.git
 .config/**/*.git*
 .config/**/*.json*
 .config/**/*pycache*
