@@ -17,7 +17,13 @@ function! s:check_general() abort " {{{1
   endif
 
   if !executable('bibtex')
-    call health#report_warn('bibtex is not executable, so bibtex completions are disabled.')
+    call health#report_warn('bibtex is not executable!',
+          \ 'bibtex is required for cite completions.')
+  endif
+  if !executable('biber')
+    call health#report_warn(
+          \ 'biber is not executable!',
+          \ 'Biber is often required so this may give unexpected problems.')
   endif
 endfunction
 
@@ -114,6 +120,20 @@ function! s:check_view_mupdf() abort " {{{1
 
   if l:ok
     call health#report_ok('MuPDF should work properly!')
+  endif
+endfunction
+
+" }}}1
+function! s:check_view_sioyek() abort " {{{1
+  let l:ok = 1
+
+  if !executable(g:vimtex_view_sioyek_exe)
+    call health#report_error('Sioyek is not executable!')
+    let l:ok = 0
+  endif
+
+  if l:ok
+    call health#report_ok('Sioyek should work properly!')
   endif
 endfunction
 

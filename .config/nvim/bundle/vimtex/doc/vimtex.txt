@@ -289,10 +289,13 @@ Clientserver~
 
   A server will be started automatically if Vim is running on Windows or if it
   is running in a GUI (gVim). If you use Vim under a terminal in Linux or
-  MacOS, a server will not be started by default. Since Vim version 8.0.475,
-  one can use |remote_startserver()| to start a server from your `vimrc` file.
-  The following vimrc configuration snippet will ensure that Vim starts with
-  a server, if possible: >
+  MacOS, a server will not be started by defaul. Also, MacVim users should be
+  aware of some differences from regular Vim and should therefore read
+  |macvim-clientserver| carefully.
+
+  Since Vim version 8.0.475, one can use |remote_startserver()| to start
+  a server from your `vimrc` file. The following vimrc configuration snippet
+  will ensure that Vim starts with a server, if possible: >
 
     if empty(v:servername) && exists('*remote_startserver')
       call remote_startserver('VIM')
@@ -354,12 +357,15 @@ Buffer variable~
         for more info on the |autocmd| file pattern syntax.
 
   Note: Users may be interested in the concept of project specific vim
-        configuration. This is supported in Vim and neovim already, see 'exrc'
-        and 'secure'. There are also several plugins to help work with project
-        specific settings, such as:
+        configuration. This is supported in Vim, see 'exrc' and 'secure'.
+        There are also several plugins to help work with project specific
+        settings, such as:
 
         * https://github.com/embear/vim-localvimrc
         * https://github.com/tpope/vim-projectionist
+        * https://github.com/jenterkin/vim-autosource
+        * https://github.com/ii14/exrc.vim
+        * https://klen/nvim-config-local (neovim only)
 
                                                               *vimtex-tex-root*
 TeX root directive~
@@ -1943,7 +1949,7 @@ OPTIONS                                                        *vimtex-options*
 
   Default value: >
     let g:vimtex_indent_conditionals = {
-          \ 'open': '\v%(\\newif)@<!\\if%(f>|field|name|numequal|thenelse)@!',
+          \ 'open': '\v%(\\newif)@<!\\if%(f>|field|name|numequal|thenelse|toggle)@!',
           \ 'else': '\\else\>',
           \ 'close': '\\fi\>',
           \}
@@ -2261,6 +2267,7 @@ OPTIONS                                                        *vimtex-options*
 
     let g:vimtex_syntax_conceal = {
           \ 'accents': 1,
+          \ 'ligatures': 1,
           \ 'cites': 1,
           \ 'fancy': 1,
           \ 'greek': 1,
@@ -4373,11 +4380,11 @@ general idea can be described as follows.
 
   `tex{type}Zone`
     Some commands open specific syntax regions that have different rules. Math
-    mode is a good example. Math mode is highlighted differently, and the
-    syntax regions are name `texMathZone*`. The `tex{type}Zone`s may typically
-    contain their own (sub)sets of syntax groups that are only matched within
-    the specific region. Another example is the inclusion of nested syntax
-    highlighting with e.g. the `minted` or `listings` packages.
+    mode is a good example. Math mode is highlighted differently, and the main
+    syntax regions are named `texMathZone*`. The `tex{type}Zone`s may
+    typically contain their own (sub)sets of syntax groups that are only
+    matched within the specific region. Another example is the inclusion of
+    nested syntax highlighting with e.g. the `minted` or `listings` packages.
 
   `tex{type}{element}`
     Some regions or commands include other types of elements, e.g. parameters
@@ -4492,22 +4499,30 @@ Table 2: A list of the most common normal LaTeX groups.~
 
 Table 3: A list of math mode groups.~
 >
-  GROUP                    DEFAULT        EXAMPLE
+  GROUP                    DEFAULT           EXAMPLE
   ----------------------------------------------------------------------------
-  texMathZone              Special        \( HERE \); \[ HERE \]
-  texMathZoneEnv           texMathZone    \begin{menv}  HERE \end{menv}
-  texMathZoneEnvStarred    texMathZone    \begin{menv*} HERE \end{menv*}
-  texMathZoneX             texMathZone    $ HERE $
-  texMathZoneXX            texMathZone    $$ HERE $$
-  texMathZoneEnsured       texMathZone    \ensuremath{HERE}
-  texCmdMathEnv            texCmdEnv      \BEGIN; \END (for math environments)
-  texMathEnvArgName        Delimiter      \begin{EQUATION}
-  texCmdMath               texCmd         \ENSUREMATH
-  texMathDelim             Type           \LVERT
-  texMathDelimMod          texMathDelim   \LEFT\lvert \RIGHT\rvert
-  texMathOper              Operator       Basic operators: +-=/
-  texMathSuperSub          texMathOper    Sub and super operators (^, _)
-  texMathError             texError       Unmatched region endings
+  texMathZone              Special
+  texMathZoneLI            texMathZone       \( HERE \)
+  texMathZoneLD            texMathZone       \[ HERE \]
+  texMathZoneTI            texMathZone       $ HERE $
+  texMathZoneTD            texMathZone       $$ HERE $$
+  texMathZoneEnv           texMathZone       \begin{menv}  HERE \end{menv}
+  texMathZoneEnvStarred    texMathZone       \begin{menv*} HERE \end{menv*}
+  texMathZoneEnsured       texMathZone       \ensuremath{HERE}
+  texMathDelimZone         texDelim
+  texMathDelimZoneLI       texMathDelimZone  \(; \)
+  texMathDelimZoneLD       texMathDelimZone  \[; \]
+  texMathDelimZoneTI       texMathDelimZone  $
+  texMathDelimZoneTD       texMathDelimZone  $$
+  texCmdMathEnv            texCmdEnv         \BEGIN; \END
+                                             (Only for math environments.)
+  texMathEnvArgName        Delimiter         \begin{EQUATION}
+  texCmdMath               texCmd            \ENSUREMATH
+  texMathDelim             Type              \LVERT
+  texMathDelimMod          texMathDelim      \LEFT\lvert \RIGHT\rvert
+  texMathOper              Operator          Basic operators: +-=/
+  texMathSuperSub          texMathOper       Sub and super operators (^, _)
+  texMathError             texError          Unmatched region endings
 
 Table 4: A list of other important groups.~
 >

@@ -99,28 +99,45 @@ function! vimtex#delim#toggle_modifier(...) abort " {{{1
     endif
   endfor
 
+  " Possibly shift right delimiter position
+  let l:cnum = l:close.cnum
+  let l:shift = len(newmods[0]) - len(l:open.mod)
+  if l:open.lnum == l:close.lnum
+    let l:cnum += l:shift
+  endif
+
+  " Calculate new position
+  let l:pos = vimtex#pos#get_cursor()
+  let l:do_adjust_right = l:pos[2] >= l:close.cnum + len(l:close.mod)
+  if l:pos[1] == l:open.lnum && l:pos[2] > l:open.cnum
+    if l:pos[2] > l:open.cnum + len(l:open.mod)
+      let l:pos[2] += l:shift
+    elseif l:shift < 0
+      let l:pos[2] = l:open.cnum
+    endif
+  endif
+  if l:pos[1] == l:close.lnum && l:pos[2] >= l:cnum
+    if l:do_adjust_right
+      let l:pos[2] += len(newmods[1]) - len(l:close.mod)
+    else
+      let l:pos[2] = l:cnum
+    endif
+  endif
+
+  " Change current text
   let line = getline(l:open.lnum)
   let line = strpart(line, 0, l:open.cnum - 1)
         \ . newmods[0]
         \ . strpart(line, l:open.cnum + len(l:open.mod) - 1)
   call setline(l:open.lnum, line)
 
-  let l:cnum = l:close.cnum
-  if l:open.lnum == l:close.lnum
-    let n = len(newmods[0]) - len(l:open.mod)
-    let l:cnum += n
-    let pos = vimtex#pos#get_cursor()
-    if pos[2] > l:open.cnum + len(l:open.mod)
-      let pos[2] += n
-      call vimtex#pos#set_cursor(pos)
-    endif
-  endif
-
   let line = getline(l:close.lnum)
   let line = strpart(line, 0, l:cnum - 1)
         \ . newmods[1]
         \ . strpart(line, l:cnum + len(l:close.mod) - 1)
   call setline(l:close.lnum, line)
+
+  call vimtex#pos#set_cursor(l:pos)
 
   return newmods
 endfunction
@@ -418,7 +435,16 @@ function! vimtex#delim#get_surrounding(type) abort " {{{1
   let l:pos_val_last = l:pos_val_cursor
   let l:pos_val_open = l:pos_val_cursor - 1
 
-  while l:pos_val_open < l:pos_val_last
+  " Avoid long iterations
+  let l:count = 0
+  let l:max_tries = get({
+        \ 'env_tex': 100,
+        \ 'env_math': 3,
+        \ 'env_all': 100,
+        \} , a:type, 100)
+
+  while l:pos_val_open < l:pos_val_last && l:count < l:max_tries
+    let l:count += 1
     let l:open = vimtex#delim#get_prev(a:type, 'open')
     if empty(l:open) | break | endif
 
@@ -649,7 +675,7 @@ function! s:parser_tex(match, lnum, cnum, side, type, direction) abort " {{{1
         \ 'close' : '\m' . escape(a:match, '$'),
         \}
   let result.side = vimtex#syntax#in(
-        \   (a:match ==# '$' ? 'texMathZoneX' : 'texMathZoneXX'),
+        \   (a:match ==# '$' ? 'texMathZoneTI' : 'texMathZoneTD'),
         \   a:lnum, a:cnum+1)
         \ ? 'open' : 'close'
   let result.is_open = result.side ==# 'open'

@@ -35,7 +35,7 @@ const usage = `usage: fzf [options]
     --tac                 Reverse the order of the input
     --disabled            Do not perform search
     --tiebreak=CRI[,..]   Comma-separated list of sort criteria to apply
-                          when the scores are tied [length|begin|end|index]
+                          when the scores are tied [length|chunk|begin|end|index]
                           (default: length)
 
   Interface
@@ -89,7 +89,7 @@ const usage = `usage: fzf [options]
                           [,[no]wrap][,[no]cycle][,[no]follow][,[no]hidden]
                           [,border-BORDER_OPT]
                           [,+SCROLL[OFFSETS][/DENOM]][,~HEADER_LINES]
-                          [,default]
+                          [,default][,<SIZE_THRESHOLD(ALTERNATIVE_LAYOUT)]
 
   Scripting
     -q, --query=STR       Start the finder with the given query
@@ -125,6 +125,7 @@ type criterion int
 
 const (
 	byScore criterion = iota
+	byChunk
 	byLength
 	byBegin
 	byEnd
@@ -175,10 +176,14 @@ type previewOpts struct {
 	follow      bool
 	border      tui.BorderShape
 	headerLines int
+	threshold   int
+	alternative *previewOpts
 }
 
 func (a previewOpts) sameLayout(b previewOpts) bool {
-	return a.size == b.size && a.position == b.position && a.border == b.border && a.hidden == b.hidden
+	return a.size == b.size && a.position == b.position && a.border == b.border && a.hidden == b.hidden && a.threshold == b.threshold &&
+		(a.alternative != nil && b.alternative != nil && a.alternative.sameLayout(*b.alternative) ||
+			a.alternative == nil && b.alternative == nil)
 }
 
 func (a previewOpts) sameContentLayout(b previewOpts) bool {
@@ -247,7 +252,7 @@ type Options struct {
 }
 
 func defaultPreviewOpts(command string) previewOpts {
-	return previewOpts{command, posRight, sizeSpec{50, true}, "", false, false, false, false, tui.BorderRounded, 0}
+	return previewOpts{command, posRight, sizeSpec{50, true}, "", false, false, false, false, tui.BorderRounded, 0, 0, nil}
 }
 
 func defaultOptions() *Options {
@@ -607,6 +612,7 @@ func parseKeyChords(str string, message string) map[tui.Event]string {
 func parseTiebreak(str string) []criterion {
 	criteria := []criterion{byScore}
 	hasIndex := false
+	hasChunk := false
 	hasLength := false
 	hasBegin := false
 	hasEnd := false
@@ -623,6 +629,9 @@ func parseTiebreak(str string) []criterion {
 		switch str {
 		case "index":
 			check(&hasIndex, "index")
+		case "chunk":
+			check(&hasChunk, "chunk")
+			criteria = append(criteria, byChunk)
 		case "length":
 			check(&hasLength, "length")
 			criteria = append(criteria, byLength)
@@ -635,6 +644,9 @@ func parseTiebreak(str string) []criterion {
 		default:
 			errorExit("invalid sort criterion: " + str)
 		}
+	}
+	if len(criteria) > 4 {
+		errorExit("at most 3 tiebreaks are allowed: " + str)
 	}
 	return criteria
 }
@@ -1169,12 +1181,19 @@ func parseInfoStyle(str string) infoStyle {
 }
 
 func parsePreviewWindow(opts *previewOpts, input string) {
-	delimRegex := regexp.MustCompile("[:,]") // : for backward compatibility
+	tokenRegex := regexp.MustCompile(`[:,]*(<([1-9][0-9]*)\(([^)<]+)\)|[^,:]+)`)
 	sizeRegex := regexp.MustCompile("^[0-9]+%?$")
 	offsetRegex := regexp.MustCompile(`^(\+{-?[0-9]+})?([+-][0-9]+)*(-?/[1-9][0-9]*)?$`)
 	headerRegex := regexp.MustCompile("^~(0|[1-9][0-9]*)$")
-	tokens := delimRegex.Split(input, -1)
-	for _, token := range tokens {
+	tokens := tokenRegex.FindAllStringSubmatch(input, -1)
+	var alternative string
+	for _, match := range tokens {
+		if len(match[2]) > 0 {
+			opts.threshold = atoi(match[2])
+			alternative = match[3]
+			continue
+		}
+		token := match[1]
 		switch token {
 		case "":
 		case "default":
@@ -1209,9 +1228,9 @@ func parsePreviewWindow(opts *previewOpts, input string) {
 			opts.border = tui.BorderHorizontal
 		case "border-vertical":
 			opts.border = tui.BorderVertical
-		case "border-top":
+		case "border-up", "border-top":
 			opts.border = tui.BorderTop
-		case "border-bottom":
+		case "border-down", "border-bottom":
 			opts.border = tui.BorderBottom
 		case "border-left":
 			opts.border = tui.BorderLeft
@@ -1232,6 +1251,13 @@ func parsePreviewWindow(opts *previewOpts, input string) {
 				errorExit("invalid preview window option: " + token)
 			}
 		}
+	}
+	if len(alternative) > 0 {
+		alternativeOpts := *opts
+		opts.alternative = &alternativeOpts
+		opts.alternative.hidden = false
+		opts.alternative.alternative = nil
+		parsePreviewWindow(opts.alternative, alternative)
 	}
 }
 
@@ -1289,7 +1315,6 @@ func parseOptions(opts *Options, allArgs []string) {
 	validateJumpLabels := false
 	validatePointer := false
 	validateMarker := false
-	validateEllipsis := false
 	for i := 0; i < len(allArgs); i++ {
 		arg := allArgs[i]
 		switch arg {
@@ -1477,7 +1502,6 @@ func parseOptions(opts *Options, allArgs []string) {
 			opts.HeaderFirst = false
 		case "--ellipsis":
 			opts.Ellipsis = nextString(allArgs, &i, "ellipsis string required")
-			validateEllipsis = true
 		case "--preview":
 			opts.Preview.command = nextString(allArgs, &i, "preview command required")
 		case "--no-preview":
@@ -1520,6 +1544,8 @@ func parseOptions(opts *Options, allArgs []string) {
 			opts.ClearOnExit = false
 		case "--version":
 			opts.Version = true
+		case "--":
+			// Ignored
 		default:
 			if match, value := optString(arg, "--algo="); match {
 				opts.FuzzyAlgo = parseAlgo(value)
@@ -1577,7 +1603,6 @@ func parseOptions(opts *Options, allArgs []string) {
 				opts.HeaderLines = atoi(value)
 			} else if match, value := optString(arg, "--ellipsis="); match {
 				opts.Ellipsis = value
-				validateEllipsis = true
 			} else if match, value := optString(arg, "--preview="); match {
 				opts.Preview.command = value
 			} else if match, value := optString(arg, "--preview-window="); match {
@@ -1640,24 +1665,11 @@ func parseOptions(opts *Options, allArgs []string) {
 			errorExit(err.Error())
 		}
 	}
-
-	if validateEllipsis {
-		for _, r := range opts.Ellipsis {
-			if !unicode.IsGraphic(r) {
-				errorExit("invalid character in ellipsis")
-			}
-		}
-	}
 }
 
 func validateSign(sign string, signOptName string) error {
 	if sign == "" {
 		return fmt.Errorf("%v cannot be empty", signOptName)
-	}
-	for _, r := range sign {
-		if !unicode.IsGraphic(r) {
-			return fmt.Errorf("invalid character in %v", signOptName)
-		}
 	}
 	if runewidth.StringWidth(sign) > 2 {
 		return fmt.Errorf("%v display width should be up to 2", signOptName)
@@ -1740,9 +1752,24 @@ func postProcessOptions(opts *Options) {
 	}
 }
 
+func expectsArbitraryString(opt string) bool {
+	switch opt {
+	case "-q", "--query", "-f", "--filter", "--header", "--prompt":
+		return true
+	}
+	return false
+}
+
 // ParseOptions parses command-line options
 func ParseOptions() *Options {
 	opts := defaultOptions()
+
+	for idx, arg := range os.Args[1:] {
+		if arg == "--version" && (idx == 0 || idx > 0 && !expectsArbitraryString(os.Args[idx])) {
+			opts.Version = true
+			return opts
+		}
+	}
 
 	// Options from Env var
 	words, _ := shellwords.Parse(os.Getenv("FZF_DEFAULT_OPTS"))

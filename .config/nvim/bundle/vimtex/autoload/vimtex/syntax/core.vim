@@ -308,14 +308,17 @@ function! vimtex#syntax#core#init() abort " {{{1
         \ 'contains': '@texClusterTabular'
         \})
 
-  syntax match texTabularCol   "[lcr]" contained
-  syntax match texTabularCol   "p"     contained nextgroup=texTabularLength
-  syntax match texTabularAtSep "@"     contained nextgroup=texTabularLength
+  syntax match texTabularAtSep     "@"     contained nextgroup=texTabularLength
+  syntax match texTabularCol       "[lcr]" contained
+  syntax match texTabularCol       "\*"    contained nextgroup=texTabularMulti
+  syntax match texTabularCol       "p"     contained nextgroup=texTabularLength
+  syntax match texTabularVertline  "||\?"  contained
   syntax cluster texClusterTabular contains=texTabular.*
 
   call vimtex#syntax#core#new_arg('texTabularLength', {
         \ 'contains': 'texLength,texCmd'
         \})
+  call vimtex#syntax#core#new_arg('texTabularMulti', {'next': 'texTabularArg'})
 
   " {{{2 Commands: \begin{minipage}[position][height][inner-pos]{width}
 
@@ -536,24 +539,24 @@ function! vimtex#syntax#core#init() abort " {{{1
 
   " Math regions: Inline Math Zones
   let l:conceal = g:vimtex_syntax_conceal.math_bounds ? 'concealends' : ''
-  execute 'syntax region texMathZone matchgroup=texMathDelimZone'
+  execute 'syntax region texMathZoneLI matchgroup=texMathDelimZoneLI'
           \ 'start="\%(\\\@<!\)\@<=\\("'
           \ 'end="\%(\\\@<!\)\@<=\\)"'
-          \ 'contains=@texClusterMath keepend'
+          \ 'contains=@texClusterMath'
           \ l:conceal
-  execute 'syntax region texMathZone matchgroup=texMathDelimZone'
+  execute 'syntax region texMathZoneLD matchgroup=texMathDelimZoneLD'
           \ 'start="\\\["'
           \ 'end="\\]"'
-          \ 'contains=@texClusterMath keepend'
+          \ 'contains=@texClusterMath'
           \ l:conceal
-  execute 'syntax region texMathZoneX matchgroup=texMathDelimZone'
+  execute 'syntax region texMathZoneTI matchgroup=texMathDelimZoneTI'
           \ 'start="\$"'
           \ 'skip="\\\\\|\\\$"'
           \ 'end="\$"'
           \ 'contains=@texClusterMath'
           \ 'nextgroup=texMathTextAfter'
           \ l:conceal
-  execute 'syntax region texMathZoneXX matchgroup=texMathDelimZone'
+  execute 'syntax region texMathZoneTD matchgroup=texMathDelimZoneTD'
           \ 'start="\$\$"'
           \ 'end="\$\$"'
           \ 'contains=@texClusterMath keepend'
@@ -813,14 +816,20 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texMathCmdText        texCmd
   highlight def link texMathDelimMod       texMathDelim
   highlight def link texMathDelimZone      texDelim
+  highlight def link texMathDelimZoneLI    texMathDelimZone
+  highlight def link texMathDelimZoneLD    texMathDelimZone
+  highlight def link texMathDelimZoneTI    texMathDelimZone
+  highlight def link texMathDelimZoneTD    texMathDelimZone
   highlight def link texMathError          texError
   highlight def link texMathErrorDelim     texError
   highlight def link texMathGroup          texMathZone
+  highlight def link texMathZoneLI         texMathZone
+  highlight def link texMathZoneLD         texMathZone
+  highlight def link texMathZoneTI         texMathZone
+  highlight def link texMathZoneTD         texMathZone
   highlight def link texMathZoneEnsured    texMathZone
   highlight def link texMathZoneEnv        texMathZone
   highlight def link texMathZoneEnvStarred texMathZone
-  highlight def link texMathZoneX          texMathZone
-  highlight def link texMathZoneXX         texMathZone
   highlight def link texMathStyleConcArg   texMathZone
   highlight def link texMathSub            texMathZone
   highlight def link texMathSuper          texMathZone
@@ -851,6 +860,7 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texTabularChar        texSymbol
   highlight def link texTabularCol         texOpt
   highlight def link texTabularOpt         texEnvOpt
+  highlight def link texTabularVertline    texMathDelim
   highlight def link texTheoremEnvOpt      texEnvOpt
   highlight def link texVerbZone           texZone
   highlight def link texVerbZoneInline     texVerbZone

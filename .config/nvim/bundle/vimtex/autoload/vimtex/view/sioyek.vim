@@ -33,7 +33,6 @@ function! s:viewer._start(outfile) dict abort " {{{1
         \ : a:outfile
 
   let l:cmd  = g:vimtex_view_sioyek_exe
-        \ . ' --reuse-instance'
         \ . ' --inverse-search "' . s:inverse_search_cmd
         \ .   ' -c \"VimtexInverseSearch %2 ''%1''\""'
         \ . ' --forward-search-file ' . vimtex#util#shellescape(expand('%:p'))
@@ -42,7 +41,7 @@ function! s:viewer._start(outfile) dict abort " {{{1
 
   " Start the view process
   " NB: Use vimtex#jobs#start to ensure it runs in the background
-  let self.job = vimtex#jobs#start(l:cmd)
+  let self.job = vimtex#jobs#start(l:cmd, {'detached': v:true})
   let self.cmd_start = l:cmd
 endfunction
 
