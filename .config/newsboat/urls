@@ -10,10 +10,10 @@ https://www.fsf.org/static/fsforg/rss/blogs.xml
 https://www.fosslinux.com/feed
 #https://rawsec.ml/rss.xml Linux
 #https://h4ck3r9.space/rss.xml
-#"---Raspberry Pi & Arduino---"
+"---Raspberry Pi & Arduino---"
 #https://magpi.raspberrypi.org/feed
 #https://riscv.org/feed
-#https://pi-hole.net/feed
+https://pi-hole.net/feed
 #https://pimylifeup.com/feed
 #https://feeds.feedburner.com/smarthomebeginr?format=xml
 #https://blog.adafruit.com/feed
@@ -29,8 +29,6 @@ https://www.rockpapershotgun.com/feed
 #https://www.liquiddota.com/rss/news.xml E-sports
 https://teamleviathangaming.com/feed/
 "---X-wing---"
-https://rogueoutpost.co.uk/index.php/category/articles/feed
-https://www.fantasyflightgames.com/en/rss/?tags=x-wing-second-edition
 https://dylan-jones.co.uk/feed
 https://whattheactualzuck.wordpress.com/feed
 https://stayontheleader.blogspot.com/feeds/posts/default
@@ -73,7 +71,6 @@ https://www.nrk.no/kultur/toppsaker.rss Nyheter
 "---Youtube---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCaxar6TBM-94_ezoS00fLkA "Day[9]
 https://www.youtube.com/feeds/videos.xml?channel_id=UCK5eBtuoj_HkdXKHNmBLAXg "Afreeca"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2WWBPpcENmF3CkHQx3UB2A "Star Craft Esports"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "Luke Smith"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "Computerphile"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCaFwdfCUUyUc1dCsM2k7dAg
