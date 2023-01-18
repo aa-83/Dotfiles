@@ -703,13 +703,16 @@ function! vimtex#syntax#core#init_highlights() abort " {{{1
   highlight def link texArg              Include
   highlight def link texCmd              Statement
   highlight def link texCmdSpaceCodeChar Special
-  highlight def link texCmdTodo          Todo
+  highlight def link texCmdTodo          VimtexTodo
+  highlight def link texCmdWarning       VimtexWarning
+  highlight def link texCmdError         VimtexError
+  highlight def link texCmdFatal         VimtexFatal
   highlight def link texCmdType          Type
   highlight def link texComment          Comment
   highlight def link texCommentTodo      Todo
   highlight def link texDelim            Delimiter
   highlight def link texEnvArgName       PreCondit
-  highlight def link texError            Error
+  highlight def link texError            VimtexError
   highlight def link texLength           Number
   highlight def link texMathDelim        Type
   highlight def link texMathEnvArgName   Delimiter
@@ -1207,7 +1210,7 @@ endfunction
 let s:re_sub =
       \ '[-+=()0-9aehijklmnoprstuvx]\|\\\%('
       \ . join([
-      \     'beta', 'delta', 'phi', 'gamma', 'chi'
+      \     'beta', 'rho', 'phi', 'gamma', 'chi'
       \ ], '\|') . '\)\>'
 let s:re_super = '[-+=()<>:;0-9a-pr-zABDEG-PRTUVW]'
 

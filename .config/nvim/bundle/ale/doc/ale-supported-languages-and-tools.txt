@@ -52,6 +52,8 @@ Notes:
   * `buildifier`
 * BibTeX
   * `bibclean`
+* Bicep
+  * `bicep`
 * BitBake
   * `oelint-adv`
 * Bourne Shell
@@ -118,6 +120,7 @@ Notes:
 * CSS
   * `VSCode CSS language server`
   * `cspell`
+  * `css-beautify`
   * `csslint`
   * `fecs`
   * `prettier`
@@ -175,6 +178,7 @@ Notes:
   * `SyntaxErl`
   * `dialyzer`!!
   * `elvis`!!
+  * `erlang_ls`
   * `erlc`
   * `erlfmt`
 * Fish
@@ -479,6 +483,7 @@ Notes:
   * `pyre`
   * `pyright`
   * `reorder-python-imports`
+  * ruff
   * `unimport`
   * `vulture`!!
   * `yapf`
@@ -492,6 +497,7 @@ Notes:
 * Racket
   * `racket-langserver`
   * `raco`
+  * `raco_fmt`
 * Re:VIEW
   * `redpen`
 * ReasonML
@@ -594,6 +600,7 @@ Notes:
   * `terraform-ls`
   * `terraform-lsp`
   * `tflint`
+  * `tfsec`
 * Texinfo
   * `alex`
   * `cspell`
@@ -665,6 +672,7 @@ Notes:
 * YAML
   * `actionlint`
   * `circleci`!!
+  * `gitlablint`
   * `prettier`
   * `spectral`
   * `swaglint`

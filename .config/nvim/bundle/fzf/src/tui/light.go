@@ -189,6 +189,10 @@ func (r *LightRenderer) Init() {
 	}
 }
 
+func (r *LightRenderer) Resize(maxHeightFunc func(int) int) {
+	r.maxHeightFunc = maxHeightFunc
+}
+
 func (r *LightRenderer) makeSpace() {
 	r.stderr("\n")
 	r.csi("G")
@@ -676,6 +680,9 @@ func (r *LightRenderer) MaxX() int {
 }
 
 func (r *LightRenderer) MaxY() int {
+	if r.height == 0 {
+		r.updateTerminalSize()
+	}
 	return r.height
 }
 
@@ -705,7 +712,7 @@ func (r *LightRenderer) NewWindow(top int, left int, width int, height int, prev
 
 func (w *LightWindow) drawBorder() {
 	switch w.border.shape {
-	case BorderRounded, BorderSharp:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble:
 		w.drawBorderAround()
 	case BorderHorizontal:
 		w.drawBorderHorizontal(true, true)
@@ -855,6 +862,9 @@ func attrCodes(attr Attr) []string {
 	}
 	if (attr & Reverse) > 0 {
 		codes = append(codes, "7")
+	}
+	if (attr & StrikeThrough) > 0 {
+		codes = append(codes, "9")
 	}
 	return codes
 }

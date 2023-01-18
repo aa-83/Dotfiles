@@ -8,8 +8,8 @@ import (
 
 	"runtime"
 
-	"github.com/gdamore/tcell"
-	"github.com/gdamore/tcell/encoding"
+	"github.com/gdamore/tcell/v2"
+	"github.com/gdamore/tcell/v2/encoding"
 
 	"github.com/mattn/go-runewidth"
 	"github.com/rivo/uniseg"
@@ -19,12 +19,24 @@ func HasFullscreenRenderer() bool {
 	return true
 }
 
-func (p ColorPair) style() tcell.Style {
-	style := tcell.StyleDefault
-	return style.Foreground(tcell.Color(p.Fg())).Background(tcell.Color(p.Bg()))
+func asTcellColor(color Color) tcell.Color {
+	if color == colDefault {
+		return tcell.ColorDefault
+	}
+
+	value := uint64(tcell.ColorValid) + uint64(color)
+	if color.is24() {
+		value = value | uint64(tcell.ColorIsRGB)
+	}
+	return tcell.Color(value)
 }
 
-type Attr tcell.Style
+func (p ColorPair) style() tcell.Style {
+	style := tcell.StyleDefault
+	return style.Foreground(asTcellColor(p.Fg())).Background(asTcellColor(p.Bg()))
+}
+
+type Attr int32
 
 type TcellWindow struct {
 	color       bool
@@ -63,8 +75,6 @@ func (w *TcellWindow) Refresh() {
 	}
 	w.lastX = 0
 	w.lastY = 0
-
-	w.drawBorder()
 }
 
 func (w *TcellWindow) FinishFill() {
@@ -72,12 +82,13 @@ func (w *TcellWindow) FinishFill() {
 }
 
 const (
-	Bold      Attr = Attr(tcell.AttrBold)
-	Dim            = Attr(tcell.AttrDim)
-	Blink          = Attr(tcell.AttrBlink)
-	Reverse        = Attr(tcell.AttrReverse)
-	Underline      = Attr(tcell.AttrUnderline)
-	Italic         = Attr(tcell.AttrItalic)
+	Bold          Attr = Attr(tcell.AttrBold)
+	Dim                = Attr(tcell.AttrDim)
+	Blink              = Attr(tcell.AttrBlink)
+	Reverse            = Attr(tcell.AttrReverse)
+	Underline          = Attr(tcell.AttrUnderline)
+	StrikeThrough      = Attr(tcell.AttrStrikeThrough)
+	Italic             = Attr(tcell.AttrItalic)
 )
 
 const (
@@ -85,6 +96,8 @@ const (
 	AttrRegular   = Attr(1 << 7)
 	AttrClear     = Attr(1 << 8)
 )
+
+func (r *FullscreenRenderer) Resize(maxHeightFunc func(int) int) {}
 
 func (r *FullscreenRenderer) defaultTheme() *ColorTheme {
 	if _screen.Colors() >= 256 {
@@ -502,7 +515,7 @@ func (r *FullscreenRenderer) NewWindow(top int, left int, width int, height int,
 	if preview {
 		normal = ColPreview
 	}
-	return &TcellWindow{
+	w := &TcellWindow{
 		color:       r.theme.Colored,
 		preview:     preview,
 		top:         top,
@@ -511,6 +524,8 @@ func (r *FullscreenRenderer) NewWindow(top int, left int, width int, height int,
 		height:      height,
 		normal:      normal,
 		borderStyle: borderStyle}
+	w.drawBorder()
+	return w
 }
 
 func (w *TcellWindow) Close() {
@@ -561,6 +576,7 @@ func (w *TcellWindow) printString(text string, pair ColorPair) {
 		style = style.
 			Reverse(a&Attr(tcell.AttrReverse) != 0).
 			Underline(a&Attr(tcell.AttrUnderline) != 0).
+			StrikeThrough(a&Attr(tcell.AttrStrikeThrough) != 0).
 			Italic(a&Attr(tcell.AttrItalic) != 0).
 			Blink(a&Attr(tcell.AttrBlink) != 0).
 			Dim(a&Attr(tcell.AttrDim) != 0)
@@ -612,6 +628,7 @@ func (w *TcellWindow) fillString(text string, pair ColorPair) FillReturn {
 		Dim(a&Attr(tcell.AttrDim) != 0).
 		Reverse(a&Attr(tcell.AttrReverse) != 0).
 		Underline(a&Attr(tcell.AttrUnderline) != 0).
+		StrikeThrough(a&Attr(tcell.AttrStrikeThrough) != 0).
 		Italic(a&Attr(tcell.AttrItalic) != 0)
 
 	gr := uniseg.NewGraphemes(text)
@@ -688,31 +705,31 @@ func (w *TcellWindow) drawBorder() {
 	}
 
 	switch shape {
-	case BorderRounded, BorderSharp, BorderHorizontal, BorderTop:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderHorizontal, BorderTop:
 		for x := left; x < right; x++ {
 			_screen.SetContent(x, top, w.borderStyle.horizontal, nil, style)
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp, BorderHorizontal, BorderBottom:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderHorizontal, BorderBottom:
 		for x := left; x < right; x++ {
 			_screen.SetContent(x, bot-1, w.borderStyle.horizontal, nil, style)
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp, BorderVertical, BorderLeft:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderVertical, BorderLeft:
 		for y := top; y < bot; y++ {
 			_screen.SetContent(left, y, w.borderStyle.vertical, nil, style)
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp, BorderVertical, BorderRight:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderVertical, BorderRight:
 		for y := top; y < bot; y++ {
 			_screen.SetContent(right-1, y, w.borderStyle.vertical, nil, style)
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp:
+	case BorderRounded, BorderSharp, BorderBold, BorderDouble:
 		_screen.SetContent(left, top, w.borderStyle.topLeft, nil, style)
 		_screen.SetContent(right-1, top, w.borderStyle.topRight, nil, style)
 		_screen.SetContent(left, bot-1, w.borderStyle.bottomLeft, nil, style)

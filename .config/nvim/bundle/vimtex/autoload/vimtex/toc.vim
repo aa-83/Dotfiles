@@ -344,11 +344,11 @@ endfunction
 function! s:toc.set_syntax() abort dict "{{{1
   syntax clear
 
-  if self.show_help
-    execute 'syntax match VimtexTocHelp'
-          \ '/^\%<' . self.help_nlines . 'l.*/'
-          \ 'contains=VimtexTocHelpKey,VimtexTocHelpLayerOn,VimtexTocHelpLayerOff'
+  execute 'syntax match VimtexTocHelp'
+        \ '/^\%<' . self.help_nlines . 'l.*/'
+        \ 'contains=VimtexTocHelpKey,VimtexTocHelpLayerOn,VimtexTocHelpLayerOff'
 
+  if self.show_help
     syntax match VimtexTocHelpKey /<\S*>/ contained
     syntax match VimtexTocHelpKey /^\s*[-+<>a-zA-Z\/]\+\ze\s/ contained
           \ contains=VimtexTocHelpKeySeparator
@@ -363,12 +363,18 @@ function! s:toc.set_syntax() abort dict "{{{1
     syntax match VimtexTocHelpConceal /[+-]/ contained conceal
 
     highlight link VimtexTocHelpKeySeparator VimtexTocHelp
+  else
+    syntax match VimtexTocHelpKey / h / contained
   endif
 
   execute 'syntax match VimtexTocTodo'
-        \ '/\v\zs%('
-        \   . toupper(join(keys(g:vimtex_toc_todo_labels), '|')) . '):\ze /'
+        \ '"\v\zs%('
+        \   . toupper(join(keys(g:vimtex_toc_todo_labels), '|')) . '):\ze "'
         \ 'contained'
+  syntax match VimtexTocTodo "\v\zs%(an)?fxnote:\ze " contained
+  syntax match VimtexTocWarning "\v\zs%(an)?fxwarning:\ze " contained
+  syntax match VimtexTocError "\v\zs%(an)?fxerror:\ze " contained
+  syntax match VimtexTocFatal "\v\zs%(an)?fxfatal:\ze " contained
 
   syntax match VimtexTocInclPath /.*/ contained
   syntax match VimtexTocIncl /\w\+ incl:/ contained
@@ -381,6 +387,9 @@ function! s:toc.set_syntax() abort dict "{{{1
 
   syntax cluster VimtexTocTitleStuff add=VimtexTocIncl
   syntax cluster VimtexTocTitleStuff add=VimtexTocTodo
+  syntax cluster VimtexTocTitleStuff add=VimtexTocWarning
+  syntax cluster VimtexTocTitleStuff add=VimtexTocError
+  syntax cluster VimtexTocTitleStuff add=VimtexTocFatal
   syntax cluster VimtexTocTitleStuff add=VimtexTocLabelsSecs
   syntax cluster VimtexTocTitleStuff add=VimtexTocLabelsEq
   syntax cluster VimtexTocTitleStuff add=VimtexTocLabelsFig
@@ -409,10 +418,14 @@ endfunction
 " Print the TOC entries
 "
 function! s:toc.print_help() abort dict " {{{1
-  let self.help_nlines = 0
-  if !self.show_help | return | endif
+  if !self.show_help
+    call append('$', ['Press h to toggle help text.', ''])
+    let self.help_nlines = 2
+    return
+  endif
 
   let help_text = [
+        \ '      h  Toggle help text',
         \ '<Esc>/q  Close',
         \ '<Space>  Jump',
         \ '<Enter>  Jump and close',
@@ -442,7 +455,7 @@ function! s:toc.print_help() abort dict " {{{1
   call append('$', help_text)
   call append('$', '')
 
-  let self.help_nlines += len(help_text) + 1
+  let self.help_nlines = len(help_text) + 1
 endfunction
 
 " }}}1
@@ -627,19 +640,14 @@ endfunction
 " }}}1
 function! s:toc.toggle_help() abort dict "{{{1
   let l:pos = vimtex#pos#get_cursor()
-  if self.show_help
-    let l:pos[1] = max([l:pos[1] - self.help_nlines, 1])
-    call vimtex#pos#set_cursor(l:pos)
-  endif
+  let l:pos[1] = max([l:pos[1] - self.help_nlines, 1])
 
-  let self.show_help = self.show_help ? 0 : 1
+  let self.show_help = !self.show_help
   call self.refresh()
   call self.set_syntax()
 
-  if self.show_help
-    let l:pos[1] += self.help_nlines
-    call vimtex#pos#set_cursor(l:pos)
-  endif
+  let l:pos[1] += self.help_nlines
+  call vimtex#pos#set_cursor(l:pos)
 endfunction
 
 " }}}1
