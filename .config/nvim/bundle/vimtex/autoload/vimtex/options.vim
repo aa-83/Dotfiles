@@ -45,6 +45,7 @@ function! vimtex#options#init() abort " {{{1
         \ 'simple': 0,
         \ 'match_str_fmt': '@key [@type] @author_all (@year), "@title"',
         \ 'menu_fmt': '[@type] @author_short (@year), "@title"',
+        \ 'info_fmt': "TITLE: @title\nAUTHOR: @author_all\nYEAR: @year",
         \ 'abbr_fmt': '',
         \ 'auth_len': 20,
         \ 'custom_patterns': [],
@@ -285,6 +286,8 @@ function! vimtex#options#init() abort " {{{1
   call s:init_option('vimtex_mappings_disable', {})
   call s:init_option('vimtex_mappings_override_existing', 0)
 
+  call s:init_option('vimtex_mappings_prefix', '<localleader>l')
+
   call s:init_option('vimtex_matchparen_enabled', 1)
   call s:init_option('vimtex_motion_enabled', 1)
 
@@ -322,6 +325,7 @@ function! vimtex#options#init() abort " {{{1
         \ 'ligatures': 1,
         \ 'cites': 1,
         \ 'fancy': 1,
+        \ 'spacing': 1,
         \ 'greek': 1,
         \ 'math_bounds': 1,
         \ 'math_delimiters': 1,
@@ -370,6 +374,7 @@ function! vimtex#options#init() abort " {{{1
         \ 'amsmath': {'load': 2},
         \ 'babel': {'conceal': 1},
         \ 'hyperref': {'conceal': 1},
+        \ 'fontawesome5': {'conceal': 1},
         \})
 
   " Disable conceals if chosen
@@ -377,6 +382,7 @@ function! vimtex#options#init() abort " {{{1
     call map(g:vimtex_syntax_conceal, {k, v -> 0})
     let g:vimtex_syntax_packages.babel.conceal = 0
     let g:vimtex_syntax_packages.hyperref.conceal = 0
+    let g:vimtex_syntax_packages.fontawesome5.conceal = 0
   endif
 
   call s:init_option('vimtex_texcount_custom_arg', '')

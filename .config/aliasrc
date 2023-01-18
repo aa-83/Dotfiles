@@ -16,6 +16,7 @@ alias ...='cd ../..' ;
 alias ....='cd ../../..' ;
 
 # Software specific aliases
+alias yeet='sudo pacman -Rns' ;
 alias yt='yt-dlp --add-metadata -i' ;
 alias yta='yt-dlp -x -f bestaudio/best' ;
 alias ftf='fzf-tmux -r'

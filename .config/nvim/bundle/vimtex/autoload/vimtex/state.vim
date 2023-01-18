@@ -464,6 +464,7 @@ function! s:get_main_choose(list) abort " {{{1
     unsilent return vimtex#ui#select(l:choices, {
           \ 'prompt': 'Please select an appropriate main file:',
           \ 'abort': v:false,
+          \ 'return': 'key',
           \})
   endif
 endfunction
@@ -474,7 +475,6 @@ function! s:file_is_main(file) abort " {{{1
   if !filereadable(a:file) | return 0 | endif
 
   let l:preamble = vimtex#parser#preamble(a:file, {
-        \ 'inclusive' : 1,
         \ 'root' : fnamemodify(a:file, ':p:h'),
         \})
 

@@ -11,7 +11,7 @@ BuildDirectory: /home/eirik/.config/tmux/plugins/tmux-mem-cpu-load
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: franzferdinand
+Site: archibald
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -64,7 +64,7 @@ UpdateType: git
 
 # Compiler info
 Compiler: /usr/bin/c++
-CompilerVersion: 12.1.1
+CompilerVersion: 12.2.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
