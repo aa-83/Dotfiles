@@ -30,6 +30,11 @@ endfor
 
 
 function! VimtexIndentExpr() abort " {{{1
+  " This wrapper function is used because of rnoweb[0] that "misuses" the
+  " indentexpr and assumes it takes no arguments.
+  "
+  " [0]: /usr/share/nvim/runtime/indent/rnoweb.vim:21
+
   return VimtexIndent(v:lnum)
 endfunction
 
@@ -42,7 +47,7 @@ function! VimtexIndent(lnum) abort " {{{1
   let l:line = s:clean_line(getline(a:lnum))
 
   " Check for verbatim modes
-  if s:is_verbatim(l:line, a:lnum)
+  if s:in_verbatim(a:lnum)
     return empty(l:line) ? indent(l:prev_lnum) : indent(a:lnum)
   endif
 
@@ -77,7 +82,7 @@ function! s:get_prev_lnum(lnum) abort " {{{1
   let l:lnum = a:lnum
   let l:line = getline(l:lnum)
 
-  while l:lnum != 0 && (l:line =~# '^\s*%' || s:is_verbatim(l:line, l:lnum))
+  while l:lnum > 0 && (l:line =~# '^\s*%' || s:in_verbatim(l:lnum))
     let l:lnum = prevnonblank(l:lnum - 1)
     let l:line = getline(l:lnum)
   endwhile
@@ -94,15 +99,12 @@ function! s:clean_line(line) abort " {{{1
 endfunction
 
 " }}}1
-function! s:is_verbatim(line, lnum) abort " {{{1
-  return a:line !~# s:verbatim_re_envdelim
-        \ && vimtex#env#is_inside(s:verbatim_re_list)[0]
-endfunction
+function! s:in_verbatim(lnum) abort " {{{1
+  let l:synstack = vimtex#syntax#stack(a:lnum, col([a:lnum, '$']) - 2)
 
-let s:verbatim_envs = ['lstlisting', 'verbatim', 'minted', 'markdown']
-let s:verbatim_re_list = '\%(' . join(s:verbatim_envs, '\|') . '\)'
-let s:verbatim_re_envdelim = '\v\\%(begin|end)\{%('
-      \ . join(s:verbatim_envs, '|') . ')'
+  return match(l:synstack, '\v^tex%(Lst|Verb|Markdown|Minted)Zone') >= 0
+        \ && match(l:synstack, '\v^tex%(Minted)?Env') < 0
+endfunction
 
 " }}}1
 
@@ -190,12 +192,10 @@ let s:re_depth_end = g:vimtex#re#not_bslash . '\\end\s*\{\w+\*?}|^\s*%(}|\\])'
 function! s:indent_envs(line, prev_line) abort " {{{1
   let l:ind = 0
 
-  " First for general environments
   let l:ind += s:sw*(
         \    a:prev_line =~# s:envs_begin
         \ && a:prev_line !~# s:envs_end
         \ && a:prev_line !~# s:envs_ignored)
-  let l:xx = l:ind
   let l:ind -= s:sw*(
         \    a:line !~# s:envs_begin
         \ && a:line =~# s:envs_end
@@ -210,7 +210,11 @@ let s:envs_ignored = '\v<%(' . join(g:vimtex_indent_ignored_envs, '|') . ')>'
 
 " }}}1
 function! s:indent_items(line, lnum, prev_line, prev_lnum) abort " {{{1
-  if a:prev_line =~# s:envs_item && a:line !~# s:envs_enditem
+  if s:envs_lists_empty | return 0 | endif
+
+  if a:prev_line =~# s:envs_item
+        \ && (a:line !~# s:envs_enditem
+        \     || (a:line =~# s:envs_item && a:prev_line =~# s:envs_beglist))
     return s:sw
   elseif a:line =~# s:envs_endlist && a:prev_line !~# s:envs_begitem
     return -s:sw
@@ -229,6 +233,7 @@ function! s:indent_items(line, lnum, prev_line, prev_lnum) abort " {{{1
   return 0
 endfunction
 
+let s:envs_lists_empty = empty(g:vimtex_indent_lists)
 let s:envs_lists = join(g:vimtex_indent_lists, '\|')
 let s:envs_item = '^\s*\\item\>'
 let s:envs_beglist = '\\begin{\%(' . s:envs_lists . '\)'
@@ -265,39 +270,31 @@ let s:re_delim_trivial = empty(s:re_open) || empty(s:re_close)
 
 " }}}1
 function! s:indent_conditionals(line, lnum, prev_line, prev_lnum) abort " {{{1
-  if !exists('s:re_cond')
-    let s:re_cond = g:vimtex_indent_conditionals
-  endif
+  if empty(s:conditionals) | return 0 | endif
 
-  if empty(s:re_cond) | return 0 | endif
+  let l:ind = s:sw*(
+        \    (a:prev_line =~# s:conditionals.open
+        \     || a:prev_line =~# s:conditionals.else)
+        \ && a:prev_line !~# s:conditionals.close)
+  let l:ind -= s:sw*(
+        \    a:line !~# s:conditionals.open
+        \ && (a:line =~# s:conditionals.close
+        \     || a:line =~# s:conditionals.else))
 
-  if get(s:, 'conditional_opened')
-    if a:line =~# s:re_cond.close
-      silent! unlet s:conditional_opened
-      return a:prev_line =~# s:re_cond.open ? 0 : -s:sw
-    elseif a:line =~# s:re_cond.else
-      return -s:sw
-    elseif a:prev_line =~# s:re_cond.else
-      return s:sw
-    elseif a:prev_line =~# s:re_cond.open
-      return s:sw
-    endif
-  endif
-
-  if a:line =~# s:re_cond.open
-        \ && a:line !~# s:re_cond.close
-    let s:conditional_opened = 1
-  endif
-
-  return 0
+  return l:ind
 endfunction
+
+let s:conditionals = g:vimtex_indent_conditionals
 
 " }}}1
 function! s:indent_tikz(lnum, prev) abort " {{{1
   if !has_key(b:vimtex.packages, 'tikz') | return 0 | endif
 
-  let l:env_pos = vimtex#env#is_inside('tikzpicture')
-  if l:env_pos[0] > 0 && l:env_pos[0] < a:lnum
+  let l:synstack = vimtex#syntax#stack(a:lnum, 1)
+  if match(l:synstack, '^texTikzZone') < 0 | return 0 | endif
+
+  let l:env_lnum = search('\\begin\s*{tikzpicture\*\?}', 'bn')
+  if l:env_lnum > 0 && l:env_lnum < a:lnum
     let l:prev_starts = a:prev =~# s:tikz_commands
     let l:prev_stops  = a:prev =~# ';\s*$'
 
@@ -308,7 +305,7 @@ function! s:indent_tikz(lnum, prev) abort " {{{1
 
     " Decrease indent on tikz command end, i.e. on semicolon
     if ! l:prev_starts && l:prev_stops
-      let l:context = join(getline(l:env_pos[0], a:lnum-1), '')
+      let l:context = join(getline(l:env_lnum, a:lnum-1), '')
       return -s:sw*(l:context =~# s:tikz_commands)
     endif
   endif

@@ -1,42 +1,40 @@
-"---Distros---"
+#"---Distros---"
 https://www.archlinux.org/feeds/news/ Linux
 https://www.archlinux.org/feeds/releases
-https://www.alpinelinux.org/atom.xml
-https://www.kali.org/rss.xml
-https://tails.boum.org/news/index.en.rss
-"---Linux News---"
-https://www.fsf.org/static/fsforg/rss/news.xml
-https://www.fsf.org/static/fsforg/rss/blogs.xml
-https://www.fosslinux.com/feed
-#https://rawsec.ml/rss.xml Linux
-#https://h4ck3r9.space/rss.xml
+#https://www.alpinelinux.org/atom.xml
+#https://www.kali.org/rss.xml
+#https://tails.boum.org/news/index.en.rss
+#"---Linux News---"
+#https://www.fsf.org/static/fsforg/rss/news.xml
+#https://www.fsf.org/static/fsforg/rss/blogs.xml
+#https://www.fosslinux.com/feed
 "---Raspberry Pi & Arduino---"
 #https://magpi.raspberrypi.org/feed
 #https://riscv.org/feed
-https://pi-hole.net/feed
+#https://pi-hole.net/feed
 #https://pimylifeup.com/feed
 #https://feeds.feedburner.com/smarthomebeginr?format=xml
 #https://blog.adafruit.com/feed
 "---Tech---"
 http://feeds.arstechnica.com/arstechnica/features "Tech News"
-http://feeds.arstechnica.com/arstechnica/index "Tech News"
+#http://feeds.arstechnica.com/arstechnica/index "Tech News"
 #https://www.bleepingcomputer.com/feed/
-https://www.accessnow.org/rss
-https://blog.torproject.org/feed
-"---Gaming---"
-https://www.rockpapershotgun.com/feed
+#https://www.accessnow.org/rss
+#https://blog.torproject.org/feed
+#"---Gaming---"
+#https://www.rockpapershotgun.com/feed
 #https://tl.net/rss/news.xml E-sports
-#https://www.liquiddota.com/rss/news.xml E-sports
-https://teamleviathangaming.com/feed/
-"---X-wing---"
-https://dylan-jones.co.uk/feed
-https://whattheactualzuck.wordpress.com/feed
-https://stayontheleader.blogspot.com/feeds/posts/default
-https://xwingdebrief.wordpress.com/feed
-https://hyperspacejunkie.home.blog/feed
-https://patricksxwingblog.wordpress.com/feed
-https://midwestscrub.wordpress.com/feed
-https://carolinakrayts.libsyn.com/rss
+#"---X-wing---"
+#https://dylan-jones.co.uk/feed
+#https://whattheactualzuck.wordpress.com/feed
+#https://stayontheleader.blogspot.com/feeds/posts/default
+#https://xwingdebrief.wordpress.com/feed
+#https://hyperspacejunkie.home.blog/feed
+#https://patricksxwingblog.wordpress.com/feed
+#https://midwestscrub.wordpress.com/feed
+#https://carolinakrayts.libsyn.com/rss
+"---Legion---"
+https://thefifthtrooper.com/feed
 #"---Vitenskap---"
 #https://www.nasa.gov/rss/dyn/breaking_news.rss Nasa
 #https://www.nasa.gov/rss/dyn/earth.rss Nasa
@@ -44,35 +42,34 @@ https://carolinakrayts.libsyn.com/rss
 #https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss Nasa
 "---Kunst---"
 https://cdm.link/feed/ "Digital Culture"
-https://artthescience.com/feed
+#https://artthescience.com/feed
 "---Mat---"
 https://www.chilipeppermadness.com/feed
 https://thewoksoflife.com/feed
 "---Meninger---"
 #https://www.haaretz.com/cmlink/1.4605051 Nyheter
 https://feeds.soundcloud.com/users/soundcloud:users:211911700/sounds.rss
-https://lukesmith.xyz/rss.xml Linux
+#https://lukesmith.xyz/rss.xml Linux
 #"---Nyheter---"
-#https://www.haaretz.com/cmlink/1.4605045 Nyheter
 #https://www.haaretz.com/cmlink/1.4850015 Nyheter
 #https://www.haaretz.com/cmlink/1.4850006 Nyheter
 #https://www.dr.dk/nyheder/service/feeds/indland
 #https://www.dr.dk/nyheder/service/feeds/udland
 #https://www.dr.dk/nyheder/service/feeds/politik
-#https://www.dr.dk/nyheder/service/feeds/kultur
+https://www.dr.dk/nyheder/service/feeds/kultur
 #https://www.dr.dk/Nyheder/Service/feeds/regionale/kbh/
 #https://www.independent.co.uk/news/world/rss Nyheter
 #https://www.independent.co.uk/sport/rugby/rugby-union/rss Nyheter
 #https://www.independent.co.uk/arts-entertainment/rss Nyheter
-https://www.nrk.no/urix/toppsaker.rss Nyheter
+#https://www.nrk.no/urix/toppsaker.rss Nyheter
 #https://www.nrk.no/sport/toppsaker.rss Nyheter
 https://www.nrk.no/kultur/toppsaker.rss Nyheter
 #https://www.nrk.no/hordaland/toppsaker.rss Nyheter
-"---Youtube---"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCaxar6TBM-94_ezoS00fLkA "Day[9]
-https://www.youtube.com/feeds/videos.xml?channel_id=UCK5eBtuoj_HkdXKHNmBLAXg "Afreeca"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "Luke Smith"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "Computerphile"
+#"---Youtube---"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCaxar6TBM-94_ezoS00fLkA "Day[9]
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCK5eBtuoj_HkdXKHNmBLAXg "Afreeca"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "Luke Smith"
+#https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA "Computerphile"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCaFwdfCUUyUc1dCsM2k7dAg
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUX6wvmuuo3GaQQtDCPH7zg
 https://www.youtube.com/feeds/videos.xml?channel_id=UC1qv7WUh0rldbnuFBuaXyUw

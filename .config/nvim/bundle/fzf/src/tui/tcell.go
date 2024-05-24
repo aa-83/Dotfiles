@@ -7,9 +7,8 @@ import (
 	"time"
 
 	"github.com/gdamore/tcell/v2"
-	"github.com/gdamore/tcell/v2/encoding"
+	"github.com/junegunn/fzf/src/util"
 
-	"github.com/mattn/go-runewidth"
 	"github.com/rivo/uniseg"
 )
 
@@ -97,6 +96,11 @@ const (
 	AttrClear     = Attr(1 << 8)
 )
 
+func (r *FullscreenRenderer) PassThrough(str string) {
+	// No-op
+	// https://github.com/gdamore/tcell/pull/650#issuecomment-1806442846
+}
+
 func (r *FullscreenRenderer) Resize(maxHeightFunc func(int) int) {}
 
 func (r *FullscreenRenderer) defaultTheme() *ColorTheme {
@@ -138,15 +142,16 @@ func (a Attr) Merge(b Attr) Attr {
 var (
 	_screen          tcell.Screen
 	_prevMouseButton tcell.ButtonMask
+	_initialResize   bool = true
 )
 
-func (r *FullscreenRenderer) initScreen() {
+func (r *FullscreenRenderer) initScreen() error {
 	s, e := tcell.NewScreen()
 	if e != nil {
-		errorExit(e.Error())
+		return e
 	}
 	if e = s.Init(); e != nil {
-		errorExit(e.Error())
+		return e
 	}
 	if r.mouse {
 		s.EnableMouse()
@@ -154,16 +159,25 @@ func (r *FullscreenRenderer) initScreen() {
 		s.DisableMouse()
 	}
 	_screen = s
+
+	return nil
 }
 
-func (r *FullscreenRenderer) Init() {
+func (r *FullscreenRenderer) Init() error {
 	if os.Getenv("TERM") == "cygwin" {
 		os.Setenv("TERM", "")
 	}
-	encoding.Register()
 
-	r.initScreen()
+	if err := r.initScreen(); err != nil {
+		return err
+	}
 	initTheme(r.theme, r.defaultTheme(), r.forceBlack)
+
+	return nil
+}
+
+func (r *FullscreenRenderer) Top() int {
+	return 0
 }
 
 func (r *FullscreenRenderer) MaxX() int {
@@ -193,14 +207,30 @@ func (r *FullscreenRenderer) NeedScrollbarRedraw() bool {
 	return true
 }
 
+func (r *FullscreenRenderer) ShouldEmitResizeEvent() bool {
+	return true
+}
+
 func (r *FullscreenRenderer) Refresh() {
 	// noop
+}
+
+// TODO: Pixel width and height not implemented
+func (r *FullscreenRenderer) Size() TermSize {
+	cols, lines := _screen.Size()
+	return TermSize{lines, cols, 0, 0}
 }
 
 func (r *FullscreenRenderer) GetChar() Event {
 	ev := _screen.PollEvent()
 	switch ev := ev.(type) {
 	case *tcell.EventResize:
+		// Ignore the first resize event
+		// https://github.com/gdamore/tcell/blob/v2.7.0/TUTORIAL.md?plain=1#L18
+		if _initialResize {
+			_initialResize = false
+			return Event{Invalid, 0, nil}
+		}
 		return Event{Resize, 0, nil}
 
 	// process mouse events:
@@ -294,16 +324,16 @@ func (r *FullscreenRenderer) GetChar() Event {
 			switch ev.Rune() {
 			case 0:
 				if ctrl {
-					return Event{BSpace, 0, nil}
+					return Event{Backspace, 0, nil}
 				}
 			case rune(tcell.KeyCtrlH):
 				switch {
 				case ctrl:
 					return keyfn('h')
 				case alt:
-					return Event{AltBS, 0, nil}
+					return Event{AltBackspace, 0, nil}
 				case none, shift:
-					return Event{BSpace, 0, nil}
+					return Event{Backspace, 0, nil}
 				}
 			}
 		case tcell.KeyCtrlI:
@@ -356,17 +386,17 @@ func (r *FullscreenRenderer) GetChar() Event {
 		// section 3: (Alt)+Backspace2
 		case tcell.KeyBackspace2:
 			if alt {
-				return Event{AltBS, 0, nil}
+				return Event{AltBackspace, 0, nil}
 			}
-			return Event{BSpace, 0, nil}
+			return Event{Backspace, 0, nil}
 
 		// section 4: (Alt+Shift)+Key(Up|Down|Left|Right)
 		case tcell.KeyUp:
 			if altShift {
-				return Event{AltSUp, 0, nil}
+				return Event{AltShiftUp, 0, nil}
 			}
 			if shift {
-				return Event{SUp, 0, nil}
+				return Event{ShiftUp, 0, nil}
 			}
 			if alt {
 				return Event{AltUp, 0, nil}
@@ -374,10 +404,10 @@ func (r *FullscreenRenderer) GetChar() Event {
 			return Event{Up, 0, nil}
 		case tcell.KeyDown:
 			if altShift {
-				return Event{AltSDown, 0, nil}
+				return Event{AltShiftDown, 0, nil}
 			}
 			if shift {
-				return Event{SDown, 0, nil}
+				return Event{ShiftDown, 0, nil}
 			}
 			if alt {
 				return Event{AltDown, 0, nil}
@@ -385,10 +415,10 @@ func (r *FullscreenRenderer) GetChar() Event {
 			return Event{Down, 0, nil}
 		case tcell.KeyLeft:
 			if altShift {
-				return Event{AltSLeft, 0, nil}
+				return Event{AltShiftLeft, 0, nil}
 			}
 			if shift {
-				return Event{SLeft, 0, nil}
+				return Event{ShiftLeft, 0, nil}
 			}
 			if alt {
 				return Event{AltLeft, 0, nil}
@@ -396,10 +426,10 @@ func (r *FullscreenRenderer) GetChar() Event {
 			return Event{Left, 0, nil}
 		case tcell.KeyRight:
 			if altShift {
-				return Event{AltSRight, 0, nil}
+				return Event{AltShiftRight, 0, nil}
 			}
 			if shift {
-				return Event{SRight, 0, nil}
+				return Event{ShiftRight, 0, nil}
 			}
 			if alt {
 				return Event{AltRight, 0, nil}
@@ -412,15 +442,21 @@ func (r *FullscreenRenderer) GetChar() Event {
 		case tcell.KeyHome:
 			return Event{Home, 0, nil}
 		case tcell.KeyDelete:
-			return Event{Del, 0, nil}
+			if ctrl {
+				return Event{CtrlDelete, 0, nil}
+			}
+			if shift {
+				return Event{ShiftDelete, 0, nil}
+			}
+			return Event{Delete, 0, nil}
 		case tcell.KeyEnd:
 			return Event{End, 0, nil}
 		case tcell.KeyPgUp:
-			return Event{PgUp, 0, nil}
+			return Event{PageUp, 0, nil}
 		case tcell.KeyPgDn:
-			return Event{PgDn, 0, nil}
+			return Event{PageDown, 0, nil}
 		case tcell.KeyBacktab:
-			return Event{BTab, 0, nil}
+			return Event{ShiftTab, 0, nil}
 		case tcell.KeyF1:
 			return Event{F1, 0, nil}
 		case tcell.KeyF2:
@@ -466,7 +502,7 @@ func (r *FullscreenRenderer) GetChar() Event {
 
 		// section 7: Esc
 		case tcell.KeyEsc:
-			return Event{ESC, 0, nil}
+			return Event{Esc, 0, nil}
 		}
 	}
 
@@ -512,7 +548,7 @@ func (r *FullscreenRenderer) NewWindow(top int, left int, width int, height int,
 		height:      height,
 		normal:      normal,
 		borderStyle: borderStyle}
-	w.drawBorder()
+	w.Erase()
 	return w
 }
 
@@ -529,7 +565,17 @@ func fill(x, y, w, h int, n ColorPair, r rune) {
 }
 
 func (w *TcellWindow) Erase() {
-	fill(w.left-1, w.top, w.width+1, w.height-1, w.normal, ' ')
+	if w.borderStyle.shape.HasLeft() {
+		fill(w.left-1, w.top, w.width, w.height-1, w.normal, ' ')
+	} else {
+		fill(w.left, w.top, w.width-1, w.height-1, w.normal, ' ')
+	}
+	w.drawBorder(false)
+}
+
+func (w *TcellWindow) EraseMaybe() bool {
+	w.Erase()
+	return true
 }
 
 func (w *TcellWindow) Enclose(y int, x int) bool {
@@ -572,26 +618,27 @@ func (w *TcellWindow) printString(text string, pair ColorPair) {
 
 	gr := uniseg.NewGraphemes(text)
 	for gr.Next() {
+		st := style
 		rs := gr.Runes()
 
 		if len(rs) == 1 {
 			r := rs[0]
-			if r < rune(' ') { // ignore control characters
-				continue
+			if r == '\r' {
+				st = style.Dim(true)
+				rs[0] = '␍'
 			} else if r == '\n' {
-				w.lastY++
-				lx = 0
-				continue
-			} else if r == '\u000D' { // skip carriage return
+				st = style.Dim(true)
+				rs[0] = '␊'
+			} else if r < rune(' ') { // ignore control characters
 				continue
 			}
 		}
 		var xPos = w.left + w.lastX + lx
 		var yPos = w.top + w.lastY
 		if xPos < (w.left+w.width) && yPos < (w.top+w.height) {
-			_screen.SetContent(xPos, yPos, rs[0], rs[1:], style)
+			_screen.SetContent(xPos, yPos, rs[0], rs[1:], st)
 		}
-		lx += runewidth.StringWidth(string(rs))
+		lx += util.StringWidth(string(rs))
 	}
 	w.lastX += lx
 }
@@ -620,13 +667,22 @@ func (w *TcellWindow) fillString(text string, pair ColorPair) FillReturn {
 		Italic(a&Attr(tcell.AttrItalic) != 0)
 
 	gr := uniseg.NewGraphemes(text)
+Loop:
 	for gr.Next() {
+		st := style
 		rs := gr.Runes()
-		if len(rs) == 1 && rs[0] == '\n' {
-			w.lastY++
-			w.lastX = 0
-			lx = 0
-			continue
+		if len(rs) == 1 {
+			r := rs[0]
+			switch r {
+			case '\r':
+				st = style.Dim(true)
+				rs[0] = '␍'
+			case '\n':
+				w.lastY++
+				w.lastX = 0
+				lx = 0
+				continue Loop
+			}
 		}
 
 		// word wrap:
@@ -643,8 +699,8 @@ func (w *TcellWindow) fillString(text string, pair ColorPair) FillReturn {
 			return FillSuspend
 		}
 
-		_screen.SetContent(xPos, yPos, rs[0], rs[1:], style)
-		lx += runewidth.StringWidth(string(rs))
+		_screen.SetContent(xPos, yPos, rs[0], rs[1:], st)
+		lx += util.StringWidth(string(rs))
 	}
 	w.lastX += lx
 	if w.lastX == w.width {
@@ -670,7 +726,15 @@ func (w *TcellWindow) CFill(fg Color, bg Color, a Attr, str string) FillReturn {
 	return w.fillString(str, NewColorPair(fg, bg, a))
 }
 
-func (w *TcellWindow) drawBorder() {
+func (w *TcellWindow) DrawBorder() {
+	w.drawBorder(false)
+}
+
+func (w *TcellWindow) DrawHBorder() {
+	w.drawBorder(true)
+}
+
+func (w *TcellWindow) drawBorder(onlyHorizontal bool) {
 	shape := w.borderStyle.shape
 	if shape == BorderNone {
 		return
@@ -692,9 +756,9 @@ func (w *TcellWindow) drawBorder() {
 		style = w.normal.style()
 	}
 
-	hw := runewidth.RuneWidth(w.borderStyle.horizontal)
+	hw := runeWidth(w.borderStyle.top)
 	switch shape {
-	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderHorizontal, BorderTop:
+	case BorderRounded, BorderSharp, BorderBold, BorderBlock, BorderThinBlock, BorderDouble, BorderHorizontal, BorderTop:
 		max := right - 2*hw
 		if shape == BorderHorizontal || shape == BorderTop {
 			max = right - hw
@@ -705,37 +769,39 @@ func (w *TcellWindow) drawBorder() {
 		//       ==================
 		//                 (  HH  ) => TR is ignored
 		for x := left; x <= max; x += hw {
-			_screen.SetContent(x, top, w.borderStyle.horizontal, nil, style)
+			_screen.SetContent(x, top, w.borderStyle.top, nil, style)
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderHorizontal, BorderBottom:
+	case BorderRounded, BorderSharp, BorderBold, BorderBlock, BorderThinBlock, BorderDouble, BorderHorizontal, BorderBottom:
 		max := right - 2*hw
 		if shape == BorderHorizontal || shape == BorderBottom {
 			max = right - hw
 		}
 		for x := left; x <= max; x += hw {
-			_screen.SetContent(x, bot-1, w.borderStyle.horizontal, nil, style)
+			_screen.SetContent(x, bot-1, w.borderStyle.bottom, nil, style)
+		}
+	}
+	if !onlyHorizontal {
+		switch shape {
+		case BorderRounded, BorderSharp, BorderBold, BorderBlock, BorderThinBlock, BorderDouble, BorderVertical, BorderLeft:
+			for y := top; y < bot; y++ {
+				_screen.SetContent(left, y, w.borderStyle.left, nil, style)
+			}
+		}
+		switch shape {
+		case BorderRounded, BorderSharp, BorderBold, BorderBlock, BorderThinBlock, BorderDouble, BorderVertical, BorderRight:
+			vw := runeWidth(w.borderStyle.right)
+			for y := top; y < bot; y++ {
+				_screen.SetContent(right-vw, y, w.borderStyle.right, nil, style)
+			}
 		}
 	}
 	switch shape {
-	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderVertical, BorderLeft:
-		for y := top; y < bot; y++ {
-			_screen.SetContent(left, y, w.borderStyle.vertical, nil, style)
-		}
-	}
-	switch shape {
-	case BorderRounded, BorderSharp, BorderBold, BorderDouble, BorderVertical, BorderRight:
-		vw := runewidth.RuneWidth(w.borderStyle.vertical)
-		for y := top; y < bot; y++ {
-			_screen.SetContent(right-vw, y, w.borderStyle.vertical, nil, style)
-		}
-	}
-	switch shape {
-	case BorderRounded, BorderSharp, BorderBold, BorderDouble:
+	case BorderRounded, BorderSharp, BorderBold, BorderBlock, BorderThinBlock, BorderDouble:
 		_screen.SetContent(left, top, w.borderStyle.topLeft, nil, style)
-		_screen.SetContent(right-runewidth.RuneWidth(w.borderStyle.topRight), top, w.borderStyle.topRight, nil, style)
+		_screen.SetContent(right-runeWidth(w.borderStyle.topRight), top, w.borderStyle.topRight, nil, style)
 		_screen.SetContent(left, bot-1, w.borderStyle.bottomLeft, nil, style)
-		_screen.SetContent(right-runewidth.RuneWidth(w.borderStyle.bottomRight), bot-1, w.borderStyle.bottomRight, nil, style)
+		_screen.SetContent(right-runeWidth(w.borderStyle.bottomRight), bot-1, w.borderStyle.bottomRight, nil, style)
 	}
 }

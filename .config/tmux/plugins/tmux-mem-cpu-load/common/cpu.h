@@ -19,6 +19,7 @@
 #ifndef CPU_H_
 #define CPU_H_
 
+#include <cstdint>
 #include <sys/types.h>
 
 #if defined(__APPLE__) && defined(__MACH__)
@@ -27,12 +28,15 @@
   #define CP_IDLE 2
   #define CP_NICE 3
   #define CP_STATES 4
+#elif defined(__OpenBSD__)
+  #include <sys/sched.h>
+  #define CP_STATES CPUSTATES
 #else
   #define CP_USER   0
   #define CP_NICE   1
   #define CP_SYS    2
 
-  #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+  #if defined(__FreeBSD__) || defined(__NetBSD__)
     // *BSD or OSX
     #define CP_INTR   3
     #define CP_IDLE   4

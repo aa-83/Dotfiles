@@ -148,8 +148,13 @@ function! s:cache.init(path, opts) dict abort " {{{1
   let new.path = a:path
   let new.ftime = -1
   let new.default = a:opts.default
+
   let new.__validated = 0
   let new.__validation_value = deepcopy(a:opts.validate)
+  if type(new.__validation_value) == v:t_dict
+    let new.__validation_value._version = s:_version
+  endif
+  let new.data.__validate = deepcopy(new.__validation_value)
 
   if a:opts.persistent
     return extend(new, s:cache_persistent)
@@ -167,17 +172,7 @@ let s:cache_persistent = {
 function! s:cache_persistent.validate() dict abort " {{{1
   let self.__validated = 1
 
-  if type(self.__validation_value) == v:t_dict
-    let self.__validation_value._version = s:_version
-  endif
-
-  if empty(self.data)
-    let self.data.__validate = deepcopy(self.__validation_value)
-    return
-  endif
-
-  if !has_key(self.data, '__validate')
-        \ || type(self.data.__validate) != type(self.__validation_value)
+  if type(self.data.__validate) != type(self.__validation_value)
         \ || self.data.__validate != self.__validation_value
     call self.clear()
     let self.data.__validate = deepcopy(self.__validation_value)
@@ -220,9 +215,18 @@ function! s:cache_persistent.write(...) dict abort " {{{1
   let l:modified = self.modified || a:0 > 0
   if !l:modified || empty(self.data) | return | endif
 
-  call writefile([json_encode(self.data)], self.path)
-  let self.ftime = getftime(self.path)
-  let self.modified = 0
+  try
+    let l:encoded = json_encode(self.data)
+    call writefile([l:encoded], self.path)
+    let self.ftime = getftime(self.path)
+    let self.modified = 0
+  catch /E474:/
+    call vimtex#log#warning(
+          \ 'Could not encode cache "'
+          \   . fnamemodify(self.path, ':t:r') . '"',
+          \ string(self.data)
+          \)
+  endtry
 endfunction
 
 " }}}1
@@ -244,7 +248,7 @@ function! s:cache_persistent.read() dict abort " {{{1
     return
   endif
 
-  call extend(self.data, l:data, 'keep')
+  call extend(self.data, l:data)
 
   if !self.__validated
     call self.validate()

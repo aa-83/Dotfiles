@@ -37,7 +37,7 @@
 
 std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigned int graph_lines,
     bool use_colors = false,
-    bool use_powerline_left = false, bool use_powerline_right = false )
+    bool use_powerline_left = false, bool use_powerline_right = false, bool use_vert_graph = false)
 {
 
   float percentage;
@@ -80,13 +80,19 @@ std::string cpu_string( CPU_MODE cpu_mode, unsigned int cpu_usage_delay, unsigne
     }
   }
 
-  if( graph_lines > 0)
+  if( use_vert_graph )
+  {
+    oss << "▕";
+    oss << get_graph_vert( unsigned( percentage ) );
+    oss << "▏";
+  }
+  else if( graph_lines > 0)
   {
     oss << " [";
     oss << get_graph_by_percentage( unsigned( percentage ), graph_lines );
     oss << "]";
   }
-  oss.width( 5 );
+  oss.width( 6 );
   oss.setf( std::ios::fixed, std::ios::floatfield );
   oss.precision( 1 );
   oss.fill( ' ' );
@@ -123,6 +129,16 @@ void print_help()
     << "\tUse powerline left symbols throughout the output, enables --colors\n"
     << "-q, --powerline-right\n"
     << "\tUse powerline right symbols throughout the output, enables --colors\n"
+    << "-v, --vertical-graph\n"
+    << "\tUse vertical bar chart for CPU graph\n"
+    << "-l <value>, --segments-left <value>\n"
+    << "\tEnable blending bg/fg color (depending on -p or -q use) with segment to left\n"
+    << "\tProvide color to be used depending on -p or -q option for seamless segment blending\n"
+    << "\tColor is an integer value which uses the standard tmux color palette values\n"
+    << "-r <value>, --segments-right <value>\n"
+    << "\tEnable blending bg/fg color (depending on -p or -q use) with segment to right\n"
+    << "\tProvide color to be used depending on -p or -q option for seamless segment blending\n"
+    << "\tColor is an integer value which uses the standard tmux color palette values\n"
     << "-i <value>, --interval <value>\n"
     << "\tSet tmux status refresh interval in seconds. Default: 1 second\n"
     << "-g <value>, --graph-lines <value>\n"
@@ -141,9 +157,14 @@ int main( int argc, char** argv )
   unsigned cpu_usage_delay = 990000;
   short averages_count = 3;
   short graph_lines = 10; // max 32767 should be enough
+  short left_color = 0;
+  short right_color = 0;
   bool use_colors = false;
   bool use_powerline_left = false;
   bool use_powerline_right = false;
+  bool use_vert_graph = false;
+  bool segments_to_left = false;
+  bool segments_to_right= false;
   MEMORY_MODE mem_mode = MEMORY_MODE_DEFAULT;
   CPU_MODE cpu_mode = CPU_MODE_DEFAULT;
 
@@ -157,17 +178,20 @@ int main( int argc, char** argv )
     { "colors", no_argument, NULL, 'c' },
     { "powerline-left", no_argument, NULL, 'p' },
     { "powerline-right", no_argument, NULL, 'q' },
+    { "vertical-graph", no_argument, NULL, 'v' },
     { "interval", required_argument, NULL, 'i' },
     { "graph-lines", required_argument, NULL, 'g' },
     { "mem-mode", required_argument, NULL, 'm' },
     { "cpu-mode", required_argument, NULL, 't' },
     { "averages-count", required_argument, NULL, 'a' },
+    { "segments-left", required_argument, NULL, 'l' },
+    { "segments-right", required_argument, NULL, 'r' },
     { 0, 0, 0, 0 } // used to handle unknown long options
   };
 
   int c;
   // while c != -1
-  while( (c = getopt_long( argc, argv, "hi:cpqg:m:a:t:", long_options, NULL) ) != -1 )
+  while( (c = getopt_long( argc, argv, "hi:cpqvl:r:g:m:a:t:", long_options, NULL) ) != -1 )
   {
     switch( c )
     {
@@ -185,6 +209,27 @@ int main( int argc, char** argv )
       case 'q': // --powerline-right
         use_colors = true;
         use_powerline_right = true;
+        break;
+      case 'v': // --vertical-graph
+        use_vert_graph = true;
+        break;
+      case 'l': // --segments-left
+        segments_to_left = true;
+        if( atoi( optarg ) < 0 || atoi( optarg ) > 255 )
+        {
+          std::cerr << "Valid color vaues are from 0 to 255.\n";
+          return EXIT_FAILURE;
+        }
+        left_color = atoi( optarg ) ;
+        break;
+      case 'r': // --segments-right
+        segments_to_right= true;
+        if( atoi( optarg ) < 0 || atoi( optarg ) > 255 )
+        {
+          std::cerr << "Valid color vaues are from 0 to 255.\n";
+          return EXIT_FAILURE;
+        }
+        right_color = atoi( optarg ) ;
         break;
       case 'i': // --interval, -i
         if( atoi( optarg ) < 1 )
@@ -246,9 +291,9 @@ int main( int argc, char** argv )
 
   MemoryStatus memory_status;
   mem_status( memory_status );
-  std::cout << mem_string( memory_status, mem_mode, use_colors, use_powerline_left, use_powerline_right )
-    << cpu_string( cpu_mode, cpu_usage_delay, graph_lines, use_colors, use_powerline_left, use_powerline_right )
-    << load_string( use_colors, use_powerline_left, use_powerline_right, averages_count );
+  std::cout << mem_string( memory_status, mem_mode, use_colors, use_powerline_left, use_powerline_right, segments_to_left, left_color )
+    << cpu_string( cpu_mode, cpu_usage_delay, graph_lines, use_colors, use_powerline_left, use_powerline_right, use_vert_graph )
+    << load_string( use_colors, use_powerline_left, use_powerline_right, averages_count, segments_to_right, right_color );
 
   std::cout << std::endl;
 

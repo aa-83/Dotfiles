@@ -7,14 +7,27 @@
 scriptencoding utf-8
 
 function! vimtex#syntax#p#amsmath#load(cfg) abort " {{{1
-  call vimtex#syntax#core#new_region_math('align')
-  call vimtex#syntax#core#new_region_math('alignat')
-  call vimtex#syntax#core#new_region_math('flalign')
-  call vimtex#syntax#core#new_region_math('gather')
-  call vimtex#syntax#core#new_region_math('mathpar')
-  call vimtex#syntax#core#new_region_math('multline')
-  call vimtex#syntax#core#new_region_math('xalignat')
-  call vimtex#syntax#core#new_region_math('xxalignat', {'starred': 0})
+  for l:env in [
+        \ 'align',
+        \ 'alignat',
+        \ 'flalign',
+        \ 'gather',
+        \ 'mathpar',
+        \ 'multline',
+        \ 'xalignat',
+        \]
+    call vimtex#syntax#core#new_env(#{
+          \ name: l:env,
+          \ starred: v:true,
+          \ math: v:true
+          \})
+  endfor
+
+  " This does not accept starred variant
+  call vimtex#syntax#core#new_env({
+        \ 'name': 'xxalignat',
+        \ 'math': v:true
+        \})
 
   syntax match texMathCmdEnv contained contains=texCmdMathEnv nextgroup=texMathArrayArg skipwhite skipnl "\\begin{subarray}"
   syntax match texMathCmdEnv contained contains=texCmdMathEnv nextgroup=texMathArrayArg skipwhite skipnl "\\begin{x\?alignat\*\?}"
@@ -45,6 +58,12 @@ function! vimtex#syntax#p#amsmath#load(cfg) abort " {{{1
         \ 'contains': 'TOP,@Spell'
         \})
 
+  " \operatorname
+  syntax match texCmdOpname nextgroup=texOpnameArg skipwhite skipnl "\\operatorname\>"
+  call vimtex#syntax#core#new_arg('texOpnameArg', {
+        \ 'contains': 'TOP,@Spell'
+        \})
+
   " DeclareMathOperator
   syntax match texCmdDeclmathoper nextgroup=texDeclmathoperArgName skipwhite skipnl "\\DeclareMathOperator\>\*\?"
   call vimtex#syntax#core#new_arg('texDeclmathoperArgName', {
@@ -53,42 +72,13 @@ function! vimtex#syntax#p#amsmath#load(cfg) abort " {{{1
         \})
   call vimtex#syntax#core#new_arg('texDeclmathoperArgBody', {'contains': 'TOP,@Spell'})
 
-  " \operatorname
-  syntax match texCmdOpname nextgroup=texOpnameArg skipwhite skipnl "\\operatorname\>"
-  call vimtex#syntax#core#new_arg('texOpnameArg', {
-        \ 'contains': 'TOP,@Spell'
-        \})
-
   " \tag{label} or \tag*{label}
   syntax match texMathCmd "\\tag\>\*\?" contained nextgroup=texMathTagArg
   call vimtex#syntax#core#new_arg('texMathTagArg', {'contains': 'TOP,@Spell'})
 
   " Add conceal rules
-  if g:vimtex_syntax_conceal.math_delimiters
-    " Conceal the command and delims of "\operatorname{ ... }"
-    syntax region texMathConcealedArg contained matchgroup=texMathCmd
-          \ start="\\operatorname\*\?\s*{" end="}"
-          \ concealends
-    syntax cluster texClusterMath add=texMathConcealedArg
-
-    " Conceal "\eqref{ ... }" as "( ... )"
-    syntax match texCmdRefEq nextgroup=texRefEqConcealedArg
-          \ conceal skipwhite skipnl "\\eqref\>"
-    call vimtex#syntax#core#new_arg('texRefEqConcealedArg', {
-          \ 'contains': 'texComment,@NoSpell,texRefEqConcealedDelim',
-          \ 'opts': 'keepend contained',
-          \ 'matchgroup': '',
-          \})
-    syntax match texRefEqConcealedDelim contained "{" cchar=( conceal
-    syntax match texRefEqConcealedDelim contained "}" cchar=) conceal
-
-    " Amsmath [lr][vV]ert
-    if &encoding ==# 'utf-8'
-      syntax match texMathDelim contained conceal cchar=| "\\\%([bB]igg\?l\|left\)\\lvert"
-      syntax match texMathDelim contained conceal cchar=| "\\\%([bB]igg\?r\|right\)\\rvert"
-      syntax match texMathDelim contained conceal cchar=‖ "\\\%([bB]igg\?l\|left\)\\lVert"
-      syntax match texMathDelim contained conceal cchar=‖ "\\\%([bB]igg\?r\|right\)\\rVert"
-    endif
+  if a:cfg.conceal
+    call s:add_conceals()
   endif
 
   highlight def link texCmdDeclmathoper     texCmdNew
@@ -106,6 +96,52 @@ function! vimtex#syntax#p#amsmath#load(cfg) abort " {{{1
   highlight def link texOpnameArg           texMathZone
   highlight def link texSubjClassArg        texArg
   highlight def link texSubjClassOpt        texOpt
+endfunction
+
+" }}}1
+
+function! s:add_conceals() abort " {{{1
+  " Conceal "\eqref{ … }" as "(…)"
+  syntax match texCmdRefEq nextgroup=texRefEqConcealedArg
+        \ conceal skipwhite skipnl "\\eqref\>"
+  call vimtex#syntax#core#new_arg('texRefEqConcealedArg', {
+        \ 'contains': 'texComment,@NoSpell,texRefEqConcealedDelim',
+        \ 'opts': 'keepend contained',
+        \ 'matchgroup': '',
+        \})
+  syntax match texRefEqConcealedDelim contained "{" conceal cchar=(
+  syntax match texRefEqConcealedDelim contained "}" conceal cchar=)
+
+  " \operatorname
+  "   conceal the command and delims
+  "   \operatorname{ … }  ⇒  …
+  syntax region texMathConcealedArg contained matchgroup=texMathCmd
+        \ start="\\operatorname\*\?\s*{\s*" end="\s*}"
+        \ concealends
+  syntax cluster texClusterMath add=texMathConcealedArg
+
+  " The last part are amsmath specific math delimiters and should respect the
+  " global config value
+  if !g:vimtex_syntax_conceal.math_delimiters | return | endif
+
+  " Amsmath [lr][vV]ert
+  if &encoding ==# 'utf-8'
+    syntax match texMathDelim contained conceal cchar=| "\\\%([bB]igg\?l\?\|left\)\\lvert\>\s*"
+    syntax match texMathDelim contained conceal cchar=| "\s*\\\%([bB]igg\?r\?\|right\)\\rvert\>"
+    syntax match texMathDelim contained conceal cchar=‖ "\\\%([bB]igg\?l\?\|left\)\\lVert\>\s*"
+    syntax match texMathDelim contained conceal cchar=‖ "\s*\\\%([bB]igg\?r\?\|right\)\\rVert\>"
+  endif
+
+  syntax match texCmdEnvM "\\\%(begin\|end\){Vmatrix}" contained conceal cchar=║
+  syntax match texCmdEnvM "\\\%(begin\|end\){vmatrix}" contained conceal cchar=|
+  syntax match texCmdEnvM "\\begin{Bmatrix}"           contained conceal cchar={
+  syntax match texCmdEnvM "\\end{Bmatrix}"             contained conceal cchar=}
+  syntax match texCmdEnvM "\\begin{bmatrix}"           contained conceal cchar=[
+  syntax match texCmdEnvM "\\end{bmatrix}"             contained conceal cchar=]
+  syntax match texCmdEnvM "\\begin{pmatrix}"           contained conceal cchar=(
+  syntax match texCmdEnvM "\\end{pmatrix}"             contained conceal cchar=)
+  syntax match texCmdEnvM "\\begin{smallmatrix}"       contained conceal cchar=(
+  syntax match texCmdEnvM "\\end{smallmatrix}"         contained conceal cchar=)
 endfunction
 
 " }}}1

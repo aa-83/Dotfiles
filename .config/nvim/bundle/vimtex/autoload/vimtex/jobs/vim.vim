@@ -108,15 +108,18 @@ endfunction
 
 " }}}1
 function! s:job.get_pid() abort dict " {{{1
-  if !has_key(self, 'pid')
-    try
-      return get(job_info(self.job), 'process')
-    catch
-      return 0
-    endtry
-  endif
+  try
+    return get(job_info(self.job), 'process')
+  catch
+    return 0
+  endtry
+endfunction
 
-  return self.pid
+" }}}1
+function! s:job.signal_hup() abort dict " {{{1
+  if self.is_running()
+    call job_stop(self.job, 'hup')
+  endif
 endfunction
 
 " }}}1
