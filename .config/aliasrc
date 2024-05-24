@@ -16,7 +16,6 @@ alias ...='cd ../..' ;
 alias ....='cd ../../..' ;
 
 # Software specific aliases
-alias yeet='sudo pacman -Rns' ;
 alias yt='yt-dlp --add-metadata -i' ;
 alias yta='yt-dlp -x -f bestaudio/best' ;
 alias ftf='fzf-tmux -r'
@@ -27,6 +26,12 @@ alias gotop='gotop -c cyberpunk_neon' ;
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf' ;
 alias tmuxl='tmux list-sessions' ;
 alias tmuxa='tmux attach-session -t' ;
+
+# VPN
+alias vpn='systemctl restart systemd-resolved && nordvpn connect norway' ;
+alias nvcn='nordvpn connect norway';
+alias nvd='nordvpn disconnect';
+alias nvs='nordvpn status';
 
 # Config shortcuts
 alias bib='nvim ~/dokumenter/latex/bib/bibliografi.bib' ;

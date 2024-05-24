@@ -3,6 +3,9 @@ if exists("b:did_autoload_ultisnips")
 endif
 let b:did_autoload_ultisnips = 1
 
+" Ensure snippets are loaded for current buffer
+au UltiSnips_AutoTrigger FileType,BufEnter * call UltiSnips#CheckFiletype()
+
 " Also import vim as we expect it to be imported in many places.
 py3 import vim
 py3 from UltiSnips import UltiSnips_Manager
@@ -87,6 +90,12 @@ function! UltiSnips#ExpandSnippetOrJump() abort
     return ""
 endfunction
 
+function! UltiSnips#JumpOrExpandSnippet() abort
+    call s:compensate_for_pum()
+    py3 UltiSnips_Manager.jump_or_expand()
+    return ""
+endfunction
+
 function! UltiSnips#ListSnippets() abort
     py3 UltiSnips_Manager.list_snippets()
     return ""
@@ -115,6 +124,11 @@ endfunction
 function! UltiSnips#CanJumpBackwards() abort
 	py3 vim.command("let can_jump_backwards = %d" % UltiSnips_Manager.can_jump_backwards())
 	return can_jump_backwards
+endfunction
+
+function! UltiSnips#ToggleAutoTrigger() abort
+    py3 vim.command("let autotrigger = %d" % UltiSnips_Manager._toggle_autotrigger())
+    return autotrigger
 endfunction
 
 function! UltiSnips#SaveLastVisualSelection() range abort
@@ -175,6 +189,10 @@ endfunction
 
 function! UltiSnips#TrackChange() abort
     py3 UltiSnips_Manager._track_change()
+endfunction
+
+function! UltiSnips#CheckFiletype() abort
+    py3 UltiSnips_Manager._check_filetype(vim.eval('&ft'))
 endfunction
 
 function! UltiSnips#RefreshSnippets() abort

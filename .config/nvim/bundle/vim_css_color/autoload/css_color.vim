@@ -3,7 +3,7 @@
 " Commit:       $Format:%H$
 " Licence:      The MIT License (MIT)
 
-if ! ( v:version >= 700 && has('syntax') && ( has('gui_running') || has('nvim') || &t_Co == 256 ) )
+if ! ( v:version >= 700 && has('syntax') && ( has('gui_running') || has('nvim') || &t_Co >= 256 ) )
 	function! css_color#init(type, keywords, groups)
 	endfunction
 	function! css_color#extend(groups)
@@ -90,24 +90,8 @@ if has('gui_running')
 		call add( s:exe, 'hi BG'.a:color.' guibg=#'.a:color.' guifg=#'.( a:is_bright ? '000000' : 'ffffff' ) )
 	endfunction
 else
-	" preset 16 vt100 colors
-	let s:xtermcolor = [
-		\ [ 0x00, 0x00, 0x00 ],
-		\ [ 0xCD, 0x00, 0x00 ],
-		\ [ 0x00, 0xCD, 0x00 ],
-		\ [ 0xCD, 0xCD, 0x00 ],
-		\ [ 0x00, 0x00, 0xEE ],
-		\ [ 0xCD, 0x00, 0xCD ],
-		\ [ 0x00, 0xCD, 0xCD ],
-		\ [ 0xE5, 0xE5, 0xE5 ],
-		\ [ 0x7F, 0x7F, 0x7F ],
-		\ [ 0xFF, 0x00, 0x00 ],
-		\ [ 0x00, 0xFF, 0x00 ],
-		\ [ 0xFF, 0xFF, 0x00 ],
-		\ [ 0x5C, 0x5C, 0xFF ],
-		\ [ 0xFF, 0x00, 0xFF ],
-		\ [ 0x00, 0xFF, 0xFF ],
-		\ [ 0xFF, 0xFF, 0xFF ]]
+	" the 16 vt100 colors are not defined consistently
+	let s:xtermcolor = repeat( [''], 16 )
 
 	" the 6 values used in the xterm color cube
 	"                    0    95   135   175   215   255
@@ -123,7 +107,7 @@ else
 	" grayscale ramp
 	let s:xtermcolor += map( range(24), 'repeat( [10 * v:val + 8], 3 )' )
 
-	for idx in range(len(s:xtermcolor))
+	for idx in range( 16, len(s:xtermcolor) - 1 )
 		let s:xtermcolor[idx] = s:rgb2din99( map(s:xtermcolor[idx], 'v:val / 255.0') )
 	endfor
 
@@ -138,7 +122,7 @@ else
 
 		let [L1,a1,b1] = s:rgb2din99([ r/255.0, g/255.0, b/255.0 ])
 
-		for idx in range(len(s:xtermcolor))
+		for idx in range( 16, len(s:xtermcolor) - 1 )
 			let [L2,a2,b2] = s:xtermcolor[idx]
 			let dL = L1 - L2
 			let da = a1 - a2
@@ -247,7 +231,7 @@ let s:_hexcolor   = '#\(\x\{3}\%(\>\|\x\{3}\>\)\)' " submatch 1
 let s:_rgbacolor  = '#\(\x\{3}\%(\>\|\x\%(\>\|\x\{2}\%(\>\|\x\{2}\>\)\)\)\)' " submatch 1
 let s:_funcname   = '\(rgb\|hsl\)a\?' " submatch 2
 let s:_ws_        = '\s*'
-let s:_numval     = s:_ws_ . '\(\d\{1,3}%\?\)' " submatch 3,4,5
+let s:_numval     = s:_ws_ . '\(\d\{1,3}\%(%\|deg\)\?\)' " submatch 3,4,5
 let s:_listsep    = s:_ws_ . ','
 let s:_otherargs_ = '\%(,[^)]*\)\?'
 let s:_funcexpr   = s:_funcname . '[(]' . s:_numval . s:_listsep . s:_numval . s:_listsep . s:_numval . s:_ws_ . s:_otherargs_ . '[)]'

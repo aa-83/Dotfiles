@@ -130,6 +130,7 @@ class SnippetManager:
         self._visual_content = VisualContentPreserver()
 
         self._snippet_sources = []
+        self._filetypes = []
 
         self._snip_expanded_in_action = False
         self._inside_action = False
@@ -146,6 +147,10 @@ class SnippetManager:
         if enable_snipmate == "1":
             self.register_snippet_source("snipmate_files", SnipMateFileSource())
 
+        self._autotrigger = True
+        if vim_helper.eval("exists('g:UltiSnipsAutoTrigger')") == "1":
+            self._autotrigger = vim_helper.eval("g:UltiSnipsAutoTrigger") == "1"
+
         self._should_update_textobjects = False
         self._should_reset_visual = False
 
@@ -155,7 +160,7 @@ class SnippetManager:
     def jump_forwards(self):
         """Jumps to the next tabstop."""
         vim_helper.command("let g:ulti_jump_forwards_res = 1")
-        vim_helper.command("let &undolevels = &undolevels")
+        vim_helper.command("let &g:undolevels = &g:undolevels")
         if not self._jump(JumpDirection.FORWARD):
             vim_helper.command("let g:ulti_jump_forwards_res = 0")
             return self._handle_failure(self.forward_trigger)
@@ -165,7 +170,7 @@ class SnippetManager:
     def jump_backwards(self):
         """Jumps to the previous tabstop."""
         vim_helper.command("let g:ulti_jump_backwards_res = 1")
-        vim_helper.command("let &undolevels = &undolevels")
+        vim_helper.command("let &g:undolevels = &g:undolevels")
         if not self._jump(JumpDirection.BACKWARD):
             vim_helper.command("let g:ulti_jump_backwards_res = 0")
             return self._handle_failure(self.backward_trigger)
@@ -181,7 +186,7 @@ class SnippetManager:
 
     @err_to_scratch_buffer.wrap
     def expand_or_jump(self):
-        """This function is used for people who wants to have the same trigger
+        """This function is used for people who want to have the same trigger
         for expansion and forward jumping.
 
         It first tries to expand a snippet, if this fails, it tries to
@@ -193,6 +198,24 @@ class SnippetManager:
         if not rv:
             vim_helper.command("let g:ulti_expand_or_jump_res = 2")
             rv = self._jump(JumpDirection.FORWARD)
+        if not rv:
+            vim_helper.command("let g:ulti_expand_or_jump_res = 0")
+            self._handle_failure(self.expand_trigger, True)
+
+    @err_to_scratch_buffer.wrap
+    def jump_or_expand(self):
+        """This function is used for people who want to have the same trigger
+        for expansion and forward jumping.
+
+        It first tries to jump forward, if this fails, it tries to
+        expand a snippet.
+
+        """
+        vim_helper.command("let g:ulti_expand_or_jump_res = 2")
+        rv = self._jump(JumpDirection.FORWARD)
+        if not rv:
+            vim_helper.command("let g:ulti_expand_or_jump_res = 1")
+            rv = self._try_expand()
         if not rv:
             vim_helper.command("let g:ulti_expand_or_jump_res = 0")
             self._handle_failure(self.expand_trigger, True)
@@ -808,7 +831,7 @@ class SnippetManager:
         if not snippets:
             # No snippet found
             return False
-        vim_helper.command("let &undolevels = &undolevels")
+        vim_helper.command("let &g:undolevels = &g:undolevels")
         if len(snippets) == 1:
             snippet = snippets[0]
         else:
@@ -816,7 +839,7 @@ class SnippetManager:
             if not snippet:
                 return True
         self._do_snippet(snippet, before)
-        vim_helper.command("let &undolevels = &undolevels")
+        vim_helper.command("let &g:undolevels = &g:undolevels")
         return True
 
     def can_expand(self, autotrigger_only=False):
@@ -833,6 +856,10 @@ class SnippetManager:
 
     def can_jump_backwards(self):
         return self.can_jump(JumpDirection.BACKWARD)
+
+    def _toggle_autotrigger(self):
+        self._autotrigger = not self._autotrigger
+        return self._autotrigger
 
     @property
     def _current_snippet(self):
@@ -938,7 +965,8 @@ class SnippetManager:
                 before = vim_helper.buf.line_till_cursor
 
                 if (
-                    before
+                    self._autotrigger
+                    and before
                     and self._last_change[0] != ""
                     and before[-1] == self._last_change[0]
                 ):
@@ -955,6 +983,15 @@ class SnippetManager:
     def _refresh_snippets(self):
         for _, source in self._snippet_sources:
             source.refresh()
+
+
+    @err_to_scratch_buffer.wrap
+    def _check_filetype(self, ft):
+        """Ensure snippets are loaded for the current filetype."""
+        if ft not in self._filetypes:
+            self._filetypes.append(ft)
+            for _, source in self._snippet_sources:
+                source.must_ensure = True
 
 
 UltiSnips_Manager = SnippetManager(  # pylint:disable=invalid-name

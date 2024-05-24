@@ -184,8 +184,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Colours
-set colorcolumn=80
-set termguicolors
+set t_8f=\[[38;2;%lu;%lu;%lum
+set t_8b=\[[48;2;%lu;%lu;%lum
+colorscheme vim
+"set termguicolors
 set background=light
 "set background=dark
 highlight ColorColumn ctermbg=red

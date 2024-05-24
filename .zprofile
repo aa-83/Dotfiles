@@ -5,8 +5,8 @@
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="$PATH:/home/eirik/.local/share/gem/ruby"
 export PATH="$PATH:/home/eirik/.local/share/go/bin"
-#export PATH="$PATH:/home/eirik/dokumenter/diverse/build/oF"
-#export PG_OF_PATH="/home/eirik/dokumenter/diverse/build/oF"
+export PATH="$PATH:/home/eirik/dokumenter/git_repositories/openFrameworks"
+export PG_OF_PATH="/home/eirik/dokumenter/git_repositories/openFrameworks/apps/projectGenerator"
 
 # Default Programs
 export TERMINAL="st"
@@ -16,7 +16,7 @@ export FILE="vifm"
 export BROWSER="firefox"
 export READER="zathura"
 export VIEWER="sxiv"
-export STATUSBAR="dwmblocks"
+#export STATUSBAR="dwmblocks"
 export PAGER="less"
 
 # ~/ Clean-up
@@ -47,7 +47,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
 # Prompt for ssh and gpg passwords for adding to the keychain at login, before x-server starts
-eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_rsa Eirik)"
+eval "$(keychain --dir /home/eirik/.config/.keychain --agents ssh,gpg --eval eirik_franzferdinand Eirik)"
 
 # Startx at login
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "$XDG_CONFIG_HOME/xinitrc"
+[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx "/home/eirik/.config/xinitrc"
