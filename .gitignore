@@ -1,6 +1,8 @@
 .config/**/*.pid
 .config/**/*.db
 .config/**/*.log
+.config/nvim/bundle/**/.git
+.config/nvim/bundle/**/*.git*
 .config/**/.git
 .config/**/*.git*
 .config/**/*.json*
