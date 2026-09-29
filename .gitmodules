@@ -1,5 +1,0 @@
-[submodule ".config/neovim/bundle/ale"]
-	ignore = dirty
-
-[submodule ".config/neovim/bundle/neomake"]
-	ignore = dirty
