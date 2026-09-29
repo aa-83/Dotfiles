@@ -1,0 +1,60 @@
+[submodule ".config/nvim/bundle/ale"]
+	path = .config/nvim/bundle/ale
+	url = https://github.com/dense-analysis/ale
+[submodule ".config/nvim/bundle/coc.nvim"]
+	path = .config/nvim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule ".config/nvim/bundle/fzf.nvim"]
+	path = .config/nvim/bundle/fzf.nvim
+	url = https://github.com/junegunn/fzf.vim
+[submodule ".config/nvim/bundle/goyo.cim"]
+	path = .config/nvim/bundle/goyo.cim
+	url = https://github.com/junegunn/goyo.vim
+[submodule ".config/nvim/bundle/neco_syntax"]
+	path = .config/nvim/bundle/neco_syntax
+	url = https://github.com/Shougo/neco-syntax
+[submodule ".config/nvim/bundle/nomake"]
+	path = .config/nvim/bundle/nomake
+	url = https://github.com/neomake/neomake
+[submodule ".config/nvim/bundle/neosnippet_snippets"]
+	path = .config/nvim/bundle/neosnippet_snippets
+	url = https://github.com/Shougo/neosnippet-snippets
+[submodule ".config/nvim/bundle/nerdtree"]
+	path = .config/nvim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".config/nvim/bundle/nerdtree_buffer_ops"]
+	path = .config/nvim/bundle/nerdtree_buffer_ops
+	url = https://github.com/PhilRunninger/nerdtree-buffer-ops
+[submodule ".config/nvim/bundle/nerdtree_git_plugin"]
+	path = .config/nvim/bundle/nerdtree_git_plugin
+	url = https://github.com/xuyuanp/nerdtree-git-plugin
+[submodule ".config/nvim/bundle/nerdtree_visual_selection"]
+	path = .config/nvim/bundle/nerdtree_visual_selection
+	url = https://github.com/PhilRunninger/nerdtree-visual-selection
+[submodule ".config/nvim/bundle/scvim"]
+	path = .config/nvim/bundle/scvim
+	url = https://github.com/supercollider/scvim
+[submodule ".config/nvim/bundle/ultisnips"]
+	path = .config/nvim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule ".config/nvim/bundle/vim_css_colour"]
+	path = .config/nvim/bundle/vim_css_colour
+	url = https://github.com/ap/vim-css-color
+[submodule ".config/nvim/bundle/vim_devicons"]
+	path = .config/nvim/bundle/vim_devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule ".config/nvim/bundle/vim_gutentags"]
+	path = .config/nvim/bundle/vim_gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule ".config/nvim/bundle/vim_highlightedyank"]
+	path = .config/nvim/bundle/vim_highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank
+[submodule ".config/nvim/bundle/nerdtree_syntax_highlight"]
+	path = .config/nvim/bundle/nerdtree_syntax_highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+[submodule ".config/nvim/bundle/vim_snippets"]
+	path = .config/nvim/bundle/vim_snippets
+	url = https://github.com/honza/vim-snippets
+[submodule ".config/nvim/bundle/vimtex"]
+	path = .config/nvim/bundle/vimtex
+	url = https://github.com/lervag/vimtex/
