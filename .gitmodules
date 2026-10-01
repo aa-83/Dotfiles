@@ -58,3 +58,6 @@
 [submodule ".config/nvim/bundle/vimtex"]
 	path = .config/nvim/bundle/vimtex
 	url = https://github.com/lervag/vimtex/
+[submodule ".config/nvim/bundle/vim_lsp"]
+	path = .config/nvim/bundle/vim_lsp
+	url = https://github.com/prabirshrestha/vim-lsp
